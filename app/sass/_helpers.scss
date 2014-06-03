@@ -1,0 +1,49 @@
+// Type
+%serif{
+  font-family: "Palatino", "Palatino Linotype", "Open Sans", sans-serif;
+  font-style: italic;
+}
+%sans-serif{
+  font-family:"Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+// Positioning
+%vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%vertical-align-children{
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+}
+
+// Animation
+%quickest-transition{
+  @include transition(all .12s $ease-in-out-quad);
+}
+%quick-transition{
+  @include transition(all .12s $ease-in-out-quad);
+}
+%midspeed-transition{
+  @include transition(all .25s ease);
+}
+%slower-transition{
+  @include transition(all .5s $ease-in-out-quad);
+}
+%slowest-transition{
+  @include transition(all 1s $ease-in-out-quad);
+}
+%slug-transition{
+  @include transition(all 1.5s $ease-in-out-quad);
+}

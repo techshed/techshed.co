@@ -1,0 +1,96 @@
+.home{
+  .page-content > header{
+    background: $techshed-orange;
+
+    .background-image, .header-copy{
+      @extend %vertical-align;
+      position: absolute;
+    }
+    .bg-img{
+      position: absolute;
+      top: 0;
+      right: 5%;
+      z-index: 0;
+      background-image: url(../images/home/header-tools.jpg);
+      background-size: cover;
+      background-position: top right;
+      width: 65%;
+      height: 72%;
+
+
+    }
+    .header-copy{
+      width: 100%;
+      z-index: 1;
+      color: #fff;
+    }
+    h1{
+      font-weight: 900;
+      width: 100%;
+      font-size: 12.5rem;
+      margin: 0 0 0 -0.6rem;
+      padding: 0;
+      line-height: 1;
+    }
+    p{
+      width: 35%;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin: 0 0 2rem;
+    }
+    .comma{
+      margin-right: -4rem;
+    }
+    @include media(max-width $bp-small-2, 1){
+      h1{
+        font-weight: 900;
+        width: 80%;
+        font-size: 6rem;
+        margin: 0 0 0 -0.6rem;
+        padding: 0;
+        line-height: 1;
+      }
+      p{
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0 0 2rem;
+      }
+      .comma{
+        display: none;
+      }
+      .background-image{
+        right: 1rem;
+        max-height: 100%;
+        max-width: 28rem;
+        z-index: 0;
+        margin-top: -4.5rem;
+      }
+      .btn{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.home01{
+  background-image: url(../images/home/homepage-image3.jpg);
+  background-color: #77A0A6;
+}
+.home02{
+  background-image: url(../images/home/homepage-image4.jpg);
+  background-color: gainsboro;
+}
+.home03{
+  background-image: url(../images/home/homepage-image5.jpg);
+  background-color: lightgoldenrodyellow;
+}
+.home04{
+  background-color: lightsteelblue;
+}
+.home05{
+  background-color: #ddd;
+}
+.home06{
+  background-color: mistyrose;
+}

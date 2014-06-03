@@ -1,0 +1,29 @@
+.btn{
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  border-radius: .4rem;
+  color: #444;
+  font-weight: 600;
+  border-width: .2rem;
+  border-style: solid;
+  border-color: #fff;
+
+  &.btn-large{
+    padding: 1rem 5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  &.btn-black{
+    color: #444;
+    border-color: #444;
+  }
+  &.btn-white{
+    border-color: #fff;
+    color: #fff;
+  }
+}
