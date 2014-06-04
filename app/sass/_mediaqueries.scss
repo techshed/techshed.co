@@ -25,13 +25,13 @@
 /* min-width 1025px, large screens */
 @include media(min-width 64.063em) {
   html{
-
+    font-size: 72%;
   }
 }
 /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
 @include media(min-width 64.063em, max-width 90em) {
   html{
-
+    font-size: 80%;
   }
 }
 
@@ -39,13 +39,13 @@
 /* min-width 1441px, xlarge screens */
 @include media(min-width 90.063em) {
   html{
-
+    font-size: 86%;
   }
 }
 /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
 @include media(min-width 90.063em, max-width 120em) {
   html{
-
+    font-size: 92%;
   }
 }
 
@@ -53,6 +53,6 @@
 /* min-width 1921px, xlarge screens */
 @include media(min-width 120.063em) {
   html{
-
+    font-size: 120%;
   }
 }

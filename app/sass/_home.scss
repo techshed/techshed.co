@@ -19,7 +19,7 @@
       background-position: top right;
       background-repeat: no-repeat;
       z-index: 0;
-      margin-top: -.3rem;
+      margin-top: -2.3rem;
       right: -.3rem;
     }
     .header-copy{
@@ -56,18 +56,18 @@
       width: 100%;
     }
 
-    /* TABLET: min-width 641px and max-width 1024px */
-    @include media(min-width 40.063em, max-width 64em) {
+    /* min-width 641px, medium screens */
+    @include media(min-width 40.063em) {
       padding-top: 0;
-      height: rem(720px);
+      height: rem(800px);
 
       h1{
         font-size: 9.5rem;
       }
       .bg-img{
-        margin-top: 1.8rem;
         right: -2rem;
-        width: 82%
+        width: 84%;
+        margin-top: 3.5rem;
       }
       .btn{
         width: auto;
@@ -76,10 +76,65 @@
         display: block;
       }
     }
+    /* min-width 1025px, large screens */
+    @include media(min-width 64.063em) {
+      padding: 0;
+
+      h1{
+        font-size: 11.3rem;
+        margin-left: -1rem;
+      }
+
+      .bg-img{
+        right: 4rem;
+        width: 64%;
+        margin-top: 0rem;
+      }
+      .comma{
+        display: inline-block;
+        visibility: visible;
+        margin-right: -2.6rem;
+      }
+      p{
+        font-size: 1.7rem;
+        margin: 1rem 0 1.5rem;
+      }
+    }
+    /* min-width 1441px, xlarge screens */
+    @include media(min-width 90.063em) {
+      height: rem(900px);
+      padding: 0;
+
+      h1{
+        font-size: 14.4rem;
+        margin-left: -1rem;
+      }
+
+      .bg-img{
+        right: 6rem;
+        width: 64%;
+        margin-top: 2rem;
+      }
+      .comma{
+        display: inline-block;
+        visibility: visible;
+        margin-right: -2.6rem;
+      }
+      p{
+        font-size: 2rem;
+        margin: 1rem 0 1.5rem;
+      }
+    }
+    /* min-width 1921px, xlarge screens */
+    @include media(min-width 120.063em) {
+      p{
+        margin: 1.5rem 0 2rem;
+      }
+    }
   }
 }
 
-// Home Block STyles
+// Home Block Styles
 .home01{
   background-image: url(../images/home/home01.jpg);
 }
@@ -108,23 +163,36 @@
   margin: 0 auto;
   padding: 0;
   width: 90%;
-}
-.benefits__item{
-  float: left;
-  height: 10rem;
-  width: 10rem;
-  margin: 5.5%;
-  border-radius: 50%;
-  border: .2rem solid #fff;
 
-  p{
-    @extend %vertical-align;
-    margin: 0;
-    padding: 0 10%;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    color: #fff;
+  .benefits__item{
+    float: left;
+    height: 10rem;
+    width: 10rem;
+    margin: 5.5%;
+    border-radius: 50%;
+    border: .2rem solid #fff;
+
+    p{
+      @extend %vertical-align;
+      margin: 0;
+      padding: 0 10%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+    }
+  }
+
+  /* min-width 641px, medium screens */
+  @include media(min-width 40.063em) {
+    width: 100%;
+
+    .benefits__item{
+      margin: 4.4%;
+    }
   }
 }
+
+
+

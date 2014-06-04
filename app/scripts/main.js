@@ -19,6 +19,7 @@ $(function() {
         a = _.actions;
         _.bindActions();
         _.setHeaderHeight();
+        $('h1').fitText(.72);
       },
       bindActions: function() {
 

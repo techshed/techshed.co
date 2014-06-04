@@ -9,6 +9,7 @@
     "normalize.css": "~3.0.1",
     "fastclick": "~1.0.2",
     "slabText": "~2.2.0",
-    "jquery.stellar": "~0.6.2"
+    "jquery.stellar": "~0.6.2",
+    "FitText.js": "*"
   }
 }

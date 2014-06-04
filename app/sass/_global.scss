@@ -171,20 +171,16 @@ a{
     background-size: cover;
     background-position: center center;
   }
-  &.block-img-tall, &.our-jobs{
+  &.block-tall{
     height: 38rem;
   }
   &.block-img-wide{
     height: 20rem;
   }
-  @include media(min-width 40.063em, max-width 64em) {
-    &.block-img-tall, &.our-jobs{
+  @include media(min-width 40.063em) {
+    &.block-tall{
       width: 50%;
       height: 42rem;
-    }
-    &.our-jobs{
-
-      padding: 0;
     }
   }
 }
@@ -207,20 +203,27 @@ a{
   p{
     font-size: 1.9rem;
     line-height: 1.7;
-    margin: 1.8rem 0 2.2rem;
+    margin: 0;
+    padding: 2rem 0;
   }
   .btn{
     width: 100%;
+  }
+  @include media(min-width 40.063em) {
+    .btn{
+      width: auto;
+    }
   }
 }
 
 .pullquote{
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.9rem;
   line-height: 1.6;
   font-weight: 500;
   padding: 4rem 0;
+  max-width: 70rem;
 
   &.sans-serif{
     font-weight: 900;

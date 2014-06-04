@@ -24,10 +24,25 @@
   html {
     font-size: 70%; } }
 /* min-width 1025px, large screens */
+@media screen and (min-width: 64.063em) {
+  html {
+    font-size: 72%; } }
 /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+@media screen and (min-width: 64.063em) {
+  html {
+    font-size: 80%; } }
 /* min-width 1441px, xlarge screens */
+@media screen and (min-width: 90.063em) {
+  html {
+    font-size: 86%; } }
 /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+@media screen and (min-width: 90.063em) {
+  html {
+    font-size: 92%; } }
 /* min-width 1921px, xlarge screens */
+@media screen and (min-width: 120.063em) {
+  html {
+    font-size: 120%; } }
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -43,7 +58,7 @@
   vertical-align: middle;
   cursor: pointer; }
   .btn.btn-large {
-    padding: .9rem 5rem;
+    padding: .9rem 7rem;
     font-size: 1.6rem;
     font-weight: 800; }
   .btn.btn-black {
@@ -153,7 +168,7 @@
 body, .sans-serif {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif; }
 
-.nav-primary .logo, .nav-primary .nav-primary__links, .block-copy-container, .home .page-content > header .bg-img, .home .page-content > header .header-copy, .benefits__item p {
+.nav-primary .logo, .nav-primary .nav-primary__links, .block-copy-container, .home .page-content > header .bg-img, .home .page-content > header .header-copy, .benefits .benefits__item p {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -306,16 +321,14 @@ a {
   .block.block-img {
     background-size: cover;
     background-position: center center; }
-  .block.block-img-tall, .block.our-jobs {
+  .block.block-tall {
     height: 38rem; }
   .block.block-img-wide {
     height: 20rem; }
   @media screen and (min-width: 40.063em) {
-    .block.block-img-tall, .block.our-jobs {
+    .block.block-tall {
       width: 50%;
-      height: 42rem; }
-    .block.our-jobs {
-      padding: 0; } }
+      height: 42rem; } }
 
 .block-copy-container {
   position: relative;
@@ -332,17 +345,22 @@ a {
   .block-copy-container p {
     font-size: 1.9rem;
     line-height: 1.7;
-    margin: 1.8rem 0 2.2rem; }
+    margin: 0;
+    padding: 2rem 0; }
   .block-copy-container .btn {
     width: 100%; }
+  @media screen and (min-width: 40.063em) {
+    .block-copy-container .btn {
+      width: auto; } }
 
 .pullquote {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.9rem;
   line-height: 1.6;
   font-weight: 500;
-  padding: 4rem 0; }
+  padding: 4rem 0;
+  max-width: 70rem; }
   .pullquote.sans-serif {
     font-weight: 900;
     color: #fff;
@@ -354,7 +372,10 @@ a {
   background: #fda929;
   height: 41.25rem;
   padding-top: 2.6rem;
-  /* TABLET: min-width 641px and max-width 1024px */ }
+  /* min-width 641px, medium screens */
+  /* min-width 1025px, large screens */
+  /* min-width 1441px, xlarge screens */
+  /* min-width 1921px, xlarge screens */ }
   .home .page-content > header .bg-img, .home .page-content > header .header-copy {
     position: absolute; }
   .home .page-content > header .bg-img {
@@ -366,7 +387,7 @@ a {
     background-position: top right;
     background-repeat: no-repeat;
     z-index: 0;
-    margin-top: -.3rem;
+    margin-top: -2.3rem;
     right: -.3rem; }
   .home .page-content > header .header-copy {
     width: 100%;
@@ -395,17 +416,55 @@ a {
   @media screen and (min-width: 40.063em) {
     .home .page-content > header {
       padding-top: 0;
-      height: 45rem; }
+      height: 50rem; }
       .home .page-content > header h1 {
         font-size: 9.5rem; }
       .home .page-content > header .bg-img {
-        margin-top: 1.8rem;
         right: -2rem;
-        width: 82%; }
+        width: 84%;
+        margin-top: 3.5rem; }
       .home .page-content > header .btn {
         width: auto; }
       .home .page-content > header .break-sm {
         display: block; } }
+  @media screen and (min-width: 64.063em) {
+    .home .page-content > header {
+      padding: 0; }
+      .home .page-content > header h1 {
+        font-size: 11.3rem;
+        margin-left: -1rem; }
+      .home .page-content > header .bg-img {
+        right: 4rem;
+        width: 64%;
+        margin-top: 0rem; }
+      .home .page-content > header .comma {
+        display: inline-block;
+        visibility: visible;
+        margin-right: -2.6rem; }
+      .home .page-content > header p {
+        font-size: 1.7rem;
+        margin: 1rem 0 1.5rem; } }
+  @media screen and (min-width: 90.063em) {
+    .home .page-content > header {
+      height: 56.25rem;
+      padding: 0; }
+      .home .page-content > header h1 {
+        font-size: 14.4rem;
+        margin-left: -1rem; }
+      .home .page-content > header .bg-img {
+        right: 6rem;
+        width: 64%;
+        margin-top: 2rem; }
+      .home .page-content > header .comma {
+        display: inline-block;
+        visibility: visible;
+        margin-right: -2.6rem; }
+      .home .page-content > header p {
+        font-size: 2rem;
+        margin: 1rem 0 1.5rem; } }
+  @media screen and (min-width: 120.063em) {
+    .home .page-content > header p {
+      margin: 1.5rem 0 2rem; } }
 
 .home01 {
   background-image: url(../images/home/home01.jpg); }
@@ -430,24 +489,29 @@ a {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-  width: 90%; }
+  width: 90%;
+  /* min-width 641px, medium screens */ }
   .benefits:after {
     content: "";
     display: table;
     clear: both; }
-
-.benefits__item {
-  float: left;
-  height: 10rem;
-  width: 10rem;
-  margin: 5.5%;
-  border-radius: 50%;
-  border: .2rem solid #fff; }
-  .benefits__item p {
-    margin: 0;
-    padding: 0 10%;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    color: #fff; }
+  .benefits .benefits__item {
+    float: left;
+    height: 10rem;
+    width: 10rem;
+    margin: 5.5%;
+    border-radius: 50%;
+    border: .2rem solid #fff; }
+    .benefits .benefits__item p {
+      margin: 0;
+      padding: 0 10%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff; }
+  @media screen and (min-width: 40.063em) {
+    .benefits {
+      width: 100%; }
+      .benefits .benefits__item {
+        margin: 4.4%; } }
