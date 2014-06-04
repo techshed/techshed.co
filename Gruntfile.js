@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     includes: {
       build: {
         cwd: '<%= config.app %>',
-        src: ['*.html', 'partials/*.html'],
+        src: ['*.html', 'pages/*.html'],
         dest: 'dist',
         options: {
           flatten: true
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       },
       server: {
         cwd: '<%= config.app %>',
-        src: ['*.html', 'partials/*.html'],
+        src: ['*.html', 'pages/*.html'],
         dest: '.tmp/',
         options: {
           flatten: true

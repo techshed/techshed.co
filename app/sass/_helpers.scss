@@ -28,6 +28,12 @@
   }
 }
 
+%ghost-block{
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
 // Animation
 %quickest-transition{
   @include transition(all .12s $ease-in-out-quad);

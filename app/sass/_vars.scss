@@ -2,21 +2,22 @@
 $column                   : golden-ratio(1em, 3); // Column width
 $gutter                   : golden-ratio(.1em, 1); // Gutter between each two columns
 $grid-columns             : 12; // Total number of columns in the grid
-$max-width                : rem(1400); // Max-width of the outer container
+$max-width                : rem(1680); // Max-width of the outer container
 $border-box-sizing        : true; // Makes all elements have a border-box layout
 $default-feature          : min-width; // Default @media feature for the breakpoint() mixin
 $default-layout-direction : LTR;
 
-// Breakpoints (courtesy of Brad Frost - http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/)
-$bp-small   : 24em; // 384px
-$bp-small-2 : 29.75em; // 476px
-$bp-small-3 : 39.8em; // 636px
-$bp-med     : 46.8em; // 748px
-$bp-med-2   : 48em; // 768px
-$bp-large   : 50em; // 800px
-$bp-large-2 : 54.5em; // 872px
-$bp-xl      : 60em; // 960px
-$bp-xl-2    : 67em; // 1072px
+// Breakpoints (based on http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/)
+$bp-small   : rem(384);
+$bp-small-2 : rem(476);
+$bp-small-3 : rem(636);
+$bp-med     : rem(748);
+$bp-med-2   : rem(768);
+$bp-large   : rem(800);
+$bp-large-2 : rem(872);
+$bp-xl      : rem(960);
+$bp-xl-2    : rem(1072);
+$bp-xl-3    : rem(1680);
 
 // Global Theme Colors
 $techshed-orange : #FDA929;

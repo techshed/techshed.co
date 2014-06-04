@@ -19,9 +19,6 @@ $(function() {
         a = _.actions;
         _.bindActions();
         _.setHeaderHeight();
-
-        // full-bleed page header
-        $('.slabtext').slabText();
       },
       bindActions: function() {
 
@@ -30,9 +27,9 @@ $(function() {
         var winH = $(window).height() - e.primaryNav.height();
 
         if (winH < 600) {
-          e.pageHeader.css(
-            'height', $(window).height()
-          );
+          // e.pageHeader.css(
+          //   'height', $(window).height()
+          // );
         } else {
 
         }

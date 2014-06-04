@@ -1,21 +1,21 @@
 .btn{
   display: inline-block;
   margin-bottom: 0;
+  font-weight: 600;
+  color: #444;
   text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
   white-space: nowrap;
   border-radius: .4rem;
-  color: #444;
-  font-weight: 600;
   border-width: .2rem;
   border-style: solid;
   border-color: #fff;
+  background-image: none;
+  vertical-align: middle;
+  cursor: pointer;
 
   &.btn-large{
-    padding: 1rem 5rem;
-    font-size: 1.4rem;
+    padding: .9rem 5rem;
+    font-size: 1.6rem;
     font-weight: 800;
   }
   &.btn-black{

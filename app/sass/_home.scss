@@ -1,96 +1,130 @@
 .home{
+
+  // Hero Header
   .page-content > header{
     background: $techshed-orange;
+    height: rem(660px);
+    padding-top: 2.6rem;
 
-    .background-image, .header-copy{
+    .bg-img, .header-copy{
       @extend %vertical-align;
       position: absolute;
     }
     .bg-img{
       position: absolute;
-      top: 0;
-      right: 5%;
-      z-index: 0;
+      width: 100%;
+      height: 100%;
       background-image: url(../images/home/header-tools.jpg);
-      background-size: cover;
+      background-size: 100%;
       background-position: top right;
-      width: 65%;
-      height: 72%;
-
-
+      background-repeat: no-repeat;
+      z-index: 0;
+      margin-top: -.3rem;
+      right: -.3rem;
     }
     .header-copy{
       width: 100%;
       z-index: 1;
       color: #fff;
+      margin-top: -1rem;
     }
     h1{
       font-weight: 900;
       width: 100%;
-      font-size: 12.5rem;
-      margin: 0 0 0 -0.6rem;
+      font-size: 7.5rem;
       padding: 0;
-      line-height: 1;
+      line-height: .8;
+      margin: 0 0 0 -.48rem;
     }
     p{
-      width: 35%;
-      font-size: 1.7rem;
-      font-weight: 700;
-      margin: 0 0 2rem;
+      width: 90%;
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 1rem 0 1.5rem;
     }
-    .comma{
-      margin-right: -4rem;
+    .break-sm{
+      display: none;
     }
-    @include media(max-width $bp-small-2, 1){
+    .comma, .break-sm{
+      @extend %ghost-block;
+    }
+    .break-sm{
+      display: none;
+    }
+    .btn{
+      width: 100%;
+    }
+
+    /* TABLET: min-width 641px and max-width 1024px */
+    @include media(min-width 40.063em, max-width 64em) {
+      padding-top: 0;
+      height: rem(720px);
+
       h1{
-        font-weight: 900;
-        width: 80%;
-        font-size: 6rem;
-        margin: 0 0 0 -0.6rem;
-        padding: 0;
-        line-height: 1;
+        font-size: 9.5rem;
       }
-      p{
-        width: 100%;
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin: 0 0 2rem;
-      }
-      .comma{
-        display: none;
-      }
-      .background-image{
-        right: 1rem;
-        max-height: 100%;
-        max-width: 28rem;
-        z-index: 0;
-        margin-top: -4.5rem;
+      .bg-img{
+        margin-top: 1.8rem;
+        right: -2rem;
+        width: 82%
       }
       .btn{
-        width: 100%;
+        width: auto;
+      }
+      .break-sm{
+        display: block;
       }
     }
   }
 }
 
+// Home Block STyles
 .home01{
-  background-image: url(../images/home/homepage-image3.jpg);
-  background-color: #77A0A6;
+  background-image: url(../images/home/home01.jpg);
 }
 .home02{
-  background-image: url(../images/home/homepage-image4.jpg);
-  background-color: gainsboro;
+  background-image: url(../images/home/home02.jpg);
 }
 .home03{
-  background-image: url(../images/home/homepage-image5.jpg);
-  background-color: lightgoldenrodyellow;
+  background-image: url(../images/home/home03.jpg);
 }
 .home04{
-  background-color: lightsteelblue;
+  background-image: url(../images/home/home04.jpg);
 }
 .home05{
-  background-color: #ddd;
+  background-image: url(../images/home/home05.jpg);
 }
 .home06{
-  background-color: mistyrose;
+  background-image: url(../images/home/home06.jpg);
+}
+
+
+// Benefits
+.benefits{
+  @include clearfix;
+  position: relative;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+}
+.benefits__item{
+  float: left;
+  height: 10rem;
+  width: 10rem;
+  margin: 5.5%;
+  border-radius: 50%;
+  border: .2rem solid #fff;
+
+  p{
+    @extend %vertical-align;
+    margin: 0;
+    padding: 0 10%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+  }
 }

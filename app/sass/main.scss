@@ -3,8 +3,10 @@
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
 // techshed.co global
-@import 'fonts';
+
 @import 'vars';
+@import 'fonts';
+@import 'mediaqueries';
 @import 'buttons';
 @import 'loadspinner';
 @import 'helpers';
