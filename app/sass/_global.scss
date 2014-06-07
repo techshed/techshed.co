@@ -1,5 +1,4 @@
 * {
-  @include backface-visibility(hidden);
   ::selection {
     background: opacify($techshed-orange, .2); /* Safari */
     color: #fff;
@@ -20,12 +19,15 @@ body{
   @extend %sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 100%;
+  font-size: 1.6rem;
   color: #333;
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h4{
+  margin: 0;
 }
 a{
   color: darken($techshed-orange, 20%);
@@ -39,28 +41,11 @@ a{
   }
 }
 
-.check-if-mobile{
-  @include media(max-width $bp-med, 1) {
-    display: none;
-  }
-}
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
-}
-
-.hidden{
-  opacity: 0 !important;
-}
-
-.serif{
-  @extend %serif;
-}
-.sans-serif{
-  @extend %sans-serif;
 }
 
 .wrapper{
@@ -76,19 +61,145 @@ a{
   position: relative;
   float: left;
   width: 100%;
+}
 
-  & > header{
-    @include clearfix;
-    position: relative;
-    float: left;
+.page-header{
+  @include clearfix;
+  position: relative;
+  float: left;
+  height: rem(660px);
+  width: 100%;
+  margin: 0;
+
+  .header-copy{
+    @extend %vertical-align;
+    position: absolute;
     width: 100%;
-    margin: 0;
-
+    z-index: 1;
   }
-  @include media(max-width $bp-small-2, 1) {
-    & > header{
-      height: rem(480px);
+  .header-bg{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-size: 100%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  h1{
+    width: 40%;
+    padding: 0;
+    margin: 0 0 0 -.48rem;
+    font-weight: 800;
+    font-size: 6rem;
+    line-height: .8;
+  }
+  p{
+    @extend %serif;
+    font-size: 1.8rem;
+    width: 82%;
+    line-height: 1.6;
+  }
+  .break-sm{
+    display: none;
+  }
+  .comma, .break-sm{
+    @extend %ghost-block;
+  }
+  .break-sm{
+    display: none;
+  }
+  .btn{
+    width: 100%;
+  }
+}
+
+.row{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.block{
+  position: relative;
+  float: left;
+  margin: auto;
+  width: 100%;
+  padding: 3.2rem 0;
+
+  &.block-img{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &.block-tall{
+    height: 38rem;
+  }
+  &.block-img-wide{
+    height: 30rem;
+    background-position: center right;
+  }
+  @include media(min-width 40.063em) {
+    &.block-tall{
+      width: 50%;
+      height: 42rem;
     }
+    &.block-img-wide{
+      height: 50rem;
+    }
+  }
+}
+
+.block-copy-container{
+  @extend %vertical-align;
+  position: relative;
+  margin: 0 auto;
+  text-align: left;
+  color: #fff;
+
+  h2{
+    margin: 0;
+    padding: 0;
+    font-size: 4rem;
+    line-height: 1.06;
+    font-weight: 900;
+    width: 30%;
+  }
+  p{
+    font-size: 1.9rem;
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 0;
+    width: 50%;
+  }
+  .btn{
+    width: 100%;
+  }
+
+  /* MEDIUM: 641px min */
+  @include media(min-width 40.063em) {
+    .btn{
+      width: auto;
+    }
+  }
+}
+
+.pullquote{
+  max-width: 80rem;
+  padding: 4rem 0;
+  margin: 0 auto;
+  font-size: 1.9rem;
+  line-height: 1.6;
+  font-weight: 500;
+
+  &.sans-serif{
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.48;
+    font-size: 900;
+    font-size: 2.2rem;
   }
 }
 
@@ -97,7 +208,6 @@ a{
   float: left;
   width: 100%;
   height: 5rem;
-  background: $techshed-orange;
   z-index: 99;
 
   .logo{
@@ -121,115 +231,17 @@ a{
   .nav-primary__links{
     text-align: right;
     right: 0;
-    display: none;
 
     a{
       display: inline-block;
       padding: .8rem 1rem;
-      color: #fff;
+      color: #444;
       font-weight: 700;
       font-size: 1.5rem;
     }
   }
-  @include media(max-width $bp-small-2, 1) {
-    .logo{
-      width: 10rem;
-    }
-    .nav-primary__links{
-      display: none;
-    }
-  }
   /* TABLET: min-width 641px and max-width 1024px */
   @include media(min-width 40.063em, max-width 64em) {
-    .logo{
 
-    }
-    .nav-primary__links{
-      a{
-
-      }
-
-    }
-  }
-}
-
-.row{
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 100%;
-}
-
-.block{
-  position: relative;
-  float: left;
-  margin: auto;
-  width: 100%;
-  padding: 3.2rem 0;
-
-  &.block-img{
-    background-size: cover;
-    background-position: center center;
-  }
-  &.block-tall{
-    height: 38rem;
-  }
-  &.block-img-wide{
-    height: 20rem;
-  }
-  @include media(min-width 40.063em) {
-    &.block-tall{
-      width: 50%;
-      height: 42rem;
-    }
-  }
-}
-
-.block-copy-container{
-  @extend %vertical-align;
-  position: relative;
-  width: 90%;
-  margin: 0 auto;
-  text-align: left;
-
-  h2{
-    margin: 0;
-    padding: 0;
-    font-size: 4rem;
-    line-height: 1.06;
-    font-weight: 900;
-    width: 30%;
-  }
-  p{
-    font-size: 1.9rem;
-    line-height: 1.7;
-    margin: 0;
-    padding: 2rem 0;
-  }
-  .btn{
-    width: 100%;
-  }
-  @include media(min-width 40.063em) {
-    .btn{
-      width: auto;
-    }
-  }
-}
-
-.pullquote{
-  padding: 0;
-  margin: 0 auto;
-  font-size: 1.9rem;
-  line-height: 1.6;
-  font-weight: 500;
-  padding: 4rem 0;
-  max-width: 70rem;
-
-  &.sans-serif{
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.48;
-    font-size: 900;
-    font-size: 2.2rem;
   }
 }

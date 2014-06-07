@@ -19,9 +19,16 @@ $(function() {
         a = _.actions;
         _.bindActions();
         _.setHeaderHeight();
-        $('h1').fitText(.72);
+
+        $('.fit-text').fitText(0.72, {
+          minFontSize: '85px'
+        });
+
       },
       bindActions: function() {
+
+      },
+      imgFadeIn: function() {
 
       },
       setHeaderHeight: function() {

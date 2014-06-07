@@ -6,6 +6,12 @@
 %sans-serif{
   font-family:"Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+.serif{
+  @extend %serif;
+}
+.sans-serif{
+  @extend %sans-serif;
+}
 
 // Positioning
 %vertical-align {
@@ -15,7 +21,6 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
 %vertical-align-children{
   text-align: center;
 
@@ -52,4 +57,16 @@
 }
 %slug-transition{
   @include transition(all 1.5s $ease-in-out-quad);
+}
+
+
+.hidden{
+  opacity: 0 !important;
+}
+
+.check-if-mobile{
+  /* MEDIUM: 641px min */
+  @include media(min-width 40.063em) {
+    display: none;
+  }
 }

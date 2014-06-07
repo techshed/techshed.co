@@ -1,8 +1,10 @@
 .btn{
   display: inline-block;
   margin-bottom: 0;
+  padding: 1rem 0;
   font-weight: 600;
-  color: #444;
+  color: #FFF;
+  font-size: 1.4rem;
   text-align: center;
   white-space: nowrap;
   border-radius: .4rem;
@@ -21,9 +23,5 @@
   &.btn-black{
     color: #444;
     border-color: #444;
-  }
-  &.btn-white{
-    border-color: #fff;
-    color: #fff;
   }
 }
