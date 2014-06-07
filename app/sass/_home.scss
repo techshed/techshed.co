@@ -10,9 +10,12 @@
     }
   }
   .our-jobs{
-    width: 90%;
     max-width: 38rem;
-    color: #444;
+    color: #444 !important;
+
+    p{
+      width: 100%;
+    }
   }
 
   // Hero Header
