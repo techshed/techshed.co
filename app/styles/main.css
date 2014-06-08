@@ -57,6 +57,9 @@
   .btn.btn-black {
     color: #444;
     border-color: #444; }
+  .btn:hover, .btn:active {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8); }
 
 .loading-spinner {
   position: absolute;
@@ -305,7 +308,8 @@ a {
   .block.block-img {
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    color: #fff; }
   .block.block-tall {
     height: 38rem; }
   .block.block-img-wide {

@@ -24,4 +24,9 @@
     color: #444;
     border-color: #444;
   }
+
+  &:hover, &:active{
+    color: #fff;
+    border-color: rgba(255,255,255,0.8);
+  }
 }

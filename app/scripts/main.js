@@ -15,8 +15,8 @@ $(function() {
         _.bindActions();
         _.setHeaderHeight();
         _.fitText();
-
-        _.getPage('home');
+        var href = location.href.split('/').pop();
+        _.getPage(href);
       },
 
       bindActions: function() {
@@ -38,18 +38,18 @@ $(function() {
       getPage: function(page) {
         var url = '/pages/' + page + '.html';
 
-        if (page === 'home' || page === ''){
+        if (page === 'home' || page === '') {
           console.log('home!!!!');
-          e.pageWindow.load('/pages/home.html', function(){
+          e.pageWindow.load('/pages/home.html', function() {
             $('body').removeClass().addClass('home');
             _.fitText();
           });
-        } else{
+        } else {
           e.pageWindow.load(url, function() {
             $('body').removeClass().addClass(page);
           });
         }
-        
+
       },
 
       fitText: function() {
