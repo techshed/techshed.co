@@ -204,7 +204,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
-  color: #333;
+  color: #444;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
@@ -240,11 +240,11 @@ a {
     display: table;
     clear: both; }
 
-.page-content {
+#page-window {
   position: relative;
   float: left;
   width: 100%; }
-  .page-content:after {
+  #page-window:after {
     content: "";
     display: table;
     clear: both; }
@@ -532,7 +532,8 @@ a {
     top: 1rem;
     right: -30rem; }
   .projects .block-project {
-    height: 50rem; }
+    height: 50rem;
+    color: #fff; }
     .projects .block-project h2 {
       width: 70%; }
     .projects .block-project p {

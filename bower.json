@@ -10,6 +10,8 @@
     "fastclick": "~1.0.2",
     "slabText": "~2.2.0",
     "jquery.stellar": "~0.6.2",
-    "FitText.js": "*"
+    "FitText.js": "*",
+    "jquery.smooth-scroll": "~1.4.13",
+    "history.js": "~1.8.0"
   }
 }

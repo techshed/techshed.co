@@ -41,20 +41,20 @@
 
   <nav role="banner navigation" class="nav-primary">
     <div class="wrapper">
-      <a href="#" class="logo"><img src="images/global/techshed-logo.png" alt="Techshed - part of The Home Depot">Techshed</a>
+      <a href="/" class="logo"><img src="images/global/techshed-logo.png" alt="Techshed - part of The Home Depot">Techshed</a>
       <div class="nav-primary__links">
-        <a href="#">Home</a>
-        <a href="#">Jobs</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <a class="nav-primary__link" href="pages/home.html" data-page="home">Home</a>
+        <a class="nav-primary__link" href="pages/jobs.html" data-page="jobs">Jobs</a>
+        <a class="nav-primary__link" href="pages/projects.html" data-page="projects">Projects</a>
+        <a class="nav-primary__link" href="pages/contact.html" data-page="contact">Contact</a>
       </div>
       <!-- /nav-primary__links -->
     </div>
     <!-- /wrapper -->
   </nav>
 
-  <section role="main" class="page-content">
-    include "pages/home.html"
+  <section role="main" id="page-window">
+
   </section>
   <!-- /page-content -->
 
@@ -64,6 +64,7 @@
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
   <script src="bower_components/FitText.js/jquery.fittext.js"></script>
+  <script src="bower_components/jquery.smooth-scroll/jquery.smooth-scroll.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

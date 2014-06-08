@@ -1,38 +1,65 @@
 'use strict';
 
 $(function() {
-  var _, v, e, a, TechshedCo = {
-      views: {
-
-      },
+  var _, e, TechShedCo = {
       elements: {
-        primaryNav: $('.primary-nav'),
-        pageHeader: $('.page-content').find('header')
+        pageWindow: $('#page-window'),
+        navPrimary: $('.nav-primary'),
+        navPrimaryLink: $('.nav-primary__link'),
+        pageHeader: $('.page-header')
       },
-      actions: {
 
-      },
       init: function() {
         _ = this;
-        v = _.views;
         e = _.elements;
-        a = _.actions;
         _.bindActions();
         _.setHeaderHeight();
+        _.fitText();
 
+        _.getPage('home');
+      },
+
+      bindActions: function() {
+        e.navPrimaryLink.on('click', function(e) {
+          var page = $(this).data('page');
+          _.getPage(page);
+          history.pushState({}, '', page);
+          e.preventDefault();
+        });
+
+        $(window).on('popstate', function(e) {
+          var href = location.href.split('/').pop();
+          _.getPage(href);
+          console.log(href);
+          e.preventDefault();
+        });
+      },
+
+      getPage: function(page) {
+        var url = '/pages/' + page + '.html';
+
+        if (page === 'home' || page === ''){
+          console.log('home!!!!');
+          e.pageWindow.load('/pages/home.html', function(){
+            $('body').removeClass().addClass('home');
+            _.fitText();
+          });
+        } else{
+          e.pageWindow.load(url, function() {
+            $('body').removeClass().addClass(page);
+          });
+        }
+        
+      },
+
+      fitText: function() {
         $('.fit-text').fitText(0.72, {
           minFontSize: '85px'
         });
-
       },
-      bindActions: function() {
 
-      },
-      imgFadeIn: function() {
-
-      },
       setHeaderHeight: function() {
-        var winH = $(window).height() - e.primaryNav.height();
+        var winH = $(window).height() - e.navPrimary.height();
 
         if (winH < 600) {
           // e.pageHeader.css(
@@ -42,15 +69,9 @@ $(function() {
 
         }
       },
-      revealView: function(el) {
-        v.currentView = el;
-        el.removeClass().addClass('animated slideInRight');
-      },
-      concealView: function(el) {
-        el.removeClass().addClass('animated slideOutLeft');
-      }
+
     };
 
   // FastClick.attach(document.body);
-  TechshedCo.init();
+  TechShedCo.init();
 });
