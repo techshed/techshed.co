@@ -39,6 +39,7 @@
       font-weight: 900;
     }
     p{
+      @extend %sans-serif;
       width: 32rem;
       margin: 1rem 0 1.5rem;
       font-size: 1.8rem;
@@ -100,8 +101,9 @@
         margin-left: -1rem;
       }
       .header-bg{
-        right: 6rem;
-        margin-top: 2rem;
+        right: 8rem;
+        margin-top: 0;
+        width: 63rem;
       }
       .comma{
         display: inline-block;
@@ -117,6 +119,7 @@
       p{
         margin: 1.5rem 0 2rem;
       }
+
     }
   }
 }

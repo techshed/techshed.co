@@ -12,18 +12,27 @@ $(function() {
       init: function() {
         _ = this;
         e = _.elements;
-        _.bindActions();
-        _.setHeaderHeight();
-        _.fitText();
+
         var href = location.href.split('/').pop();
         _.getPage(href);
+        _.bindTriggers();
+        _.setHeaderHeight();
+        _.fitText();
       },
 
-      bindActions: function() {
+      bindTriggers: function() {
         e.navPrimaryLink.on('click', function(e) {
-          var page = $(this).data('page');
-          _.getPage(page);
-          history.pushState({}, '', page);
+          var $this = $(this),
+            page = $this.data('page');
+
+          var href = location.href.split('/').pop();
+          if (href !== page) {
+            _.getPage(page);
+            history.pushState({}, '', page);
+          } else {
+            return false;
+          }
+
           e.preventDefault();
         });
 
@@ -38,8 +47,8 @@ $(function() {
       getPage: function(page) {
         var url = '/pages/' + page + '.html';
 
+
         if (page === 'home' || page === '') {
-          console.log('home!!!!');
           e.pageWindow.load('/pages/home.html', function() {
             $('body').removeClass().addClass('home');
             _.fitText();
@@ -56,6 +65,7 @@ $(function() {
         $('.fit-text').fitText(0.72, {
           minFontSize: '85px'
         });
+        console.log('fittext initialized!');
       },
 
       setHeaderHeight: function() {

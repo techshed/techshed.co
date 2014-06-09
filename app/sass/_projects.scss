@@ -40,6 +40,15 @@
   }
   /* LARGE: 1025px min */
   @include media(min-width 64.063em) {
+
+  }
+  /* X-LARGE: 1441px min */
+  @include media(min-width 90.063em) {
+    .header-bg{
+      width: 42rem;
+      top: 1rem;
+      right: -2rem;
+    }
     .break-sm{
       display: block;
     }

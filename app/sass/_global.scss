@@ -88,6 +88,7 @@ a{
     z-index: 0;
   }
   h1{
+    @extend %sans-serif;
     width: 100%;
     padding: 0;
     margin: 0 0 0 -.48rem;
@@ -96,13 +97,14 @@ a{
     line-height: .8;
   }
   p{
-    @extend %serif;
     font-size: 1.8rem;
     width: 82%;
     line-height: 1.6;
   }
-  .break-sm{
-    display: none;
+  &.subpage{
+    p{
+      @extend %serif;
+    }
   }
   .comma, .break-sm{
     @extend %ghost-block;
@@ -237,6 +239,10 @@ a{
       color: #444;
       font-weight: 700;
       font-size: 1.5rem;
+
+      &.active{
+        border-bottom: 1px solid #444;
+      }
     }
   }
   /* TABLET: min-width 641px and max-width 1024px */
