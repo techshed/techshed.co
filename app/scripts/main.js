@@ -3,8 +3,11 @@
 $(function() {
   var _, e, TechShedCo = {
       elements: {
+        navToggle: $('.nav-toggle'),
         pageWindow: $('#page-window'),
         navPrimary: $('.nav-primary'),
+        navPrimaryLinks: $('.nav-primary__links'),
+        navPrimaryLinksLg: $('.nav-primary__links--lg'),
         navPrimaryLink: $('.nav-primary__link'),
         pageHeader: $('.page-header')
       },
@@ -12,41 +15,42 @@ $(function() {
       init: function() {
         _ = this;
         e = _.elements;
-
         var href = location.href.split('/').pop();
         _.getPage(href);
         _.bindTriggers();
         _.setHeaderHeight();
-        _.fitText();
       },
 
       bindTriggers: function() {
-        e.navPrimaryLink.on('click', function(e) {
+
+        e.navToggle.on('click', function(el) {
+          e.navPrimaryLinks.toggleClass('show');
+          el.preventDefault();
+        });
+
+        e.navPrimaryLink.on('click', function(el) {
           var $this = $(this),
             page = $this.data('page');
 
+          e.navPrimaryLinks.removeClass('show');
           var href = location.href.split('/').pop();
           if (href !== page) {
             _.getPage(page);
             history.pushState({}, '', page);
-          } else {
-            return false;
           }
-
-          e.preventDefault();
+          el.preventDefault();
         });
 
-        $(window).on('popstate', function(e) {
+        $(window).on('popstate', function(el) {
           var href = location.href.split('/').pop();
           _.getPage(href);
           console.log(href);
-          e.preventDefault();
+          el.preventDefault();
         });
       },
 
       getPage: function(page) {
         var url = '/pages/' + page + '.html';
-
 
         if (page === 'home' || page === '') {
           e.pageWindow.load('/pages/home.html', function() {
@@ -55,17 +59,15 @@ $(function() {
           });
         } else {
           e.pageWindow.load(url, function() {
-            $('body').removeClass().addClass(page);
+            $('body').removeClass().addClass(page + ' subpage');
           });
         }
-
       },
 
       fitText: function() {
         $('.fit-text').fitText(0.72, {
           minFontSize: '85px'
         });
-        console.log('fittext initialized!');
       },
 
       setHeaderHeight: function() {
@@ -82,6 +84,6 @@ $(function() {
 
     };
 
-  // FastClick.attach(document.body);
+  FastClick.attach(document.body);
   TechShedCo.init();
 });

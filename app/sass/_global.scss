@@ -101,11 +101,7 @@ a{
     width: 82%;
     line-height: 1.6;
   }
-  &.subpage{
-    p{
-      @extend %serif;
-    }
-  }
+
   .comma, .break-sm{
     @extend %ghost-block;
   }
@@ -219,7 +215,7 @@ a{
     color: transparent;
     font: 0/0 a;
   }
-  .logo, .nav-primary__links{
+  .logo, .nav-primary__links--lg{
     @extend %vertical-align;
     position: absolute;
   }
@@ -229,14 +225,54 @@ a{
     margin: 0;
     padding: 0;
   }
+  .nav-toggle{
+    text-align: right;
+    float: right;
+    padding: .8rem 1rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
   .nav-primary__links{
+    @include calc(height, '100% - 5rem');
+    position: absolute;
+    background: #222;
+    width: auto;
+    top: 5rem;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    display: none;
+
+    &.show{
+      display: block;
+    }
+
+    .nav-primary__link{
+      display: block;
+      float: left;
+      color: #fff;
+      font-size: 4rem;
+      font-weight: 900;
+      width: 100%;
+      height: 25%;
+
+      span{
+        @extend %vertical-align;
+        display: inline-block;
+      }
+    }
+  }
+  .nav-primary__links--lg{
     text-align: right;
     right: 0;
+    display: none;
 
     a{
       display: inline-block;
       padding: .8rem 1rem;
-      color: #444;
+      color: #fff;
       font-weight: 700;
       font-size: 1.5rem;
 
@@ -245,8 +281,23 @@ a{
       }
     }
   }
-  /* TABLET: min-width 641px and max-width 1024px */
-  @include media(min-width 40.063em, max-width 64em) {
+  // MEDIUM: 641px min
+  @include media(min-width 40.063em) {
+    .nav-toggle{
+      display: none;
+    }
+    .nav-primary__links--lg{
+      display: block;
+    }
+  }
+}
 
+// Subpage-specific styles
+.subpage{
+  .nav-toggle, .nav-primary__links--lg a{
+    color: #444;
+  }
+  .page-header p{
+    @extend %serif;
   }
 }
