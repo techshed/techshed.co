@@ -6,12 +6,6 @@
 %sans-serif{
   font-family:"Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-.serif{
-  @extend %serif;
-}
-.sans-serif{
-  @extend %sans-serif;
-}
 
 // Positioning
 %vertical-align {
@@ -58,6 +52,3 @@
 %slug-transition{
   @include transition(all 1.5s $ease-in-out-quad);
 }
-
-
-

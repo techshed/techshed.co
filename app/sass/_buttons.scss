@@ -24,9 +24,12 @@
     color: #444;
     border-color: #444;
   }
-
-  &:hover, &:active{
+  &.btn-white:hover, &.btn-white:active{
     color: #fff;
     border-color: rgba(255,255,255,0.8);
+  }
+  &.btn-black:hover, &.btn-black:active{
+    color: #444;
+    border-color: rgba(0,0,0,0.8);
   }
 }
