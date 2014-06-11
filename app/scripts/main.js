@@ -18,10 +18,10 @@ $(function() {
         e = _.elements;
         var href = location.href.split('/').pop();
         _.getPage(href);
-        _.bindTriggers();
+        _.bindEvents();
         _.setHeaderHeight();
       },
-      bindTriggers: function() {
+      bindEvents: function() {
         // nav toggle button
         e.navToggle.on('click', function(el) {
           _.toggleNavMenu();
@@ -32,7 +32,11 @@ $(function() {
         e.navPrimaryLink.on('click', function(el) {
           var $this = $(this),
             page = $this.data('page');
-          _.toggleNavMenu();
+
+          if ($(this).parents().hasClass('nav-primary__menu')) {
+            _.toggleNavMenu();
+          }
+
           var href = location.href.split('/').pop();
           if (href !== page) {
             _.getPage(page);
@@ -52,7 +56,7 @@ $(function() {
       getPage: function(page) {
         var url = '/pages/' + page + '/index.html';
 
-        if (page === ('home' || '')) {
+        if (page === 'home' || page === '') {
           e.pageWindow.load('/pages/home/index.html', function() {
             $('body').removeClass().addClass('home');
             _.fitText();
