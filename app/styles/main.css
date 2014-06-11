@@ -53,15 +53,20 @@ body, .page-header h1, .home .page-header p {
   visibility: hidden;
   height: 0; }
 
-.loading-spinner {
+.nav-primary, .nav-primary .nav-toggle {
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none; }
+
+.loading-spinner, .subpage .nav-primary, .subpage .nav-toggle, .subpage .nav-primary__menu--lg a {
   -webkit-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -moz-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
 .nav-primary .nav-primary__menu, .nav-primary .nav-primary__menu .nav-primary__link {
-  -webkit-transition: opacity 0.25s ease;
-  -moz-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease; }
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
 
 .btn {
   display: inline-block;
@@ -295,7 +300,7 @@ a {
   .page-header h1 {
     width: 100%;
     padding: 0;
-    margin: 0 0 0 -.48rem;
+    margin: 0 0 0 -.45rem;
     font-weight: 800;
     font-size: 6rem;
     line-height: .8; }
@@ -378,16 +383,19 @@ a {
   width: 100%;
   height: 5rem;
   z-index: 99; }
+  .nav-primary a:active {
+    opacity: .6; }
   .nav-primary .logo {
+    background: url("../images/global/techshed-logo.png") left top no-repeat;
+    background-size: cover;
     width: 12rem;
+    height: 3rem;
     left: 0;
     margin: 0;
     padding: 0;
     font: 0/0 a;
     font-size: 3rem;
     color: transparent; }
-    .nav-primary .logo img {
-      max-width: 100%; }
   .nav-primary .logo, .nav-primary .nav-primary__menu--lg {
     position: absolute; }
   .nav-primary .nav-toggle {
@@ -453,6 +461,13 @@ a {
     .nav-primary .nav-primary__menu--lg {
       display: block; } }
 
+.subpage .page-header h1 {
+  margin-left: -0.35rem; }
+.subpage .page-header p {
+  font-size: 2rem;
+  width: 100%; }
+.subpage .logo {
+  background-position: 0 -3.1rem; }
 .subpage .nav-toggle, .subpage .nav-primary__menu--lg a {
   color: #444; }
 

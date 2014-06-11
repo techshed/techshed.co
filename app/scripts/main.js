@@ -24,7 +24,15 @@ $(function() {
       bindEvents: function() {
         // nav toggle button
         e.navToggle.on('click', function(el) {
-          _.toggleNavMenu();
+          // prevent multiple clicks within .6s window
+          if (!$(this).data('isClicked')) {
+            _.toggleNavMenu();
+            var link = $(this);
+            link.data('isClicked', true);
+            setTimeout(function() {
+              link.removeData('isClicked');
+            }, 600);
+          }
           el.preventDefault();
         });
 
@@ -33,10 +41,13 @@ $(function() {
           var $this = $(this),
             page = $this.data('page');
 
+          // ## need to simplify this ##
           if ($(this).parents().hasClass('nav-primary__menu')) {
             _.toggleNavMenu();
           }
-
+          if ($(this).hasClass('logo') && !e.navPrimaryMenu.hasClass('is-hidden')) {
+            _.toggleNavMenu();
+          }
           var href = location.href.split('/').pop();
           if (href !== page) {
             _.getPage(page);
@@ -54,8 +65,10 @@ $(function() {
         });
       },
       getPage: function(page) {
+        // page html path
         var url = '/pages/' + page + '/index.html';
 
+        // if home was clicked
         if (page === 'home' || page === '') {
           e.pageWindow.load('/pages/home/index.html', function() {
             $('body').removeClass().addClass('home');
@@ -74,9 +87,7 @@ $(function() {
       },
       toggleNavMenu: function() {
         if (e.navPrimaryMenu.hasClass('is-hidden')) {
-          console.log('nav is hidden');
           e.pageWindow.addClass('no-scroll');
-
           e.navPrimaryMenu.css({
             'display': 'block'
           });
@@ -85,7 +96,6 @@ $(function() {
           }, 100);
 
         } else {
-          console.log('nav is visible');
           e.pageWindow.removeClass('no-scroll');
           e.navPrimaryMenu
             .addClass('is-hidden')
