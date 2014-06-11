@@ -1,8 +1,12 @@
+#home-video-bg{
+  display: none;
+}
+
 .home{
 
   // Primary Nav
   .nav-primary{
-    background: $techshed-orange;
+
   }
   .our-jobs{
     max-width: 38rem;
@@ -15,8 +19,8 @@
 
   // Hero Header
   .page-header{
-    background: $techshed-orange;
-    padding-top: 2.6rem;
+    background: #DB9452;
+    overflow: hidden;
 
     .header-bg{
       width: 35rem;
@@ -36,7 +40,7 @@
     p{
       @extend %sans-serif;
       width: 100%;
-      margin: 1rem 0 1.5rem;
+      margin: 1rem 0 1.8rem;
       font-size: 1.7rem;
       font-weight: 900;
       line-height: 1.3;
@@ -44,8 +48,20 @@
 
     // MEDIUM: 641px min
     @include media(min-width 40.063em) {
-      padding-top: 0;
-      height: rem(700px);
+      height: rem(800px);
+
+      #home-video-bg{
+        display: block;
+        width: 100%;
+        position: absolute;
+        background-color: transparent;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        height: auto;
+        background-size: cover;
+      }
 
       h1{
         font-size: 9.5rem;
@@ -67,11 +83,13 @@
     }
     // LARGE: 1025px min
     @include media(min-width 64.063em) {
-      padding: 0;
 
       h1{
         font-size: 11.3rem;
         margin-left: -1rem;
+      }
+      .header-copy{
+        margin-top: 0rem;
       }
 
       .header-bg{
@@ -86,17 +104,19 @@
       p{
         width: 40rem;
         font-size: 1.7rem;
-        margin: 1rem 0 1.5rem;
       }
     }
     // X-LARGE: 1441px min
     @include media(min-width 90.063em) {
-      height: rem(900px);
+      height: rem(1000px);
       padding: 0;
 
       h1{
         font-size: 14.4rem;
         margin-left: -1rem;
+      }
+      .header-copy{
+        margin-top: 2rem;
       }
       .header-bg{
         right: 8rem;
@@ -109,11 +129,11 @@
       }
       p{
         font-size: 2rem;
-        margin: 1rem 0 1.5rem;
       }
     }
     // XX-LARGE 1921px min
     @include media(min-width 120.063em) {
+      height: rem(1140px);
       p{
         margin: 1.5rem 0 2rem;
       }

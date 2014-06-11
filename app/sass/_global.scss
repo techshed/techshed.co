@@ -90,6 +90,8 @@ a{
   height: rem(660px);
   width: 100%;
   margin: 0;
+  margin-top: -5rem;
+  padding-top: 5rem;
 
   .header-copy{
     @extend %vertical-align;
@@ -222,6 +224,7 @@ a{
 }
 
 .nav-primary{
+  position: relative;
   float: left;
   width: 100%;
   height: 5rem;
@@ -260,6 +263,8 @@ a{
   .nav-primary__menu{
     @include calc(height, '100% - 5rem');
     @extend %midspeed-transition;
+    @extend %hwa;
+    @extend %backface-hidden;
     position: absolute;
     width: auto;
     top: 5rem;
@@ -272,8 +277,9 @@ a{
 
     .nav-primary__link{
       @extend %midspeed-transition;
+      @extend %backface-hidden;
       display: block;
-      background: #222;
+      background: rgba(0,0,0,0.92);
       float: left;
       color: #fff;
       font-size: 3rem;
@@ -296,7 +302,7 @@ a{
 
       @for $item from 1 through 4{
         &:nth-child(#{$item}){
-          transition-delay: #{$item/ 13}s;
+          transition-delay: #{$item/ 15}s;
         }
       }
     }

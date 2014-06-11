@@ -55,3 +55,16 @@
 %slug-transition{
   @include transition(all 1.5s $ease-in-out-quad);
 }
+
+%hwa {
+  -webkit-transform: translateZ(0) translate3D(0,0,0);
+  -moz-transform: translateZ(0) translate3D(0,0,0);
+  -o-transform: translateZ(0) translate3D(0,0,0);
+  -ms-transform: translateZ(0) translate3D(0,0,0);
+  transform: translateZ(0) translate3D(0,0,0);
+}
+
+%backface-hidden {
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}

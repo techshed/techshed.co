@@ -24,14 +24,14 @@ $(function() {
       bindEvents: function() {
         // nav toggle button
         e.navToggle.on('click', function(el) {
-          // prevent multiple clicks within .6s window
+          // prevent multiple clicks within .4s window
           if (!$(this).data('isClicked')) {
             _.toggleNavMenu();
             var link = $(this);
             link.data('isClicked', true);
             setTimeout(function() {
               link.removeData('isClicked');
-            }, 600);
+            }, 400);
           }
           el.preventDefault();
         });
@@ -81,7 +81,7 @@ $(function() {
         }
       },
       fitText: function() {
-        $('.fit-text').fitText(0.72, {
+        $('.fit-text').fitText(0.7, {
           minFontSize: '85px'
         });
       },
