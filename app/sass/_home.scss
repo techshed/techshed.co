@@ -1,5 +1,12 @@
 #home-video-bg{
   display: none;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
 }
 
 .home{
@@ -52,13 +59,6 @@
 
       #home-video-bg{
         display: block;
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        height: 100%;
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%);
       }
       h1{
         font-size: 9.5rem;
@@ -83,6 +83,10 @@
       #home-video-bg{
         height: 111%;
       }
+      h1{
+        width: 102%;
+        margin-left: -.9rem;
+      }
       .header-bg{
         right: 4rem;
         width: 54rem;
@@ -104,7 +108,10 @@
       padding: 0;
 
       #home-video-bg{
-        height: 115%;
+        height: rem(1200px);
+      }
+      h1{
+        margin-left: -.9rem;
       }
       .header-copy{
         margin-top: 2rem;

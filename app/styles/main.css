@@ -1,16 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic);
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 @font-face {
-  font-family: "Avenir Book";
-  src: url("Fonts/721226/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix");
-  src: url("Fonts/721226/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix") format("eot"), url("Fonts/721226/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff"), url("Fonts/721226/849bc5b9-a2ff-4343-977b-26ba8bd24a60.ttf") format("truetype"), url("Fonts/721226/f67fa3b5-c1d1-488f-8e60-a828b9ad56a4.svg#f67fa3b5-c1d1-488f-8e60-a828b9ad56a4") format("svg"); }
+  font-family: "Avenir";
+  src: url("../fonts/avenir-book.eot?#iefix") format("eot"), url("../fonts/avenir-book.woff") format("woff"), url("../fonts/avenir-book.ttf") format("truetype"), url("../fonts/avenir-book.svg") format("svg");
+  font-weight: 300; }
 @font-face {
-  font-family: "Avenir Heavy";
-  src: url("Fonts/721244/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix");
-  src: url("Fonts/721244/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("eot"), url("Fonts/721244/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"), url("Fonts/721244/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"), url("Fonts/721244/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg"); }
+  font-family: "Avenir";
+  src: url("../fonts/avenir-heavy.eot?#iefix") format("eot"), url("../fonts/avenir-heavy.woff") format("woff"), url("../fonts/avenir-heavy.ttf") format("truetype"), url("../fonts/avenir-heavy.svg") format("svg");
+  font-weight: 600; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-black.eot?#iefix") format("eot"), url("../fonts/avenir-black.woff") format("woff"), url("../fonts/avenir-black.ttf") format("truetype"), url("../fonts/avenir-black.svg") format("svg");
+  font-weight: 900; }
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 @media screen and (max-width: 40em) {
   html {
@@ -35,7 +40,7 @@
   html {
     font-size: 105%; } }
 .pullquote, .subpage .page-header p {
-  font-family: "Palatino", "Palatino Linotype", "Open Sans", sans-serif;
+  font-family: "Libre Baskerville", "Palatino Linotype", "Palatino", serif;
   font-style: italic; }
 
 body, .page-header h1, .home .page-header p {
@@ -486,7 +491,14 @@ a {
   color: #444; }
 
 #home-video-bg {
-  display: none; }
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%); }
 
 .home .our-jobs {
   max-width: 38rem;
@@ -518,14 +530,7 @@ a {
     .home .page-header {
       height: 50rem; }
       .home .page-header #home-video-bg {
-        display: block;
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        height: 100%;
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%); }
+        display: block; }
       .home .page-header h1 {
         font-size: 9.5rem; }
       .home .page-header .header-bg {
@@ -541,6 +546,9 @@ a {
   @media screen and (min-width: 64.063em) {
     .home .page-header #home-video-bg {
       height: 111%; }
+    .home .page-header h1 {
+      width: 102%;
+      margin-left: -.9rem; }
     .home .page-header .header-bg {
       right: 4rem;
       width: 54rem;
@@ -557,7 +565,9 @@ a {
       height: 62.5rem;
       padding: 0; }
       .home .page-header #home-video-bg {
-        height: 115%; }
+        height: 75rem; }
+      .home .page-header h1 {
+        margin-left: -.9rem; }
       .home .page-header .header-copy {
         margin-top: 2rem; }
       .home .page-header .header-bg {
