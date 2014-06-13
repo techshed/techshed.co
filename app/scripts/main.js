@@ -81,7 +81,7 @@ $(function() {
         }
       },
       fitText: function() {
-        $('.fit-text').fitText(0.7, {
+        $('.fit-text').fitText(0.697, {
           minFontSize: '85px'
         });
       },

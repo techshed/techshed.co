@@ -494,7 +494,7 @@ a {
   .home .our-jobs p {
     width: 100%; }
 .home .page-header {
-  background: #DB9452;
+  background: #E1AB68;
   overflow: hidden; }
   .home .page-header .header-bg {
     width: 35rem;
@@ -519,15 +519,13 @@ a {
       height: 50rem; }
       .home .page-header #home-video-bg {
         display: block;
-        width: 100%;
         position: absolute;
-        background-color: transparent;
-        right: 0;
-        bottom: 0;
         min-width: 100%;
         min-height: 100%;
-        height: auto;
-        background-size: cover; }
+        height: 100%;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%); }
       .home .page-header h1 {
         font-size: 9.5rem; }
       .home .page-header .header-bg {
@@ -541,18 +539,16 @@ a {
       .home .page-header .break-sm {
         display: block; } }
   @media screen and (min-width: 64.063em) {
-    .home .page-header h1 {
-      font-size: 11.3rem;
-      margin-left: -1rem; }
-    .home .page-header .header-copy {
-      margin-top: 0rem; }
+    .home .page-header #home-video-bg {
+      height: 111%; }
     .home .page-header .header-bg {
       right: 4rem;
       width: 54rem;
       margin-top: 0rem; }
     .home .page-header .comma {
       display: inline-block;
-      visibility: visible; }
+      visibility: visible;
+      margin-right: -.5rem; }
     .home .page-header p {
       width: 40rem;
       font-size: 1.7rem; } }
@@ -560,23 +556,21 @@ a {
     .home .page-header {
       height: 62.5rem;
       padding: 0; }
-      .home .page-header h1 {
-        font-size: 14.4rem;
-        margin-left: -1rem; }
+      .home .page-header #home-video-bg {
+        height: 115%; }
       .home .page-header .header-copy {
         margin-top: 2rem; }
       .home .page-header .header-bg {
         right: 8rem;
         margin-top: 0;
         width: 63rem; }
-      .home .page-header .comma {
-        display: inline-block;
-        visibility: visible; }
       .home .page-header p {
         font-size: 2rem; } }
   @media screen and (min-width: 120.063em) {
     .home .page-header {
       height: 71.25rem; }
+      .home .page-header #home-video-bg {
+        height: 120%; }
       .home .page-header p {
         margin: 1.5rem 0 2rem; } }
 

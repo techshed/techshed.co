@@ -19,7 +19,7 @@
 
   // Hero Header
   .page-header{
-    background: #DB9452;
+    background: #E1AB68;
     overflow: hidden;
 
     .header-bg{
@@ -52,17 +52,14 @@
 
       #home-video-bg{
         display: block;
-        width: 100%;
         position: absolute;
-        background-color: transparent;
-        right: 0;
-        bottom: 0;
         min-width: 100%;
         min-height: 100%;
-        height: auto;
-        background-size: cover;
+        height: 100%;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
       }
-
       h1{
         font-size: 9.5rem;
       }
@@ -83,15 +80,9 @@
     }
     // LARGE: 1025px min
     @include media(min-width 64.063em) {
-
-      h1{
-        font-size: 11.3rem;
-        margin-left: -1rem;
+      #home-video-bg{
+        height: 111%;
       }
-      .header-copy{
-        margin-top: 0rem;
-      }
-
       .header-bg{
         right: 4rem;
         width: 54rem;
@@ -100,6 +91,7 @@
       .comma{
         display: inline-block;
         visibility: visible;
+        margin-right: -.5rem;
       }
       p{
         width: 40rem;
@@ -111,9 +103,8 @@
       height: rem(1000px);
       padding: 0;
 
-      h1{
-        font-size: 14.4rem;
-        margin-left: -1rem;
+      #home-video-bg{
+        height: 115%;
       }
       .header-copy{
         margin-top: 2rem;
@@ -123,10 +114,6 @@
         margin-top: 0;
         width: 63rem;
       }
-      .comma{
-        display: inline-block;
-        visibility: visible;
-      }
       p{
         font-size: 2rem;
       }
@@ -134,6 +121,10 @@
     // XX-LARGE 1921px min
     @include media(min-width 120.063em) {
       height: rem(1140px);
+
+      #home-video-bg{
+        height: 120%;
+      }
       p{
         margin: 1.5rem 0 2rem;
       }
