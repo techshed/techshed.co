@@ -8,15 +8,25 @@
 
   // MEDIUM: 641px min
   @include media(min-width 40.063em) {
-    .header-bg{
-      right: -10rem;
-    }
+
   }
   // LARGE: 1025px min
   @include media(min-width 64.063em) {
-    .header-bg{
 
+  }
+  /* X-LARGE: 1441px min */
+  @include media(min-width 90.063em) {
+    .break-sm{
+      display: block;
     }
   }
 }
 
+
+.jobscore-jobs{
+  max-width: 900px;
+
+  #jobs-list{
+    font-size: 2rem;
+  }
+}

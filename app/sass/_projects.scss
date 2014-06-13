@@ -40,7 +40,9 @@
   }
   /* LARGE: 1025px min */
   @include media(min-width 64.063em) {
-
+    .break-sm{
+      display: block;
+    }
   }
   /* X-LARGE: 1441px min */
   @include media(min-width 90.063em) {
@@ -49,9 +51,7 @@
       top: 1rem;
       right: -2rem;
     }
-    .break-sm{
-      display: block;
-    }
+
   }
 }
 

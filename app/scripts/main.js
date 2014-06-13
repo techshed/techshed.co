@@ -20,6 +20,16 @@ $(function() {
         _.getPage(href);
         _.bindEvents();
         _.setHeaderHeight();
+
+        if (href === 'jobs') {
+          var jswidget = $('.jobscore-jobs');
+          setTimeout(function(){
+            jswidget.remove();
+          }, 500);
+          
+          console.log('jobs!');
+          jswidget.find('#jobs-list').addClass('soisdskjhsd');
+        }
       },
       bindEvents: function() {
         // nav toggle button
