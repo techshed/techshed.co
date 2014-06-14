@@ -4,7 +4,7 @@
   padding: 1rem 0;
   font-weight: 600;
   color: #FFF;
-  font-size: 1.4rem;
+  font-size: 2rem;
   text-align: center;
   white-space: nowrap;
   border-radius: .4rem;
@@ -16,9 +16,7 @@
   cursor: pointer;
 
   &.btn-large{
-    padding: .9rem 7rem;
-    font-size: 1.6rem;
-    font-weight: 800;
+    font-weight: 900;
   }
   &.btn-black{
     color: #444;

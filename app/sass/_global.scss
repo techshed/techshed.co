@@ -114,13 +114,13 @@ a{
     width: 100%;
     padding: 0;
     margin: 0 0 0 -.45rem;
-    font-weight: 800;
     font-size: 6rem;
+    font-weight: 900;
     line-height: .8;
   }
   p{
-    font-size: 1.8rem;
     width: 82%;
+    font-size: 2rem;
     line-height: 1.6;
   }
 
@@ -161,65 +161,32 @@ a{
     height: 30rem;
     background-position: center right;
   }
+  // MEDIUM: 641px min
   @include media(min-width 40.063em) {
     &.block-tall{
       width: 50%;
       height: 42rem;
     }
     &.block-img-wide{
-      height: 50rem;
-    }
-  }
-}
-
-.block-copy-container{
-  @extend %vertical-align;
-  position: relative;
-  margin: 0 auto;
-  text-align: left;
-
-  h2{
-    margin: 0;
-    padding: 0;
-    font-size: 4rem;
-    line-height: 1.06;
-    font-weight: 900;
-    width: 30%;
-  }
-  p{
-    font-size: 1.9rem;
-    line-height: 1.7;
-    margin: 0;
-    padding: 2rem 0;
-    width: 50%;
-  }
-  .btn{
-    width: 100%;
-  }
-
-  // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
-    .btn{
-      width: auto;
+      height: 42rem;
     }
   }
 }
 
 .pullquote{
   @extend %serif;
-  max-width: 80rem;
-  padding: 4rem 0;
-  margin: 0 auto;
-  font-size: 1.9rem;
+  font-weight: 300;
   line-height: 1.6;
-  font-weight: 500;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem 0;
+  font-size: 2rem;
 
   &.sans-serif{
-    font-weight: 900;
+    @extend %sans-serif;
     color: #fff;
+    font-weight: 900;
     line-height: 1.48;
-    font-size: 900;
-    font-size: 2.2rem;
   }
 }
 
@@ -252,13 +219,13 @@ a{
     position: absolute;
   }
   .nav-toggle{
+    @extend %no-transition;
     text-align: right;
     float: right;
     padding: .8rem 1rem;
     color: #fff;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 1.5rem;
-    @extend %no-transition;
   }
   .nav-primary__menu{
     @include calc(height, '100% - 5rem');
@@ -323,7 +290,7 @@ a{
       display: inline-block;
       padding: .8rem 1rem;
       color: #fff;
-      font-weight: 700;
+      font-weight: 900;
       font-size: 1.5rem;
 
       &.active{

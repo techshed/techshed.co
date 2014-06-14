@@ -9,9 +9,11 @@ $(function() {
         navPrimaryMenu: $('.nav-primary__menu'),
         navPrimaryMenuLg: $('.nav-primary__menu--lg'),
         navPrimaryLink: $('.nav-primary__link'),
-        // Content Containers
+        // Page Containers
         pageWindow: $('#page-window'),
-        pageHeader: $('.page-header')
+        pageHeader: $('.page-header'),
+        // Page Elements
+        homeVideo: $('#home-video-bg')
       },
       init: function() {
         _ = this;
@@ -21,20 +23,16 @@ $(function() {
         _.bindEvents();
         _.setHeaderHeight();
 
+        // Jobs Page
         if (href === 'jobs') {
-          var jswidget = $('.jobscore-jobs');
-          setTimeout(function(){
-            jswidget.remove();
-          }, 500);
-          
-          console.log('jobs!');
-          jswidget.find('#jobs-list').addClass('soisdskjhsd');
+          _.initJobScoreWidget();
         }
+
       },
       bindEvents: function() {
-        // nav toggle button
+        // Nav toggle button
         e.navToggle.on('click', function(el) {
-          // prevent multiple clicks within .4s window
+          // Prevent multiple clicks within .4s window
           if (!$(this).data('isClicked')) {
             _.toggleNavMenu();
             var link = $(this);
@@ -46,7 +44,7 @@ $(function() {
           el.preventDefault();
         });
 
-        // nav links
+        // Page links
         e.navPrimaryLink.on('click', function(el) {
           var $this = $(this),
             page = $this.data('page');
@@ -66,7 +64,7 @@ $(function() {
           el.preventDefault();
         });
 
-        // back button / HTML5 pop state
+        // Enable back button via HTML5 pop state
         $(window).on('popstate', function(el) {
           var href = location.href.split('/').pop();
           _.getPage(href);
@@ -125,6 +123,21 @@ $(function() {
           //   'height', $(window).height()
           // );
         }
+      },
+      initJobScoreWidget: function() {
+        var jswidget = $('.jobscore-jobs');
+        setTimeout(function(){
+          jswidget.remove();
+        }, 500);
+        
+        jswidget.find('#jobs-list').addClass('soisdskjhsd');
+
+        (function(d, s, c) {
+          if (window._jobscore_loader) { return; } else { window._jobscore_loader = true; }
+          var o = d.createElement(s); o.type = 'text/javascript'; o.async = true;
+          var sc = d.getElementsByTagName(s)[0]; sc.parentNode.insertBefore(o, sc);
+          o.src = ('https:' === d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
+        })(document, 'script', 'redbeacon');
       }
     };
 

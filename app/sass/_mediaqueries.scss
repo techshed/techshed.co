@@ -23,7 +23,7 @@
 /* min-width 1025px, large screens */
 @include media(min-width 64.063em) {
   html{
-    font-size: 90%;
+    font-size: 85%;
   }
 }
 /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
