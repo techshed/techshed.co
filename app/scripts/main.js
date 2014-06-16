@@ -22,7 +22,6 @@ $(function() {
         _.getPage(href);
         _.bindEvents();
         _.setHeaderHeight();
-
       },
       bindEvents: function() {
         // Nav toggle button
@@ -51,6 +50,7 @@ $(function() {
           if ($(this).hasClass('logo') && !e.navPrimaryMenu.hasClass('is-hidden')) {
             _.toggleNavMenu();
           }
+
           var href = location.href.split('/').pop();
           if (href !== page) {
             _.getPage(page);
@@ -70,23 +70,30 @@ $(function() {
       getPage: function(page) {
         // page html path
         var url = '/pages/' + page + '/index.html';
+        NProgress.start();
+        _.concealPageWindow();
+
+        // unload jobscore widget
+        window._jobscore_loader = false;
 
         // if home was clicked
         if (page === 'home' || page === '') {
           e.pageWindow.load('/pages/home/index.html', function() {
             $('body').removeClass().addClass('home');
             _.fitText();
+            NProgress.done();
+            _.revealPageWindow();
           });
         } else {
           e.pageWindow.load(url, function() {
             $('body').removeClass().addClass(page + ' subpage');
+            NProgress.done();
+            _.revealPageWindow();
           });
-
-
         }
         setTimeout(function() {
           _.initJobScoreWidget();
-        }, 1300);
+        }, 0);
       },
       fitText: function() {
         $('.fit-text').fitText(0.697, {
@@ -127,7 +134,6 @@ $(function() {
         }
       },
       initJobScoreWidget: function() {
-        console.log('jobs page!');
         (function(d, s, c) {
           if (window._jobscore_loader) {
             return;
@@ -141,6 +147,14 @@ $(function() {
           sc.parentNode.insertBefore(o, sc);
           o.src = ('https:' === d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
         })(document, 'script', 'redbeacon');
+      },
+      concealPageWindow: function() {
+        e.pageWindow.fadeOut(400, function() {
+          console.log('animation end');
+        });
+      },
+      revealPageWindow: function() {
+        e.pageWindow.fadeIn();
       }
     };
 

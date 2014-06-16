@@ -11,6 +11,7 @@
     "slabText": "~2.2.0",
     "jquery.stellar": "~0.6.2",
     "FitText.js": "*",
-    "history.js": "~1.8.0"
+    "history.js": "~1.8.0",
+    "nprogress": "~0.1.3"
   }
 }

@@ -49,6 +49,20 @@ a{
   opacity: 0;
 }
 
+// NProgress Bar
+#nprogress .bar {
+  background: $techshed-orange;
+  height: 2px;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+  box-shadow: 0 0 10px $techshed-orange, 0 0 5px $techshed-orange;
+}
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: none;
+}
+
 .check-if-mobile{
   /* MEDIUM: 641px min */
   @include media(min-width 40.063em) {
@@ -72,6 +86,7 @@ a{
 }
 
 .nav-primary{
+  @extend %backface-hidden;
   @extend %no-transition;
   position: relative;
   float: left;
@@ -371,3 +386,8 @@ a{
     @extend %serif;
   }
 }
+
+
+
+
+

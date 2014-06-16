@@ -47,7 +47,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal; }
 
-.nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary .nav-primary__menu .nav-primary__link span, .page-header__copy, .our-jobs, .benefits__item p {
+.nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary .nav-primary__menu .nav-primary__link span, .page-header__copy, .our-jobs, .benefits .benefits__item p {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -64,7 +64,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   -moz-transition: none;
   transition: none; }
 
-.loading-spinner, .nav-primary.menu-on, .subpage .nav-toggle, .subpage .nav-primary__menu--lg a {
+.nav-primary.menu-on, .subpage .nav-toggle, .subpage .nav-primary__menu--lg a {
   -webkit-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -moz-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
@@ -86,7 +86,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   -ms-transform: translateZ(0) translate3D(0, 0, 0);
   transform: translateZ(0) translate3D(0, 0, 0); }
 
-.nav-primary .nav-primary__menu, .nav-primary .nav-primary__menu:before, .nav-primary .nav-primary__menu .nav-primary__link {
+.nav-primary, .nav-primary .nav-primary__menu, .nav-primary .nav-primary__menu:before, .nav-primary .nav-primary__menu .nav-primary__link {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
@@ -116,99 +116,6 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
     color: #444;
     border-color: rgba(0, 0, 0, 0.8); }
 
-.loading-spinner {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  bottom: 0;
-  left: 50%;
-  height: 5em;
-  width: 5em;
-  -webkit-transform: scale(0.4);
-  -moz-transform: scale(0.4);
-  -ms-transform: scale(0.4);
-  -o-transform: scale(0.4);
-  transform: scale(0.4);
-  margin: 0 0 0 -2.5em;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-  -webkit-filter: blur(2px); }
-
-.circle {
-  height: 5em;
-  width: 5em;
-  border-radius: 50%;
-  margin: 0 auto;
-  position: relative; }
-
-.circle:after {
-  height: 4em;
-  width: 4em;
-  position: absolute;
-  top: 0px;
-  right: 0;
-  bottom: 0px;
-  left: 50%;
-  content: "";
-  border-radius: 50%;
-  background: #ffffff;
-  margin: auto auto auto -2em; }
-
-.loader {
-  height: 5em;
-  width: 5em;
-  position: absolute;
-  top: 0px;
-  right: 0;
-  bottom: 0px;
-  left: 50%;
-  background: #fff;
-  border-radius: 50%;
-  margin: auto auto auto -2.5em; }
-
-.loader:after {
-  position: absolute;
-  top: 0px;
-  right: 0;
-  bottom: 0px;
-  left: 0;
-  -webkit-animation: spin 0.34s infinite linear;
-  -moz-animation: spin 0.34s infinite linear;
-  animation: spin 0.34s infinite linear;
-  content: "";
-  margin: auto;
-  border-radius: 50%;
-  border: 2.5em solid #fda929;
-  border-top: 2.5em solid transparent;
-  border-left: 2.5em solid transparent; }
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); }
-
-  100% {
-    -webkit-transform: rotate(360deg); } }
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg); }
-
-  100% {
-    -moz-transform: rotate(360deg); } }
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
 * {
   -webkit-tap-highlight-color: transparent; }
   * ::selection {
@@ -253,6 +160,18 @@ a {
 
 .invisible {
   opacity: 0; }
+
+#nprogress .bar {
+  background: #fda929;
+  height: 2px; }
+
+/* Fancy blur effect */
+#nprogress .peg {
+  box-shadow: 0 0 10px #fda929, 0 0 5px #fda929; }
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: none; }
 
 .check-if-mobile {
   /* MEDIUM: 641px min */ }
@@ -512,6 +431,13 @@ a {
   right: 0;
   transform: translate(0, -50%); }
 
+.culture p:first-letter {
+  font-size: 340%;
+  line-height: 0;
+  display: inline-block;
+  float: left;
+  padding: 3.2rem .3rem 1rem .6rem; }
+
 .home .nav-primary {
   background-color: transparent; }
 .home .page-header {
@@ -525,6 +451,8 @@ a {
   .home .page-header .page-header__copy {
     color: #fff;
     margin-top: -1rem; }
+  .home .page-header h1 {
+    width: 30%; }
   .home .page-header p {
     width: 100%;
     margin: 1rem 0 1.8rem;
@@ -535,8 +463,6 @@ a {
       height: 50rem; }
       .home .page-header #home-video-bg {
         display: block; }
-      .home .page-header h1 {
-        font-size: 9.5rem; }
       .home .page-header .page-header__bg {
         width: 81%;
         right: 0rem;
@@ -631,38 +557,33 @@ a {
 
 .benefits {
   position: relative;
-  width: 90%;
+  list-style-type: none;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
-  list-style-type: none; }
+  width: 90%; }
   .benefits:after {
     content: "";
     display: table;
     clear: both; }
+  .benefits .benefits__item {
+    float: left;
+    height: 10rem;
+    width: 10rem;
+    margin: 5.5%;
+    border-radius: 50%;
+    border: .2rem solid #fff; }
+    .benefits .benefits__item p {
+      margin: 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff; }
   @media screen and (min-width: 40.063em) {
     .benefits {
-      width: 100%; } }
-
-.benefits__item {
-  display: inline-block;
-  height: 10rem;
-  width: 10rem;
-  margin: 5.7%;
-  border-radius: 50%;
-  border: .2rem solid #fff; }
-  .benefits__item p {
-    margin: 0;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    color: #fff; }
-  @media screen and (min-width: 40.063em) {
-    .benefits__item {
-      width: 12rem;
-      height: 12rem;
-      margin: 5.2%; } }
+      width: 100%; }
+      .benefits .benefits__item {
+        margin: 4.4%; } }
 
 .jobs {
   /* X-LARGE: 1441px min */ }
