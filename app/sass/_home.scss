@@ -11,18 +11,22 @@
 
 .home{
 
+  .nav-primary{
+    background-color: transparent;
+  }
+
   // Hero Header
   .page-header{
     background: #E1AB68;
     overflow: hidden;
 
-    .header-bg{
+    .page-header__bg{
       width: 35rem;
       margin-top: -2.3rem;
       right: -.3rem;
       background-image: url(../images/home/header-tools.jpg);
     }
-    .header-copy{
+    .page-header__copy{
       color: #fff;
       margin-top: -1rem;
     }
@@ -47,12 +51,12 @@
       h1{
         font-size: 9.5rem;
       }
-      .header-bg{
+      .page-header__bg{
         width: 81%;
         right: 0rem;
         margin-top: 3.5rem;
       }
-      .header-copy{
+      .page-header__copy{
         margin-top: 0;
       }
       .btn{
@@ -73,7 +77,7 @@
         width: 102%;
         margin-left: -.9rem;
       }
-      .header-bg{
+      .page-header__bg{
         right: 4rem;
         width: 54rem;
         margin-top: 0rem;
@@ -97,7 +101,7 @@
       h1{
         margin-left: -.9rem;
       }
-      .header-bg{
+      .page-header__bg{
         right: 8rem;
         margin-top: 0;
         width: 63rem;
@@ -190,40 +194,46 @@
 .benefits{
   @include clearfix;
   position: relative;
-  list-style-type: none;
+  width: 90%;
   margin: 0 auto;
   padding: 0;
-  width: 90%;
-
-  .benefits__item{
-    float: left;
-    height: 10rem;
-    width: 10rem;
-    margin: 5.5%;
-    border-radius: 50%;
-    border: .2rem solid #fff;
-
-    p{
-      @extend %vertical-align;
-      margin: 0;
-      padding: 0 10%;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      color: #fff;
-    }
-  }
+  text-align: center;
+  list-style-type: none;
 
   // MEDIUM: 641px min
   @include media(min-width 40.063em) {
     width: 100%;
-
-    .benefits__item{
-      margin: 4.4%;
-    }
   }
 }
 
+.benefits__item{
+  display: inline-block;
+  height: 10rem;
+  width: 10rem;
+  margin: 5.7%;
+  border-radius: 50%;
+  border: .2rem solid #fff;
+
+  p{
+    @extend %vertical-align;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+  }
+
+  // MEDIUM: 641px min
+  @include media(min-width 40.063em) {
+    width: 12rem;
+    height: 12rem;
+    margin: 5.2%;
+
+    p{
+
+    }
+  }
+}
 
 

@@ -23,11 +23,6 @@ $(function() {
         _.bindEvents();
         _.setHeaderHeight();
 
-        // Jobs Page
-        if (href === 'jobs') {
-          _.initJobScoreWidget();
-        }
-
       },
       bindEvents: function() {
         // Nav toggle button
@@ -86,7 +81,12 @@ $(function() {
           e.pageWindow.load(url, function() {
             $('body').removeClass().addClass(page + ' subpage');
           });
+
+
         }
+        setTimeout(function() {
+          _.initJobScoreWidget();
+        }, 1300);
       },
       fitText: function() {
         $('.fit-text').fitText(0.697, {
@@ -96,15 +96,17 @@ $(function() {
       toggleNavMenu: function() {
         if (e.navPrimaryMenu.hasClass('is-hidden')) {
           e.pageWindow.addClass('no-scroll');
+          e.navPrimary.addClass('menu-on');
           e.navPrimaryMenu.css({
             'display': 'block'
           });
           setTimeout(function() {
             e.navPrimaryMenu.removeClass('is-hidden');
-          }, 100);
+          }, 30);
 
         } else {
           e.pageWindow.removeClass('no-scroll');
+          e.navPrimary.removeClass('menu-on');
           e.navPrimaryMenu
             .addClass('is-hidden')
             .one('transitionend webkitTransitionEnd', function(el) {
@@ -125,17 +127,18 @@ $(function() {
         }
       },
       initJobScoreWidget: function() {
-        var jswidget = $('.jobscore-jobs');
-        setTimeout(function(){
-          jswidget.remove();
-        }, 500);
-        
-        jswidget.find('#jobs-list').addClass('soisdskjhsd');
-
+        console.log('jobs page!');
         (function(d, s, c) {
-          if (window._jobscore_loader) { return; } else { window._jobscore_loader = true; }
-          var o = d.createElement(s); o.type = 'text/javascript'; o.async = true;
-          var sc = d.getElementsByTagName(s)[0]; sc.parentNode.insertBefore(o, sc);
+          if (window._jobscore_loader) {
+            return;
+          } else {
+            window._jobscore_loader = true;
+          }
+          var o = d.createElement(s);
+          o.type = 'text/javascript';
+          o.async = true;
+          var sc = d.getElementsByTagName(s)[0];
+          sc.parentNode.insertBefore(o, sc);
           o.src = ('https:' === d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
         })(document, 'script', 'redbeacon');
       }

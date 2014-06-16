@@ -47,6 +47,9 @@
 %midspeed-transition{
   @include transition(all .25s ease);
 }
+%regular-transition{
+  @include transition(all .33s ease);
+}
 %slower-transition{
   @include transition(all .5s $ease-in-out-quad);
 }
