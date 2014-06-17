@@ -71,7 +71,6 @@ $(function() {
         // page html path
         var url = '/pages/' + page + '/index.html';
         NProgress.start();
-        _.concealPageWindow();
 
         // unload jobscore widget
         window._jobscore_loader = false;
@@ -82,13 +81,11 @@ $(function() {
             $('body').removeClass().addClass('home');
             _.fitText();
             NProgress.done();
-            _.revealPageWindow();
           });
         } else {
           e.pageWindow.load(url, function() {
             $('body').removeClass().addClass(page + ' subpage');
             NProgress.done();
-            _.revealPageWindow();
           });
         }
         setTimeout(function() {

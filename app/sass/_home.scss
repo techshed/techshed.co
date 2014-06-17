@@ -41,7 +41,6 @@
     }
     h1{
       width: 30%;
-
     }
     p{
       @extend %sans-serif;
@@ -57,6 +56,15 @@
 
       #home-video-bg{
         display: block;
+      }
+      h1{
+        width: 102%;
+        margin-left: -.9rem;
+      }
+      .comma{
+        display: inline-block;
+        visibility: visible;
+        margin-right: -.5rem;
       }
 
       .page-header__bg{
