@@ -126,20 +126,18 @@ a{
     position: absolute;
   }
   .nav-toggle{
-    @extend %no-transition;
     text-align: right;
     float: right;
-    padding: 1rem 0rem;
+    padding: 1.4rem 0rem;
     color: #fff;
     font-size: 1.6rem;
     font-weight: 600;
 
     span{
-      font-weight: 900;
       opacity: .5;
-      font-size: 1.9rem;
     }
   }
+
 
   // MEDIUM: 641px min
   @include media(min-width 40.063em) {
@@ -151,16 +149,21 @@ a{
     }
   }
 }
+.menu-on .nav-toggle{
+  span{
+    font-size: 1.9rem;
+  }
+}
 .nav-primary__menu{
-  height: 100%;
-  @extend %midspeed-transition;
+  @extend %regular-transition;
   @extend %hwa;
   @extend %backface-hidden;
   position: absolute;
-  width: auto;
   top: 0;
   right: 0;
   left: 0;
+  width: auto;
+  height: 100%;
   min-height: 35.4rem;
   text-align: center;
   z-index: 2;
@@ -183,6 +186,7 @@ a{
     width: 100%;
   }
   .nav-primary__link{
+    @include transform(translateY(0));
     @extend %regular-transition;
     @extend %backface-hidden;
     display: block;
@@ -193,7 +197,6 @@ a{
     opacity: 1;
     width: 100%;
     height: 25%;
-    @include transform(translateY(0));
 
     span{
       @extend %vertical-align;
@@ -213,8 +216,8 @@ a{
     }
 
     .nav-primary__link{
-      opacity: 0;
       @include transform(translateY(-10px));
+      opacity: 0;
     }
   }
 }
@@ -261,7 +264,6 @@ a{
   margin-top: -5rem;
   padding-top: 5rem;
 
-
   h1{
     @extend %sans-serif;
     width: 100%;
@@ -276,7 +278,6 @@ a{
     font-size: 2rem;
     line-height: 1.6;
   }
-
   .comma, .break-sm{
     @extend %ghost-block;
   }
@@ -371,6 +372,8 @@ a{
     background-color: transparent;
   }
   .page-header{
+    height: 38rem;
+
     h1{
       margin-left: -0.35rem;
     }
@@ -380,7 +383,7 @@ a{
     }
   }
   .logo{
-    background-position: 0 -3.1rem;
+    background-position: 0 -3.08rem;
   }
   .nav-toggle, .nav-primary__menu--lg a{
     @extend %quick-transition;
@@ -390,8 +393,3 @@ a{
     @extend %serif;
   }
 }
-
-
-
-
-

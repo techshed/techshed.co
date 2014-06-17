@@ -9,8 +9,13 @@
   <title>Techshed</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <!-- webfont in the head so that we don't flash unstyled text -->
+  <link rel="icon" href="favicons/favicon.ico">
+  <link rel="apple-touch-icon" href="/favicons/57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicons/72.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicons/60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicons/76.png">
+
+
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
@@ -27,15 +32,14 @@
   </script>
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css" />
-  <link rel="stylesheet" href="/bower_components/nprogress/nprogress.css" />
+  <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="/styles/main.css">
   <!-- endbuild -->
   <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 </head>
 
@@ -49,22 +53,22 @@
       <!-- nav toggle -->
       <a class="nav-toggle" href="#">MENU <span>☰</span></a>
       <!-- logo -->
-      <a class="logo nav-primary__link" href="pages/home/" data-page="home">Techshed</a>
+      <a class="logo nav-primary__link" href="/" data-page="home">Techshed</a>
 
       <div class="nav-primary__menu--lg">
-        <a class="nav-primary__link" href="pages/home/" data-page="home">Home</a>
-        <a class="nav-primary__link" href="pages/jobs/" data-page="jobs">Jobs</a>
-        <a class="nav-primary__link" href="pages/projects/" data-page="projects">Projects</a>
-        <a class="nav-primary__link" href="pages/contact/" data-page="contact">Contact</a>
+        <a class="nav-primary__link" href="/home" data-page="home">Home</a>
+        <a class="nav-primary__link" href="/jobs" data-page="jobs">Jobs</a>
+        <a class="nav-primary__link" href="/projects" data-page="projects">Projects</a>
+        <a class="nav-primary__link" href="/contact" data-page="contact">Contact</a>
       </div>
     </div>
   </nav>
   <!-- small screen nav -->
   <div class="nav-primary__menu is-hidden">
-    <a class="nav-primary__link" href="pages/home/" data-page="home"><span>Home</span></a>
-    <a class="nav-primary__link" href="pages/jobs/" data-page="jobs"><span>Jobs</span></a>
-    <a class="nav-primary__link" href="pages/projects/" data-page="projects"><span>Projects</span></a>
-    <a class="nav-primary__link" href="pages/contact/" data-page="contact"><span>Contact</span></a>
+    <a class="nav-primary__link" href="/home/" data-page="home"><span>Home</span></a>
+    <a class="nav-primary__link" href="/jobs/" data-page="jobs"><span>Jobs</span></a>
+    <a class="nav-primary__link" href="/projects/" data-page="projects"><span>Projects</span></a>
+    <a class="nav-primary__link" href="/contact/" data-page="contact"><span>Contact</span></a>
   </div>
 
   <!-- Page Window -->
@@ -73,7 +77,6 @@
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/modernizr/modernizr.js"></script>
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
   <script src="bower_components/FitText.js/jquery.fittext.js"></script>
@@ -92,7 +95,7 @@
   </script>
 
   <!-- build:js({app,.tmp}) scripts/main.js -->
-  <script src="/scripts/main.js"></script>
+  <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </body>
 </html>

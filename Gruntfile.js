@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     includes: {
       build: {
         cwd: '<%= config.app %>',
-        src: ['*.html', 'pages/*.html'],
+        src: ['*.html', 'pages/{,*/}*.html'],
         dest: 'dist',
         options: {
           flatten: true
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
       },
       server: {
         cwd: '<%= config.app %>',
-        src: ['*.html', 'pages/*.html'],
+        src: ['*.html', 'pages/{,*/}*.html'],
         dest: '.tmp/',
         options: {
           flatten: true
@@ -292,9 +292,12 @@ module.exports = function(grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            'videos/{,*/}*',
+            'favicons/{,*/}*',
+            'fonts/{,*/}*',
+            'styles/{,*/}*'
           ]
         }]
       },
@@ -327,7 +330,6 @@ module.exports = function(grunt) {
       ],
       dist: [
         'copy:styles',
-        'imagemin',
         'svgmin'
       ]
     }
@@ -361,11 +363,10 @@ module.exports = function(grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'cssmin',
     'uglify',
     'copy:dist',
+    'cssmin',
     'modernizr',
-    'rev',
     'usemin',
     'htmlmin'
   ]);

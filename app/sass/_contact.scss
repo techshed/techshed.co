@@ -1,15 +1,13 @@
 .contact{
-  .page-header__bg{
-    background-image: url(../images/contact/header-contact.jpg);
-    width: 46rem;
-    top: 2rem;
-    right: -5rem;
+  .break-sm{
+    display: block;
   }
-
 
   // MEDIUM: 641px min
   @include media(min-width 40.063em) {
-
+    .break-sm{
+      display: none;
+    }
   }
   // LARGE: 1025px min
   @include media(min-width 64.063em) {

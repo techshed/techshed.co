@@ -1,5 +1,6 @@
 .projects{
-  /* LARGE: 1025px min */
+
+  // LARGE: 1025px min
   @include media(min-width 64.063em) {
     .break-sm{
       display: block;
@@ -10,20 +11,32 @@
 .block--project{
   @extend .block--img;
   @extend .block--wide;
-  height: 50rem;
+  height: 25rem;
   color: #fff;
 
+  @include media(min-width 40.063em) {
+    height: 40rem;
+  }
+}
+
+.block--project__copy{
+  @extend %vertical-align;
+  width: 100%;
+
   h2{
-    width: 70%;
+    font-size: 2.6rem;
+    margin: 0 0 1rem;
+    font-weight: 900;
   }
   p{
     width: 100%;
+    margin: 0;
     font-weight: 600;
     line-height: 1.5;
   }
-  @include media(min-width 40.063em) {
-    height: 40rem;
 
+  // MEDIUM: 641px min
+  @include media(min-width 40.063em) {
     h2{
       width: 70%;
     }
@@ -31,9 +44,10 @@
       width: 50%;
     }
   }
+  &.block--project__copy--rg
 }
 
-// Project Images
+// Project Specific Styles
 .project01{
   background-image: url(../images/projects/project01.jpg);
 }
