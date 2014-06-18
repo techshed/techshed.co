@@ -1,7 +1,7 @@
 .projects{
 
   // LARGE: 1025px min
-  @include media(min-width 64.063em) {
+  @include respond-to(large-screens) {
     .break-sm{
       display: block;
     }
@@ -14,7 +14,8 @@
   height: 25rem;
   color: #fff;
 
-  @include media(min-width 40.063em) {
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
     height: 40rem;
   }
 }
@@ -36,7 +37,7 @@
   }
 
   // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
+  @include respond-to(medium-screens) {
     h2{
       width: 70%;
     }
@@ -44,7 +45,8 @@
       width: 50%;
     }
   }
-  &.block--project__copy--rg
+  &.block--project__copy--ralign{
+  }
 }
 
 // Project Specific Styles

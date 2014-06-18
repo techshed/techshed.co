@@ -1,44 +1,13 @@
-#home-video-bg{
-  display: none;
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  height: 100%;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%);
-}
-
-.culture{
-  p:first-letter{
-    font-size: 340%;
-    line-height: 0;
-    display: inline-block;
-    float: left;
-    padding: 3.2rem .3rem 1rem .6rem;
-  }
-}
 .home{
 
   .nav-primary{
     background-color: transparent;
   }
 
-  // Hero Header
   .page-header{
     background: #E1AB68;
     overflow: hidden;
 
-    .page-header__bg{
-      width: 35rem;
-      margin-top: -2.3rem;
-      right: -.3rem;
-      background-image: url(../images/home/header-tools.jpg);
-    }
-    .page-header__copy{
-      color: #fff;
-      margin-top: -1rem;
-    }
     h1{
       width: 30%;
     }
@@ -51,15 +20,11 @@
     }
 
     // MEDIUM: 641px min
-    @include media(min-width 40.063em) {
+    @include respond-to(medium-screens) {
       height: rem(800px);
 
       .comma{
         height: auto;
-      }
-
-      #home-video-bg{
-        display: block;
       }
       h1{
         width: 102%;
@@ -70,15 +35,6 @@
         visibility: visible;
         margin-right: -.5rem;
       }
-
-      .page-header__bg{
-        width: 81%;
-        right: 0rem;
-        margin-top: 3.5rem;
-      }
-      .page-header__copy{
-        margin-top: 0;
-      }
       .btn{
         max-width: 26rem;
       }
@@ -87,20 +43,12 @@
       }
     }
     // LARGE: 1025px min
-    @include media(min-width 64.063em) {
+    @include respond-to(large-screens) {
       height: rem(850);
 
-      #home-video-bg{
-        height: 111%;
-      }
       h1{
         width: 102%;
         margin-left: -.9rem;
-      }
-      .page-header__bg{
-        right: 4rem;
-        width: 54rem;
-        margin-top: 0rem;
       }
       .comma{
         display: inline-block;
@@ -112,40 +60,74 @@
       }
     }
     // X-LARGE: 1441px min
-    @include media(min-width 90.063em) {
+    @include respond-to(x-large-screens) {
       height: rem(1000px);
 
-      #home-video-bg{
-        height: rem(1200px);
-      }
       h1{
         margin-left: -.9rem;
       }
-      .page-header__bg{
-        right: 8rem;
-        margin-top: 0;
-        width: 63rem;
-      }
-      p{
-
-      }
     }
     // XX-LARGE 1921px min
-    @include media(min-width 120.063em) {
+    @include respond-to(xx-large-screens) {
       height: rem(960px);
 
-      #home-video-bg{
-        height: 120%;
-      }
       p{
         margin: 1.5rem 0 2rem;
       }
+    }
+  }
 
+  .page-header__copy{
+    color: #fff;
+    margin-top: -1rem;
+
+    // MEDIUM: 641px min
+    @include respond-to(medium-screens) {
+      margin-top: 0;
     }
   }
 }
 
+#home-video-bg{
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
 
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
+    display: block;
+  }
+  // LARGE: 1025px min
+  @include respond-to(large-screens) {
+    height: 111%;
+  }
+  // X-LARGE: 1441px min
+  @include respond-to(x-large-screens) {
+    height: rem(1200px);
+  }
+  // XX-LARGE: 1921px min
+  @include respond-to(xx-large-screens) {
+    height: 120%;
+  }
+}
+
+// culture block
+.culture{
+  p:first-letter{
+    font-size: 340%;
+    line-height: 0;
+    display: inline-block;
+    float: left;
+    padding: 3.2rem .3rem 1rem .6rem;
+  }
+}
+
+// our jobs block
 .our-jobs{
   @extend %vertical-align;
   max-width: 38rem;
@@ -173,13 +155,8 @@
     width: 100%;
   }
 
-  // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
-
-  }
-
   // LARGE: 1025px min
-  @include media(min-width 64.063em) {
+  @include respond-to(large-screens) {
     max-width: 47rem;
 
     .btn{
@@ -219,32 +196,33 @@
   padding: 0;
   width: 90%;
 
-  .benefits__item{
-    float: left;
-    height: 10rem;
-    width: 10rem;
-    margin: 5.5%;
-    border-radius: 50%;
-    border: .2rem solid #fff;
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
+    width: 100%;
+  }
+}
 
-    p{
-      @extend %vertical-align;
-      margin: 0;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      color: #fff;
-    }
+.benefits__item{
+  float: left;
+  height: 10rem;
+  width: 10rem;
+  margin: 5.5%;
+  border-radius: 50%;
+  border: .2rem solid #fff;
+
+  p{
+    @extend %vertical-align;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
   }
 
   // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
-    width: 100%;
-
-    .benefits__item{
-      margin: 4.4%;
-    }
+  @include respond-to(medium-screens) {
+    margin: 4.4%;
   }
 }
 

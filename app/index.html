@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <title>Techshed</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicons/favicon.ico">
   <link rel="apple-touch-icon" href="/favicons/57.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicons/72.png">
@@ -46,33 +46,33 @@
 <body>
   <!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-  <nav role="navigation banner" class="nav-primary">
-
+  <nav class="nav-primary" role="navigation banner">
     <!-- medium+ screen nav -->
     <div class="wrapper">
       <!-- nav toggle -->
-      <a class="nav-toggle" href="#">MENU <span>☰</span></a>
+      <a class="nav-primary__menu-toggle" href="#">MENU <span>☰</span></a>
       <!-- logo -->
       <a class="logo nav-primary__link" href="/" data-page="home">Techshed</a>
 
       <div class="nav-primary__menu--lg">
-        <a class="nav-primary__link" href="/home" data-page="home">Home</a>
+        <a class="nav-primary__link" href="/" data-page="home">Home</a>
         <a class="nav-primary__link" href="/jobs" data-page="jobs">Jobs</a>
         <a class="nav-primary__link" href="/projects" data-page="projects">Projects</a>
         <a class="nav-primary__link" href="/contact" data-page="contact">Contact</a>
       </div>
     </div>
   </nav>
+
   <!-- small screen nav -->
   <div class="nav-primary__menu is-hidden">
-    <a class="nav-primary__link" href="/home/" data-page="home"><span>Home</span></a>
-    <a class="nav-primary__link" href="/jobs/" data-page="jobs"><span>Jobs</span></a>
-    <a class="nav-primary__link" href="/projects/" data-page="projects"><span>Projects</span></a>
-    <a class="nav-primary__link" href="/contact/" data-page="contact"><span>Contact</span></a>
+    <a class="nav-primary__link" href="/" data-page="home"><span>Home</span></a>
+    <a class="nav-primary__link" href="/jobs" data-page="jobs"><span>Jobs</span></a>
+    <a class="nav-primary__link" href="/projects" data-page="projects"><span>Projects</span></a>
+    <a class="nav-primary__link" href="/contact" data-page="contact"><span>Contact</span></a>
   </div>
 
   <!-- Page Window -->
-  <section role="main" id="page-window"></section>
+  <section id="page-window" role="main"></section>
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->

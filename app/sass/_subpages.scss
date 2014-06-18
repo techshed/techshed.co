@@ -1,0 +1,27 @@
+// Subpage-specific styles
+.subpage{
+  .nav-primary{
+    background-color: transparent;
+  }
+  .page-header{
+    height: 38rem;
+
+    h1{
+      margin-left: -0.35rem;
+    }
+    p{
+      font-size: 2rem;
+      width: 100%;
+    }
+  }
+  .logo{
+    background-position: 0 -3.08rem;
+  }
+  .nav-primary__menu-toggle, .nav-primary__menu--lg a{
+    @extend %quick-transition;
+    color: #444;
+  }
+  .page-header p{
+    @extend %serif;
+  }
+}

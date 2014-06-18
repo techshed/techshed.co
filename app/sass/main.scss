@@ -2,16 +2,17 @@
 @import 'bower_components/bourbon/dist/bourbon';
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
-// techshed.co global components
-
+// global styles
 @import 'vars';
 @import 'fonts';
 @import 'mediaqueries';
 @import 'placeholders';
 @import 'buttons';
 @import 'global';
+@import 'navigation';
+@import 'subpages';
 
-// techshed.co pages
+// page-specific styles
 @import 'home';
 @import 'jobs';
 @import 'projects';

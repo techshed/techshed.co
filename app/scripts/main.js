@@ -5,7 +5,7 @@ $(function() {
       elements: {
         // Navigation
         navPrimary: $('.nav-primary'),
-        navToggle: $('.nav-toggle'),
+        navToggle: $('.nav-primary__menu-toggle'),
         navPrimaryMenu: $('.nav-primary__menu'),
         navPrimaryMenuLg: $('.nav-primary__menu--lg'),
         navPrimaryLink: $('.nav-primary__link'),
@@ -100,7 +100,7 @@ $(function() {
       toggleNavMenu: function() {
         if (e.navPrimaryMenu.hasClass('is-hidden')) {
           e.pageWindow.addClass('no-scroll');
-          e.navPrimary.addClass('menu-on');
+          e.navPrimary.addClass('nav-primary__menu--on');
           e.navToggle.html('CLOSE <span>×</span>');
           e.navPrimaryMenu.css({
             'display': 'block'
@@ -111,7 +111,7 @@ $(function() {
 
         } else {
           e.pageWindow.removeClass('no-scroll');
-          e.navPrimary.removeClass('menu-on');
+          e.navPrimary.removeClass('nav-primary__menu--on');
           e.navToggle.html('MENU <span>☰</span>');
           e.navPrimaryMenu
             .addClass('is-hidden')

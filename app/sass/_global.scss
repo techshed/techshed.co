@@ -15,6 +15,16 @@ html, body{
 html{
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
+  // SMALL: 641px min
+  @include respond-to(handhelds) { font-size: 62.5%; }
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) { font-size: 75%; }
+  // LARGE: 1025px min
+  @include respond-to(large-screens) { font-size: 85%; }
+  // X-LARGE: 1441px min
+  @include respond-to(x-large-screens) { font-size: 95%; }
+  // XX-LARGE 1921px min
+  @include respond-to(xx-large-screens) { font-size: 105%; }
 }
 body{
   @extend %sans-serif;
@@ -27,9 +37,7 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h4{
-  margin: 0;
-}
+
 a{
   color: darken($techshed-orange, 20%);
   text-decoration: none;
@@ -54,20 +62,16 @@ a{
   background: $techshed-orange;
   height: 2px;
 }
-/* Fancy blur effect */
 #nprogress .peg {
-  box-shadow: 0 0 10px $techshed-orange, 0 0 5px $techshed-orange;
+  display: none;
 }
-/* Remove these to get rid of the spinner */
 #nprogress .spinner {
   display: none;
 }
 
 .check-if-mobile{
-  /* MEDIUM: 641px min */
-  @include media(min-width 40.063em) {
-    display: none;
-  }
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) { display: none; }
 }
 
 .browsehappy {
@@ -85,161 +89,7 @@ a{
   margin: 0 auto;
 }
 
-.nav-primary{
-  @extend %backface-hidden;
-  @extend %no-transition;
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 5rem;
-  z-index: 99;
-
-  &.menu-on{
-    @extend %quick-transition;
-
-    .nav-toggle{
-      color: #fff;
-    }
-    .logo{
-      background-position: 0 0;
-    }
-  }
-
-  a:active{
-    opacity: .6;
-  }
-
-  .logo{
-    background: url('../images/global/techshed-logo.png') left top no-repeat;
-    background-size: cover;
-    width: 12rem;
-    height: 3rem;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    font: 0/0 a;
-    font-size: 3rem;
-    color: transparent;
-  }
-  .logo, .nav-primary__menu--lg{
-    @extend %vertical-align;
-    position: absolute;
-  }
-  .nav-toggle{
-    text-align: right;
-    float: right;
-    padding: 1.4rem 0rem;
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: 600;
-
-    span{
-      opacity: .5;
-    }
-  }
-
-
-  // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
-    .nav-toggle, .nav-primary__menu{
-      display: none !important;
-    }
-    .nav-primary__menu--lg{
-      display: block;
-    }
-  }
-}
-.menu-on .nav-toggle{
-  span{
-    font-size: 1.9rem;
-  }
-}
-.nav-primary__menu{
-  @extend %regular-transition;
-  @extend %hwa;
-  @extend %backface-hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: auto;
-  height: 100%;
-  min-height: 35.4rem;
-  text-align: center;
-  z-index: 2;
-  display: none;
-  padding-top: 5rem;
-  overflow: hidden;
-
-  &:before{
-    @extend %regular-transition;
-    @extend %hwa;
-    @extend %backface-hidden;
-    content: '';
-    position: absolute;
-    background: linear-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, transparent 100%);
-    height: 240%;
-    top: -5rem;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-  }
-  .nav-primary__link{
-    @include transform(translateY(0));
-    @extend %regular-transition;
-    @extend %backface-hidden;
-    display: block;
-    float: left;
-    color: #fff;
-    font-size: 2.7rem;
-    font-weight: 900;
-    opacity: 1;
-    width: 100%;
-    height: 25%;
-
-    span{
-      @extend %vertical-align;
-      display: inline-block;
-    }
-    @for $item from 1 through 4{
-      &:nth-child(#{$item}){
-        transition-delay: #{$item/ 15}s;
-      }
-    }
-  }
-  &.is-hidden{
-    opacity: 0;
-
-    &:before{
-      top: -100%;
-    }
-
-    .nav-primary__link{
-      @include transform(translateY(-10px));
-      opacity: 0;
-    }
-  }
-}
-.nav-primary__menu--lg{
-  text-align: right;
-  right: 0;
-  display: none;
-
-  a{
-    display: inline-block;
-    padding: .8rem 1rem;
-    color: #fff;
-    font-weight: 900;
-    font-size: 1.7rem;
-
-    &.active{
-      border-bottom: 1px solid #444;
-    }
-  }
-}
-
-
+// primary view window for pages
 #page-window{
   @include clearfix;
   position: relative;
@@ -305,7 +155,7 @@ a{
   z-index: 0;
 }
 
-// Layout Pieces
+// layout containers
 .row{
   position: relative;
   float: left;
@@ -330,7 +180,7 @@ a{
   height: 38rem;
 
   // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
+  @include respond-to(medium-screens) {
     width: 50%;
     height: 42rem;
   }
@@ -341,13 +191,14 @@ a{
   background-position: center right;
 
   // MEDIUM: 641px min
-  @include media(min-width 40.063em) {
-    height: 42rem;
-  }
+  @include respond-to(medium-screens) { height: 42rem; }
 }
 
 
 // Type
+h4{
+  margin: 0;
+}
 .pullquote{
   @extend %serif;
   font-weight: 300;
@@ -362,34 +213,5 @@ a{
     color: #fff;
     font-weight: 900;
     line-height: 1.48;
-  }
-}
-
-
-// Subpage-specific styles
-.subpage{
-  .nav-primary{
-    background-color: transparent;
-  }
-  .page-header{
-    height: 38rem;
-
-    h1{
-      margin-left: -0.35rem;
-    }
-    p{
-      font-size: 2rem;
-      width: 100%;
-    }
-  }
-  .logo{
-    background-position: 0 -3.08rem;
-  }
-  .nav-toggle, .nav-primary__menu--lg a{
-    @extend %quick-transition;
-    color: #444;
-  }
-  .page-header p{
-    @extend %serif;
   }
 }
