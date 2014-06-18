@@ -41,12 +41,15 @@
 .nav-primary__menu-toggle{
   text-align: right;
   float: right;
-  padding: 1.4rem 0rem;
+  padding: 1.8rem 0rem;
   color: #fff;
   font-size: 1.6rem;
   font-weight: 600;
+  vertical-align: middle;
 
   span{
+    display: inline-block;
+    line-height: 0;
     opacity: .5;
   }
 }
@@ -118,15 +121,14 @@
   }
 }
 
-
 .nav-primary__menu--on{
   @extend %quick-transition;
 
   .logo{
-    background-position: 0 0;
+    background-position: 0 0 !important;
   }
   .nav-primary__menu-toggle{
-    color: #fff;
+    color: #fff !important;
 
     span{
       font-size: 1.9rem;

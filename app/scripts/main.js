@@ -13,7 +13,7 @@ $(function() {
         pageWindow: $('#page-window'),
         pageHeader: $('.page-header'),
         // Page Elements
-        homeVideo: $('#home-video-bg')
+        homeVideo: $('.video-bg')
       },
       init: function() {
         _ = this;
@@ -94,7 +94,7 @@ $(function() {
       },
       fitText: function() {
         $('.fit-text').fitText(0.697, {
-          minFontSize: '85px'
+          minFontSize: '78px'
         });
       },
       toggleNavMenu: function() {

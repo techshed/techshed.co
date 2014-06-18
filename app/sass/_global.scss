@@ -1,10 +1,10 @@
 * {
   ::selection {
-    background: opacify($techshed-orange, .2); /* Safari */
+    background: $homedepot-orange; /* Safari */
     color: #fff;
     }
   ::-moz-selection {
-    background: opacify($techshed-orange, .2); /* Firefox */
+    background: $homedepot-orange; /* Firefox */
     color: #fff;
   }
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -39,15 +39,8 @@ body{
 }
 
 a{
-  color: darken($techshed-orange, 20%);
+  color: darken($homedepot-orange, 20%);
   text-decoration: none;
-
-  &:hover{
-    color: darken($techshed-orange, 30%);
-  }
-  &:active{
-    color: darken($techshed-orange, 40%);
-  }
 }
 
 .hidden{
@@ -59,7 +52,7 @@ a{
 
 // NProgress Bar
 #nprogress .bar {
-  background: $techshed-orange;
+  background: $homedepot-orange;
   height: 2px;
 }
 #nprogress .peg {
@@ -174,6 +167,18 @@ a{
   background-position: center center;
   background-repeat: no-repeat;
   color: #fff;
+
+  a{
+    color: #fff;
+    @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.6) 50%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 1.6rem;
+
+    &:hover, &:active{
+      color: rgba(255,255,255,0.8);
+    }
+  }
 }
 .block--tall{
   @extend .block;
