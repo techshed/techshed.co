@@ -5,10 +5,11 @@
   }
 
   .page-header{
-    background-color: #E1AB68;
+    background-color: #FAA568;
     background-image: url(../images/home/header-bg.jpg);
-    background-size: cover;
-    background-position: center bottom;
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
     overflow: hidden;
 
     h1{
@@ -133,7 +134,7 @@
     line-height: 0;
     display: inline-block;
     float: left;
-    padding: 3.1rem .2rem 1rem .6rem;
+    padding: 3.1rem 0.5rem 1rem 1rem;
 
     // firefox fix
     @-moz-document url-prefix() {

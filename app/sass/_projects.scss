@@ -41,6 +41,7 @@
   width: 10rem;
   height: 10rem;
   text-align: center;
+  box-shadow: 0 0 0 .3rem #fff;
 }
 
 .block--project__copy{
@@ -66,6 +67,7 @@
     }
     p{
       width: 70%;
+      max-width: 55rem;
     }
   }
   &.block--project__copy--ralign{

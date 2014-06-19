@@ -169,11 +169,13 @@ a{
   color: #fff;
 
   a{
-    color: #fff;
+    // props to Marcin Wichary @ Medium.com for this text underline method
+    // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
     @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.6) 50%);
-    background-repeat: repeat-x;
+    color: #fff;
     background-size: 2px 2px;
     background-position: 0 1.6rem;
+    background-repeat: repeat-x;
 
     &:hover, &:active{
       color: rgba(255,255,255,0.8);
