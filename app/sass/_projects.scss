@@ -16,9 +16,9 @@
 .block--project{
   @extend .block--wide;
   min-height: 30rem;
-
 }
 .block--project--featured{
+  @extend .block--wide;
   @extend .block--img;
   color: #fff;
   height: 40rem;
@@ -41,7 +41,6 @@
   width: 10rem;
   height: 10rem;
   text-align: center;
-  box-shadow: 0 0 0 .3rem #fff;
 }
 
 .block--project__copy{

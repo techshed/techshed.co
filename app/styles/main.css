@@ -267,11 +267,11 @@ a {
       width: 50%;
       height: 42rem; } }
 
-.block--wide, .block--project {
+.block--wide, .block--project, .block--project--featured {
   height: 30rem;
   background-position: center right; }
   @media screen and (min-width: 40.063em) {
-    .block--wide, .block--project {
+    .block--wide, .block--project, .block--project--featured {
       height: 42rem; } }
 
 h4 {
@@ -631,8 +631,7 @@ h4 {
   font-weight: 900;
   width: 10rem;
   height: 10rem;
-  text-align: center;
-  box-shadow: 0 0 0 .3rem #fff; }
+  text-align: center; }
 
 .block--project__copy {
   width: 100%; }

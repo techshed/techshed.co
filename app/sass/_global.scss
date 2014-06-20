@@ -169,7 +169,7 @@ a{
   color: #fff;
 
   a{
-    // props to Marcin Wichary @ Medium.com for this text underline method
+    // props to Marcin Wichary @ Medium.com for this fancy text underline method
     // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
     @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.6) 50%);
     color: #fff;
