@@ -195,6 +195,7 @@ a{
 .block--wide{
   @extend .block;
   height: 30rem;
+  width: 100%;
   background-position: center right;
 
   // MEDIUM: 641px min

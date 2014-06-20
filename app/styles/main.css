@@ -24,7 +24,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal; }
 
-.page-header__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .our-jobs, .benefits__item p, .block--project__copy {
+.page-header__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .our-jobs, .benefits__item p {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -237,7 +237,7 @@ a {
   float: left;
   width: 100%; }
 
-.block, .block--img, .block--project--featured, .block--tall, .block--wide, .block--project {
+.block, .block--img, .block--project--featured, .block--tall, .block--wide, .block--project, .block--project--leftalign, .block--project--rightalign {
   position: relative;
   float: left;
   margin: auto;
@@ -267,11 +267,12 @@ a {
       width: 50%;
       height: 42rem; } }
 
-.block--wide, .block--project, .block--project--featured {
+.block--wide, .block--project--featured {
   height: 30rem;
+  width: 100%;
   background-position: center right; }
   @media screen and (min-width: 40.063em) {
-    .block--wide, .block--project, .block--project--featured {
+    .block--wide, .block--project--featured {
       height: 42rem; } }
 
 h4 {
@@ -604,21 +605,50 @@ h4 {
   max-width: 900px; }
 
 .projects .page-header {
-  min-height: 48rem;
-  margin-bottom: 4rem; }
+  min-height: 52rem;
+  margin-bottom: 2rem; }
 @media screen and (min-width: 64.063em) {
   .projects .break-sm {
     display: block; } }
 
-.block--project {
-  min-height: 30rem; }
+.block--project, .block--project--leftalign, .block--project--rightalign {
+  width: 100%;
+  float: left; }
+  .block--project img, .block--project--leftalign img, .block--project--rightalign img {
+    display: block;
+    max-height: 40rem;
+    max-width: 100%;
+    margin: 0 auto; }
+  @media screen and (min-width: 40.063em) {
+    .block--project img, .block--project--leftalign img, .block--project--rightalign img {
+      max-width: none; } }
 
 .block--project--featured {
   color: #fff;
-  height: 40rem; }
+  height: 40rem;
+  margin-bottom: 5rem; }
   @media screen and (min-width: 40.063em) {
     .block--project--featured {
       height: 40rem; } }
+
+@media screen and (min-width: 40.063em) {
+  .block--project--leftalign .block--project__img {
+    float: left; }
+    .block--project--leftalign .block--project__img img {
+      float: right; } }
+
+@media screen and (min-width: 40.063em) {
+  .block--project--rightalign .block--project__img {
+    float: right; }
+    .block--project--rightalign .block--project__img img {
+      float: left; } }
+
+.block--project__img, .block--project__copy {
+  width: 100%;
+  float: left; }
+  @media screen and (min-width: 40.063em) {
+    .block--project__img, .block--project__copy {
+      width: 50%; } }
 
 .featured-badge {
   position: absolute;
@@ -633,23 +663,18 @@ h4 {
   height: 10rem;
   text-align: center; }
 
-.block--project__copy {
-  width: 100%; }
-  .block--project__copy h2 {
-    font-size: 3.5rem;
-    margin: 0 0 1rem;
-    font-weight: 900; }
+.block--project__copy h2 {
+  font-size: 3.5rem;
+  margin: 0 0 1rem;
+  font-weight: 900; }
+.block--project__copy p {
+  width: 100%;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.5; }
+@media screen and (min-width: 40.063em) {
   .block--project__copy p {
-    width: 100%;
-    margin: 0;
-    font-weight: 600;
-    line-height: 1.5; }
-  @media screen and (min-width: 40.063em) {
-    .block--project__copy h2 {
-      width: 70%; }
-    .block--project__copy p {
-      width: 70%;
-      max-width: 55rem; } }
+    max-width: 55rem; } }
 
 .project01 {
   background-image: url(../images/projects/project01.jpg); }

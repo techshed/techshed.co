@@ -160,4 +160,4 @@ $(function() {
       }
     };
   TechShedCo.init();
-})();
+});

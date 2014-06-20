@@ -1,8 +1,8 @@
 .projects{
 
   .page-header{
-    min-height: 48rem;
-    margin-bottom: 4rem;
+    min-height: 52rem;
+    margin-bottom: 2rem;
   }
 
   // LARGE: 1025px min
@@ -14,20 +14,76 @@
 }
 
 .block--project{
-  @extend .block--wide;
-  min-height: 30rem;
+  @extend .block;
+  width: 100%;
+  float: left;
+
+  img{
+    display: block;
+    max-height: 40rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
+    img{
+      max-width: none;
+    }
+  }
 }
 .block--project--featured{
   @extend .block--wide;
   @extend .block--img;
   color: #fff;
   height: 40rem;
+  margin-bottom: 5rem;
 
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
     height: 40rem;
   }
 }
+
+.block--project--leftalign{
+  @extend .block--project;
+
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
+    .block--project__img{
+      float: left;
+
+      img{
+        float: right;
+      }
+    }
+  }
+}
+.block--project--rightalign{
+  @extend .block--project;
+
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
+    .block--project__img{
+      float: right;
+
+      img{
+        float: left;
+      }
+    }
+  }
+}
+
+.block--project__img, .block--project__copy{
+  width: 100%;
+  float: left;
+
+  // MEDIUM: 641px min
+  @include respond-to(medium-screens) {
+    width: 50%;
+  }
+}
+
 
 .featured-badge{
   position: absolute;
@@ -44,8 +100,6 @@
 }
 
 .block--project__copy{
-  @extend %vertical-align;
-  width: 100%;
 
   h2{
     font-size: 3.5rem;
@@ -61,11 +115,11 @@
 
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
+
     h2{
-      width: 70%;
+
     }
     p{
-      width: 70%;
       max-width: 55rem;
     }
   }
