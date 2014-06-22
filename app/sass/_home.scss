@@ -196,24 +196,43 @@
 
 // Benefits
 .benefits{
-  @include clearfix;
-  position: relative;
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
-  width: 90%;
+
+  .wrapper{
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+  .col{
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    margin: 2rem 0;
+    text-align: center;
+  }
 
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
-    width: 100%;
+
+    .col{
+      width: 33.333333%;
+      margin-right: 0;
+    }
+  }
+  // LARGE: 1025px min
+  @include respond-to(large-screens) {
+
+    .col{
+      width: 25%;
+      margin-right: 0;
+    }
   }
 }
 
 .benefits__item{
-  float: left;
+  display: inline-block;
   height: 10rem;
   width: 10rem;
-  margin: 5.5%;
   border-radius: 50%;
   border: .2rem solid #fff;
 

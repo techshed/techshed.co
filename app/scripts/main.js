@@ -76,7 +76,7 @@
       getPage: function(page) {
         // page html path
         var url = '/pages/' + page + '.html';
-      NProgress.start();
+        NProgress.start();
 
         // unload jobscore widget
         window._jobscore_loader = false;
@@ -87,7 +87,7 @@
             // check if page = home
             if (page === 'home' || page === '') {
               e.pageWindow.load('/pages/home.html', function() {
-            $('body').removeClass().addClass('home');
+                $('body').removeClass().addClass('home');
                 e.pageWindow.removeClass('is-transitioning');
                 NProgress.done();
                 _.fitText();
