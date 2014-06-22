@@ -40,7 +40,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   -moz-transition: none;
   transition: none; }
 
-.nav-primary__menu--on, .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
+#page-window, .nav-primary__menu--on, .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
   -webkit-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -moz-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
@@ -188,10 +188,13 @@ a {
     height: 100%;
     overflow: hidden; }
 
+.is-transitioning {
+  opacity: 0; }
+
 .page-header {
   position: relative;
   float: left;
-  height: 46.25rem;
+  height: 53.125rem;
   width: 100%;
   margin: 0;
   margin-top: -5rem;
@@ -486,18 +489,8 @@ h4 {
   min-width: 100%;
   min-height: 100%;
   height: 100%;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%); }
-  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .video-bg {
-      display: block;
-      min-width: 140%;
-      min-height: 190%;
-      height: 200%;
-      top: 50%;
-      right: -10%;
-      transform: translate(0, -50%); } }
+  top: 0;
+  right: 0; }
   @media screen and (min-width: 40.063em) {
     .video-bg {
       display: block; } }
@@ -638,10 +631,26 @@ h4 {
     height: 33rem; }
     .project .col:last-child, .project--featured .col:last-child, .project--img-left .col:last-child, .project--img-right .col:last-child {
       margin-right: 0; } }
+@media screen and (min-width: 90.063em) {
+  .project .wrapper, .project--featured .wrapper, .project--img-left .wrapper, .project--img-right .wrapper {
+    max-width: 90rem; } }
 
 .project--featured {
   height: 40rem;
   margin-bottom: 5rem; }
+
+.project--featured__badge {
+  position: absolute;
+  top: -8rem;
+  line-height: 10rem;
+  left: calc(50% - 5rem);
+  background: #f16322;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 900;
+  width: 10rem;
+  height: 10rem;
+  text-align: center; }
 
 @media screen and (min-width: 40.063em) {
   .project--img-left .project__img {
@@ -685,21 +694,8 @@ h4 {
       .project__copy p {
         max-width: 55rem; } }
 
-.project01 {
+.project-01 {
   background-image: url(../images/projects/project01.jpg); }
-
-.featured-badge {
-  position: absolute;
-  top: -8rem;
-  line-height: 10rem;
-  left: 0;
-  background: #f16322;
-  border-radius: 50%;
-  color: #fff;
-  font-weight: 900;
-  width: 10rem;
-  height: 10rem;
-  text-align: center; }
 
 .contact .break-sm {
   display: block; }

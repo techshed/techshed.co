@@ -39,26 +39,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Build the site using grunt-includes
-    includes: {
-      build: {
-        cwd: '<%= config.app %>',
-        src: ['*.html', 'pages/{,*/}*.html'],
-        dest: 'dist',
-        options: {
-          flatten: true
-        }
-      },
-      server: {
-        cwd: '<%= config.app %>',
-        src: ['*.html', 'pages/{,*/}*.html'],
-        dest: '.tmp/',
-        options: {
-          flatten: true
-        }
-      }
-    },
-
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -77,7 +57,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: ['<%= config.app %>/sass/{,*/}*.scss'],
-        tasks: ['sass', 'newer:copy:styles', 'autoprefixer']
+        tasks: ['sass', 'newer:copy:styles']
       },
       livereload: {
         options: {
@@ -88,8 +68,7 @@ module.exports = function(grunt) {
           '<%= config.app %>/pages/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
-        ],
-        tasks: ['includes:server']
+        ]
       }
     },
 
@@ -153,21 +132,6 @@ module.exports = function(grunt) {
         '<%= config.app %>/scripts/{,*/}*.js',
         '!<%= config.app %>/scripts/vendor/*'
       ]
-    },
-
-    // Add vendor prefixed styles
-    autoprefixer: {
-      options: {
-        browsers: ['last 1 version']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
-        }]
-      }
     },
 
     // Automatically inject Bower components into the HTML file
@@ -238,14 +202,14 @@ module.exports = function(grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseBooleanAttributes: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          removeCommentsFromCDATA: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true
+          collapseBooleanAttributes: false,
+          collapseWhitespace: false,
+          removeAttributeQuotes: false,
+          removeCommentsFromCDATA: false,
+          removeEmptyAttributes: false,
+          removeOptionalTags: false,
+          removeRedundantAttributes: false,
+          useShortDoctype: false
         },
         files: [{
           expand: true,
@@ -255,32 +219,6 @@ module.exports = function(grunt) {
         }]
       }
     },
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //     dist: {
-    //         files: {
-    //             '<%= config.dist %>/styles/main.css': [
-    //                 '.tmp/styles/{,*/}*.css',
-    //                 '<%= config.app %>/styles/{,*/}*.css'
-    //             ]
-    //         }
-    //     }
-    // },
-    // uglify: {
-    //     dist: {
-    //         files: {
-    //             '<%= config.dist %>/scripts/scripts.js': [
-    //                 '<%= config.dist %>/scripts/scripts.js'
-    //             ]
-    //         }
-    //     }
-    // },
-    // concat: {
-    //     dist: {}
-    // },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -294,11 +232,13 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '{,*/}*.html',
-            'images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            'images/{,*/}*',
             'videos/{,*/}*',
             'favicons/{,*/}*',
             'fonts/{,*/}*',
-            'styles/{,*/}*'
+            'styles/{,*/}*',
+            'scripts/{,*/}*',
+            'pages/{,*/}*'
           ]
         }]
       },
@@ -320,8 +260,7 @@ module.exports = function(grunt) {
         '<%= config.dist %>/scripts/{,*/}*.js',
         '<%= config.dist %>/styles/{,*/}*.css',
         '!<%= config.dist %>/scripts/vendor/*'
-      ],
-      uglify: true
+      ]
     },
 
     // Run some tasks in parallel to speed up build process
@@ -344,8 +283,6 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'autoprefixer',
-      'includes:server',
       'connect:livereload',
       'watch'
     ]);
@@ -359,14 +296,10 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'useminPrepare',
-    'includes:build',
     'sass',
     'concurrent:dist',
-    'autoprefixer',
     'concat',
-    'uglify',
     'copy:dist',
-    'cssmin',
     'modernizr',
     'usemin',
     'htmlmin'

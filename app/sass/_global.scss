@@ -84,6 +84,7 @@ a{
 
 // primary view window for pages
 #page-window{
+  @extend %quick-transition;
   @include clearfix;
   position: relative;
   float: left;
@@ -96,12 +97,15 @@ a{
     overflow: hidden;
   }
 }
+.is-transitioning{
+  opacity: 0;
+}
 
 .page-header{
   @include clearfix;
   position: relative;
   float: left;
-  height: rem(740px);
+  height: rem(850px);
   width: 100%;
   margin: 0;
   margin-top: -5rem;

@@ -8,8 +8,6 @@
     "neat": "~1.6.0",
     "normalize.css": "~3.0.1",
     "fastclick": "~1.0.2",
-    "slabText": "~2.2.0",
-    "jquery.stellar": "~0.6.2",
     "FitText.js": "*",
     "history.js": "~1.8.0",
     "nprogress": "~0.1.3"

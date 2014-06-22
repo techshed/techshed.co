@@ -23,11 +23,11 @@
     max-width: 100%;
     margin: 0 auto;
   }
+
   .col{
     @include span-columns(12);
 
   }
-
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
     img{
@@ -38,6 +38,12 @@
       height: 33rem;
     }
   }
+  // LARGE: 1025px min
+  @include respond-to(x-large-screens) {
+    .wrapper{
+      max-width: 90rem;
+    }
+  }
 }
 
 .project--featured{
@@ -45,6 +51,20 @@
   @extend .block--img;
   height: 40rem;
   margin-bottom: 5rem;
+}
+
+.project--featured__badge{
+  position: absolute;
+  top: -8rem;
+  line-height: 10rem;
+  left: calc(50% - 5rem);
+  background: $homedepot-orange;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 900;
+  width: 10rem;
+  height: 10rem;
+  text-align: center;
 }
 
 .project--img-left{
@@ -107,23 +127,6 @@
 }
 
 // Project Specific Styles
-.project01{
+.project-01{
   background-image: url(../images/projects/project01.jpg);
 }
-
-.featured-badge{
-  position: absolute;
-  top: -8rem;
-  line-height: 10rem;
-  left: 0;
-  background: $homedepot-orange;
-  border-radius: 50%;
-  color: #fff;
-  font-weight: 900;
-  width: 10rem;
-  height: 10rem;
-  text-align: center;
-}
-
-
-
