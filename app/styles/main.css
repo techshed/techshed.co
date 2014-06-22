@@ -40,7 +40,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   -moz-transition: none;
   transition: none; }
 
-.nav-primary__menu--on, .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
+#page-window, .nav-primary__menu--on, .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
   -webkit-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -moz-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955); }

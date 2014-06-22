@@ -84,7 +84,11 @@ a{
 
 // primary view window for pages
 #page-window{
+<<<<<<< HEAD
   @extend %regular-transition;
+=======
+  @extend %quick-transition;
+>>>>>>> dca82b3b1a1982f379aad79ca703c129548a34c1
   @include clearfix;
   position: relative;
   float: left;
@@ -99,7 +103,10 @@ a{
   }
 }
 .is-transitioning{
+<<<<<<< HEAD
 
+=======
+>>>>>>> dca82b3b1a1982f379aad79ca703c129548a34c1
   opacity: 0;
 }
 
