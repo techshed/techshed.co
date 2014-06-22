@@ -18,13 +18,13 @@
   <script>
     WebFont.load({
       custom: {
-        families: [
-        'Avenir'
-        ]
+        families: ['Avenir']
       },
       google: {
-        families: ['Libre Baskerville']
-      }
+        families: ['Libre Baskerville:italic']
+      },
+        loading: function () { console.log("Loading fonts.."); },
+        fontinactive: function (font, fvd) { console.log("Could'nt load " + font + " font"); }
     });
   </script>
   <!-- build:css styles/vendor.css -->

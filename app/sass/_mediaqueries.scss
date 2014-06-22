@@ -20,4 +20,20 @@
   @else if $media == xx-large-screens {
     @media screen and (min-width: 120.063em) { @content; }
   }
+
+
+  /**** DEVICE SPECIFIC ****/
+
+
+  // iPad Portrait
+  @else if $media == ipad-portrait {
+    @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) { @content; }
+  }
+
+  // iPad Landscape
+  @else if $media == ipad-landscape {
+    @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { @content; }
+  }
+
 }
+

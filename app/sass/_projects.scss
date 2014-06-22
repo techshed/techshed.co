@@ -13,16 +13,19 @@
   }
 }
 
-.block--project{
+// Project Item
+.project{
   @extend .block;
-  width: 100%;
-  float: left;
 
   img{
     display: block;
-    max-height: 40rem;
+    max-height: 35rem;
     max-width: 100%;
     margin: 0 auto;
+  }
+  .col{
+    @include span-columns(12);
+
   }
 
   // MEDIUM: 641px min
@@ -30,27 +33,26 @@
     img{
       max-width: none;
     }
+    .col{
+      @include span-columns(6);
+      height: 33rem;
+    }
   }
 }
-.block--project--featured{
-  @extend .block--wide;
+
+.project--featured{
+  @extend .project;
   @extend .block--img;
-  color: #fff;
   height: 40rem;
   margin-bottom: 5rem;
-
-  // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
-    height: 40rem;
-  }
 }
 
-.block--project--leftalign{
-  @extend .block--project;
+.project--img-left{
+  @extend .project;
 
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
-    .block--project__img{
+    .project__img{
       float: left;
 
       img{
@@ -59,31 +61,55 @@
     }
   }
 }
-.block--project--rightalign{
-  @extend .block--project;
+.project--img-right{
+  @extend .project;
 
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
-    .block--project__img{
+    .col:first-child{
+      width: 40%;
       float: right;
-
-      img{
-        float: left;
-      }
+    }
+    .col:nth-child(2){
+      float: left;
     }
   }
 }
 
-.block--project__img, .block--project__copy{
+.project__img, .project__copy{
   width: 100%;
   float: left;
+}
+
+.project__copy{
+  @extend %vertical-align;
+  @include transform(none);
+
+  h2{
+    margin: 0 0 1rem;
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+  p{
+    width: 100%;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.5;
+  }
 
   // MEDIUM: 641px min
   @include respond-to(medium-screens) {
-    width: 50%;
+  @include transform(translateY(-50%));
+    p{
+      max-width: 55rem;
+    }
   }
 }
 
+// Project Specific Styles
+.project01{
+  background-image: url(../images/projects/project01.jpg);
+}
 
 .featured-badge{
   position: absolute;
@@ -97,45 +123,6 @@
   width: 10rem;
   height: 10rem;
   text-align: center;
-}
-
-.block--project__copy{
-
-  h2{
-    font-size: 3.5rem;
-    margin: 0 0 1rem;
-    font-weight: 900;
-  }
-  p{
-    width: 100%;
-    margin: 0;
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
-  // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
-
-    h2{
-
-    }
-    p{
-      max-width: 55rem;
-    }
-  }
-  &.block--project__copy--ralign{
-  }
-}
-
-// Project Specific Styles
-.project01{
-  background-image: url(../images/projects/project01.jpg);
-}
-.project02{
-
-}
-.project03{
-
 }
 
 

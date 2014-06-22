@@ -1,8 +1,7 @@
+/* jshint camelcase: false */
 'use strict';
 
-FastClick.attach(document.body);
-
-$(function() {
+(function($, NProgress) {
   var _, e, href, TechShedCo = {
       elements: {
         // Nav
@@ -24,7 +23,7 @@ $(function() {
         href = location.href.split('/').pop();
         _.getPage(href);
         _.bindEvents();
-        _.setHeaderHeight();
+        $.fn.FastClick.attach(document.body);
       },
       bindEvents: function() {
         // Nav toggle button
@@ -84,6 +83,8 @@ $(function() {
             $('body').removeClass().addClass('home');
             _.fitText();
             NProgress.done();
+
+
           });
         } else {
           e.pageWindow.load(url, function() {
@@ -160,4 +161,4 @@ $(function() {
       }
     };
   TechShedCo.init();
-});
+})($, NProgress);
