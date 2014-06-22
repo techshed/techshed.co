@@ -1,7 +1,8 @@
 /* jshint camelcase: false */
-'use strict';
 
-(function($, NProgress) {
+(function() {
+  'use strict';
+
   var _, e, href, TechShedCo = {
       elements: {
         // Nav
@@ -17,14 +18,16 @@
         homeVideo: $('.video-bg'),
         homeHeadline: $('.home .page-header h1')
       },
+
       init: function() {
         _ = this;
         e = _.elements;
         href = location.href.split('/').pop();
         _.getPage(href);
         _.bindEvents();
-        $.fn.FastClick.attach(document.body);
+        FastClick.attach(document.body);
       },
+
       bindEvents: function() {
         // Nav toggle button
         e.navToggle.on('click', function(el) {
@@ -69,38 +72,49 @@
           el.preventDefault();
         });
       },
+
       getPage: function(page) {
         // page html path
-        var url = '/pages/' + page + '/index.html';
-        NProgress.start();
+        var url = '/pages/' + page + '.html';
+      NProgress.start();
 
         // unload jobscore widget
         window._jobscore_loader = false;
 
-        // if home was clicked
-        if (page === 'home' || page === '') {
-          e.pageWindow.load('/pages/home/index.html', function() {
+        // fade page window, load new page, fade back in
+        e.pageWindow.addClass('is-transitioning')
+          .on('transitionend webkitTransitionEnd', function(el) {
+            // check if page = home
+            if (page === 'home' || page === '') {
+              e.pageWindow.load('/pages/home.html', function() {
             $('body').removeClass().addClass('home');
-            _.fitText();
-            NProgress.done();
+                e.pageWindow.removeClass('is-transitioning');
+                NProgress.done();
+                _.fitText();
+              });
+            } else {
+              e.pageWindow.load(url, function() {
+                $('body').removeClass().addClass(page + ' subpage');
+                e.pageWindow.removeClass('is-transitioning');
+                NProgress.done();
+              });
+            }
+            e.pageWindow.off('transitionend webkitTransitionEnd');
+            el.stopPropagation();
+          });
 
 
-          });
-        } else {
-          e.pageWindow.load(url, function() {
-            $('body').removeClass().addClass(page + ' subpage');
-            NProgress.done();
-          });
-        }
         setTimeout(function() {
           _.initJobScoreWidget();
         }, 500);
       },
+
       fitText: function() {
         $('.fit-text').fitText(0.697, {
-          minFontSize: '78px'
+          minFontSize: '86px'
         });
       },
+
       toggleNavMenu: function() {
         if (e.navPrimaryMenu.hasClass('is-hidden')) {
           e.pageWindow.addClass('no-scroll');
@@ -128,6 +142,7 @@
             });
         }
       },
+
       setHeaderHeight: function() {
         var winH = $(window).height() - e.navPrimary.height();
         if (winH < 600) {
@@ -136,6 +151,7 @@
           // );
         }
       },
+
       initJobScoreWidget: function() {
         (function(d, s, c) {
           if (window._jobscore_loader) {
@@ -150,15 +166,7 @@
           sc.parentNode.insertBefore(o, sc);
           o.src = ('https:' === d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
         })(document, 'script', 'redbeacon');
-      },
-      concealPageWindow: function() {
-        e.pageWindow.fadeOut(400, function() {
-          console.log('animation end');
-        });
-      },
-      revealPageWindow: function() {
-        e.pageWindow.fadeIn();
       }
     };
   TechShedCo.init();
-})($, NProgress);
+})();

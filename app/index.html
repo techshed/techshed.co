@@ -1,5 +1,17 @@
 <!doctype html>
-<!--░░░ made with ❤ by techshed ░░░-->
+<!--
+
+        ░░   design & code by   ░░                  ░░                        ░░
+        ░░                      ░░                  ░░                        ░░
+      ░░░░░░  ░░░░░░░  ░░░░░░░  ░░░░░░░░  ░░░░░░░░  ░░░░░░░░  ░░░░░░░░  ░░░░░░░░
+        ░░    ░░   ░░  ░░       ░░    ░░  ░░        ░░    ░░  ░░    ░░  ░░    ░░
+        ░░    ░░░░░░░  ░░       ░░    ░░  ░░░░░░░░  ░░    ░░  ░░░░░░░░  ░░    ░░
+        ░░    ░░       ░░       ░░    ░░        ░░  ░░    ░░  ░░        ░░    ░░
+        ░░░░  ░░░░░░░  ░░░░░░░  ░░    ░░  ░░░░░░░░  ░░    ░░  ░░░░░░░░  ░░░░░░░░
+
+                Join us and help change an industry : jobs@techshed.co
+
+-->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -8,7 +20,7 @@
   <meta charset="utf-8">
   <title>Techshed</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
   <link rel="icon" href="favicons/favicon.ico">
   <link rel="apple-touch-icon" href="favicons/57.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicons/72.png">
@@ -23,8 +35,8 @@
       google: {
         families: ['Libre Baskerville:italic']
       },
-        loading: function () { console.log("Loading fonts.."); },
-        fontinactive: function (font, fvd) { console.log("Could'nt load " + font + " font"); }
+        loading: function () { console.log("Loading fonts..."); },
+        fontinactive: function (font, fvd) { console.log("Couldn't load font: " + font); }
     });
   </script>
   <!-- build:css styles/vendor.css -->
@@ -69,13 +81,12 @@
   </div>
 
   <!-- Page Window -->
-  <section id="page-window" role="main"></section>
+  <section id="page-window" class="is-visible" role="main"></section>
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
-  <script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
   <script src="bower_components/FitText.js/jquery.fittext.js"></script>
   <script src="bower_components/nprogress/nprogress.js"></script>
   <!-- endbower -->
