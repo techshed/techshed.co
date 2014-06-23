@@ -39,6 +39,7 @@ module.exports = function(grunt) {
       }
     },
 
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -65,7 +66,7 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= config.app %>/{,*/}*.html',
-          '<%= config.app %>/pages/*.html',
+          '<%= config.app %>/pages/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
@@ -220,6 +221,29 @@ module.exports = function(grunt) {
       }
     },
 
+    // By default, your `index.html`'s <!-- Usemin block --> will take care of
+    // minification. These next options are pre-configured if you do not wish
+    // to use the Usemin blocks.
+    // cssmin: {
+    //     dist: {
+    //         files: {
+    //             '<%= config.dist %>/styles/main.css': [
+    //                 '.tmp/styles/{,*/}*.css',
+    //                 '<%= config.app %>/styles/{,*/}*.css'
+    //             ]
+    //         }
+    //     }
+    // },
+    uglify: {
+      options: {
+        mangle: false,
+        beautify: true
+      }
+    },
+    // concat: {
+    //     dist: {}
+    // },
+
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -232,13 +256,11 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '{,*/}*.html',
-            'images/{,*/}*',
+            'images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             'videos/{,*/}*',
             'favicons/{,*/}*',
             'fonts/{,*/}*',
-            'styles/{,*/}*',
-            'scripts/{,*/}*',
-            'pages/{,*/}*'
+            'styles/{,*/}*'
           ]
         }]
       },
@@ -299,7 +321,9 @@ module.exports = function(grunt) {
     'sass',
     'concurrent:dist',
     'concat',
+    'uglify',
     'copy:dist',
+    'cssmin',
     'modernizr',
     'usemin',
     'htmlmin'

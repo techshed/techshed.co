@@ -1,4 +1,5 @@
 /* jshint camelcase: false */
+/* global NProgress, FastClick */
 
 (function() {
   'use strict';
@@ -20,6 +21,7 @@
       },
 
       init: function() {
+        window.techshedco = this;
         _ = this;
         e = _.elements;
         href = location.href.split('/').pop();
