@@ -3,13 +3,13 @@
     display: block;
   }
   // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
+  @include respond-to(md-screen) {
     .break-sm{
       display: none;
     }
   }
   // LARGE: 1025px min
-  @include respond-to(large-screens) {
+  @include respond-to(lg-screen) {
     .block-copy-container{
       top: 2rem;
       h2{
@@ -39,7 +39,7 @@
   }
 
   // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
+  @include respond-to(md-screen) {
     background-position: center center;
 
     .block-copy-container{
@@ -49,14 +49,14 @@
   }
 
   // LARGE: 1025px min
-  @include respond-to(large-screens) {
+  @include respond-to(lg-screen) {
 
     .block-copy-container{
       @include span-columns(7);
     }
   }
   // X-LARGE: 1025px min
-  @include respond-to(x-large-screens) {
+  @include respond-to(x-lg-screen) {
 
     .block-copy-container{
       @include span-columns(6);

@@ -16,7 +16,7 @@
       line-height: 1.3;
     }
     // MEDIUM: 641px min
-    @include respond-to(medium-screens) {
+    @include respond-to(md-screen) {
       height: rem(800px);
       background-image: none;
 
@@ -40,7 +40,7 @@
       }
     }
     // LARGE: 1025px min
-    @include respond-to(large-screens) {
+    @include respond-to(lg-screen) {
       height: rem(850px);
 
       h1{
@@ -57,7 +57,7 @@
       }
     }
     // X-LARGE: 1441px min
-    @include respond-to(x-large-screens) {
+    @include respond-to(x-lg-screen) {
       height: rem(1000px);
 
       h1{
@@ -65,7 +65,7 @@
       }
     }
     // XX-LARGE 1921px min
-    @include respond-to(xx-large-screens) {
+    @include respond-to(xx-lg-screen) {
       height: rem(960px);
 
       h1{
@@ -82,7 +82,7 @@
     margin-top: -1rem;
 
     // MEDIUM: 641px min
-    @include respond-to(medium-screens) {
+    @include respond-to(md-screen) {
       margin-top: 0;
     }
   }
@@ -98,19 +98,19 @@
   right: 0;
 
   // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
+  @include respond-to(md-screen) {
     display: block;
   }
   // LARGE: 1025px min
-  @include respond-to(large-screens) {
+  @include respond-to(lg-screen) {
     height: 111%;
   }
   // X-LARGE: 1441px min
-  @include respond-to(x-large-screens) {
-    height: rem(1200px);
+  @include respond-to(x-lg-screen) {
+    height: rem(1150px);
   }
   // XX-LARGE: 1921px min
-  @include respond-to(xx-large-screens) {
+  @include respond-to(xx-lg-screen) {
     height: 120%;
   }
 }
@@ -163,7 +163,7 @@
   }
 
   // LARGE: 1025px min
-  @include respond-to(large-screens) {
+  @include respond-to(lg-screen) {
     max-width: 47rem;
 
     .btn{
@@ -213,7 +213,7 @@
   }
 
   // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
+  @include respond-to(md-screen) {
 
     .col{
       width: 33.333333%;
@@ -221,7 +221,7 @@
     }
   }
   // LARGE: 1025px min
-  @include respond-to(large-screens) {
+  @include respond-to(lg-screen) {
 
     .col{
       width: 25%;
@@ -248,9 +248,7 @@
   }
 
   // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
+  @include respond-to(md-screen) {
     margin: 4.4%;
   }
 }
-
-

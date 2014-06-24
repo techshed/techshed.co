@@ -325,7 +325,7 @@ h4 {
 .nav-primary__menu-toggle {
   text-align: right;
   float: right;
-  padding: 1.8rem 0rem;
+  padding: 1.5rem 0rem;
   color: #fff;
   font-size: 1.6rem;
   font-weight: 600;
@@ -501,7 +501,7 @@ h4 {
       height: 111%; } }
   @media screen and (min-width: 90.063em) {
     .video-bg {
-      height: 75rem; } }
+      height: 71.875rem; } }
   @media screen and (min-width: 120.063em) {
     .video-bg {
       height: 120%; } }
@@ -670,7 +670,9 @@ h4 {
     width: 40%;
     float: right; }
   .project--img-right .col:nth-child(2) {
-    float: left; } }
+    float: left; }
+  .project--img-right .project__copy {
+    right: -5rem; } }
 
 .project__img, .project__copy {
   width: 100%;
@@ -684,7 +686,7 @@ h4 {
   transform: none; }
   .project__copy h2 {
     margin: 0 0 1rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900; }
   .project__copy p {
     width: 100%;

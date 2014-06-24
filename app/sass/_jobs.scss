@@ -1,6 +1,6 @@
 .jobs{
   /* X-LARGE: 1441px min */
-  @include respond-to(x-large-screens) {
+  @include respond-to(x-lg-screen) {
     .break-sm{
       display: block;
     }

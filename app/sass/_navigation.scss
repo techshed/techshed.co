@@ -28,7 +28,7 @@
   }
 
   // MEDIUM: 641px min
-  @include respond-to(medium-screens) {
+  @include respond-to(md-screen) {
     .nav-primary__menu-toggle, .nav-primary__menu{
       display: none !important;
     }
@@ -41,7 +41,7 @@
 .nav-primary__menu-toggle{
   text-align: right;
   float: right;
-  padding: 1.8rem 0rem;
+  padding: 1.5rem 0rem;
   color: #fff;
   font-size: 1.6rem;
   font-weight: 600;

@@ -21,16 +21,21 @@
       },
 
       init: function() {
-        window.techshedco = this;
         _ = this;
         e = _.elements;
         href = location.href.split('/').pop();
         _.getPage(href);
         _.bindEvents();
+        window.techshedco = this;
         FastClick.attach(document.body);
       },
 
       bindEvents: function() {
+        e.homeVideo.on('play', function() {
+          console.log('video is playing');
+          $(this).remove();
+        });
+
         // Nav toggle button
         e.navToggle.on('click', function(el) {
           // Prevent multiple clicks within .4s window
@@ -50,11 +55,13 @@
           var $this = $(this),
             page = $this.data('page');
 
+          $this.addClass('active').siblings().removeClass('active');
+
           // ## need to simplify this ##
-          if ($(this).parents().hasClass('nav-primary__menu')) {
+          if ($this.parents().hasClass('nav-primary__menu')) {
             _.toggleNavMenu();
           }
-          if ($(this).hasClass('logo') && !e.navPrimaryMenu.hasClass('is-hidden')) {
+          if ($this.hasClass('logo') && !e.navPrimaryMenu.hasClass('is-hidden')) {
             _.toggleNavMenu();
           }
 
@@ -73,6 +80,8 @@
           console.log(href);
           el.preventDefault();
         });
+
+
       },
 
       getPage: function(page) {
@@ -104,7 +113,6 @@
             e.pageWindow.off('transitionend webkitTransitionEnd');
             el.stopPropagation();
           });
-
 
         setTimeout(function() {
           _.initJobScoreWidget();
@@ -145,6 +153,7 @@
         }
       },
 
+      // not enabled
       setHeaderHeight: function() {
         var winH = $(window).height() - e.navPrimary.height();
         if (winH < 600) {
