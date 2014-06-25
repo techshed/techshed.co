@@ -157,9 +157,9 @@
       setHeaderHeight: function() {
         var winH = $(window).height() - e.navPrimary.height();
         if (winH < 600) {
-          // e.pageHeader.css(
-          //   'height', $(window).height()
-          // );
+        // e.pageHeader.css(
+        //   'height', $(window).height()
+        // );
         }
       },
 
