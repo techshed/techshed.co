@@ -96,6 +96,9 @@
     .project__copy{
       right: -5rem;
     }
+    img{
+      margin-left: 10px;
+    }
   }
 }
 
@@ -125,7 +128,7 @@
     @include transform(translateY(-50%));
 
     p{
-      max-width: 55rem;
+      max-width: 51rem;
     }
   }
 }

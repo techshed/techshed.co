@@ -410,11 +410,21 @@ h4 {
     color: #fff;
     font-weight: 900;
     font-size: 1.7rem; }
-    .nav-primary__menu--lg a.active {
-      border-bottom: 1px solid #444; }
+    .nav-primary__menu--lg a.active span {
+      background-color: rgba(255, 255, 255, 0);
+      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.35) 50%);
+      background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.35) 50%);
+      padding: 0.7rem 0;
+      background-size: 1px 6px;
+      background-position: 0 2.9rem;
+      background-repeat: repeat-x; }
 
 .subpage .nav-primary {
   background-color: transparent; }
+.subpage .nav-primary__menu--lg a.active span {
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-image: linear-gradient(to bottom,transparent 50%, rgba(0, 0, 0, 0.1) 50%); }
 .subpage .page-header h1 {
   margin-left: -0.35rem; }
 .subpage .page-header p {
@@ -672,7 +682,9 @@ h4 {
   .project--img-right .col:nth-child(2) {
     float: left; }
   .project--img-right .project__copy {
-    right: -5rem; } }
+    right: -5rem; }
+  .project--img-right img {
+    margin-left: 10px; } }
 
 .project__img, .project__copy {
   width: 100%;
@@ -701,7 +713,7 @@ h4 {
       -o-transform: translateY(-50%);
       transform: translateY(-50%); }
       .project__copy p {
-        max-width: 55rem; } }
+        max-width: 51rem; } }
 
 .project-01 {
   background-image: url(../images/projects/project01.jpg); }
