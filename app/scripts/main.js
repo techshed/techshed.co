@@ -21,12 +21,12 @@
       },
 
       init: function() {
+        window.techshedco = this;
         _ = this;
         e = _.elements;
         href = location.href.split('/').pop();
         _.getPage(href);
         _.bindEvents();
-        window.techshedco = this;
         FastClick.attach(document.body);
       },
 
@@ -86,7 +86,8 @@
 
       getPage: function(page) {
         // page html path
-        var url = '/pages/' + page + '.html';
+        var url = ('/pages/' + page + '.html');
+
         NProgress.start();
 
         // unload jobscore widget
@@ -97,6 +98,7 @@
           .on('transitionend webkitTransitionEnd', function(el) {
             // check if page = home
             if (page === 'home' || page === '') {
+
               e.pageWindow.load('/pages/home.html', function() {
                 $('body').removeClass().addClass('home');
                 e.pageWindow.removeClass('is-transitioning');
@@ -104,7 +106,10 @@
                 _.fitText();
               });
             } else {
-              e.pageWindow.load(url, function() {
+              e.pageWindow.load(url, function(response, status) {
+                if (status === 'error') {
+                  e.pageWindow.load('/pages/404.html');
+                }
                 $('body').removeClass().addClass(page + ' subpage');
                 e.pageWindow.removeClass('is-transitioning');
                 NProgress.done();
@@ -157,9 +162,9 @@
       setHeaderHeight: function() {
         var winH = $(window).height() - e.navPrimary.height();
         if (winH < 600) {
-        // e.pageHeader.css(
-        //   'height', $(window).height()
-        // );
+          // e.pageHeader.css(
+          //   'height', $(window).height()
+          // );
         }
       },
 
