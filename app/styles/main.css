@@ -279,6 +279,15 @@ a {
   @media screen and (min-width: 40.063em) {
     .block--wide {
       height: 42rem; } }
+  @media screen and (min-width: 64.063em) {
+    .block--wide {
+      height: 52rem; } }
+  @media screen and (min-width: 90.063em) {
+    .block--wide {
+      height: 62rem; } }
+  @media screen and (min-width: 120.063em) {
+    .block--wide {
+      height: 72rem; } }
 
 h4 {
   margin: 0; }
@@ -429,8 +438,9 @@ h4 {
   margin-left: -0.35rem; }
   .subpage .page-header h1 span {
     color: #ddd;
-    font-weight: 100;
-    display: block; }
+    font-weight: 900;
+    display: block;
+    margin-bottom: 1.4rem; }
 .subpage .page-header p {
   font-size: 2rem;
   width: 100%; }
@@ -721,6 +731,9 @@ h4 {
 
 .project-01 {
   background-image: url(../images/projects/project01.jpg); }
+
+.project-04 .project__img {
+  margin-left: -3rem; }
 
 .contact .break-sm {
   display: block; }
