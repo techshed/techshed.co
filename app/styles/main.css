@@ -180,10 +180,6 @@ a {
   width: 100%;
   margin-top: -5rem;
   padding-top: 5rem; }
-  #page-window:after {
-    content: "";
-    display: table;
-    clear: both; }
   #page-window.no-scroll {
     height: 100%;
     -webkit-transition: none;
@@ -210,9 +206,9 @@ a {
     width: 100%;
     padding: 0;
     margin: 0 0 0 -.45rem;
-    font-size: 6rem;
     font-weight: 900;
-    line-height: .8; }
+    line-height: .8;
+    font-size: 6rem; }
   .page-header p {
     width: 82%;
     font-size: 2rem;
@@ -220,7 +216,8 @@ a {
   .page-header .break-sm {
     display: none; }
   .page-header .btn {
-    width: 100%; }
+    width: 100%;
+    max-width: 40rem; }
 
 .page-header__copy {
   position: absolute;
@@ -452,19 +449,23 @@ h4 {
 .home .page-header {
   background-color: #FAA568;
   background-image: url(../images/home/header-bg.jpg);
-  background-size: contain;
-  background-position: right bottom;
+  background-size: 100%;
+  background-position: right center;
   background-repeat: no-repeat;
   overflow: hidden; }
   .home .page-header p {
-    width: 100%;
     margin: 1rem 0 1.8rem;
     font-weight: 900;
-    line-height: 1.3; }
+    line-height: 1.3;
+    width: 36rem; }
   @media screen and (min-width: 40.063em) {
     .home .page-header {
-      height: 50rem;
-      background-image: none; }
+      background-image: none;
+      height: auto; }
+      .home .page-header:before {
+        content: '';
+        display: block;
+        margin-top: 72%; }
       .home .page-header .comma {
         height: auto; }
       .home .page-header h1 {
@@ -475,21 +476,17 @@ h4 {
         visibility: visible;
         margin-right: -.5rem; }
       .home .page-header .btn {
-        max-width: 26rem; }
-      .home .page-header .break-sm {
-        display: block; } }
+        max-width: 26rem; } }
   @media screen and (min-width: 64.063em) {
-    .home .page-header {
-      height: 53.125rem; }
-      .home .page-header h1 {
-        width: 102%;
-        margin-left: -.7rem; }
-      .home .page-header .comma {
-        display: inline-block;
-        visibility: visible;
-        margin-right: -.5rem; }
-      .home .page-header p {
-        width: 40rem; } }
+    .home .page-header:before {
+      margin-top: 60%; }
+    .home .page-header h1 {
+      width: 102%;
+      margin-left: -.7rem; }
+    .home .page-header .comma {
+      display: inline-block;
+      visibility: visible;
+      margin-right: -.5rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
       height: 62.5rem; }
@@ -507,7 +504,7 @@ h4 {
   margin-top: -1rem; }
   @media screen and (min-width: 40.063em) {
     .home .page-header__copy {
-      margin-top: 0; } }
+      margin-top: 1rem; } }
 
 .video-bg {
   display: none;
@@ -566,7 +563,7 @@ h4 {
     .our-jobs {
       max-width: 47rem; }
       .our-jobs .btn {
-        max-width: 20rem; } }
+        max-width: 25rem; } }
 
 .home01 {
   background-image: url(../images/home/home01.jpg); }

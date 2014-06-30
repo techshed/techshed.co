@@ -31,6 +31,7 @@
       },
 
       bindEvents: function() {
+
         el.homeVideo.on('play', function() {
           console.log('video is playing');
           $(this).remove();
@@ -93,7 +94,7 @@
         // strip special characters
         var cleanPage = page.replace(/[^a-z0-9\s]/gi, '');
         // page html path
-        var url = ('/pages/' + cleanPage + '.html');
+        var pageUrl = ('/pages/' + cleanPage + '.html');
         NProgress.start();
 
         // underline active nav link
@@ -121,8 +122,9 @@
                 NProgress.done();
                 TechShedCo.fitText();
               });
+              // not home, so load the url
             } else {
-              el.pageWindow.load(url, function(response, status) {
+              el.pageWindow.load(pageUrl, function(response, status) {
                 if (status === 'error') {
                   el.pageWindow.load('/pages/404.html');
                 }
@@ -141,6 +143,8 @@
       },
 
       fitText: function() {
+        var winW = $(window).width();
+
         $('.fit-text').fitText(0.697, {
           minFontSize: '86px'
         });
@@ -182,6 +186,18 @@
           //   'height', $(window).height()
           // );
         }
+      },
+
+      debounce: function(func, timer) {
+        var timeoutID;
+        return function() {
+          var scope = this,
+            args = arguments;
+          clearTimeout(timeoutID);
+          timeoutID = setTimeout(function() {
+            func.apply(scope, Array.prototype.slice.call(args));
+          }, timer);
+        };
       },
 
       initJobScoreWidget: function() {

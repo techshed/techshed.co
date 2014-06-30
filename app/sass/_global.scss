@@ -85,7 +85,6 @@ a{
 // primary view window for pages
 #page-window{
   @extend %regular-transition;
-  @include clearfix;
   position: relative;
   float: left;
   width: 100%;
@@ -117,9 +116,9 @@ a{
     width: 100%;
     padding: 0;
     margin: 0 0 0 -.45rem;
-    font-size: 6rem;
     font-weight: 900;
     line-height: .8;
+    font-size: 6rem;
   }
   p{
     width: 82%;
@@ -134,6 +133,7 @@ a{
   }
   .btn{
     width: 100%;
+    max-width: 40rem;
   }
 }
 .page-header__copy{
