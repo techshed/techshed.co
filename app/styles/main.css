@@ -35,7 +35,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   visibility: hidden;
   height: 0; }
 
-.nav-primary .logo {
+.nav-primary .logo, .nav-primary__menu .nav-primary__link:active {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none; }
@@ -278,13 +278,7 @@ a {
       height: 42rem; } }
   @media screen and (min-width: 64.063em) {
     .block--wide {
-      height: 52rem; } }
-  @media screen and (min-width: 90.063em) {
-    .block--wide {
-      height: 62rem; } }
-  @media screen and (min-width: 120.063em) {
-    .block--wide {
-      height: 72rem; } }
+      height: 47rem; } }
 
 h4 {
   margin: 0; }
@@ -356,7 +350,7 @@ h4 {
   .nav-primary__menu:before {
     content: '';
     position: absolute;
-    background: linear-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, transparent 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.93) 0%, rgba(0, 0, 0, 0.93) 50%, transparent 100%);
     height: 240%;
     top: -5rem;
     left: 0;
@@ -388,6 +382,8 @@ h4 {
     opacity: 1;
     width: 100%;
     height: 25%; }
+    .nav-primary__menu .nav-primary__link:active {
+      color: rgba(255, 255, 255, 0.5); }
     .nav-primary__menu .nav-primary__link span {
       display: inline-block; }
     .nav-primary__menu .nav-primary__link:nth-child(1) {
@@ -431,16 +427,18 @@ h4 {
   background-color: transparent;
   background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
   background-image: linear-gradient(to bottom,transparent 50%, rgba(0, 0, 0, 0.1) 50%); }
-.subpage .page-header h1 {
-  margin-left: -0.35rem; }
-  .subpage .page-header h1 span {
-    color: #ddd;
-    font-weight: 900;
-    display: block;
-    margin-bottom: 1.4rem; }
-.subpage .page-header p {
-  font-size: 2rem;
-  width: 100%; }
+.subpage .page-header {
+  height: 44rem; }
+  .subpage .page-header h1 {
+    margin-left: -0.35rem; }
+    .subpage .page-header h1 span {
+      color: #ddd;
+      font-weight: 900;
+      display: block;
+      margin-bottom: 1.4rem; }
+  .subpage .page-header p {
+    font-size: 2rem;
+    width: 100%; }
 .subpage .logo {
   background-position: 0 -3.08rem; }
 .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
@@ -450,43 +448,42 @@ h4 {
   background-color: #FAA568;
   background-image: url(../images/home/header-bg.jpg);
   background-size: 100%;
-  background-position: right center;
+  background-position: right bottom;
   background-repeat: no-repeat;
   overflow: hidden; }
   .home .page-header p {
     margin: 1rem 0 1.8rem;
     font-weight: 900;
     line-height: 1.3;
-    width: 36rem; }
+    width: 100%;
+    max-width: 36rem; }
   @media screen and (min-width: 40.063em) {
     .home .page-header {
       background-image: none;
-      height: auto; }
+      height: auto;
+      max-height: 60rem; }
       .home .page-header:before {
         content: '';
         display: block;
-        margin-top: 72%; }
-      .home .page-header .comma {
-        height: auto; }
+        margin-top: 73%; }
       .home .page-header h1 {
         width: 102%;
         margin-left: -.4rem; }
       .home .page-header .comma {
         display: inline-block;
         visibility: visible;
+        height: auto;
         margin-right: -.5rem; }
       .home .page-header .btn {
         max-width: 26rem; } }
   @media screen and (min-width: 64.063em) {
-    .home .page-header:before {
-      margin-top: 60%; }
-    .home .page-header h1 {
-      width: 102%;
-      margin-left: -.7rem; }
-    .home .page-header .comma {
-      display: inline-block;
-      visibility: visible;
-      margin-right: -.5rem; } }
+    .home .page-header {
+      max-height: 65rem; }
+      .home .page-header:before {
+        margin-top: 63%; }
+      .home .page-header h1 {
+        width: 102%;
+        margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
       height: 62.5rem; }
@@ -618,7 +615,9 @@ h4 {
     color: #fff; }
   @media screen and (min-width: 40.063em) {
     .benefits__item {
-      margin: 4.4%; } }
+      margin: 4.4%;
+      width: 12rem;
+      height: 12rem; } }
 
 .jobs {
   /* X-LARGE: 1441px min */ }
@@ -631,7 +630,7 @@ h4 {
 
 .projects .page-header {
   min-height: 52rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 3.5rem; }
 @media screen and (min-width: 64.063em) {
   .projects .break-sm {
     display: block; } }
@@ -729,8 +728,9 @@ h4 {
 .project-01 {
   background-image: url(../images/projects/project01.jpg); }
 
-.project-04 .project__img {
-  margin-left: -3rem; }
+@media screen and (min-width: 40.063em) {
+  .project-04 .project__img {
+    margin-left: -3rem; } }
 
 .contact .break-sm {
   display: block; }

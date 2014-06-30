@@ -4,7 +4,7 @@
     background-color: #FAA568;
     background-image: url(../images/home/header-bg.jpg);
     background-size: 100%;
-    background-position: right center;
+    background-position: right bottom;
     background-repeat: no-repeat;
     overflow: hidden;
 
@@ -13,33 +13,29 @@
       margin: 1rem 0 1.8rem;
       font-weight: 900;
       line-height: 1.3;
-      width: 36rem;
+      width: 100%;
+      max-width: 36rem;
     }
 
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
       background-image: none;
       height: auto;
+      max-height: 60rem;
 
       &:before{
         content: '';
         display: block;
-        margin-top: 72%;
-      }
-
-      .comma{
-        height: auto;
+        margin-top: 73%;
       }
       h1{
         width: 102%;
         margin-left: -.4rem;
       }
-      p{
-
-      }
       .comma{
         display: inline-block;
         visibility: visible;
+        height: auto;
         margin-right: -.5rem;
       }
       .btn{
@@ -49,22 +45,14 @@
 
     // LARGE: 1025px min
     @include respond-to(lg-screen) {
+      max-height: 65rem;
 
       &:before{
-        margin-top: 60%;
+        margin-top: 63%;
       }
-
       h1{
         width: 102%;
         margin-left: -.7rem;
-      }
-      .comma{
-        display: inline-block;
-        visibility: visible;
-        margin-right: -.5rem;
-      }
-      p{
-
       }
     }
 
@@ -261,5 +249,7 @@
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin: 4.4%;
+    width: 12rem;
+    height: 12rem;
   }
 }

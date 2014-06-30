@@ -2,7 +2,7 @@
 
   .page-header{
     min-height: 52rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
   }
 
   // LARGE: 1025px min
@@ -138,7 +138,12 @@
   background-image: url(../images/projects/project01.jpg);
 }
 .project-04{
-  .project__img{
-    margin-left: -3rem;
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+
+    .project__img{
+      margin-left: -3rem;
+    }
   }
 }
