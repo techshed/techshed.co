@@ -23,7 +23,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal; }
 
-.page-header__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .our-jobs, .benefits__item p, .project__copy {
+.page-header__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .our-jobs, .benefits__item p, .project__copy, .contact-footer__copy {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -636,6 +636,11 @@ h4 {
   min-height: 52rem;
   margin-bottom: 3.5rem; }
 @media screen and (min-width: 64.063em) {
+  .projects .page-header__copy {
+    max-width: 74rem; } }
+@media screen and (min-width: 90.063em) {
+  .projects .page-header__copy {
+    max-width: none; }
   .projects .break-sm {
     display: block; } }
 
@@ -767,21 +772,17 @@ h4 {
 @media screen and (min-width: 40.063em) {
   .contact .break-sm {
     display: none; } }
-@media screen and (min-width: 64.063em) {
-  .contact .block-copy-container {
-    top: 2rem; }
-    .contact .block-copy-container h2 {
-      width: 100%; } }
 
 .contact-footer {
   background-image: url(../images/contact/footer-bg.jpg);
   font-size: 1.5rem;
   height: 40rem !important;
-  background-position: 27% 0px !important; }
+  background-position: 27% 0px !important;
+  padding-top: 6%; }
   .contact-footer h2 {
     margin: 0 0 2rem;
     font-size: 2.5rem;
-    font-weight: 600; }
+    font-weight: 900; }
   .contact-footer .col {
     float: left;
     display: block;
@@ -794,28 +795,35 @@ h4 {
     margin: 0 0 2rem; }
   @media screen and (min-width: 40.063em) {
     .contact-footer {
-      background-position: center center; }
-      .contact-footer .block-copy-container {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 65.88078%;
-        top: 50%; }
-        .contact-footer .block-copy-container:last-child {
-          margin-right: 0; } }
-  @media screen and (min-width: 64.063em) {
-    .contact-footer .block-copy-container {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%; }
-      .contact-footer .block-copy-container:last-child {
-        margin-right: 0; } }
-  @media screen and (min-width: 90.063em) {
-    .contact-footer .block-copy-container {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
-      .contact-footer .block-copy-container:last-child {
-        margin-right: 0; } }
+      background-position: center center; } }
+
+.contact-footer__copy:after {
+  content: "";
+  display: table;
+  clear: both; }
+@media screen and (min-width: 40.063em) {
+  .contact-footer__copy {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .contact-footer__copy:last-child {
+      margin-right: 0; } }
+@media screen and (min-width: 64.063em) {
+  .contact-footer__copy {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%; }
+    .contact-footer__copy:last-child {
+      margin-right: 0; }
+    .contact-footer__copy h2 {
+      width: 100%; } }
+@media screen and (min-width: 90.063em) {
+  .contact-footer__copy {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    .contact-footer__copy:last-child {
+      margin-right: 0; } }

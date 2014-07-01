@@ -8,15 +8,6 @@
       display: none;
     }
   }
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
-    .block-copy-container{
-      top: 2rem;
-      h2{
-        width: 100%;
-      }
-    }
-  }
 }
 
 .contact-footer{
@@ -24,11 +15,12 @@
   font-size: 1.5rem;
   height: 40rem !important;
   background-position: 27% 0px !important;
+  padding-top: 6%;
 
   h2{
     margin: 0 0 2rem;
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 900;
   }
   .col{
     @include span-columns(6);
@@ -41,25 +33,28 @@
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     background-position: center center;
+  }
+}
 
-    .block-copy-container{
-      @include span-columns(8);
-      top: 50%;
-    }
+.contact-footer__copy{
+  @include clearfix;
+  @extend %vertical-align;
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    @include span-columns(8);
   }
 
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
+    @include span-columns(7);
 
-    .block-copy-container{
-      @include span-columns(7);
+    h2{
+      width: 100%;
     }
   }
   // X-LARGE: 1025px min
   @include respond-to(x-lg-screen) {
-
-    .block-copy-container{
-      @include span-columns(6);
-    }
+    @include span-columns(6);
   }
 }

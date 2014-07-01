@@ -7,6 +7,16 @@
 
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
+    .page-header__copy{
+      max-width: 74rem;
+    }
+  }
+
+  // // X-LARGE: 1441px min
+  @include respond-to(x-lg-screen) {
+    .page-header__copy{
+      max-width: none;
+    }
     .break-sm{
       display: block;
     }
