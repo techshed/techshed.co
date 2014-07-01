@@ -665,6 +665,9 @@ h4 {
 .project--featured {
   height: 40rem;
   margin-bottom: 5rem; }
+  @media screen and (min-width: 64.063em) {
+    .project--featured .project__copy {
+      right: -4rem; } }
 
 .project--featured__badge {
   position: absolute;
@@ -726,7 +729,15 @@ h4 {
         max-width: 51rem; } }
 
 .project-01 {
-  background-image: url(../images/projects/project01.jpg); }
+  background-image: url(../images/projects/project01.jpg);
+  background-position: right center;
+  background-size: 120%; }
+  @media screen and (min-width: 64.063em) {
+    .project-01 {
+      background-size: 110%; } }
+  @media screen and (min-width: 90.063em) {
+    .project-01 {
+      background-size: 100%; } }
 
 @media screen and (min-width: 40.063em) {
   .project-04 .project__img {
