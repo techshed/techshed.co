@@ -30,8 +30,11 @@
         FastClick.attach(document.body);
 
         setTimeout(function() {
-          $('.video-bg').attr('poster', '');
-        }, 1000);
+          var video = $('.video-bg').get(0);
+          video.on('play', function() {
+            $(this).attr('poster', '');
+          });
+        }, 0);
 
       },
 
