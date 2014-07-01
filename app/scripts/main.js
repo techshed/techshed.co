@@ -28,14 +28,15 @@
         TechShedCo.getPage(href);
         TechShedCo.bindEvents();
         FastClick.attach(document.body);
+
+        setTimeout(function() {
+          $('.video-bg').attr('poster', '');
+        }, 1000);
+
       },
 
       bindEvents: function() {
 
-        el.homeVideo.on('play', function() {
-          console.log('video is playing');
-          $(this).remove();
-        });
 
         // Nav toggle button
         el.navToggle.on('click', function(ev) {
@@ -143,10 +144,8 @@
       },
 
       fitText: function() {
-        var winW = $(window).width();
-
         $('.fit-text').fitText(0.697, {
-          minFontSize: '86px'
+          minFontSize: '84px'
         });
       },
 
@@ -188,18 +187,6 @@
         }
       },
 
-      debounce: function(func, timer) {
-        var timeoutID;
-        return function() {
-          var scope = this,
-            args = arguments;
-          clearTimeout(timeoutID);
-          timeoutID = setTimeout(function() {
-            func.apply(scope, Array.prototype.slice.call(args));
-          }, timer);
-        };
-      },
-
       initJobScoreWidget: function() {
         (function(d, s, c) {
           if (window._jobscore_loader) {
@@ -214,6 +201,18 @@
           sc.parentNode.insertBefore(o, sc);
           o.src = ('https:' === d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
         })(document, 'script', 'redbeacon');
+      },
+
+      debounce: function(func, timer) {
+        var timeoutID;
+        return function() {
+          var scope = this,
+            args = arguments;
+          clearTimeout(timeoutID);
+          timeoutID = setTimeout(function() {
+            func.apply(scope, Array.prototype.slice.call(args));
+          }, timer);
+        };
       }
     };
   TechShedCo.init();

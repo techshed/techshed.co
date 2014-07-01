@@ -461,11 +461,11 @@ h4 {
     .home .page-header {
       background-image: none;
       height: auto;
-      max-height: 60rem; }
+      max-height: 53rem; }
       .home .page-header:before {
         content: '';
         display: block;
-        margin-top: 73%; }
+        margin-top: 64%; }
       .home .page-header h1 {
         width: 102%;
         margin-left: -.4rem; }
@@ -486,12 +486,16 @@ h4 {
         margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
-      height: 62.5rem; }
+      max-height: 68.75rem; }
+      .home .page-header:before {
+        margin-top: 63%; }
       .home .page-header h1 {
         margin-left: -.8rem; } }
   @media screen and (min-width: 120.063em) {
     .home .page-header {
-      height: 60rem; }
+      max-height: 87.5rem; }
+      .home .page-header:before {
+        margin-top: 46%; }
       .home .page-header h1 {
         margin-left: -1rem; }
       .home .page-header p {

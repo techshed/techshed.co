@@ -21,12 +21,12 @@
     @include respond-to(md-screen) {
       background-image: none;
       height: auto;
-      max-height: 60rem;
+      max-height: 53rem;
 
       &:before{
         content: '';
         display: block;
-        margin-top: 73%;
+        margin-top: 64%;
       }
       h1{
         width: 102%;
@@ -58,7 +58,11 @@
 
     // X-LARGE: 1441px min
     @include respond-to(x-lg-screen) {
-      height: rem(1000px);
+      max-height: rem(1100px);
+
+      &:before{
+        margin-top: 63%;
+      }
 
       h1{
         margin-left: -.8rem;
@@ -67,7 +71,11 @@
 
     // XX-LARGE 1921px min
     @include respond-to(xx-lg-screen) {
-      height: rem(960px);
+      max-height: rem(1400px);
+
+      &:before{
+        margin-top: 46%;
+      }
 
       h1{
         margin-left: -1rem;
