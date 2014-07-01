@@ -131,7 +131,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         '<%= config.app %>/scripts/{,*/}*.js',
-        '!<%= config.app %>/scripts/vendor/*'
+        '!<%= config.app %>/scripts/'
       ]
     },
 
@@ -236,8 +236,7 @@ module.exports = function(grunt) {
     // },
     uglify: {
       options: {
-        mangle: false,
-        beautify: true
+
       }
     },
     // concat: {
@@ -277,11 +276,10 @@ module.exports = function(grunt) {
     // reference in your app
     modernizr: {
       devFile: '<%= config.app %>/bower_components/modernizr/modernizr.js',
-      outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
+      outputFile: '<%= config.dist %>/scripts/modernizr.js',
       files: [
         '<%= config.dist %>/scripts/{,*/}*.js',
-        '<%= config.dist %>/styles/{,*/}*.css',
-        '!<%= config.dist %>/scripts/vendor/*'
+        '<%= config.dist %>/styles/{,*/}*.css'
       ]
     },
 
