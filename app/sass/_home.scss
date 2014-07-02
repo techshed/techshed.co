@@ -17,7 +17,6 @@
       max-width: 36rem;
     }
 
-
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
       background-image: none;
@@ -59,7 +58,7 @@
 
     // X-LARGE: 1441px min
     @include respond-to(x-lg-screen) {
-      max-height: rem(1000px);
+      max-height: 71rem;
 
       &:before{
         margin-top: 56%;
@@ -75,7 +74,7 @@
       max-height: rem(1400px);
 
       &:before{
-        margin-top: 50%;
+        margin-top: 53%;
       }
 
       h1{
@@ -93,7 +92,7 @@
 
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     // X-LARGE: 1441px min
@@ -118,15 +117,15 @@
   }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
-    height: 111%;
+
   }
   // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
-    height: rem(1150px);
+
   }
   // XX-LARGE: 1921px min
   @include respond-to(xx-lg-screen) {
-    height: 120%;
+
   }
 }
 
@@ -206,7 +205,6 @@
   background-image: url(../images/home/home06.jpg);
 }
 
-
 // Benefits
 .benefits{
 
@@ -227,6 +225,7 @@
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
+    padding: 3rem 0;
 
     .col{
       width: 33.333333%;
@@ -235,11 +234,16 @@
   }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
+    padding: 4rem 0;
 
     .col{
       width: 25%;
       margin-right: 0;
     }
+  }
+  // X-LARGE: 1025px min
+  @include respond-to(x-lg-screen) {
+    padding: 7rem 0;
   }
 }
 
@@ -265,5 +269,24 @@
     margin: 4.4%;
     width: 12rem;
     height: 12rem;
+  }
+}
+
+.location{
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    padding: 6rem 0;
+  }
+  // LARGE: 1025px min
+  @include respond-to(lg-screen) {
+    padding: 8rem 0;
+  }
+  // X-LARGE: 1441px min
+  @include respond-to(x-lg-screen) {
+    padding: 9rem 0;
+  }
+  // XX-LARGE 1921px min
+  @include respond-to(xx-lg-screen) {
+    padding: 13rem 0;
   }
 }

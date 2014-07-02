@@ -87,9 +87,15 @@
 
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
+    height: 37rem;
+
     .project__copy{
       right: -4rem;
     }
+  }
+  // X-LARGE: 1441px min
+  @include respond-to(lg-screen) {
+    height: 43rem;
   }
 }
 .project--featured__badge{

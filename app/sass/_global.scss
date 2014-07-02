@@ -173,6 +173,14 @@ a{
   background-repeat: no-repeat;
   color: #fff;
 
+  // iOS 1px gap fix
+  margin-bottom: -1px;
+
+  // LARGE: 1025px min
+  @include respond-to(lg-screen) {
+    margin-bottom: 0;
+  }
+
   a{
     // props to Marcin Wichary @ Medium.com for this fancy text underline method
     // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
@@ -196,6 +204,18 @@ a{
     width: 50%;
     height: 42rem;
   }
+  // LARGE: 1025px min
+  @include respond-to(lg-screen) {
+    height: 50rem;
+  }
+  // X-LARGE: 1441px min
+  @include respond-to(x-lg-screen) {
+    height: 55rem;
+  }
+  // XX-LARGE 1921px min
+  @include respond-to(xx-lg-screen) {
+    height: 60rem;
+  }
 }
 .block--wide{
   @extend .block;
@@ -204,7 +224,7 @@ a{
   background-position: center right;
 
   // MEDIUM: 641px min
-  @include respond-to(md-screen) { height: 42rem; }
+  @include respond-to(md-screen) { height: 30rem; }
   // LARGE: 641px min
   @include respond-to(lg-screen) { height: 47rem; }
   // X-LARGE: 641px min

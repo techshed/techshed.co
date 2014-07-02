@@ -250,7 +250,11 @@ a {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  color: #fff; }
+  color: #fff;
+  margin-bottom: -1px; }
+  @media screen and (min-width: 64.063em) {
+    .block--img, .project--featured {
+      margin-bottom: 0; } }
   .block--img a, .project--featured a {
     background-color: rgba(255, 255, 255, 0);
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
@@ -268,6 +272,15 @@ a {
     .block--tall {
       width: 50%;
       height: 42rem; } }
+  @media screen and (min-width: 64.063em) {
+    .block--tall {
+      height: 50rem; } }
+  @media screen and (min-width: 90.063em) {
+    .block--tall {
+      height: 55rem; } }
+  @media screen and (min-width: 120.063em) {
+    .block--tall {
+      height: 60rem; } }
 
 .block--wide {
   height: 30rem;
@@ -275,7 +288,7 @@ a {
   background-position: center right; }
   @media screen and (min-width: 40.063em) {
     .block--wide {
-      height: 42rem; } }
+      height: 30rem; } }
   @media screen and (min-width: 64.063em) {
     .block--wide {
       height: 47rem; } }
@@ -486,7 +499,7 @@ h4 {
         margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
-      max-height: 62.5rem; }
+      max-height: 71rem; }
       .home .page-header:before {
         margin-top: 56%; }
       .home .page-header h1 {
@@ -495,7 +508,7 @@ h4 {
     .home .page-header {
       max-height: 87.5rem; }
       .home .page-header:before {
-        margin-top: 50%; }
+        margin-top: 53%; }
       .home .page-header h1 {
         margin-left: -1rem; }
       .home .page-header p {
@@ -505,7 +518,7 @@ h4 {
   margin-top: -1rem; }
   @media screen and (min-width: 40.063em) {
     .home .page-header__copy {
-      margin-top: 1rem; } }
+      margin-top: 1.5rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header__copy {
       margin-top: 2rem; } }
@@ -521,15 +534,6 @@ h4 {
   @media screen and (min-width: 40.063em) {
     .video-bg {
       display: block; } }
-  @media screen and (min-width: 64.063em) {
-    .video-bg {
-      height: 111%; } }
-  @media screen and (min-width: 90.063em) {
-    .video-bg {
-      height: 71.875rem; } }
-  @media screen and (min-width: 120.063em) {
-    .video-bg {
-      height: 120%; } }
 
 .culture {
   padding: 5rem 0; }
@@ -599,13 +603,20 @@ h4 {
   margin: 2rem 0;
   text-align: center; }
 @media screen and (min-width: 40.063em) {
-  .benefits .col {
-    width: 33.333333%;
-    margin-right: 0; } }
+  .benefits {
+    padding: 3rem 0; }
+    .benefits .col {
+      width: 33.333333%;
+      margin-right: 0; } }
 @media screen and (min-width: 64.063em) {
-  .benefits .col {
-    width: 25%;
-    margin-right: 0; } }
+  .benefits {
+    padding: 4rem 0; }
+    .benefits .col {
+      width: 25%;
+      margin-right: 0; } }
+@media screen and (min-width: 90.063em) {
+  .benefits {
+    padding: 7rem 0; } }
 
 .benefits__item {
   display: inline-block;
@@ -625,6 +636,19 @@ h4 {
       margin: 4.4%;
       width: 12rem;
       height: 12rem; } }
+
+@media screen and (min-width: 40.063em) {
+  .location {
+    padding: 6rem 0; } }
+@media screen and (min-width: 64.063em) {
+  .location {
+    padding: 8rem 0; } }
+@media screen and (min-width: 90.063em) {
+  .location {
+    padding: 9rem 0; } }
+@media screen and (min-width: 120.063em) {
+  .location {
+    padding: 13rem 0; } }
 
 .jobs {
   /* X-LARGE: 1441px min */ }
@@ -694,8 +718,13 @@ h4 {
       .project--featured br {
         display: none; } }
   @media screen and (min-width: 64.063em) {
-    .project--featured .project__copy {
-      right: -4rem; } }
+    .project--featured {
+      height: 37rem; }
+      .project--featured .project__copy {
+        right: -4rem; } }
+  @media screen and (min-width: 64.063em) {
+    .project--featured {
+      height: 43rem; } }
 
 .project--featured__badge {
   position: absolute;
