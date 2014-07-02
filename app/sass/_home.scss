@@ -58,10 +58,10 @@
 
     // X-LARGE: 1441px min
     @include respond-to(x-lg-screen) {
-      max-height: rem(1100px);
+      max-height: rem(1000px);
 
       &:before{
-        margin-top: 63%;
+        margin-top: 56%;
       }
 
       h1{
@@ -93,6 +93,11 @@
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
       margin-top: 1rem;
+    }
+
+    // X-LARGE: 1441px min
+    @include respond-to(x-lg-screen) {
+      margin-top: 2rem;
     }
   }
 }
