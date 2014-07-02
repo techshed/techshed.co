@@ -486,7 +486,9 @@ h4 {
         margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
-      max-height: 68.75rem; }
+      max-height: 62.5rem; }
+      .home .page-header:before {
+        margin-top: 56%; }
       .home .page-header h1 {
         margin-left: -.8rem; } }
   @media screen and (min-width: 120.063em) {
@@ -504,6 +506,9 @@ h4 {
   @media screen and (min-width: 40.063em) {
     .home .page-header__copy {
       margin-top: 1rem; } }
+  @media screen and (min-width: 90.063em) {
+    .home .page-header__copy {
+      margin-top: 2rem; } }
 
 .video-bg {
   display: none;
