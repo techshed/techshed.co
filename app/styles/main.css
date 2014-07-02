@@ -480,22 +480,20 @@ h4 {
     .home .page-header {
       max-height: 65rem; }
       .home .page-header:before {
-        margin-top: 63%; }
+        margin-top: 54%; }
       .home .page-header h1 {
         width: 102%;
         margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
       max-height: 68.75rem; }
-      .home .page-header:before {
-        margin-top: 63%; }
       .home .page-header h1 {
         margin-left: -.8rem; } }
   @media screen and (min-width: 120.063em) {
     .home .page-header {
       max-height: 87.5rem; }
       .home .page-header:before {
-        margin-top: 46%; }
+        margin-top: 50%; }
       .home .page-header h1 {
         margin-left: -1rem; }
       .home .page-header p {
@@ -633,7 +631,6 @@ h4 {
   max-width: 900px; }
 
 .projects .page-header {
-  min-height: 52rem;
   margin-bottom: 3.5rem; }
 @media screen and (min-width: 64.063em) {
   .projects .page-header__copy {
