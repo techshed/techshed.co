@@ -1,9 +1,12 @@
 .jobs{
-  /* X-LARGE: 1441px min */
-  @include respond-to(x-lg-screen) {
-    .break-sm{
-      display: block;
+  /* MEDIUM: 641px min */
+  @include respond-to(md-screen) {
+    .page-header__copy{
+      br{
+        display: none;
+      }
     }
+
   }
 }
 

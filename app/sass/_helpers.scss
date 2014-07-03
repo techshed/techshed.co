@@ -21,6 +21,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 %vertical-align-children{
   text-align: center;
 
@@ -37,6 +38,17 @@
   display: block;
   visibility: hidden;
   height: 0;
+}
+
+%block-list{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li{
+    display: inline-block;
+    float: left;
+  }
 }
 
 // Animation

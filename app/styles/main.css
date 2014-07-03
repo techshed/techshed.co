@@ -23,7 +23,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal; }
 
-.page-header__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .our-jobs, .benefits__item p, .project__copy, .contact-footer__copy {
+.nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .home .page-header__copy, .our-jobs, .benefits__item p, .project__copy, .contact-footer__copy {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -34,6 +34,14 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   display: block;
   visibility: hidden;
   height: 0; }
+
+.contact-footer__links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .contact-footer__links li {
+    display: inline-block;
+    float: left; }
 
 .nav-primary .logo, .nav-primary__menu .nav-primary__link:active {
   -webkit-transition: none;
@@ -71,7 +79,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   text-align: center;
   white-space: nowrap;
   border-radius: .4rem;
-  border-width: .25rem;
+  border-width: .2rem;
   border-style: solid;
   border-color: #fff;
   background-image: none;
@@ -119,7 +127,7 @@ html {
       font-size: 95%; } }
   @media screen and (min-width: 120.063em) {
     html {
-      font-size: 105%; } }
+      font-size: 130%; } }
 
 body {
   margin: 0;
@@ -196,8 +204,7 @@ a {
   height: 53.125rem;
   width: 100%;
   margin: 0;
-  margin-top: -5rem;
-  padding-top: 5rem; }
+  margin-top: -5rem; }
   .page-header:after {
     content: "";
     display: table;
@@ -220,7 +227,6 @@ a {
     max-width: 40rem; }
 
 .page-header__copy {
-  position: absolute;
   width: 100%;
   z-index: 1; }
 
@@ -437,7 +443,8 @@ h4 {
   background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
   background-image: linear-gradient(to bottom,transparent 50%, rgba(0, 0, 0, 0.1) 50%); }
 .subpage .page-header {
-  height: 44rem; }
+  height: auto;
+  padding: 8rem 0; }
   .subpage .page-header h1 {
     margin-left: -0.35rem; }
     .subpage .page-header h1 span {
@@ -447,7 +454,17 @@ h4 {
       margin-bottom: 1.4rem; }
   .subpage .page-header p {
     font-size: 2rem;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 0; }
+  @media screen and (min-width: 40.063em) {
+    .subpage .page-header {
+      padding: 12rem 0 8rem; } }
+  @media screen and (min-width: 64.063em) {
+    .subpage .page-header {
+      padding: 15rem 0 11rem; } }
+  @media screen and (min-width: 90.063em) {
+    .subpage .page-header {
+      padding: 17rem 0 14rem; } }
 .subpage .logo {
   background-position: 0 -3.08rem; }
 .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
@@ -474,7 +491,7 @@ h4 {
       .home .page-header:before {
         content: '';
         display: block;
-        margin-top: 64%; }
+        margin-top: 84%; }
       .home .page-header h1 {
         width: 102%;
         margin-left: -.4rem; }
@@ -489,27 +506,24 @@ h4 {
     .home .page-header {
       max-height: 65rem; }
       .home .page-header:before {
-        margin-top: 54%; }
+        margin-top: 58%; }
       .home .page-header h1 {
         width: 102%;
         margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .home .page-header {
       max-height: 71rem; }
-      .home .page-header:before {
-        margin-top: 56%; }
       .home .page-header h1 {
         margin-left: -.8rem; } }
   @media screen and (min-width: 120.063em) {
     .home .page-header {
-      max-height: 87.5rem; }
-      .home .page-header:before {
-        margin-top: 53%; }
+      max-height: 90rem; }
       .home .page-header h1 {
         margin-left: -1rem; }
       .home .page-header p {
         margin: 1.5rem 0 2rem; } }
 .home .page-header__copy {
+  position: absolute;
   color: #fff;
   margin-top: -1rem; }
   @media screen and (min-width: 40.063em) {
@@ -606,14 +620,9 @@ h4 {
       width: 33.333333%;
       margin-right: 0; } }
 @media screen and (min-width: 64.063em) {
-  .benefits {
-    padding: 4rem 0; }
-    .benefits .col {
-      width: 25%;
-      margin-right: 0; } }
-@media screen and (min-width: 90.063em) {
-  .benefits {
-    padding: 7rem 0; } }
+  .benefits .col {
+    width: 25%;
+    margin-right: 0; } }
 
 .benefits__item {
   display: inline-block;
@@ -648,10 +657,10 @@ h4 {
     padding: 13rem 0; } }
 
 .jobs {
-  /* X-LARGE: 1441px min */ }
-  @media screen and (min-width: 90.063em) {
-    .jobs .break-sm {
-      display: block; } }
+  /* MEDIUM: 641px min */ }
+  @media screen and (min-width: 40.063em) {
+    .jobs .page-header__copy br {
+      display: none; } }
 
 .jobscore-jobs {
   max-width: 900px; }
@@ -795,63 +804,35 @@ h4 {
   .project-04 .project__img {
     margin-left: -3rem; } }
 
-.contact .break-sm {
-  display: block; }
-@media screen and (min-width: 40.063em) {
+.contact {
+  /* X-LARGE: 1441px min */ }
   .contact .break-sm {
-    display: none; } }
+    display: none; }
+  @media screen and (min-width: 90.063em) {
+    .contact .break-sm {
+      display: block; } }
 
 .contact-footer {
   background-image: url(../images/contact/footer-bg.jpg);
   font-size: 1.5rem;
-  height: 40rem !important;
-  background-position: 27% 0px !important;
-  padding-top: 6%; }
+  height: 40rem !important; }
   .contact-footer h2 {
     margin: 0 0 2rem;
-    font-size: 2.5rem;
-    font-weight: 900; }
-  .contact-footer .col {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
-    .contact-footer .col:last-child {
-      margin-right: 0; }
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.1; }
   .contact-footer .btn {
     width: 100%;
-    margin: 0 0 2rem; }
-  @media screen and (min-width: 40.063em) {
-    .contact-footer {
-      background-position: center center; } }
+    max-width: 30rem; }
 
-.contact-footer__copy:after {
-  content: "";
-  display: table;
-  clear: both; }
-@media screen and (min-width: 40.063em) {
-  .contact-footer__copy {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%; }
-    .contact-footer__copy:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 64.063em) {
-  .contact-footer__copy {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%; }
-    .contact-footer__copy:last-child {
-      margin-right: 0; }
-    .contact-footer__copy h2 {
-      width: 100%; } }
-@media screen and (min-width: 90.063em) {
-  .contact-footer__copy {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
-    .contact-footer__copy:last-child {
-      margin-right: 0; } }
+.contact-footer__copy {
+  max-width: 35rem; }
+  .contact-footer__copy:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.contact-footer__links {
+  margin-top: 2rem; }
+  .contact-footer__links li {
+    margin: 0 2.3rem 1.3rem 0; }

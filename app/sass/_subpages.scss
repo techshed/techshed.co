@@ -1,5 +1,6 @@
 // Subpage-specific styles
 .subpage{
+
   .nav-primary{
     background-color: transparent;
   }
@@ -12,7 +13,8 @@
     }
   }
   .page-header{
-    height: 44rem;
+    height: auto;
+    padding: 8rem 0;
 
     h1{
       margin-left: -0.35rem;
@@ -27,7 +29,17 @@
     p{
       font-size: 2rem;
       width: 100%;
+      margin-bottom: 0;
     }
+
+    // MEDIUM: 641px min
+    @include respond-to(md-screen) { padding: 12rem 0 8rem; }
+    // LARGE: 1025px min
+    @include respond-to(lg-screen) { padding: 15rem 0 11rem; }
+    // X-LARGE: 1441px min
+    @include respond-to(x-lg-screen) { padding: 17rem 0 14rem; }
+    // XX-LARGE 1921px min
+    @include respond-to(xx-lg-screen) {  }
   }
   .logo{
     background-position: 0 -3.08rem;

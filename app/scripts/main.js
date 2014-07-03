@@ -129,12 +129,13 @@
 
         setTimeout(function() {
           TechShedCo.initJobScoreWidget();
-        }, 500);
+        }, 1000);
       },
 
       initPage: function(pageTitle) {
         el.pageWindow.removeClass('is-transitioning');
         NProgress.done();
+        $('p').unorphanize(2);
 
         // home init
         if (pageTitle === 'home' || pageTitle === '') {

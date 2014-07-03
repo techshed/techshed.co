@@ -1,11 +1,11 @@
 .contact{
   .break-sm{
-    display: block;
+    display: none;
   }
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
+  /* X-LARGE: 1441px min */
+  @include respond-to(x-lg-screen) {
     .break-sm{
-      display: none;
+      display: block;
     }
   }
 }
@@ -14,47 +14,30 @@
   background-image: url(../images/contact/footer-bg.jpg);
   font-size: 1.5rem;
   height: 40rem !important;
-  background-position: 27% 0px !important;
-  padding-top: 6%;
 
   h2{
     margin: 0 0 2rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 900;
-  }
-  .col{
-    @include span-columns(6);
+    line-height: 1.1;
   }
   .btn{
     width: 100%;
-    margin: 0 0 2rem;
-  }
-
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
-    background-position: center center;
+    max-width: 30rem;
   }
 }
 
 .contact-footer__copy{
   @include clearfix;
   @extend %vertical-align;
+  max-width: 35rem;
+}
 
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
-    @include span-columns(8);
-  }
+.contact-footer__links{
+  @extend %block-list;
+  margin-top: 2rem;
 
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
-    @include span-columns(7);
-
-    h2{
-      width: 100%;
-    }
-  }
-  // X-LARGE: 1025px min
-  @include respond-to(x-lg-screen) {
-    @include span-columns(6);
+  li{
+    margin: 0 2.3rem 1.3rem 0;
   }
 }

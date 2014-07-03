@@ -26,7 +26,7 @@
       &:before{
         content: '';
         display: block;
-        margin-top: 64%;
+        margin-top: 84%;
       }
       h1{
         width: 102%;
@@ -48,7 +48,7 @@
       max-height: 65rem;
 
       &:before{
-        margin-top: 54%;
+        margin-top: 58%;
       }
       h1{
         width: 102%;
@@ -60,10 +60,6 @@
     @include respond-to(x-lg-screen) {
       max-height: 71rem;
 
-      &:before{
-        margin-top: 56%;
-      }
-
       h1{
         margin-left: -.8rem;
       }
@@ -71,11 +67,7 @@
 
     // XX-LARGE 1921px min
     @include respond-to(xx-lg-screen) {
-      max-height: rem(1400px);
-
-      &:before{
-        margin-top: 53%;
-      }
+      max-height: rem(1440px);
 
       h1{
         margin-left: -1rem;
@@ -87,6 +79,7 @@
   }
 
   .page-header__copy{
+    position: absolute;
     color: #fff;
     margin-top: -1rem;
 
@@ -99,6 +92,9 @@
     @include respond-to(x-lg-screen) {
       margin-top: 2rem;
     }
+  }
+  .page-header__copy{
+    @extend %vertical-align;
   }
 }
 
@@ -235,7 +231,6 @@
   }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
-    padding: 4rem 0;
 
     .col{
       width: 25%;
@@ -244,7 +239,6 @@
   }
   // X-LARGE: 1025px min
   @include respond-to(x-lg-screen) {
-    padding: 7rem 0;
   }
 }
 

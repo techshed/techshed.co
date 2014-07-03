@@ -10,7 +10,8 @@
     "fastclick": "~1.0.2",
     "FitText.js": "*",
     "nprogress": "~0.1.3",
-    "matthewlein-jQuery-widowFix": "~1.3.2"
+    "matthewlein-jQuery-widowFix": "~1.3.2",
+    "jquery-unorphanize": "~1.0.1"
   },
   "devDependencies": {}
 }
