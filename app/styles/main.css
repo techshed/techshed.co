@@ -267,11 +267,10 @@ a {
       color: rgba(255, 255, 255, 0.8); }
 
 .block--tall {
-  height: 38rem; }
+  height: 40rem; }
   @media screen and (min-width: 40.063em) {
     .block--tall {
-      width: 50%;
-      height: 42rem; } }
+      width: 50%; } }
   @media screen and (min-width: 64.063em) {
     .block--tall {
       height: 50rem; } }
@@ -286,12 +285,9 @@ a {
   height: 30rem;
   width: 100%;
   background-position: center right; }
-  @media screen and (min-width: 40.063em) {
-    .block--wide {
-      height: 30rem; } }
   @media screen and (min-width: 64.063em) {
     .block--wide {
-      height: 47rem; } }
+      height: 46rem; } }
 
 h4 {
   margin: 0; }
@@ -583,7 +579,8 @@ h4 {
   background-image: url(../images/home/home03.jpg); }
 
 .home04 {
-  background-image: url(../images/home/home04.jpg); }
+  background-image: url(../images/home/home04.jpg);
+  height: 40rem; }
 
 .home05 {
   background-image: url(../images/home/home05.jpg); }
@@ -639,13 +636,13 @@ h4 {
 
 @media screen and (min-width: 40.063em) {
   .location {
-    padding: 6rem 0; } }
+    padding: 8rem 0; } }
 @media screen and (min-width: 64.063em) {
   .location {
-    padding: 8rem 0; } }
+    padding: 10rem 0; } }
 @media screen and (min-width: 90.063em) {
   .location {
-    padding: 9rem 0; } }
+    padding: 12rem 0; } }
 @media screen and (min-width: 120.063em) {
   .location {
     padding: 13rem 0; } }

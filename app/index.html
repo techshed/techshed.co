@@ -20,7 +20,7 @@
   <meta charset="utf-8">
   <title>Techshed</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="icon" href="/favicons/favicon.ico">
@@ -28,21 +28,18 @@
   <link rel="apple-touch-icon" sizes="72x72" href="/favicons/72.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/favicons/60.png">
   <link rel="apple-touch-icon" sizes="76x76" href="/favicons/76.png">
+  <!-- Load Webfont.js early on to avoid FOUT (http://www.paulirish.com/2009/fighting-the-font-face-fout/) -->
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
-      custom: {
-        families: ['Avenir']
-      },
-      google: {
-        families: ['Libre Baskerville:italic']
-      },
-        fontinactive: function (font, fvd) { console.log("Couldn't load font: " + font); }
+      custom: { families: ['Avenir'] },
+      google: { families: ['Libre Baskerville:italic'] },
+      fontinactive: function (font, fvd) { console.log("Couldn't load font: " + font); }
     });
   </script>
   <!-- build:css /styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css" />
+  <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) /styles/main.css -->
@@ -84,12 +81,15 @@
   <!-- Page Window -->
   <section id="page-window" role="main"></section>
 
+  <!-- jQuery via Google CDN -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- build:js /scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/fastclick/lib/fastclick.js"></script>
-  <script src="/bower_components/FitText.js/jquery.fittext.js"></script>
-  <script src="/bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <script src="bower_components/FitText.js/jquery.fittext.js"></script>
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/matthewlein-jQuery-widowFix/js/jquery.widowFix-1.3.2.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

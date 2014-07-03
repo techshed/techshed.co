@@ -28,18 +28,9 @@
         TechShedCo.getPage(href);
         TechShedCo.bindEvents();
         FastClick.attach(document.body);
-
-        setTimeout(function() {
-          var video = $('.video-bg');
-          video.on('play', function() {
-            $(this).attr('poster', '');
-          });
-        }, 0);
-
       },
 
       bindEvents: function() {
-
 
         // Nav toggle button
         el.navToggle.on('click', function(ev) {
@@ -96,22 +87,22 @@
 
       getPage: function(page) {
         // strip special characters
-        var cleanPage = page.replace(/[^a-z0-9\s]/gi, '');
+        var pageTitle = page.replace(/[^a-z0-9\s]/gi, '');
         // page html path
-        var pageUrl = ('/pages/' + cleanPage + '.html');
+        var pageUrl = ('/pages/' + pageTitle + '.html');
         NProgress.start();
 
         // underline active nav link
-        if (cleanPage === 'home' || cleanPage === '') {
+        if (pageTitle === 'home' || pageTitle === '') {
           el.navPrimary.removeClass('subpage');
           $('.home').addClass('active').siblings().removeClass('active');
         } else {
           el.navPrimary.addClass('subpage');
-          $('.' + cleanPage).addClass('active').siblings().removeClass('active');
+          $('.' + pageTitle).addClass('active').siblings().removeClass('active');
         }
 
         // unload jobscore widget
-        if (cleanPage === 'jobs') {
+        if (pageTitle === 'jobs') {
           window._jobscore_loader = false;
         }
 
@@ -119,12 +110,9 @@
         el.pageWindow.addClass('is-transitioning')
           .on('transitionend webkitTransitionEnd', function(ev) {
             // check if page = home
-            if (cleanPage === 'home' || cleanPage === '') {
+            if (pageTitle === 'home' || pageTitle === '') {
               el.pageWindow.load('/pages/home.html', function() {
-                $('body').removeClass().addClass('home');
-                el.pageWindow.removeClass('is-transitioning');
-                NProgress.done();
-                TechShedCo.fitText();
+                TechShedCo.initPage(pageTitle);
               });
               // not home, so load the url
             } else {
@@ -132,9 +120,7 @@
                 if (status === 'error') {
                   el.pageWindow.load('/pages/404.html');
                 }
-                $('body').removeClass().addClass(cleanPage + ' subpage');
-                el.pageWindow.removeClass('is-transitioning');
-                NProgress.done();
+                TechShedCo.initPage(pageTitle);
               });
             }
             el.pageWindow.off('transitionend webkitTransitionEnd');
@@ -144,6 +130,27 @@
         setTimeout(function() {
           TechShedCo.initJobScoreWidget();
         }, 500);
+      },
+
+      initPage: function(pageTitle) {
+        el.pageWindow.removeClass('is-transitioning');
+        NProgress.done();
+
+        // home init
+        if (pageTitle === 'home' || pageTitle === '') {
+          $('body').removeClass().addClass('home');
+          TechShedCo.fitText();
+
+          // after video starts playing, remove the poster to avoid flicker on loop
+          var homeVideo = $('.video-bg');
+          homeVideo.on('timeupdate', function() {
+            $(this).attr('poster', '');
+          });
+
+          // subpage init
+        } else {
+          $('body').removeClass().addClass(pageTitle + ' subpage');
+        }
       },
 
       fitText: function() {
