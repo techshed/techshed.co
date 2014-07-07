@@ -4,39 +4,39 @@
 (function() {
   'use strict';
 
-  var el, href, TechShedCo = {
+  var el, href, timer, TechshedCo = {
       elements: {
         // Nav
-        navPrimary: $('.nav-primary'),
-        navToggle: $('.nav-primary__menu-toggle'),
-        navPrimaryMenu: $('.nav-primary__menu'),
-        navPrimaryMenuLg: $('.nav-primary__menu--lg'),
-        navPrimaryLink: $('.nav-primary__link'),
+        $navPrimary: $('.nav-primary'),
+        $navToggle: $('.nav-primary__menu-toggle'),
+        $navPrimaryMenu: $('.nav-primary__menu'),
+        $navPrimaryMenuLg: $('.nav-primary__menu--lg'),
+        $navPrimaryLink: $('.nav-primary__link'),
         // Containers
-        pageWindow: $('#page-window'),
-        pageHeader: $('.page-header'),
+        $pageWindow: $('#page-window'),
+        $pageHeader: $('.page-header'),
         // Page Elements
-        homeVideo: $('.video-bg'),
-        homeHeadline: $('.home .page-header h1')
+        $homeVideo: $('.video-bg'),
+        $homeHeadline: $('.home .page-header h1')
       },
 
       init: function() {
-        window.techshedco = this;
-        TechShedCo = this;
-        el = TechShedCo.elements;
+        window.TechshedCo = this;
+        TechshedCo = this;
+        el = TechshedCo.elements;
         href = location.href.split('/').pop();
-        TechShedCo.getPage(href);
-        TechShedCo.bindEvents();
         FastClick.attach(document.body);
+        TechshedCo.getPage(href);
+        TechshedCo.bindEvents();
       },
 
       bindEvents: function() {
 
         // Nav toggle button
-        el.navToggle.on('click', function(ev) {
+        el.$navToggle.on('click', function(ev) {
           // Prevent multiple clicks within .4s window
           if (!$(this).data('isClicked')) {
-            TechShedCo.toggleNavMenu();
+            TechshedCo.toggleNavMenu();
             var link = $(this);
             link.data('isClicked', true);
             setTimeout(function() {
@@ -47,7 +47,7 @@
         });
 
         // Page links
-        el.navPrimaryLink.on('click', function(ev) {
+        el.$navPrimaryLink.on('click', function(ev) {
           var $this = $(this),
             page = $this.attr('class').split(' ')[0];
           href = location.href.split('/').pop();
@@ -57,21 +57,21 @@
 
             // ~~~~~~ mobile nav logic (need to refactor) ~~~~~~
             if ($this.parents().hasClass('nav-primary__menu')) {
-              TechShedCo.toggleNavMenu();
+              TechshedCo.toggleNavMenu();
             }
-            if ($this.hasClass('logo') && !el.navPrimaryMenu.hasClass('is-hidden')) {
-              TechShedCo.toggleNavMenu();
+            if ($this.hasClass('logo') && !el.$navPrimaryMenu.hasClass('is-hidden')) {
+              TechshedCo.toggleNavMenu();
             }
             // check if already on page before fetching
             if (href !== page) {
-              TechShedCo.getPage(page);
+              TechshedCo.getPage(page);
               history.pushState({}, '', page);
             }
 
             $this.data('isClicked', true);
             setTimeout(function() {
               $this.removeData('isClicked');
-            }, 1000);
+            }, 2000);
           }
           ev.preventDefault();
         });
@@ -79,10 +79,19 @@
         // Enable back button via HTML5 pop state
         $(window).on('popstate', function(ev) {
           var href = location.href.split('/').pop();
-          TechShedCo.getPage(href);
+          TechshedCo.getPage(href);
           console.log(href);
           ev.preventDefault();
         });
+
+        // disable all transitions when window is being resized
+        $(window).on('resize', TechshedCo.debounce(function() {
+          clearInterval(timer);
+          $('body').addClass('no-transitions');
+          timer = setTimeout(function() {
+            $('body').removeClass('no-transitions');
+          }, 1000);
+        }, 0));
       },
 
       getPage: function(page) {
@@ -94,10 +103,10 @@
 
         // underline active nav link
         if (pageTitle === 'home' || pageTitle === '') {
-          el.navPrimary.removeClass('subpage');
+          el.$navPrimary.removeClass('subpage');
           $('.home').addClass('active').siblings().removeClass('active');
         } else {
-          el.navPrimary.addClass('subpage');
+          el.$navPrimary.addClass('subpage');
           $('.' + pageTitle).addClass('active').siblings().removeClass('active');
         }
 
@@ -107,44 +116,45 @@
         }
 
         // fade page window, load new page, fade back in
-        el.pageWindow.addClass('is-transitioning')
-          .on('transitionend webkitTransitionEnd', function(ev) {
+        el.$pageWindow.addClass('is-transitioning')
+          .on('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
             // check if page = home
             if (pageTitle === 'home' || pageTitle === '') {
-              el.pageWindow.load('/pages/home.html', function() {
-                TechShedCo.initPage(pageTitle);
+              el.$pageWindow.load('/pages/home.html', function() {
+                TechshedCo.initPage(pageTitle);
               });
               // not home, so load the url
             } else {
-              el.pageWindow.load(pageUrl, function(response, status) {
+              el.$pageWindow.load(pageUrl, function(response, status) {
                 if (status === 'error') {
-                  el.pageWindow.load('/pages/404.html');
+                  el.$pageWindow.load('/pages/404.html');
                 }
-                TechShedCo.initPage(pageTitle);
+                TechshedCo.initPage(pageTitle);
               });
             }
-            el.pageWindow.off('transitionend webkitTransitionEnd');
+            el.$pageWindow.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
             ev.stopPropagation();
           });
 
         setTimeout(function() {
-          TechShedCo.initJobScoreWidget();
+          TechshedCo.initJobScoreWidget();
         }, 1000);
       },
 
       initPage: function(pageTitle) {
-        el.pageWindow.removeClass('is-transitioning');
         NProgress.done();
-        $('p').unorphanize(2);
+        el.$pageWindow.removeClass('is-transitioning');
+        TechshedCo.setWaypoints();
+        $('p, h1, h2, h3, h4').unorphanize(1);
 
         // home init
         if (pageTitle === 'home' || pageTitle === '') {
           $('body').removeClass().addClass('home');
-          TechShedCo.fitText();
+          TechshedCo.fitText();
 
           // after video starts playing, remove the poster to avoid flicker on loop
-          var homeVideo = $('.video-bg');
-          homeVideo.on('timeupdate', function() {
+          var $homeVideo = $('.video-bg');
+          $homeVideo.on('timeupdate', function() {
             $(this).attr('poster', '');
           });
 
@@ -161,28 +171,28 @@
       },
 
       toggleNavMenu: function() {
-        if (el.navPrimaryMenu.hasClass('is-hidden')) {
-          el.pageWindow.addClass('no-scroll');
-          el.navPrimary.addClass('nav-primary__menu--on');
-          el.navToggle.html('CLOSE <span>×</span>');
-          el.navPrimaryMenu.css({
+        if (el.$navPrimaryMenu.hasClass('is-hidden')) {
+          el.$pageWindow.addClass('no-scroll');
+          el.$navPrimary.addClass('nav-primary__menu--on');
+          el.$navToggle.html('CLOSE <span>×</span>');
+          el.$navPrimaryMenu.css({
             'display': 'block'
           });
           setTimeout(function() {
-            el.navPrimaryMenu.removeClass('is-hidden');
+            el.$navPrimaryMenu.removeClass('is-hidden');
           }, 30);
 
         } else {
-          el.pageWindow.removeClass('no-scroll');
-          el.navPrimary.removeClass('nav-primary__menu--on');
-          el.navToggle.html('MENU <span>☰</span>');
-          el.navPrimaryMenu
+          el.$pageWindow.removeClass('no-scroll');
+          el.$navPrimary.removeClass('nav-primary__menu--on');
+          el.$navToggle.html('MENU <span>☰</span>');
+          el.$navPrimaryMenu
             .addClass('is-hidden')
-            .one('transitionend webkitTransitionEnd', function(ev) {
-              el.navPrimaryMenu.css({
+            .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
+              el.$navPrimaryMenu.css({
                 'display': 'none'
               });
-              el.navPrimaryMenu.off('transitionend webkitTransitionEnd');
+              el.$navPrimaryMenu.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
               ev.stopPropagation();
             });
         }
@@ -190,12 +200,24 @@
 
       // not enabled
       setHeaderHeight: function() {
-        var winH = $(window).height() - el.navPrimary.height();
+        var winH = $(window).height() - el.$navPrimary.height();
         if (winH < 600) {
-          // el.pageHeader.css(
+          // el.$pageHeader.css(
           //   'height', $(window).height()
           // );
         }
+      },
+
+      setWaypoints: function() {
+        $('.dormant').waypoint(function() {
+          var $this = $(this);
+          if ($this.hasClass('dormant')) {
+            $(this).waypoint('disable').removeClass('dormant');
+          }
+        }, {
+          offset: '70%'
+        });
+        $.waypoints('below');
       },
 
       initJobScoreWidget: function() {
@@ -226,5 +248,5 @@
         };
       }
     };
-  TechShedCo.init();
+  TechshedCo.init();
 })();

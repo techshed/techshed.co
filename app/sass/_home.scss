@@ -82,6 +82,7 @@
     position: absolute;
     color: #fff;
     margin-top: -1rem;
+    cursor: default;
 
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
@@ -153,6 +154,7 @@
   text-align: left;
 
   h2{
+    @extend %default-cursor;
     margin: 0;
     padding: 0;
     font-size: 5rem;
@@ -181,12 +183,51 @@
   }
 }
 
-// Home Block Styles
+// Block-specific Styles
 .home01{
-  background-image: url(../images/home/home01.jpg);
+  .block--img__img{
+    background-image: url(../images/home/home01.jpg);
+  }
 }
+
 .home02{
-  background-image: url(../images/home/home02.jpg);
+  .block--img__img{
+    background-image: url(../images/home/home02.jpg);
+  }
+
+  .pullquote{
+    @extend %sluggg-transition;
+
+    // MEDIUM: 641px min
+    @include respond-to(md-screen) {
+      padding: 8rem 0;
+    }
+    // LARGE: 1025px min
+    @include respond-to(lg-screen) {
+      padding: 10rem 0;
+    }
+    // X-LARGE: 1441px min
+    @include respond-to(x-lg-screen) {
+      padding: 12rem 0;
+    }
+    // XX-LARGE 1921px min
+    @include respond-to(xx-lg-screen) {
+      padding: 13rem 0;
+    }
+  }
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    &.dormant{
+      .block--img__img{
+        @include transform(scale(1.5));
+      }
+      p{
+        @include transform(scale(.9));
+      }
+    }
+  }
+
 }
 .home03{
   background-image: url(../images/home/home03.jpg);
@@ -207,9 +248,7 @@
 
   .wrapper{
     width: 90%;
-    max-width: 70rem;
     margin: 0 auto;
-
   }
   .col{
     float: left;
@@ -220,9 +259,24 @@
     text-align: center;
   }
 
+  @for $item from 1 through 8{
+    .col:nth-child(#{$item}){
+      .benefits__item{
+        transition-delay: #{$item / 9 }s;
+      }
+      p{
+        transition-delay: #{$item / 5 }s;
+      }
+    }
+  }
+
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     padding: 3rem 0;
+
+    .wrapper{
+      max-width: 65rem;
+    }
 
     .col{
       width: 33.333333%;
@@ -231,7 +285,9 @@
   }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
-
+    .wrapper{
+      max-width: 80rem;
+    }
     .col{
       width: 25%;
       margin-right: 0;
@@ -243,20 +299,27 @@
 }
 
 .benefits__item{
+  @extend %slowest-transition;
   display: inline-block;
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
-  border: .2rem solid #fff;
+  border: .25rem solid rgba(255,255,255,.99);
 
   p{
+    @extend %default-cursor;
+    @extend %slowest-transition;
     @extend %vertical-align;
     margin: 0;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 900;
     line-height: 1.1;
     color: #fff;
+
+    .dormant &{
+      opacity: 0;
+    }
   }
 
   // MEDIUM: 641px min
@@ -265,23 +328,12 @@
     width: 12rem;
     height: 12rem;
   }
+
+  .dormant &{
+    @extend %backface-hidden;
+    @include transform(rotateY(120deg) scale(.2));
+    border-color: rgba(255,255,255,0);
+  }
 }
 
-.location{
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
-    padding: 8rem 0;
-  }
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
-    padding: 10rem 0;
-  }
-  // X-LARGE: 1441px min
-  @include respond-to(x-lg-screen) {
-    padding: 12rem 0;
-  }
-  // XX-LARGE 1921px min
-  @include respond-to(xx-lg-screen) {
-    padding: 13rem 0;
-  }
-}
+

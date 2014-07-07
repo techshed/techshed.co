@@ -17,9 +17,14 @@
 
   h2{
     margin: 0 0 2rem;
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     font-weight: 900;
     line-height: 1.1;
+
+    span{
+      vertical-align: super;
+      font-size: 1.8rem;
+    }
   }
   .btn{
     width: 100%;
@@ -35,9 +40,9 @@
 
 .contact-footer__links{
   @extend %block-list;
-  margin-top: 2rem;
+  margin-top: 2.3rem;
 
   li{
-    margin: 0 2.3rem 1.3rem 0;
+    margin: 0 3.2rem 1.1rem 0;
   }
 }

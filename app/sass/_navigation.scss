@@ -5,6 +5,7 @@
   width: 100%;
   height: $primary-nav-height;
   z-index: 99;
+  cursor: default;
 
   a:active{
     opacity: .6;

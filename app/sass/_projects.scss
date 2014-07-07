@@ -1,9 +1,5 @@
 .projects{
 
-  .page-header{
-    margin-bottom: 3.5rem;
-  }
-
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
     .page-header__copy{
@@ -27,6 +23,7 @@
   @extend .block;
 
   img{
+    @extend %slug-transition;
     display: block;
     max-height: 35rem;
     max-width: 100%;
@@ -61,6 +58,7 @@
   height: 40rem;
   margin-bottom: 18rem;
   background-position: 93% center;
+  overflow: visible;
 
   .project__copy{
     background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.93) 50%, rgba(0, 0, 0, 0.93) 100%);
@@ -124,6 +122,12 @@
         float: right;
       }
     }
+    &.dormant{
+      img{
+        @include transform(translateX(-15rem));
+        opacity: 0;
+      }
+    }
   }
 }
 .project--img-right{
@@ -139,15 +143,23 @@
       float: left;
     }
     .project__copy{
-      right: -5rem;
+      right: -5%;
     }
     img{
       margin-left: 10px;
+    }
+
+    &.dormant{
+      img{
+        @include transform(translateX(15rem));
+        opacity: 0;
+      }
     }
   }
 }
 
 .project__img, .project__copy{
+  @extend %slower-transition;
   width: 100%;
   float: left;
 }

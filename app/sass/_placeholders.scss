@@ -28,6 +28,10 @@
   }
 }
 
+%default-cursor{
+  cursor: default;
+}
+
 %ghost-block{
   display: block;
   visibility: hidden;
@@ -69,6 +73,9 @@
 }
 %slug-transition{
   @include transition(all 1.5s $ease-in-out-quad);
+}
+%sluggg-transition{
+  @include transition(all 10s $ease-in-out-quad);
 }
 
 %hwa {
