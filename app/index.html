@@ -23,18 +23,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- facebook stuff -->
+  <meta property="og:title" content="Techshed"/>
+  <meta property="og:site_name" content="Techshed"/>
+  <meta property="og:description" content="We make meaningful interactive products that help homeowners and home improvement professionals build their dreams."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image:url" content="http://techshed.co/images/other/fb-ogimage.jpg" />
+  <!-- icons -->
   <link rel="icon" href="/favicons/favicon.ico">
   <link rel="apple-touch-icon" href="/favicons/57.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/favicons/72.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/favicons/60.png">
   <link rel="apple-touch-icon" sizes="76x76" href="/favicons/76.png">
-  <!-- Load Webfont.js early on to avoid FOUT (http://www.paulirish.com/2009/fighting-the-font-face-fout/) -->
+  <!-- load webfont.js early on to avoid FOUT (http://www.paulirish.com/2009/fighting-the-font-face-fout/) -->
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
-      custom: { families: ['Avenir'] },
+      custom: { families: ['Avenir', 'socicon-webfont'] },
+      urls: ['/styles/fonts.css'],
       google: { families: ['Libre Baskerville:italic'] },
-      fontinactive: function (font, fvd) { console.log("Couldn't load font: " + font); }
+      fontloading: function(font, fvd) { console.log(font + " is loading...")},
+      fontactive: function(font, fvd) { console.log(font + " is active.")},
+      fontinactive: function(font, fvd) { console.log("couldn't load: " + font)}
     });
   </script>
   <!-- build:css /styles/vendor.css -->
@@ -78,12 +89,18 @@
   <!-- Page Window -->
   <section id="page-window" role="main"></section>
 
+<!--<footer class="page-footer">
+    <a href="#" class="icon icon-twitter"></a>
+    <a href="#" class="icon icon-facebook"></a>
+    <a href="#" class="icon icon-youtube"></a>
+  </footer> -->
+
   <!-- jQuery via Google CDN -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- build:js /scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <script src="bower_components/FitText.js/jquery.fittext.js"></script>
   <script src="bower_components/nprogress/nprogress.js"></script>

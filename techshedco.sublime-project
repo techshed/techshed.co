@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.css",
+				"*.woff",
+				"*.svg",
+				"*.webm",
+				"*.mp4",
+				"app/bower_components"
+			],
+			"folder_exclude_patterns":
+			[
+				"dist",
+				".tmp",
+				".sass-cache",
+				"node_modules",
+				"test"
+			],
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

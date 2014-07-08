@@ -113,11 +113,14 @@
         // unload jobscore widget
         if (pageTitle === 'jobs') {
           window._jobscore_loader = false;
+          setTimeout(function() {
+            TechshedCo.initJobScoreWidget();
+          }, 1000);
         }
 
         // fade page window, load new page, fade back in
         el.$pageWindow.addClass('is-transitioning')
-          .on('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
+          .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
             // check if page = home
             if (pageTitle === 'home' || pageTitle === '') {
               el.$pageWindow.load('/pages/home.html', function() {
@@ -135,17 +138,13 @@
             el.$pageWindow.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
             ev.stopPropagation();
           });
-
-        setTimeout(function() {
-          TechshedCo.initJobScoreWidget();
-        }, 1000);
       },
 
       initPage: function(pageTitle) {
         NProgress.done();
         el.$pageWindow.removeClass('is-transitioning');
         TechshedCo.setWaypoints();
-        $('p, h1, h2, h3, h4').unorphanize(1);
+        $('p, h2, h3, h4').unorphanize(1);
 
         // home init
         if (pageTitle === 'home' || pageTitle === '') {

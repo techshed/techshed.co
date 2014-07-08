@@ -1,36 +1,36 @@
-// Avenir
+
 @font-face{
     font-family:"Avenir";
+    font-weight: 300;
     src:url("../fonts/avenir-book.eot?#iefix") format("eot"),
     url("../fonts/avenir-book.woff") format("woff"),
     url("../fonts/avenir-book.ttf") format("truetype"),
     url("../fonts/avenir-book.svg") format("svg");
-    font-weight: 300;
 }
 @font-face{
     font-family:"Avenir";
+    font-weight: 600;
     src:url("../fonts/avenir-heavy.eot?#iefix") format("eot"),
     url("../fonts/avenir-heavy.woff") format("woff"),
     url("../fonts/avenir-heavy.ttf") format("truetype"),
     url("../fonts/avenir-heavy.svg") format("svg");
-    font-weight: 600;
 }
 @font-face{
     font-family:"Avenir";
+    font-weight: 900;
     src:url("../fonts/avenir-black.eot?#iefix") format("eot"),
     url("../fonts/avenir-black.woff") format("woff"),
     url("../fonts/avenir-black.ttf") format("truetype"),
     url("../fonts/avenir-black.svg") format("svg");
-    font-weight: 900;
 }
 
-// Icons
 @font-face{
-    font-family: "socicon-webfont";
-    src: url("../fonts/socicon-webfont.eot#iefix") format("eot"),
-         url("../fonts/socicon-webfont.woff") format("woff"),
-         url("../fonts/socicon-webfont.ttf") format("truetype"),
-         url("../fonts/socicon-webfont.svg") format("svg");
+    font-family: 'techshedco-icons';
+    src: url('../fonts/techshedco-icons.eot?91874147');
+    src: url('../fonts/techshedco-icons.eot?91874147#iefix') format('embedded-opentype'),
+         url('../fonts/techshedco-icons.woff?91874147') format('woff'),
+         url('../fonts/techshedco-icons.ttf?91874147') format('truetype'),
+         url('../fonts/techshedco-icons.svg?91874147#techshedco-icons') format('svg');
     font-weight: normal;
     font-style: normal;
 }

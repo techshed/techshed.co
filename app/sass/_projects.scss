@@ -56,12 +56,12 @@
   @extend .project;
   @extend .block--img;
   height: 40rem;
-  margin-bottom: 18rem;
+  margin: 4rem 0 18rem;
   background-position: 93% center;
   overflow: visible;
 
   .project__copy{
-    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.93) 50%, rgba(0, 0, 0, 0.93) 100%);
+    background: linear-gradient(transparent 0%, #111 30%, #111 100%);
     padding: 10rem 2rem 4rem;
     width: 111.5%;
     left: -6%;
@@ -69,14 +69,15 @@
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
-    margin-bottom: 5rem;
+    margin: 0 0 5rem;
     height: 30rem;
 
     .project__copy{
-      background: none;
-      padding: 0;
-      width: 60%;
       left: 0;
+      width: 60%;
+      max-width: 40rem;
+      padding: 0;
+      background: none;
     }
     br{
       display: none;
@@ -88,7 +89,7 @@
     height: 37rem;
 
     .project__copy{
-      right: -4rem;
+      left: 7rem;
     }
   }
   // X-LARGE: 1441px min
@@ -100,7 +101,7 @@
   position: absolute;
   width: 10rem;
   height: 10rem;
-  top: -8rem;
+  top: -5rem;
   left: calc(50% - 5rem);
   font-weight: 900;
   line-height: 10rem;
@@ -193,12 +194,11 @@
 .project-01{
   background-image: url(../images/projects/project01.jpg);
 
-
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
     background-size: 110%;
   }
-  // LARGE: 1025px min
+  // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
     background-size: 100%;
   }

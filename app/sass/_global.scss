@@ -22,7 +22,7 @@ html{
   // LARGE: 1025px min
   @include respond-to(lg-screen) { font-size: 85%; }
   // X-LARGE: 1441px min
-  @include respond-to(x-lg-screen) { font-size: 95%; }
+  @include respond-to(x-lg-screen) { font-size: 104%; }
   // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) { font-size: 130%; }
 }
@@ -39,18 +39,12 @@ body{
 }
 
 a{
+  @include transition(color .1s $ease-in-out-quad);
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
 }
 
-.hidden{
-  display: none;
-}
-.invisible{
-  opacity: 0;
-}
-
-// NProgress Bar
+// nprogress bar
 #nprogress .bar {
   background: $homedepot-orange;
   height: 2px;
@@ -62,11 +56,7 @@ a{
   display: none;
 }
 
-.check-if-mobile{
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) { display: none; }
-}
-
+// displayed if browser < IE10
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -74,17 +64,11 @@ a{
   padding: 0.2em 0;
 }
 
-.wrapper{
-  @include outer-container;
-  position: relative;
-  height: 100%;
-  width: 90%;
-  margin: 0 auto;
-}
-
+// used to disable transitions during window resize
 .no-transitions *{
   @include transition(none !important);
 }
+
 
 // primary view window for pages
 #page-window{
@@ -100,11 +84,10 @@ a{
     @include transition(none);
     overflow: hidden;
   }
+  &.is-transitioning{
+    opacity: 0;
+  }
 }
-.is-transitioning{
-  opacity: 0;
-}
-
 .page-header{
   @include clearfix;
   position: relative;
@@ -156,6 +139,13 @@ a{
 }
 
 // layout containers
+.wrapper{
+  @include outer-container;
+  position: relative;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
 .row{
   position: relative;
   float: left;
@@ -175,6 +165,7 @@ a{
 }
 .block--img{
   @extend .block;
+  padding: 0;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -183,11 +174,6 @@ a{
 
   // iOS 1px gap fix
   margin-bottom: -1px;
-
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
-    margin-bottom: 0;
-  }
 
   a{
     // props to Marcin Wichary @ Medium.com for this fancy text underline method
@@ -202,9 +188,16 @@ a{
       color: rgba(255,255,255,0.8);
     }
   }
+  .pullquote{
+    padding: 13rem 0;
+  }
+
+  // LARGE: 1025px min
+  @include respond-to(lg-screen) {
+    margin-bottom: 0;
+  }
 }
 .block--img__img{
-  @extend %sluggg-transition;
   position: absolute;
   top: 0;
   width: 100%;
@@ -227,7 +220,7 @@ a{
   }
   // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
-    height: 55rem;
+    height: 47rem;
   }
   // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) {
@@ -250,27 +243,35 @@ a{
   @include respond-to(xx-lg-screen) { }
 }
 
-
-// Type
+// type related
 h4{
   margin: 0;
 }
 .pullquote{
   @extend %slowest-transition;
   @extend %serif;
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 10rem 0;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.6;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 4rem 0;
-  font-size: 2rem;
 
   &.sans-serif{
     @extend %sans-serif;
-    color: #fff;
     font-weight: 900;
     line-height: 1.48;
+    color: #fff;
   }
 }
 
+
+footer{
+  @extend .row;
+  height: 20rem;
+
+  .icon{
+    font-size: 3rem;
+  }
+}
 

@@ -48,7 +48,7 @@
       max-height: 65rem;
 
       &:before{
-        margin-top: 58%;
+        margin-top: 62%;
       }
       h1{
         width: 102%;
@@ -81,12 +81,11 @@
   .page-header__copy{
     position: absolute;
     color: #fff;
-    margin-top: -1rem;
     cursor: default;
 
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
-      margin-top: 1.5rem;
+      margin-top: 2.3rem;
     }
 
     // X-LARGE: 1441px min
@@ -126,9 +125,8 @@
   }
 }
 
-// culture block
+// culture
 .culture{
-  padding: 5rem 0;
 
   p:first-letter{
     font-size: 340%;
@@ -145,9 +143,10 @@
 }
 
 // our jobs block
-.our-jobs{
+.our-jobs__copy{
   @extend %vertical-align;
-  max-width: 38rem;
+  max-width: 48rem;
+  width: 90%;
   color: #444 !important;
   position: relative;
   margin: 0 auto;
@@ -173,9 +172,10 @@
     width: 100%;
   }
 
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
     max-width: 47rem;
+    width: 85%;
 
     .btn{
       max-width: 25rem;
@@ -185,6 +185,8 @@
 
 // Block-specific Styles
 .home01{
+  padding: 4rem 0;
+
   .block--img__img{
     background-image: url(../images/home/home01.jpg);
   }
@@ -192,28 +194,8 @@
 
 .home02{
   .block--img__img{
+    @include transition(all 20s $ease-in-out-quad);
     background-image: url(../images/home/home02.jpg);
-  }
-
-  .pullquote{
-    @extend %sluggg-transition;
-
-    // MEDIUM: 641px min
-    @include respond-to(md-screen) {
-      padding: 8rem 0;
-    }
-    // LARGE: 1025px min
-    @include respond-to(lg-screen) {
-      padding: 10rem 0;
-    }
-    // X-LARGE: 1441px min
-    @include respond-to(x-lg-screen) {
-      padding: 12rem 0;
-    }
-    // XX-LARGE 1921px min
-    @include respond-to(xx-lg-screen) {
-      padding: 13rem 0;
-    }
   }
 
   // MEDIUM: 641px min
@@ -221,9 +203,6 @@
     &.dormant{
       .block--img__img{
         @include transform(scale(1.5));
-      }
-      p{
-        @include transform(scale(.9));
       }
     }
   }
@@ -272,10 +251,10 @@
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
-    padding: 3rem 0;
 
     .wrapper{
       max-width: 65rem;
+      padding: 3rem 0
     }
 
     .col{
@@ -292,9 +271,6 @@
       width: 25%;
       margin-right: 0;
     }
-  }
-  // X-LARGE: 1025px min
-  @include respond-to(x-lg-screen) {
   }
 }
 
