@@ -28,6 +28,15 @@ def push_dev():
         git_checkout_and_pull(branch="master")
         clean()
         build()
+
+
+@task
+@roles('prod')
+def push_prod():
+    with cd(BASEDIR):
+        git_checkout_and_pull(branch="master")
+        clean()
+        build()
 # ---------------------------------------------------------------------------
 # HELPER COMMANDS
 
