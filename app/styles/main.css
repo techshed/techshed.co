@@ -22,7 +22,8 @@
   font-style: normal; }
 .pullquote, .subpage .page-header p {
   font-family: "Libre Baskerville", "Palatino Linotype", "Palatino", serif;
-  font-style: italic; }
+  font-style: italic;
+  letter-spacing: 0.06rem; }
 
 body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -88,7 +89,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
   -ms-transform: translateZ(0) translate3D(0, 0, 0);
   transform: translateZ(0) translate3D(0, 0, 0); }
 
-.nav-primary, .nav-primary__menu, .nav-primary__menu:before, .nav-primary__menu .nav-primary__link, .dormant .benefits__item {
+.nav-primary, .nav-primary__menu, .nav-primary__menu:before, .nav-primary__menu .nav-primary__link, .benefits__item {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
@@ -305,9 +306,6 @@ a {
       color: rgba(255, 255, 255, 0.8); }
   .block--img .pullquote, .project--featured .pullquote {
     padding: 13rem 0; }
-  @media screen and (min-width: 64.063em) {
-    .block--img, .project--featured {
-      margin-bottom: 0; } }
 
 .block--img__img {
   position: absolute;
@@ -513,7 +511,7 @@ footer {
       padding: 12rem 0 7rem; } }
   @media screen and (min-width: 64.063em) {
     .subpage .page-header {
-      padding: 15rem 0 10rem; } }
+      padding: 13rem 0 10rem; } }
   @media screen and (min-width: 90.063em) {
     .subpage .page-header {
       padding: 17rem 0 12rem; } }
@@ -537,9 +535,10 @@ footer {
     max-width: 36rem; }
   @media screen and (min-width: 40.063em) {
     .home .page-header {
-      background-image: none;
+      background-size: 82%;
+      background-position: right -15rem;
       height: auto;
-      max-height: 53rem; }
+      max-height: 48rem; }
       .home .page-header:before {
         content: '';
         display: block;
@@ -556,6 +555,7 @@ footer {
         max-width: 26rem; } }
   @media screen and (min-width: 64.063em) {
     .home .page-header {
+      background-image: none;
       max-height: 65rem; }
       .home .page-header:before {
         margin-top: 62%; }
@@ -593,7 +593,7 @@ footer {
   height: 100%;
   top: 0;
   right: 0; }
-  @media screen and (min-width: 40.063em) {
+  @media screen and (min-width: 64.063em) {
     .video-bg {
       display: block; } }
 
@@ -641,17 +641,7 @@ footer {
     background-image: url(../images/home/home01.jpg); }
 
 .home02 .block--img__img {
-  -webkit-transition: all 20s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -moz-transition: all 20s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: all 20s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   background-image: url(../images/home/home02.jpg); }
-@media screen and (min-width: 40.063em) {
-  .home02.dormant .block--img__img {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5); } }
 
 .home03 {
   background-image: url(../images/home/home03.jpg); }
@@ -735,20 +725,21 @@ footer {
     font-weight: 900;
     line-height: 1.1;
     color: #fff; }
-    .dormant .benefits__item p {
-      opacity: 0; }
   @media screen and (min-width: 40.063em) {
     .benefits__item {
       margin: 4.4%;
       width: 12rem;
       height: 12rem; } }
-  .dormant .benefits__item {
-    -webkit-transform: rotateY(120deg) scale(0.2);
-    -moz-transform: rotateY(120deg) scale(0.2);
-    -ms-transform: rotateY(120deg) scale(0.2);
-    -o-transform: rotateY(120deg) scale(0.2);
-    transform: rotateY(120deg) scale(0.2);
-    border-color: rgba(255, 255, 255, 0); }
+  @media screen and (min-width: 64.063em) {
+    .dormant .benefits__item {
+      -webkit-transform: rotateY(120deg) scale(0.2);
+      -moz-transform: rotateY(120deg) scale(0.2);
+      -ms-transform: rotateY(120deg) scale(0.2);
+      -o-transform: rotateY(120deg) scale(0.2);
+      transform: rotateY(120deg) scale(0.2);
+      border-color: rgba(255, 255, 255, 0); }
+      .dormant .benefits__item p {
+        opacity: 0; } }
 
 .jobs {
   /* MEDIUM: 641px min */ }

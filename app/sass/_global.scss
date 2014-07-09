@@ -191,11 +191,6 @@ a{
   .pullquote{
     padding: 13rem 0;
   }
-
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
-    margin-bottom: 0;
-  }
 }
 .block--img__img{
   position: absolute;
