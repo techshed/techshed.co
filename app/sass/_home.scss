@@ -2,10 +2,6 @@
 
   .page-header{
     background-color: #FAA568;
-    background-image: url(../images/home/header-bg.jpg);
-    background-size: 100%;
-    background-position: right bottom;
-    background-repeat: no-repeat;
     overflow: hidden;
 
     p{
@@ -80,6 +76,24 @@
     }
   }
 
+  .page-header__bg{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 40rem;
+    background-image: url(../images/home/header-bg.jpg);
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+    // MEDIUM: 641px min
+    @include respond-to(md-screen) {
+      max-width: 38rem;
+    }
+  }
+
   .page-header__copy{
     position: absolute;
     color: #fff;
@@ -130,6 +144,10 @@
 // culture
 .culture{
 
+  .pullquote{
+    @extend %serif;
+  }
+
   p:first-letter{
     font-size: 340%;
     line-height: 0;
@@ -164,6 +182,7 @@
     width: 30%;
   }
   p{
+    @extend %serif;
     line-height: 1.7;
     margin: 0;
     padding: 2rem 0;
