@@ -21,6 +21,10 @@
     @media screen and (min-width: 120.063em) { @content; }
   }
 
+  @else if $media == short-screen {
+    @media screen and (max-height: 40.063em) { @content; }
+  }
+
   /**** DEVICE SPECIFIC ****/
 
   // iPad Portrait

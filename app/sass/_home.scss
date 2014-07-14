@@ -69,7 +69,7 @@
 
     // XX-LARGE 1921px min
     @include respond-to(xx-lg-screen) {
-      max-height: rem(1440px);
+      max-height: 70rem;
 
       h1{
         margin-left: -1rem;
