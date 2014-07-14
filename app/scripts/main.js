@@ -150,6 +150,7 @@
         if (pageTitle === 'home' || pageTitle === '') {
           $('body').removeClass().addClass('home');
           TechshedCo.fitText();
+          TechshedCo.setHeaderHeight();
 
           // after video starts playing, remove the poster to avoid flicker on loop
           var $homeVideo = $('.video-bg');
@@ -199,11 +200,14 @@
 
       // not enabled
       setHeaderHeight: function() {
-        var winH = $(window).height() - el.$navPrimary.height();
-        if (winH < 600) {
-          // el.$pageHeader.css(
-          //   'height', $(window).height()
-          // );
+        var winH = $(window).height();
+        var pageHeader = $('.page-header');
+
+        if (pageHeader.height() > winH) {
+          console.log('header is taller than window');
+          pageHeader.css(
+            'max-height', winH
+          );
         }
       },
 
