@@ -150,7 +150,7 @@
         if (pageTitle === 'home' || pageTitle === '') {
           $('body').removeClass().addClass('home');
           TechshedCo.fitText();
-          TechshedCo.setHeaderHeight();
+        // TechshedCo.setHeaderHeight();
 
           // after video starts playing, remove the poster to avoid flicker on loop
           var $homeVideo = $('.video-bg');
