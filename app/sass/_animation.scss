@@ -1,0 +1,13 @@
+
+
+@include keyframes(bobbing) {
+  0% {
+    @include transform(translateY(0));
+  }
+  50% {
+    @include transform(translateY(1rem));
+  }
+  100%{
+    @include transform(translateY(0));
+  }
+}

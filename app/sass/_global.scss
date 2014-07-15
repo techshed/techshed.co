@@ -64,6 +64,11 @@ a{
   padding: 0.2em 0;
 }
 
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
 // used to disable transitions during window resize
 .no-transitions *{
   @include transition(none !important);
@@ -211,11 +216,11 @@ a{
   }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
-    height: 50rem;
+    height: 46rem;
   }
   // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
-    height: 47rem;
+    height: 58rem;
   }
   // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) {

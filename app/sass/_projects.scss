@@ -55,7 +55,7 @@
 .project--featured{
   @extend .project;
   @extend .block--img;
-  height: 40rem;
+  height: 38rem;
   margin: 4rem 0 18rem;
   background-position: 93% center;
   overflow: visible;
@@ -94,7 +94,7 @@
   }
   // X-LARGE: 1441px min
   @include respond-to(lg-screen) {
-    height: 43rem;
+    height: 40rem;
   }
 }
 .project--featured__badge{

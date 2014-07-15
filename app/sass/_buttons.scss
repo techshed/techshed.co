@@ -7,14 +7,15 @@
   font-size: 2rem;
   text-align: center;
   white-space: nowrap;
-  border-radius: .4rem;
-  border-width: .24rem;
+  border-radius: .5rem;
+  border-width: .25rem;
   border-style: solid;
   border-color: #fff;
   background-image: none;
   vertical-align: middle;
   cursor: pointer;
   background-image: none !important;
+  text-decoration: none;
 
   &.btn--large{
 
@@ -25,10 +26,10 @@
   }
   &.btn--white:hover, &.btn--white:active{
     color: #fff;
-    border-color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.7);
   }
   &.btn--black:hover, &.btn--black:active{
     color: #444;
-    border-color: rgba(0,0,0,0.8);
+    border-color: rgba(0,0,0,0.5);
   }
 }

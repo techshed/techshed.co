@@ -4,18 +4,20 @@
 
 // global styles
 @import 'vars';
-@import 'fonts';
-
 @import 'mediaqueries';
 @import 'placeholders';
+@import 'global';
+
+// components
 @import 'buttons';
 @import 'icons';
-@import 'global';
+@import 'fonts';
 @import 'navigation';
-@import 'subpages';
+@import 'animation';
 
 // page-specific styles
 @import 'home';
 @import 'jobs';
 @import 'projects';
 @import 'contact';
+@import 'subpages';
