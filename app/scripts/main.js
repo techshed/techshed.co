@@ -85,6 +85,7 @@
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
         clearInterval(timer);
+        $('.scroll-down-arrow').addClass('hidden');
         $('body').addClass('no-transitions');
         timer = setTimeout(function() {
           $('body').removeClass('no-transitions');
@@ -203,19 +204,19 @@
         pageHeader = $('.page-header'),
         downArrow = $('.scroll-down-arrow');
 
-      if (pageHeader.height() > winHeight && winHeight > 900) {
-        console.log('header is taller than window');
-        pageHeader.css(
-          'max-height', winHeight
-        );
-      }
+      // if (pageHeader.height() > winHeight && winHeight > 900) {
+      //   console.log('header is taller than window');
+      //   pageHeader.css(
+      //     'max-height', winHeight
+      //   );
+      // }
 
       // scroll down arrow
-      if (pageHeader.height() > winHeight) {
-        setTimeout(function() {
+      setTimeout(function() {
+        if (pageHeader.height() > winHeight && $(window).scrollTop() < 1) {
           downArrow.removeClass('hidden');
-        }, 7000);
-      }
+        }
+      }, 7000);
     },
 
     setWaypoints: function() {

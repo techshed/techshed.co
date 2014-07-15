@@ -35,7 +35,7 @@ body, .page-header h1, .pullquote.sans-serif, .home .page-header p {
     display: inline-block;
     float: left; }
 
-.nav-primary .logo, .nav-primary__menu .nav-primary__link:active {
+.logo, .nav-primary__menu .nav-primary__link:active {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none; }
@@ -128,7 +128,7 @@ a {
 
 #nprogress .bar {
   background: #f16322;
-  height: 2px; }
+  height: .2rem; }
 
 #nprogress .peg {
   display: none; }
@@ -150,6 +150,23 @@ a {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   transition: none !important; }
+
+.logo {
+  background-image: url("../images/global/techshed-logo.png");
+  background-size: cover;
+  width: 12rem;
+  height: 3rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font: 0/0 a;
+  font-size: 3rem;
+  color: transparent; }
+
+.logo--footer {
+  background-image: url("../images/global/techshed-logo-type.png");
+  width: 10rem;
+  height: 1.9rem; }
 
 #page-window {
   position: relative;
@@ -221,10 +238,11 @@ a {
     display: table;
     clear: both; }
 
-.row, footer {
+.row, .page-footer {
   position: relative;
   float: left;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: -1px; }
 
 .block, .block--img, .project--featured, .block--tall, .block--wide, .project, .project--img-left, .project--img-right {
   position: relative;
@@ -239,8 +257,7 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   color: #fff;
-  overflow: hidden;
-  margin-bottom: -1px; }
+  overflow: hidden; }
   .block--img a, .project--featured a {
     background-color: rgba(255, 255, 255, 0);
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
@@ -273,7 +290,7 @@ a {
       height: 46rem; } }
   @media screen and (min-width: 90.063em) {
     .block--tall {
-      height: 58rem; } }
+      height: 50rem; } }
   @media screen and (min-width: 120.063em) {
     .block--tall {
       height: 60rem; } }
@@ -301,10 +318,69 @@ h4 {
     line-height: 1.48;
     color: #fff; }
 
-footer {
-  height: 20rem; }
-  footer .icon {
-    font-size: 3rem; }
+.page-footer {
+  font-size: 1.4rem;
+  font-weight: 900;
+  padding: 3rem 0; }
+  .page-footer:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .page-footer .row, .page-footer .page-footer {
+    text-align: center; }
+  .page-footer .col {
+    height: 100%;
+    float: right;
+    width: 100%;
+    min-height: 8rem; }
+    .page-footer .col:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media screen and (min-width: 40.063em) {
+      .page-footer .col {
+        width: 50%; } }
+  .page-footer .back-to-top {
+    padding: 1rem 3rem;
+    margin: 1.6rem 0 5rem; }
+  .page-footer .site-code-colophon span {
+    color: #aaa;
+    padding: 0 .3rem;
+    font-weight: 600; }
+  .page-footer .site-code-colophon a {
+    color: #888;
+    text-decoration: underline; }
+
+@media screen and (min-width: 40.063em) {
+  .page-footer__location {
+    text-align: left; } }
+
+.page-footer__social-icons {
+  position: relative;
+  bottom: 1.5rem;
+  right: 0;
+  font-weight: normal;
+  text-align: center;
+  font-size: 2.8rem; }
+  .page-footer__social-icons a {
+    color: #444; }
+  @media screen and (min-width: 40.063em) {
+    .page-footer__social-icons {
+      text-align: right;
+      position: absolute; } }
+
+.nav-primary--footer {
+  text-align: right; }
+  .nav-primary--footer a {
+    color: #444;
+    margin: 0 0 0 1.2rem; }
+    .nav-primary--footer a.active span {
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.35) 50%);
+      background-image: linear-gradient(to bottom,transparent 50%, rgba(0, 0, 0, 0.35) 50%);
+      background-size: 1px 6.3px;
+      background-position: 0 1.4rem;
+      background-repeat: repeat-x; }
 
 .btn {
   display: inline-block;
@@ -373,17 +449,6 @@ footer {
   cursor: default; }
   .nav-primary a:active {
     opacity: .6; }
-  .nav-primary .logo {
-    background: url("../images/global/techshed-logo.png") left top no-repeat;
-    background-size: cover;
-    width: 12rem;
-    height: 3rem;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    font: 0/0 a;
-    font-size: 3rem;
-    color: transparent; }
   .nav-primary .logo, .nav-primary .nav-primary__menu--lg {
     position: absolute; }
   @media screen and (min-width: 40.063em) {
@@ -619,6 +684,9 @@ footer {
   @media screen and (min-width: 40.063em) {
     .home .page-header__bg {
       max-width: 38rem; } }
+  @media screen and (min-width: 64.063em) {
+    .home .page-header__bg {
+      display: none; } }
 .home .page-header__copy {
   position: absolute;
   color: #fff;
@@ -651,6 +719,9 @@ footer {
 @-moz-document url-prefix() {
   .culture p:first-letter {
     padding: 0.2rem 0.3rem 0.8rem 0.6rem; } }
+.our-jobs {
+  background: #fff; }
+
 .our-jobs__copy {
   max-width: 48rem;
   width: 90%;
@@ -1013,7 +1084,7 @@ footer {
   @media screen and (min-width: 90.063em) {
     .subpage .page-header {
       padding: 17rem 0 12rem; } }
-.subpage .logo {
+.subpage .nav-primary .logo {
   background-position: 0 -3.08rem; }
 .subpage .nav-primary__menu-toggle, .subpage .nav-primary__menu--lg a {
   color: #444; }

@@ -21,7 +21,6 @@
     @include animation(bobbing 1.0s $ease-in-out-quad);
     @include animation-iteration-count(infinite);
   }
-
 }
 
 .home{
@@ -118,6 +117,10 @@
     @include respond-to(md-screen) {
       max-width: 38rem;
     }
+    // LARGE: 1025px min
+    @include respond-to(lg-screen) {
+      display: none;
+    }
   }
 
   .page-header__copy{
@@ -186,6 +189,10 @@
       padding: 0.2rem 0.3rem 0.8rem 0.6rem;
     }
   }
+}
+
+.our-jobs{
+  background: #fff;
 }
 
 // our jobs block

@@ -41,7 +41,7 @@
     // XX-LARGE 1921px min
     @include respond-to(xx-lg-screen) {  }
   }
-  .logo{
+  .nav-primary .logo{
     background-position: 0 -3.08rem;
   }
   .nav-primary__menu-toggle, .nav-primary__menu--lg a{

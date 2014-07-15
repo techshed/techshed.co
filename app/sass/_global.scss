@@ -47,7 +47,7 @@ a{
 // nprogress bar
 #nprogress .bar {
   background: $homedepot-orange;
-  height: 2px;
+  height: .2rem;
 }
 #nprogress .peg {
   display: none;
@@ -74,6 +74,26 @@ a{
   @include transition(none !important);
 }
 
+
+.logo{
+  @extend %no-transition;
+  background-image: url('../images/global/techshed-logo.png');
+  background-size: cover;
+  width: 12rem;
+  height: 3rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font: 0/0 a;
+  font-size: 3rem;
+  color: transparent;
+}
+
+.logo--footer{
+  background-image: url('../images/global/techshed-logo-type.png');
+  width: 10rem;
+  height: 1.9rem;
+}
 
 // primary view window for pages
 #page-window{
@@ -155,6 +175,9 @@ a{
   position: relative;
   float: left;
   width: 100%;
+
+  // iOS 1px gap fix
+  margin-bottom: -1px;
 }
 .block{
   @extend %slug-transition;
@@ -176,9 +199,6 @@ a{
   background-repeat: no-repeat;
   color: #fff;
   overflow: hidden;
-
-  // iOS 1px gap fix
-  margin-bottom: -1px;
 
   a{
     // props to Marcin Wichary @ Medium.com for this fancy text underline method
@@ -220,7 +240,7 @@ a{
   }
   // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
-    height: 58rem;
+    height: 50rem;
   }
   // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) {
@@ -265,12 +285,89 @@ h4{
 }
 
 
-footer{
+.page-footer{
+  @include clearfix;
   @extend .row;
-  height: 20rem;
+  font-size: 1.4rem;
+  font-weight: 900;
+  padding: 3rem 0;
 
-  .icon{
-    font-size: 3rem;
+  .row{
+    text-align: center;
   }
+  .col{
+    @include clearfix;
+    height: 100%;
+    float: right;
+    width: 100%;
+    min-height: 8rem;
+
+    // MEDIUM: 641px min
+    @include respond-to(md-screen) {
+      width: 50%;
+    }
+  }
+
+  .back-to-top{
+    padding: 1rem 3rem;
+    margin: 1.6rem 0 5rem;
+  }
+  .site-code-colophon{
+    span{
+      color: #aaa;
+      padding: 0 .3rem;
+      font-weight: 600;
+    }
+    a{
+      color: #888;
+      text-decoration: underline;
+    }
+
+  }
+}
+
+.page-footer__location{
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    text-align: left;
+  }
+}
+.page-footer__social-icons{
+  position: relative;
+  bottom: 1.5rem;
+  right: 0;
+  font-weight: normal;
+  text-align: center;
+  font-size: 2.8rem;
+
+  a{
+    color: #444;
+  }
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    text-align: right;
+    position: absolute;
+  }
+}
+
+.nav-primary--footer{
+  text-align: right;
+  a{
+    color: #444;
+    margin: 0 0 0 1.2rem;
+
+    &.active{
+
+      span{
+        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 50%);
+        background-size: 1px 6.3px;
+        background-position: 0 1.4rem;
+        background-repeat: repeat-x;
+      }
+    }
+  }
+
 }
 

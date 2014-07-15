@@ -10,19 +10,6 @@
   a:active{
     opacity: .6;
   }
-  .logo{
-    @extend %no-transition;
-    background: url('../images/global/techshed-logo.png') left top no-repeat;
-    background-size: cover;
-    width: 12rem;
-    height: 3rem;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    font: 0/0 a;
-    font-size: 3rem;
-    color: transparent;
-  }
   .logo, .nav-primary__menu--lg{
     @extend %vertical-align;
     position: absolute;
