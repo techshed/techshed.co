@@ -1,4 +1,4 @@
-// Subpage-specific styles
+// Subpage specific global overrides
 .subpage{
 
   .nav-primary{
@@ -12,35 +12,6 @@
       }
     }
   }
-  .page-header{
-    height: auto;
-    padding: 7rem 0 2rem;
-
-    h1{
-      margin-left: -0.35rem;
-
-      span{
-        color: #ddd;
-        font-weight: 900;
-        display: block;
-        margin-bottom: 1.4rem;
-      }
-    }
-    p{
-      font-size: 2rem;
-      width: 100%;
-      margin-bottom: 0;
-    }
-
-    // MEDIUM: 641px min
-    @include respond-to(md-screen) { padding: 12rem 0 7rem; }
-    // LARGE: 1025px min
-    @include respond-to(lg-screen) { padding: 13rem 0 10rem; }
-    // X-LARGE: 1441px min
-    @include respond-to(x-lg-screen) { padding: 17rem 0 12rem; }
-    // XX-LARGE 1921px min
-    @include respond-to(xx-lg-screen) {  }
-  }
   .nav-primary .logo{
     background-position: 0 -3.08rem;
   }
@@ -48,8 +19,34 @@
     @extend %quick-transition;
     color: #444;
   }
-  .page-header p{
-    @extend %serif;
+}
+
+.page-header--subpage{
+  padding-bottom: 4rem;
+
+  .page-header__copy{
+    @include transform(translateY(0));
+    color: #444;
+
+    p{
+      @extend %serif;
+      font-size: 2rem;
+      width: 100%;
+      margin-bottom: 0;
+    }
   }
 
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    padding-bottom: 8rem;
+  }
+  // LARGE: 1025px min
+  @include respond-to(lg-screen) {
+    padding: 10rem 0;
+  }
+  // X-LARGE: 1441px min
+  @include respond-to(x-lg-screen) {
+    padding: 12rem 0;
+  }
 }
+

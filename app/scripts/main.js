@@ -24,6 +24,7 @@
       el = TechshedCo.elements;
       href = location.href.split('/').pop();
       FastClick.attach(document.body);
+      $('.page-footer').addClass('hidden');
       TechshedCo.getPage(href);
       TechshedCo.bindEvents();
     },
@@ -62,8 +63,14 @@
           }
           // check if already on page before fetching
           if (href !== page) {
-            TechshedCo.getPage(page);
-            history.pushState({}, '', page);
+            history.pushState({}, '', '/' + page);
+
+            $.smoothScroll({
+              scrollTarget: '0',
+              afterScroll: function() {
+                TechshedCo.getPage(page);
+              }
+            });
           }
 
           $this.data('isClicked', true);
@@ -124,6 +131,7 @@
           if (pageTitle === 'home' || pageTitle === '') {
             el.$pageWindow.load('/pages/home.html', function() {
               TechshedCo.initPage(pageTitle);
+              NProgress.done();
             });
             // not home, so load the url
           } else {
@@ -132,6 +140,7 @@
                 el.$pageWindow.load('/pages/404.html');
               }
               TechshedCo.initPage(pageTitle);
+              NProgress.done();
             });
           }
           el.$pageWindow.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
@@ -140,11 +149,11 @@
     },
 
     initPage: function(pageTitle) {
-      NProgress.done();
       el.$pageWindow.removeClass('is-transitioning');
       TechshedCo.setWaypoints();
-      $('p, h2, h3, h4').unorphanize(1);
       TechshedCo.bindEvents();
+      $('.page-footer').removeClass('hidden');
+      $('p, h2, h3, h4').unorphanize(1);
 
       // home init
       if (pageTitle === 'home' || pageTitle === '') {
@@ -198,7 +207,6 @@
       }
     },
 
-    // not enabled
     setHeaderHeight: function() {
       var winHeight = $(window).height(),
         pageHeader = $('.page-header'),
@@ -211,9 +219,9 @@
       //   );
       // }
 
-      // scroll down arrow
+      // 'scroll down' arrow
       setTimeout(function() {
-        if (pageHeader.height() > winHeight && $(window).scrollTop() < 1) {
+        if (pageHeader.height() >= winHeight && $(window).scrollTop() <= 1 && downArrow.hasClass('hidden')) {
           downArrow.removeClass('hidden');
         }
       }, 7000);

@@ -1,4 +1,31 @@
-
+// Animation
+%no-transition{
+  @include transition(none);
+}
+%quickest-transition{
+  @include transition(all .1s $ease-in-out-quad);
+}
+%quick-transition{
+  @include transition(all .12s $ease-in-out-quad);
+}
+%midspeed-transition{
+  @include transition(all .25s ease);
+}
+%regular-transition{
+  @include transition(all .33s ease);
+}
+%slower-transition{
+  @include transition(all .5s $ease-in-out-quad);
+}
+%slowest-transition{
+  @include transition(all 1s $ease-in-out-quad);
+}
+%slug-transition{
+  @include transition(all 1.5s $ease-in-out-quad);
+}
+%sluggg-transition{
+  @include transition(all 10s $ease-in-out-quad);
+}
 
 @include keyframes(bobbing) {
   0% {

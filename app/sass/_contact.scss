@@ -39,7 +39,7 @@
 }
 
 .contact-footer__links{
-  @extend %block-list;
+  @extend %inline-list;
   margin-top: 2.3rem;
 
   li{

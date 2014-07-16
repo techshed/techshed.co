@@ -90,9 +90,11 @@ a{
 }
 
 .logo--footer{
+  display: inline-block;
   background-image: url('../images/global/techshed-logo-type.png');
   width: 10rem;
   height: 1.9rem;
+
 }
 
 // primary view window for pages
@@ -117,17 +119,17 @@ a{
   @include clearfix;
   position: relative;
   float: left;
-  height: rem(850px);
   width: 100%;
   margin: 0;
   margin-top: -$primary-nav-height;
+  padding-top: $primary-nav-height;
 
   h1{
     @extend %sans-serif;
     @extend %default-cursor;
     width: 100%;
     padding: 0;
-    margin: 0 0 0 -.45rem;
+    margin: 0 0 0 -.4rem;
     font-weight: 900;
     line-height: .8;
     font-size: 6rem;
@@ -149,8 +151,19 @@ a{
   }
 }
 .page-header__copy{
+  @extend %vertical-align;
   width: 100%;
   z-index: 1;
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    margin-top: 2.3rem;
+  }
+
+  // X-LARGE: 1441px min
+  @include respond-to(x-lg-screen) {
+    margin-top: 2rem;
+  }
 }
 .page-header__bg{
   position: absolute;
@@ -168,8 +181,7 @@ a{
   @include outer-container;
   position: relative;
   height: 100%;
-  width: 90%;
-  margin: 0 auto;
+  width: 88%;
 }
 .row{
   position: relative;
@@ -288,7 +300,7 @@ h4{
 .page-footer{
   @include clearfix;
   @extend .row;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 900;
   padding: 3rem 0;
 
@@ -310,7 +322,7 @@ h4{
 
   .back-to-top{
     padding: 1rem 3rem;
-    margin: 1.6rem 0 5rem;
+    margin: 1.6rem 0 3rem;
   }
   .site-code-colophon{
     span{
@@ -353,7 +365,7 @@ h4{
 }
 
 .nav-primary--footer{
-  text-align: right;
+
   a{
     color: #444;
     margin: 0 0 0 1.2rem;
@@ -361,13 +373,17 @@ h4{
     &.active{
 
       span{
-        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 50%);
+        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.15) 50%);
         background-size: 1px 6.3px;
-        background-position: 0 1.4rem;
+        background-position: 0 2.8rem;
         background-repeat: repeat-x;
+        padding: 1rem 0;
       }
     }
   }
-
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    text-align: right;
+  }
 }
 
