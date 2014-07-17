@@ -42,10 +42,7 @@
     WebFont.load({
       custom: { families: ['Avenir', 'socicon-webfont'] },
       urls: ['/styles/fonts.css'],
-      google: { families: ['Libre Baskerville:italic'] },
-      fontloading: function(font, fvd) { console.log(font + " is loading...")},
-      fontactive: function(font, fvd) { console.log(font + " is active.")},
-      fontinactive: function(font, fvd) { console.log("couldn't load: " + font)}
+      google: { families: ['Libre Baskerville:italic'] }
     });
   </script>
   <!-- build:css /styles/vendor.css -->
@@ -89,25 +86,12 @@
   <!-- Page Window -->
   <section id="page-window" role="main"></section>
 
-  <footer class="page-footer">
+  <footer class="page-footer hidden">
     <div class="wrapper">
       <div class="row">
-        <a href="#" class="btn btn--black back-to-top">Back to top</a>
+        <a href="#" class="btn btn--back-to-top scroll-to-top">Back to top</a>
       </div>
       <div class="row">
-        <div class="col">
-          <div class="nav-primary nav-primary--footer">
-            <a class="home nav-primary__link" href="/"><span>Home</span></a>
-            <a class="jobs nav-primary__link" href="/jobs"><span>Jobs</span></a>
-            <a class="projects nav-primary__link" href="/projects"><span>Projects</span></a>
-            <a class="contact nav-primary__link" href="/contact"><span>Contact</span></a>
-          </div>
-          <div class="page-footer__social-icons">
-            <a href="#" class="icon icon-twitter"></a>
-            <a href="#" class="icon icon-facebook"></a>
-            <a href="#" class="icon icon-youtube"></a>
-          </div>
-        </div>
 
         <div class="col">
           <div class="page-footer__location">
@@ -122,9 +106,23 @@
           </div>
         </div>
 
+        <div class="col">
+          <div class="nav-primary nav-primary--footer">
+            <a class="home nav-primary__link" href="/"><span>Home</span></a>
+            <a class="jobs nav-primary__link" href="/jobs"><span>Jobs</span></a>
+            <a class="projects nav-primary__link" href="/projects"><span>Projects</span></a>
+            <a class="contact nav-primary__link" href="/contact"><span>Contact</span></a>
+          </div>
+          <div class="page-footer__social-icons">
+            <a href="#" class="icon icon-twitter"></a>
+            <a href="#" class="icon icon-facebook"></a>
+            <a href="#" class="icon icon-youtube"></a>
+          </div>
+        </div>
+
       </div>
       <div class="row">
-        <div class="site-code-colophon">
+        <div class="repo-link">
           <a href="#">Site code and colophon available on Github</a>
         </div>
       </div>
@@ -143,6 +141,8 @@
   <script src="bower_components/jquery-unorphanize/unorphanize.jquery.js"></script>
   <script src="bower_components/jquery-waypoints/waypoints.js"></script>
   <script src="bower_components/jquery.smooth-scroll/jquery.smooth-scroll.js"></script>
+  <script src="bower_components/jquery.lazyload/jquery.lazyload.js"></script>
+  <script src="bower_components/jquery.lazyload/jquery.scrollstop.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

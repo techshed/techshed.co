@@ -31,6 +31,10 @@
   cursor: default;
 }
 
+%no-selection{
+  @include user-select(none);
+}
+
 %ghost-block{
   display: block;
   visibility: hidden;

@@ -31,7 +31,7 @@ body{
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
-  color: #444;
+  color: $body-copy-color;
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
@@ -47,7 +47,7 @@ a{
 // nprogress bar
 #nprogress .bar {
   background: $homedepot-orange;
-  height: .2rem;
+  height: .18rem;
 }
 #nprogress .peg {
   display: none;
@@ -74,11 +74,13 @@ a{
   @include transition(none !important);
 }
 
-
 .logo{
   @extend %no-transition;
+  @extend %no-selection;
   background-image: url('../images/global/techshed-logo.png');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
   width: 12rem;
   height: 3rem;
   left: 0;
@@ -92,19 +94,23 @@ a{
 .logo--footer{
   display: inline-block;
   background-image: url('../images/global/techshed-logo-type.png');
-  width: 10rem;
-  height: 1.9rem;
-
+  background-size: contain;
+  width: 11rem;
+  height: 2.1rem;
+  margin-bottom: $baseline-spacing-soft;
 }
 
 // primary view window for pages
 #page-window{
-  @extend %regular-transition;
+  @extend %fade-transition;
   position: relative;
   float: left;
   width: 100%;
+  height: auto;
   margin-top: -$primary-nav-height;
   padding-top: $primary-nav-height;
+  margin-bottom: $baseline-spacing-soft;
+  overflow-x: hidden;
 
   &.no-scroll{
     height: 100%;
@@ -298,19 +304,20 @@ h4{
 
 
 .page-footer{
+  @extend %regular-transition;
   @include clearfix;
   @extend .row;
   font-size: 1.6rem;
   font-weight: 900;
-  padding: 3rem 0;
 
   .row{
     text-align: center;
+    margin-bottom: $baseline-spacing-hard;
   }
   .col{
     @include clearfix;
     height: 100%;
-    float: right;
+    float: left;
     width: 100%;
     min-height: 8rem;
 
@@ -319,71 +326,59 @@ h4{
       width: 50%;
     }
   }
-
-  .back-to-top{
-    padding: 1rem 3rem;
-    margin: 1.6rem 0 3rem;
-  }
-  .site-code-colophon{
-    span{
-      color: #aaa;
-      padding: 0 .3rem;
-      font-weight: 600;
-    }
-    a{
-      color: #888;
-      text-decoration: underline;
-    }
-
-  }
 }
 
 .page-footer__location{
+  margin-bottom: $baseline-spacing-hard;
+
+  p{
+    margin: 0 0 $baseline-spacing-soft;
+  }
+  a{
+    color: #444;
+  }
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     text-align: left;
+    margin-bottom: 0;
+
+    p:last-child{
+      margin-bottom: 0;
+    }
   }
+
 }
 .page-footer__social-icons{
   position: relative;
-  bottom: 1.5rem;
-  right: 0;
+  float: left;
   font-weight: normal;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3.2rem;
+  width: 100%;
 
   a{
-    color: #444;
+    color: $body-copy-color;
+    margin: 0 0.6rem;
   }
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
+    font-size: 2.8rem;
     text-align: right;
-    position: absolute;
   }
 }
+.repo-link{
+  font-size: 1.3rem;
 
-.nav-primary--footer{
-
-  a{
-    color: #444;
-    margin: 0 0 0 1.2rem;
-
-    &.active{
-
-      span{
-        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.15) 50%);
-        background-size: 1px 6.3px;
-        background-position: 0 2.8rem;
-        background-repeat: repeat-x;
-        padding: 1rem 0;
-      }
-    }
+  span{
+    color: lighten($body-copy-color, 30%);
+    padding: 0 .3rem;
+    font-weight: 600;
   }
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
-    text-align: right;
+  a{
+    color: lighten($body-copy-color, 30%);
+    text-decoration: underline;
   }
 }
 

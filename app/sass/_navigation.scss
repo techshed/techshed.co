@@ -1,4 +1,5 @@
 .nav-primary{
+  @extend %no-selection;
   @extend %backface-hidden;
   position: relative;
   float: left;
@@ -148,6 +149,46 @@
         background-position: 0 2.9rem;
         background-repeat: repeat-x;
       }
+    }
+  }
+}
+
+.nav-primary--footer{
+  height: auto;
+  margin-bottom: $baseline-spacing-hard;
+
+  a{
+    color: $body-copy-color;
+    margin: 0 .5rem;
+    font-size: 1.8rem;
+
+    &.active{
+
+      span{
+        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.15) 50%);
+        background-size: 0.1rem 0.4rem;
+        background-position: 0.1rem 3.2rem;
+        background-repeat: repeat-x;
+        padding: 1rem 0;
+      }
+    }
+  }
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    text-align: right;
+    margin-bottom: $baseline-spacing-soft * 3.5;
+
+    a{
+      font-size: 1.4rem;
+      margin: 0 0.5rem;
+    }
+  }
+  // LARGE: 1025px min
+  @include respond-to(lg-screen) {
+
+    a{
+      font-size: 1.6rem;
+      margin: 0 0.8rem;
     }
   }
 }

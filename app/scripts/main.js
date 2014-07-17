@@ -5,7 +5,8 @@
   'use strict';
 
   var el, href, timer, TechshedCo = {
-    elements: {
+
+    globalElements: {
       // Nav
       $navPrimary: $('.nav-primary'),
       $navToggle: $('.nav-primary__menu-toggle'),
@@ -13,20 +14,25 @@
       $navPrimaryMenuLg: $('.nav-primary__menu--lg'),
       $navPrimaryLink: $('.nav-primary__link'),
       $pageWindow: $('#page-window'),
-      $pageHeader: $('.page-header'),
-      $homeVideo: $('.video-bg'),
-      $homeHeadline: $('.home .page-header h1')
+      $pageFooter: $('#page-footer'),
+      $scrollToTop: $('.scroll-to-top')
     },
 
     init: function() {
+      console.log('site init');
       window.TechshedCo = this;
       TechshedCo = this;
-      el = TechshedCo.elements;
-      href = location.href.split('/').pop();
+      el = TechshedCo.globalElements;
+      href = window.location.href.split('/').pop();
       FastClick.attach(document.body);
-      $('.page-footer').addClass('hidden');
-      TechshedCo.getPage(href);
+      NProgress.configure({
+        trickleRate: 0.01,
+        trickleSpeed: 100,
+        minimum: 0.7
+      });
+
       TechshedCo.bindEvents();
+      TechshedCo.getPage(href);
     },
 
     bindEvents: function() {
@@ -49,7 +55,7 @@
       el.$navPrimaryLink.on('click', function(ev) {
         var $this = $(this),
           page = $this.attr('class').split(' ')[0];
-        href = location.href.split('/').pop();
+        href = window.location.href.split('/').pop();
 
         // Prevent multiple clicks within .4s window
         if (!$this.data('isClicked')) {
@@ -58,6 +64,7 @@
           if ($this.parents().hasClass('nav-primary__menu')) {
             TechshedCo.toggleNavMenu();
           }
+          // hide mobile nav menu if logo is clicked
           if ($this.hasClass('logo') && !el.$navPrimaryMenu.hasClass('is-hidden')) {
             TechshedCo.toggleNavMenu();
           }
@@ -65,6 +72,7 @@
           if (href !== page) {
             history.pushState({}, '', '/' + page);
 
+            // scroll to the top of the page before loading new page
             $.smoothScroll({
               scrollTarget: '0',
               afterScroll: function() {
@@ -81,13 +89,22 @@
         ev.preventDefault();
       });
 
-      // Enable back button via HTML5 pop state
-      $(window).on('popstate', function(ev) {
-        var href = location.href.split('/').pop();
-        TechshedCo.getPage(href);
-        console.log(href);
+      el.$scrollToTop.on('click', function(ev) {
+        $.smoothScroll({
+          scrollTarget: '0'
+        });
         ev.preventDefault();
       });
+
+      // Enable back button via HTML5 pop state
+      setTimeout(function() {
+        $(window).on('popstate', function(ev) {
+          var href = window.location.href.split('/').pop();
+          console.log(href);
+          ev.preventDefault();
+        });
+      }, 1500);
+
 
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
@@ -101,11 +118,16 @@
     },
 
     getPage: function(page) {
+
+      console.log('getpage ' + page + '...');
+
       // strip special characters
       var pageTitle = page.replace(/[^a-z0-9\s]/gi, '');
       // page html path
       var pageUrl = ('/pages/' + pageTitle + '.html');
       NProgress.start();
+
+      $('.page-footer').addClass('hidden');
 
       // underline active nav link
       if (pageTitle === 'home' || pageTitle === '') {
@@ -116,7 +138,7 @@
         $('.' + pageTitle).addClass('active').siblings().removeClass('active');
       }
 
-      // unload jobscore widget
+      // if jobs page, load the jobscore widget
       if (pageTitle === 'jobs') {
         window._jobscore_loader = false;
         setTimeout(function() {
@@ -127,10 +149,11 @@
       // fade page window, load new page, fade back in
       el.$pageWindow.addClass('is-transitioning')
         .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
+
           // check if page = home
           if (pageTitle === 'home' || pageTitle === '') {
             el.$pageWindow.load('/pages/home.html', function() {
-              TechshedCo.initPage(pageTitle);
+              TechshedCo.showPage(pageTitle);
               NProgress.done();
             });
             // not home, so load the url
@@ -139,23 +162,26 @@
               if (status === 'error') {
                 el.$pageWindow.load('/pages/404.html');
               }
-              TechshedCo.initPage(pageTitle);
+              TechshedCo.showPage(pageTitle);
               NProgress.done();
             });
           }
           el.$pageWindow.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
           ev.stopPropagation();
+
         });
     },
 
-    initPage: function(pageTitle) {
+    showPage: function(pageTitle) {
+
+      console.log('showPage ' + pageTitle + 'page...');
+
       el.$pageWindow.removeClass('is-transitioning');
       TechshedCo.setWaypoints();
-      TechshedCo.bindEvents();
       $('.page-footer').removeClass('hidden');
-      $('p, h2, h3, h4').unorphanize(1);
+      $('#page-window p, h2, h3, h4').unorphanize(1);
 
-      // home init
+      // init home
       if (pageTitle === 'home' || pageTitle === '') {
         $('body').removeClass().addClass('home');
         TechshedCo.fitText();
@@ -163,14 +189,18 @@
 
         // after video starts playing, remove the poster to avoid flicker on loop
         var $homeVideo = $('.video-bg');
-        $homeVideo.on('timeupdate', function() {
+        $homeVideo.on('playing', function() {
           $(this).attr('poster', '');
         });
 
-        // subpage init
+        // init subpage
       } else {
         $('body').removeClass().addClass(pageTitle + ' subpage');
       }
+      // prevent pageWindow collapsing to 0 height
+      $('.page-window').css({
+        'min-height': $('.page-window').height()
+      });
     },
 
     fitText: function() {
@@ -181,6 +211,9 @@
 
     toggleNavMenu: function() {
       if (el.$navPrimaryMenu.hasClass('is-hidden')) {
+        $('.page-footer').css({
+          'display': 'none'
+        });
         el.$pageWindow.addClass('no-scroll');
         el.$navPrimary.addClass('nav-primary__menu--on');
         el.$navToggle.html('CLOSE <span>×</span>');
@@ -192,6 +225,9 @@
         }, 30);
 
       } else {
+        $('.page-footer').css({
+          'display': 'block'
+        });
         el.$pageWindow.removeClass('no-scroll');
         el.$navPrimary.removeClass('nav-primary__menu--on');
         el.$navToggle.html('MENU <span>☰</span>');
@@ -221,7 +257,7 @@
 
       // 'scroll down' arrow
       setTimeout(function() {
-        if (pageHeader.height() >= winHeight && $(window).scrollTop() <= 1 && downArrow.hasClass('hidden')) {
+        if (downArrow.hasClass('hidden') && pageHeader.height() > winHeight && $(window).scrollTop() <= 1) {
           downArrow.removeClass('hidden');
         }
       }, 7000);

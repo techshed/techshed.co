@@ -1,5 +1,5 @@
 .page-header--home{
-  background-color: #FAA568;
+  background-color: #FBAB69;
   overflow: hidden;
   height: 52rem;
 
@@ -94,12 +94,14 @@
   max-width: 70%;
   background-image: url(../images/home/header-bg.jpg);
   background-size: cover;
-  background-position: right bottom;
+  background-position: left bottom;
   background-repeat: no-repeat;
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
-    max-width: 38rem;
+    max-width: 44rem;
+    top: 3%;
+    left: 46%;
   }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
@@ -166,7 +168,7 @@
   @extend %vertical-align;
   max-width: 48rem;
   width: 90%;
-  color: #444 !important;
+  color: $body-copy-color;
   position: relative;
   margin: 0 auto;
   text-align: left;
@@ -323,8 +325,8 @@
   }
 }
 
-
 .scroll-down-arrow{
+  @extend %default-cursor;
   @extend %regular-transition;
   display: none;
   position: fixed;

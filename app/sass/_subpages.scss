@@ -13,11 +13,11 @@
     }
   }
   .nav-primary .logo{
-    background-position: 0 -3.08rem;
+    background-position: left bottom;
   }
   .nav-primary__menu-toggle, .nav-primary__menu--lg a{
     @extend %quick-transition;
-    color: #444;
+    color: $body-copy-color;
   }
 }
 
@@ -26,7 +26,7 @@
 
   .page-header__copy{
     @include transform(translateY(0));
-    color: #444;
+    color: $body-copy-color;
 
     p{
       @extend %serif;

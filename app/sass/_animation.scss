@@ -27,6 +27,10 @@
   @include transition(all 10s $ease-in-out-quad);
 }
 
+%fade-transition{
+  @include transition(opacity .33s ease);
+}
+
 @include keyframes(bobbing) {
   0% {
     @include transform(translateY(0));

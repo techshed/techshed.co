@@ -3,7 +3,7 @@
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
     .page-header__copy{
-      max-width: 74rem;
+      max-width: 80rem;
     }
   }
 

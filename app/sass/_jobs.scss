@@ -1,4 +1,5 @@
 .jobs{
+
   /* MEDIUM: 641px min */
   @include respond-to(md-screen) {
     .page-header__copy{
@@ -12,4 +13,5 @@
 
 .jobscore-jobs{
   max-width: 900px;
+  min-height: 50rem;
 }
