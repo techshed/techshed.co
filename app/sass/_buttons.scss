@@ -1,21 +1,20 @@
 .btn{
+  @extend %no-selection;
   display: inline-block;
   margin-bottom: 0;
   padding: 1rem 0;
-  font-weight: 900;
-  font-size: 2rem;
-  text-align: center;
-  white-space: nowrap;
   border-radius: .5rem;
   border-width: .24rem;
   border-style: solid;
   background-image: none;
   vertical-align: middle;
   cursor: pointer;
-  background-image: none !important;
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+  white-space: nowrap;
   text-decoration: none;
 }
-
 .btn--white{
   color: #fff;
   border-color: #fff;
@@ -27,7 +26,6 @@
     border-color: rgba(255,255,255,0.5);
   }
 }
-
 .btn--black{
   color: $body-copy-color;
   border-color: $body-copy-color;
@@ -39,7 +37,6 @@
     border-color: rgba($body-copy-color,0.5);
   }
 }
-
 .btn--back-to-top{
   @extend .btn--black;
   padding: .8rem 3.3rem;

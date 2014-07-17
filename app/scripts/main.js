@@ -19,7 +19,7 @@
     },
 
     init: function() {
-      console.log('site init');
+      console.log('init site');
       window.TechshedCo = this;
       TechshedCo = this;
       el = TechshedCo.globalElements;
@@ -31,13 +31,22 @@
         minimum: 0.7
       });
 
-      TechshedCo.bindEvents();
-      TechshedCo.getPage(href);
+      // Enable back button via HTML5 pop state
+
+      $(window).on('popstate', function(ev) {
+        ev.preventDefault();
+        console.log('location: ' + document.location + ', state: ' + JSON.stringify(event.state));
+        console.log('popstate init');
+        TechshedCo.getPage(href);
+      });
     },
 
     bindEvents: function() {
-      // Nav toggle button
+
+      // mobile primary nav toggle
       el.$navToggle.on('click', function(ev) {
+        ev.preventDefault();
+
         // Prevent multiple clicks within .4s window
         if (!$(this).data('isClicked')) {
           TechshedCo.toggleNavMenu();
@@ -47,11 +56,12 @@
             link.removeData('isClicked');
           }, 400);
         }
-        ev.preventDefault();
       });
 
-      // Page links
+      // primary nav links
       el.$navPrimaryLink.on('click', function(ev) {
+        ev.preventDefault();
+
         var $this = $(this),
           page = $this.attr('class').split(' ')[0];
         href = window.location.href.split('/').pop();
@@ -66,7 +76,7 @@
         }
         // check if already on the requested page
         if (href !== page) {
-          history.pushState({}, '', '/' + page);
+          history.pushState(null, null, '/' + page);
 
           // scroll to the top of the page before loading new page
           $.smoothScroll({
@@ -77,25 +87,15 @@
           });
         }
 
-        ev.preventDefault();
       });
 
       el.$scrollToTop.on('click', function(ev) {
+        ev.preventDefault();
         $.smoothScroll({
           scrollTarget: '0'
         });
-        ev.preventDefault();
-      });
 
-      // Enable back button via HTML5 pop state
-      setTimeout(function() {
-        $(window).on('popstate', function(ev) {
-          console.log('popstate init');
-          var href = window.location.href.split('/').pop();
-          console.log(href);
-          ev.preventDefault();
-        });
-      }, 1500);
+      });
 
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
@@ -110,8 +110,6 @@
 
     getPage: function(page) {
 
-      console.log('getpage: ' + page);
-
       // strip special characters
       var pageTitle = page.replace(/[^a-z0-9\s]/gi, '');
       // page html path
@@ -125,6 +123,7 @@
         el.$navPrimary.removeClass('subpage');
         $('.home').addClass('active').siblings().removeClass('active');
       } else {
+
         el.$navPrimary.addClass('subpage');
         $('.' + pageTitle).addClass('active').siblings().removeClass('active');
       }
@@ -138,18 +137,23 @@
       }
 
       // fade page window, load new page, fade back in
-      el.$pageWindow.addClass('is-transitioning')
+      el.$pageWindow
+        .addClass('is-transitioning')
         .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
 
           // check if page = home
           if (pageTitle === 'home' || pageTitle === '') {
+            console.log('getpage: home');
             el.$pageWindow.load('/pages/home.html', function() {
+              console.log('loadpage: home');
               TechshedCo.showPage(pageTitle);
               NProgress.done();
             });
             // not home, so load the url
           } else {
+            console.log('getpage: ' + page);
             el.$pageWindow.load(pageUrl, function(response, status) {
+              console.log('loadpage: ' + page);
               if (status === 'error') {
                 el.$pageWindow.load('/pages/404.html');
               }
@@ -159,21 +163,20 @@
           }
           el.$pageWindow.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
           ev.stopPropagation();
-
         });
     },
 
     showPage: function(pageTitle) {
 
-      console.log('showPage: ' + pageTitle);
-
       el.$pageWindow.removeClass('is-transitioning');
+      TechshedCo.bindEvents();
       TechshedCo.setWaypoints();
       $('.page-footer').removeClass('hidden');
       $('#page-window p, h2, h3, h4').unorphanize(1);
 
       // init home
       if (pageTitle === 'home' || pageTitle === '') {
+        console.log('showPage: home');
         $('body').removeClass().addClass('home');
         TechshedCo.fitText();
         TechshedCo.setHeaderHeight();
@@ -186,6 +189,7 @@
 
         // init subpage
       } else {
+        console.log('showPage: ' + pageTitle);
         $('body').removeClass().addClass(pageTitle + ' subpage');
       }
       // prevent pageWindow collapsing to 0 height

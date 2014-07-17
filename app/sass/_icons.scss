@@ -1,5 +1,6 @@
 
 .icon{
+  @extend %no-selection;
   font-family: 'socicon-webfont' !important;
   font-style: normal;
 }

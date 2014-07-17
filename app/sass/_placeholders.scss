@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-// Positioning
+// Layout & Positioning
 %vertical-align {
   @include transform(translateY(-50%));
   position: relative;
@@ -26,21 +26,6 @@
     margin-right: -0.25em; /* Adjusts for spacing */
   }
 }
-
-%default-cursor{
-  cursor: default;
-}
-
-%no-selection{
-  @include user-select(none);
-}
-
-%ghost-block{
-  display: block;
-  visibility: hidden;
-  height: 0;
-}
-
 %inline-list{
   margin: 0;
   padding: 0;
@@ -51,7 +36,21 @@
     float: left;
   }
 }
+%ghost-block{
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
 
+// Helpers
+%default-cursor{
+  cursor: default;
+}
+%no-selection{
+  @include user-select(none);
+}
+
+// Rendering
 %hwa {
   -webkit-transform: translateZ(0) translate3D(0,0,0);
   -moz-transform: translateZ(0) translate3D(0,0,0);
@@ -59,7 +58,6 @@
   -ms-transform: translateZ(0) translate3D(0,0,0);
   transform: translateZ(0) translate3D(0,0,0);
 }
-
 %backface-hidden {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

@@ -21,20 +21,6 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home p {
   position: relative;
   top: 50%; }
 
-.page-header h1, .our-jobs__copy h2, .benefits__item p, .scroll-down-arrow {
-  cursor: default; }
-
-.logo, .nav-primary {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
-.page-header .comma, .page-header .break-sm {
-  display: block;
-  visibility: hidden;
-  height: 0; }
-
 .contact-footer__links {
   margin: 0;
   padding: 0;
@@ -42,6 +28,20 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home p {
   .contact-footer__links li {
     display: inline-block;
     float: left; }
+
+.page-header .comma, .page-header .break-sm {
+  display: block;
+  visibility: hidden;
+  height: 0; }
+
+.page-header h1, .our-jobs__copy h2, .benefits__item p, .scroll-down-arrow {
+  cursor: default; }
+
+.logo, .btn, .icon, .nav-primary {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .nav-primary__menu, .nav-primary__menu:before {
   -webkit-transform: translateZ(0) translate3D(0, 0, 0);
@@ -374,17 +374,16 @@ h4 {
   display: inline-block;
   margin-bottom: 0;
   padding: 1rem 0;
-  font-weight: 900;
-  font-size: 2rem;
-  text-align: center;
-  white-space: nowrap;
   border-radius: .5rem;
   border-width: .24rem;
   border-style: solid;
   background-image: none;
   vertical-align: middle;
   cursor: pointer;
-  background-image: none !important;
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+  white-space: nowrap;
   text-decoration: none; }
 
 .btn--white {
@@ -664,7 +663,7 @@ h4 {
     font-weight: 900;
     line-height: 1.3;
     width: 100%;
-    max-width: 37rem; }
+    max-width: 36rem; }
   .page-header--home .page-header__copy {
     position: absolute;
     color: #fff; }
@@ -901,18 +900,18 @@ h4 {
   font-size: 6rem;
   text-align: center; }
   .scroll-down-arrow span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
     -webkit-animation: bobbing 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     -moz-animation: bobbing 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     animation: bobbing 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
-    animation-iteration-count: infinite; }
+    animation-iteration-count: infinite;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%; }
 
 .jobs {
   /* MEDIUM: 641px min */ }
