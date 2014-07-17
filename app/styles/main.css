@@ -159,7 +159,7 @@ a {
   margin-top: -7rem;
   padding-top: 7rem;
   margin-bottom: 2.2rem;
-  overflow-x: hidden; }
+  overflow: hidden; }
   #page-window.no-scroll {
     height: 100%;
     -webkit-transition: none;
@@ -390,21 +390,23 @@ h4 {
 .btn--white {
   color: #fff;
   border-color: #fff; }
-  .btn--white:hover, .btn--white:active {
-    color: #fff;
+  .btn--white:hover {
     border-color: rgba(255, 255, 255, 0.7); }
+  .btn--white:active {
+    border-color: rgba(255, 255, 255, 0.5); }
 
 .btn--black, .btn--back-to-top {
   color: #414141;
   border-color: #414141; }
-  .btn--black:hover, .btn--back-to-top:hover, .btn--black:active, .btn--back-to-top:active {
-    border-color: rgba(65, 65, 65, 0.7) !important; }
+  .btn--black:hover, .btn--back-to-top:hover {
+    border-color: rgba(65, 65, 65, 0.7); }
+  .btn--black:active, .btn--back-to-top:active {
+    border-color: rgba(65, 65, 65, 0.5); }
 
 .btn--back-to-top {
   padding: .8rem 3.3rem;
   border-width: .19rem;
-  font-size: 1.4rem;
-  border-color: rgba(65, 65, 65, 0.7); }
+  font-size: 1.4rem; }
 
 .icon {
   font-family: 'socicon-webfont' !important;
@@ -589,7 +591,7 @@ h4 {
   -moz-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-.page-footer, .nav-primary__menu, .nav-primary__menu:before, .nav-primary__menu .nav-primary__link, .scroll-down-arrow {
+.nav-primary__menu, .nav-primary__menu:before, .nav-primary__menu .nav-primary__link, .scroll-down-arrow {
   -webkit-transition: all 0.33s ease;
   -moz-transition: all 0.33s ease;
   transition: all 0.33s ease; }
@@ -609,7 +611,7 @@ h4 {
   -moz-transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-#page-window {
+#page-window, .page-footer {
   -webkit-transition: opacity 0.33s ease;
   -moz-transition: opacity 0.33s ease;
   transition: opacity 0.33s ease; }
@@ -920,7 +922,7 @@ h4 {
 
 .jobscore-jobs {
   max-width: 900px;
-  min-height: 50rem; }
+  min-height: 37rem; }
 
 @media screen and (min-width: 64.063em) {
   .projects .page-header__copy {

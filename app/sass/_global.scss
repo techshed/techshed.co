@@ -110,7 +110,7 @@ a{
   margin-top: -$primary-nav-height;
   padding-top: $primary-nav-height;
   margin-bottom: $baseline-spacing-soft;
-  overflow-x: hidden;
+  overflow: hidden;
 
   &.no-scroll{
     height: 100%;
@@ -304,7 +304,7 @@ h4{
 
 
 .page-footer{
-  @extend %regular-transition;
+  @extend %fade-transition;
   @include clearfix;
   @extend .row;
   font-size: 1.6rem;

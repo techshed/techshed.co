@@ -20,9 +20,11 @@
   color: #fff;
   border-color: #fff;
 
-  &:hover, &:active{
-    color: #fff;
+  &:hover{
     border-color: rgba(255,255,255,0.7);
+  }
+  &:active{
+    border-color: rgba(255,255,255,0.5);
   }
 }
 
@@ -30,8 +32,11 @@
   color: $body-copy-color;
   border-color: $body-copy-color;
 
-  &:hover, &:active{
-    border-color: rgba($body-copy-color,0.7) !important;
+  &:hover{
+    border-color: rgba($body-copy-color,0.7);
+  }
+  &:active{
+    border-color: rgba($body-copy-color,0.5);
   }
 }
 
@@ -40,5 +45,4 @@
   padding: .8rem 3.3rem;
   border-width: .19rem;
   font-size: 1.4rem;
-  border-color: rgba($body-copy-color,0.7);
 }

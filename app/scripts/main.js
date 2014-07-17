@@ -36,7 +36,6 @@
     },
 
     bindEvents: function() {
-
       // Nav toggle button
       el.$navToggle.on('click', function(ev) {
         // Prevent multiple clicks within .4s window
@@ -57,35 +56,27 @@
           page = $this.attr('class').split(' ')[0];
         href = window.location.href.split('/').pop();
 
-        // Prevent multiple clicks within .4s window
-        if (!$this.data('isClicked')) {
-
-          // ~~~~~~ mobile nav logic (need to refactor) ~~~~~~
-          if ($this.parents().hasClass('nav-primary__menu')) {
-            TechshedCo.toggleNavMenu();
-          }
-          // hide mobile nav menu if logo is clicked
-          if ($this.hasClass('logo') && !el.$navPrimaryMenu.hasClass('is-hidden')) {
-            TechshedCo.toggleNavMenu();
-          }
-          // check if already on page before fetching
-          if (href !== page) {
-            history.pushState({}, '', '/' + page);
-
-            // scroll to the top of the page before loading new page
-            $.smoothScroll({
-              scrollTarget: '0',
-              afterScroll: function() {
-                TechshedCo.getPage(page);
-              }
-            });
-          }
-
-          $this.data('isClicked', true);
-          setTimeout(function() {
-            $this.removeData('isClicked');
-          }, 2000);
+        // ~~~~~~ mobile nav logic (need to refactor) ~~~~~~
+        if ($this.parents().hasClass('nav-primary__menu')) {
+          TechshedCo.toggleNavMenu();
         }
+        // hide mobile nav menu if logo is clicked
+        if ($this.hasClass('logo') && !el.$navPrimaryMenu.hasClass('is-hidden')) {
+          TechshedCo.toggleNavMenu();
+        }
+        // check if already on the requested page
+        if (href !== page) {
+          history.pushState({}, '', '/' + page);
+
+          // scroll to the top of the page before loading new page
+          $.smoothScroll({
+            scrollTarget: '0',
+            afterScroll: function() {
+              TechshedCo.getPage(page);
+            }
+          });
+        }
+
         ev.preventDefault();
       });
 
@@ -99,12 +90,12 @@
       // Enable back button via HTML5 pop state
       setTimeout(function() {
         $(window).on('popstate', function(ev) {
+          console.log('popstate init');
           var href = window.location.href.split('/').pop();
           console.log(href);
           ev.preventDefault();
         });
       }, 1500);
-
 
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
@@ -119,7 +110,7 @@
 
     getPage: function(page) {
 
-      console.log('getpage ' + page + '...');
+      console.log('getpage: ' + page);
 
       // strip special characters
       var pageTitle = page.replace(/[^a-z0-9\s]/gi, '');
@@ -143,7 +134,7 @@
         window._jobscore_loader = false;
         setTimeout(function() {
           TechshedCo.initJobScoreWidget();
-        }, 1000);
+        }, 800);
       }
 
       // fade page window, load new page, fade back in
@@ -174,7 +165,7 @@
 
     showPage: function(pageTitle) {
 
-      console.log('showPage ' + pageTitle + 'page...');
+      console.log('showPage: ' + pageTitle);
 
       el.$pageWindow.removeClass('is-transitioning');
       TechshedCo.setWaypoints();
@@ -264,13 +255,15 @@
     },
 
     setWaypoints: function() {
+      $.waypoints('below');
+
       $('.dormant').waypoint(function() {
         var $this = $(this);
         if ($this.hasClass('dormant')) {
           $(this).waypoint('disable').removeClass('dormant');
         }
       }, {
-        offset: '50%'
+        offset: '60%'
       });
       $('.scroll-down-arrow').waypoint(function() {
         var $this = $(this);
@@ -278,7 +271,6 @@
       }, {
         offset: '80%'
       });
-      $.waypoints('below');
     },
 
     initJobScoreWidget: function() {
