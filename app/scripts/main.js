@@ -23,7 +23,7 @@
       window.TechshedCo = this;
       TechshedCo = this;
       el = TechshedCo.globalElements;
-      href = window.location.href.split('/').pop();
+      href = location.href.split('/').pop();
       FastClick.attach(document.body);
       NProgress.configure({
         trickleRate: 0.01,
@@ -31,12 +31,13 @@
         minimum: 0.7
       });
 
-      // Enable back button via HTML5 pop state
+      TechshedCo.getPage(href);
 
+      // Enable back button via HTML5 pop state
       $(window).on('popstate', function(ev) {
         ev.preventDefault();
-        console.log('location: ' + document.location + ', state: ' + JSON.stringify(event.state));
         console.log('popstate init');
+        console.log('location: ' + document.location + ', state: ' + JSON.stringify(event.state));
         TechshedCo.getPage(href);
       });
     },
@@ -109,9 +110,9 @@
     },
 
     getPage: function(page) {
-
       // strip special characters
       var pageTitle = page.replace(/[^a-z0-9\s]/gi, '');
+
       // page html path
       var pageUrl = ('/pages/' + pageTitle + '.html');
       NProgress.start();
@@ -123,7 +124,6 @@
         el.$navPrimary.removeClass('subpage');
         $('.home').addClass('active').siblings().removeClass('active');
       } else {
-
         el.$navPrimary.addClass('subpage');
         $('.' + pageTitle).addClass('active').siblings().removeClass('active');
       }
@@ -140,7 +140,6 @@
       el.$pageWindow
         .addClass('is-transitioning')
         .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
-
           // check if page = home
           if (pageTitle === 'home' || pageTitle === '') {
             console.log('getpage: home');
