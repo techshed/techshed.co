@@ -14,8 +14,7 @@
       $navPrimaryMenuLg: $('.nav-primary__menu--lg'),
       $navPrimaryLink: $('.nav-primary__link'),
       $pageWindow: $('#page-window'),
-      $pageFooter: $('#page-footer'),
-      $scrollToTop: $('.scroll-to-top')
+      $pageFooter: $('#page-footer')
     },
 
     init: function() {
@@ -26,15 +25,17 @@
       href = window.location.href.split('/').pop();
       FastClick.attach(document.body);
       NProgress.configure({
-        trickleRate: 0.1,
+        trickleRate: 0.01,
         trickleSpeed: 100,
         minimum: 0.7
       });
+
       TechshedCo.bindEvents();
       TechshedCo.getPage(href);
     },
 
     bindEvents: function() {
+
       // Nav toggle button
       el.$navToggle.on('click', function(ev) {
         // Prevent multiple clicks within .4s window
@@ -87,22 +88,16 @@
         ev.preventDefault();
       });
 
-      el.$scrollToTop.on('click', function(ev) {
-        $.smoothScroll({
-          scrollTarget: '0'
-        });
-        ev.preventDefault();
-      });
 
       // Enable back button via HTML5 pop state
       setTimeout(function() {
         $(window).on('popstate', function(ev) {
-          console.log('popstate init');
           var href = window.location.href.split('/').pop();
           console.log(href);
           ev.preventDefault();
         });
       }, 1500);
+
 
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
@@ -133,33 +128,28 @@
         }, 800);
       }
 
-      // fade page window, load new page, fade back in
-      el.$pageWindow.addClass('is-transitioning')
-        .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
-
-          // check if page = home
-          if (pageTitle === 'home' || pageTitle === '') {
-            el.$pageWindow.load('/pages/home.html', function() {
-              TechshedCo.showPage(pageTitle);
-              NProgress.done();
-            });
-            // not home, so load the url
-          } else {
-            el.$pageWindow.load(pageUrl, function(response, status) {
-              if (status === 'error') {
-                el.$pageWindow.load('/pages/404.html');
-              }
-              TechshedCo.showPage(pageTitle);
-              NProgress.done();
-            });
-          }
-          el.$pageWindow.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
-          ev.stopPropagation();
+      // check if page = home
+      if (pageTitle === 'home' || pageTitle === '') {
+        el.$pageWindow.load('/pages/home.html', function() {
+          TechshedCo.showPage(pageTitle);
+          NProgress.done();
         });
+        // not home, so load the url
+      } else {
+        el.$pageWindow.load(pageUrl, function(response, status) {
+          if (status === 'error') {
+            el.$pageWindow.load('/pages/404.html');
+          }
+          TechshedCo.showPage(pageTitle);
+          NProgress.done();
+        });
+      }
     },
 
     showPage: function(pageTitle) {
-      console.log('showPage: ' + pageTitle);
+
+      console.log('showPage ' + pageTitle);
+
       el.$pageWindow.removeClass('is-transitioning');
       TechshedCo.setWaypoints();
       $('.page-footer').removeClass('hidden');
@@ -204,7 +194,6 @@
         el.$navPrimaryMenu.css({
           'display': 'block'
         });
-
         setTimeout(function() {
           el.$navPrimaryMenu.removeClass('is-hidden');
         }, 30);
@@ -249,27 +238,25 @@
     },
 
     setWaypoints: function() {
-      $.waypoints('below');
-
       $('.dormant').waypoint(function() {
         var $this = $(this);
         if ($this.hasClass('dormant')) {
           $(this).waypoint('disable').removeClass('dormant');
         }
       }, {
-        offset: '60%'
+        offset: '67%'
       });
-      $('.scroll-down-arrow').waypoint(function() {
-        var $this = $(this);
-        $this.waypoint('disable').addClass('hidden');
-      }, {
-        offset: '80%'
-      });
+
+      $.waypoints('below');
     },
 
     initJobScoreWidget: function() {
       (function(d, s, c) {
-        window._jobscore_loader = true;
+        if (window._jobscore_loader) {
+          return;
+        } else {
+          window._jobscore_loader = true;
+        }
         var o = d.createElement(s);
         o.type = 'text/javascript';
         o.async = true;
