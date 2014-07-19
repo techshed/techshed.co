@@ -7,7 +7,6 @@
     background: $homedepot-orange; /* Firefox */
     color: #fff;
   }
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 html, body{
   height: 100%;
@@ -41,11 +40,15 @@ body{
 a{
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
+<<<<<<< HEAD
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     @include transition(color .1s $ease-in-out-quad);
   }
+=======
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+>>>>>>> stash
 }
 
 // nprogress bar

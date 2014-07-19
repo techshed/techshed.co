@@ -89,7 +89,6 @@
         ev.preventDefault();
       });
 
-
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
         clearInterval(timer);
