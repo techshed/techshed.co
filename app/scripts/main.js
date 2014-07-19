@@ -69,13 +69,6 @@
           // update url in address bar
           history.pushState({}, '', '/' + page);
 
-          // underline active nav link
-          if (page === 'home' || page === '') {
-            $('.home').addClass('active').siblings().removeClass('active');
-          } else {
-            $('.' + page).addClass('active').siblings().removeClass('active');
-          }
-
           // scroll to the top of the page before loading new page
           $.smoothScroll({
             scrollTarget: '0',
@@ -110,16 +103,21 @@
 
     getPage: function(page) {
 
-      // strip special characters
-      var pageTitle = page;
       // page html path
-      var pageUrl = ('/pages/' + pageTitle + '.html');
+      var pageUrl = ('/pages/' + page + '.html');
       $('.page-footer').addClass('hidden');
+
+      // underline active nav link
+      if (page === 'home' || page === '') {
+        $('.home').addClass('active').siblings().removeClass('active');
+      } else {
+        $('.' + page).addClass('active').siblings().removeClass('active');
+      }
 
 
 
       // if jobs page, load the jobscore widget
-      if (pageTitle === 'jobs') {
+      if (page === 'jobs') {
         window._jobscore_loader = false;
         setTimeout(function() {
           TechshedCo.initJobScoreWidget();
@@ -127,9 +125,9 @@
       }
 
       // check if page = home
-      if (pageTitle === 'home' || pageTitle === '') {
+      if (page === 'home' || page === '') {
         el.$pageWindow.load('/pages/home.html', function() {
-          TechshedCo.showPage(pageTitle);
+          TechshedCo.showPage(page);
           NProgress.done();
         });
         // not home, so load the url
@@ -138,13 +136,13 @@
           if (status === 'error') {
             el.$pageWindow.load('/pages/404.html');
           }
-          TechshedCo.showPage(pageTitle);
+          TechshedCo.showPage(page);
           NProgress.done();
         });
       }
     },
 
-    showPage: function(pageTitle) {
+    showPage: function(page) {
 
       el.$pageWindow.removeClass('is-transitioning');
       TechshedCo.setWaypoints();
@@ -152,7 +150,7 @@
       $('#page-window p, h2, h3, h4').unorphanize(1);
 
       // init home
-      if (pageTitle === 'home' || pageTitle === '') {
+      if (page === 'home' || page === '') {
         $('body').removeClass().addClass('home');
         TechshedCo.fitText();
         TechshedCo.setHeaderHeight();
@@ -165,7 +163,7 @@
 
         // init subpage
       } else {
-        $('body').removeClass().addClass(pageTitle + ' subpage');
+        $('body').removeClass().addClass(page + ' subpage');
       }
       // prevent pageWindow collapsing to 0 height
       $('.page-window').css({
