@@ -2,7 +2,7 @@
   ::selection {
     background: $homedepot-orange; /* Safari */
     color: #fff;
-    }
+  }
   ::-moz-selection {
     background: $homedepot-orange; /* Firefox */
     color: #fff;
@@ -40,27 +40,23 @@ body{
 a{
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
-<<<<<<< HEAD
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
-    @include transition(color .1s $ease-in-out-quad);
+    // @include transition(color .1s $ease-in-out-quad);
   }
-=======
   -webkit-tap-highlight-color: rgba(0,0,0,0);
->>>>>>> stash
 }
 
 // nprogress bar
-#nprogress .bar {
-  background: $homedepot-orange;
-  height: .2rem;
-}
-#nprogress .peg {
-  display: none;
-}
-#nprogress .spinner {
-  display: none;
+#nprogress{
+  .bar {
+    background: $homedepot-orange;
+    height: .2rem;
+  }
+  .peg, .spinner{
+    display: none;
+  }
 }
 
 // displayed if browser < IE10
@@ -83,7 +79,7 @@ a{
 
 .logo{
   @extend %no-transition;
-  @extend %no-selection;
+  @extend %no-select;
   background-image: url('../images/global/techshed-logo.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -96,6 +92,10 @@ a{
   font: 0/0 a;
   font-size: 3rem;
   color: transparent;
+
+  .subpage &{
+    background-position: left bottom;
+  }
 }
 
 .logo--footer{
@@ -160,22 +160,18 @@ a{
   }
   .btn{
     width: 100%;
-    max-width: 40rem;
+    max-width: 30rem;
   }
 }
 .page-header__copy{
   @extend %vertical-align;
   width: 100%;
   z-index: 1;
+  margin-top: 1.8rem;
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin-top: 2.3rem;
-  }
-
-  // X-LARGE: 1441px min
-  @include respond-to(x-lg-screen) {
-    margin-top: 2rem;
   }
 }
 .page-header__bg{
@@ -205,7 +201,7 @@ a{
   margin-bottom: -1px;
 }
 .block{
-  @extend %slug-transition;
+  @extend %slower-transition;
   position: relative;
   float: left;
   margin: auto;
@@ -226,17 +222,7 @@ a{
   overflow: hidden;
 
   a{
-    // props to Marcin Wichary @ Medium.com for this fancy text underline method
-    // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
-    @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.6) 50%);
-    color: #fff;
-    background-size: 2px 2px;
-    background-position: 0 1.6rem;
-    background-repeat: repeat-x;
-
-    &:hover, &:active{
-      color: rgba(255,255,255,0.8);
-    }
+    @include svelte-underline(light, normal);
   }
   .pullquote{
     padding: 13rem 0;
@@ -250,6 +236,7 @@ a{
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
 }
 .block--tall{
   @extend .block;
@@ -265,7 +252,7 @@ a{
   }
   // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
-    height: 50rem;
+    height: 56rem;
   }
   // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) {
@@ -293,7 +280,6 @@ h4{
   margin: 0;
 }
 .pullquote{
-  @extend %slowest-transition;
   max-width: 74rem;
   margin: 0 auto;
   padding: 10rem 0;
@@ -325,7 +311,6 @@ h4{
     height: 100%;
     float: left;
     width: 100%;
-    min-height: 8rem;
 
     // MEDIUM: 641px min
     @include respond-to(md-screen) {
@@ -339,6 +324,10 @@ h4{
 
   p{
     margin: 0 0 $baseline-spacing-soft;
+
+    span{
+      @extend %superscript;
+    }
   }
   a{
     color: #444;
@@ -376,7 +365,7 @@ h4{
   }
 }
 .repo-link{
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 
   span{
     color: lighten($body-copy-color, 30%);
@@ -384,8 +373,8 @@ h4{
     font-weight: 600;
   }
   a{
+    @include svelte-underline(dark, normal);
     color: lighten($body-copy-color, 30%);
-    text-decoration: underline;
   }
 }
 

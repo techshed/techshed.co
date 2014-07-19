@@ -1,5 +1,5 @@
 .nav-primary{
-  @extend %no-selection;
+  @extend %no-select;
   @extend %backface-hidden;
   position: relative;
   float: left;
@@ -26,22 +26,23 @@
     }
   }
 }
-
 .nav-primary__menu-toggle{
   text-align: right;
   float: right;
-  padding: 2.3rem 0;
-  color: #fff;
+  padding: 2.45rem 0;
+  vertical-align: middle;
   font-size: 1.7rem;
   font-weight: 600;
-  vertical-align: middle;
+  color: $body-copy-color;
 
+  .home &{
+    color: #fff;
+  }
   span{
     display: inline-block;
     opacity: .5;
   }
 }
-
 .nav-primary__menu{
   @extend %regular-transition;
   @extend %hwa;
@@ -59,20 +60,6 @@
   padding-top: $primary-nav-height;
   overflow: hidden;
 
-  &:before{
-    @extend %regular-transition;
-    @extend %hwa;
-    @extend %backface-hidden;
-    content: '';
-    position: absolute;
-    @include linear-gradient(rgba(0, 0, 0, 0.93) 0%, rgba(0, 0, 0, 0.93) 50%, transparent 100%);
-    height: 240%;
-    top: -$primary-nav-height;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-  }
   &.is-hidden{
     opacity: 0;
 
@@ -83,6 +70,21 @@
       @include transform(translateY(-10px));
       opacity: 0;
     }
+  }
+  // dark menu bg
+  &:before{
+    @include linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+    @extend %regular-transition;
+    @extend %hwa;
+    @extend %backface-hidden;
+    content: '';
+    position: absolute;
+    height: 240%;
+    top: -$primary-nav-height;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
   }
   .nav-primary__link{
     @include transform(translateY(0));
@@ -105,6 +107,8 @@
       @extend %vertical-align;
       display: inline-block;
     }
+
+    // staggered fadein effect
     @for $item from 1 through 4{
       &:nth-child(#{$item}){
         transition-delay: #{$item / 15}s;
@@ -112,83 +116,43 @@
     }
   }
 }
-
 .nav-primary__menu--on{
-  @extend %quick-transition;
+  @extend %fast-transition;
 
   .logo{
     background-position: 0 0 !important;
   }
   .nav-primary__menu-toggle{
-    color: #fff !important;
+    color: #fff;
 
     span{
       font-size: 1.9rem;
     }
   }
 }
+// nav for medium+ screens
 .nav-primary__menu--lg{
+  @extend %inline-list;
+  display: none;
   text-align: right;
   right: 0;
-  display: none;
 
   a{
-    @extend %quick-transition;
-    display: inline-block;
-    padding: .8rem 1rem;
-    color: #fff;
+    padding: .8rem 1.3rem;
     font-weight: 900;
     font-size: 1.7rem;
-
-    &.active{
-
-      span{
-        @include linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(255,255,255,0.35) 50%);
-        padding: 0.7rem 0;
-        background-size: 1px 6px;
-        background-position: 0 2.9rem;
-        background-repeat: repeat-x;
-      }
-    }
-  }
-}
-
-.nav-primary--footer{
-  height: auto;
-  margin-bottom: $baseline-spacing-hard;
-
-  a{
     color: $body-copy-color;
-    margin: 0 .5rem;
-    font-size: 1.8rem;
 
-    &.active{
+    .home &{
+      color: #fff;
+    }
 
-      span{
-        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.15) 50%);
-        background-size: 0.1rem 0.4rem;
-        background-position: 0.1rem 3.2rem;
-        background-repeat: repeat-x;
-        padding: 1rem 0;
+    &.active span{
+      @include svelte-underline(dark, heavy);
+
+      .home &{
+        @include svelte-underline(light, heavy);
       }
-    }
-  }
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
-    text-align: right;
-    margin-bottom: $baseline-spacing-soft * 3.5;
-
-    a{
-      font-size: 1.4rem;
-      margin: 0 0.5rem;
-    }
-  }
-  // LARGE: 1025px min
-  @include respond-to(lg-screen) {
-
-    a{
-      font-size: 1.6rem;
-      margin: 0 0.8rem;
     }
   }
 }

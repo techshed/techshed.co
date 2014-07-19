@@ -1,44 +1,19 @@
-// Animation
-%no-transition{
-  @include transition(none);
-}
-%quickest-transition{
-  @include transition(all .1s $ease-in-out-quad);
-}
-%quick-transition{
+// Transitions
+%fast-transition{
   @include transition(all .12s $ease-in-out-quad);
-}
-%midspeed-transition{
-  @include transition(all .25s ease);
 }
 %regular-transition{
   @include transition(all .33s ease);
 }
-%slower-transition{
-  @include transition(all .5s $ease-in-out-quad);
-}
-%slowest-transition{
+%slow-transition{
   @include transition(all 1s $ease-in-out-quad);
 }
-%slug-transition{
+%slower-transition{
   @include transition(all 1.5s $ease-in-out-quad);
 }
-%sluggg-transition{
-  @include transition(all 10s $ease-in-out-quad);
-}
-
 %fade-transition{
   @include transition(opacity .33s ease);
 }
-
-@include keyframes(bobbing) {
-  0% {
-    @include transform(translateY(0));
-  }
-  50% {
-    @include transform(translateY(1rem));
-  }
-  100%{
-    @include transform(translateY(0));
-  }
+%no-transition{
+  @include transition(none);
 }

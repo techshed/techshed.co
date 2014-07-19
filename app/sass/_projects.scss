@@ -23,7 +23,7 @@
   @extend .block;
 
   img{
-    @extend %slug-transition;
+    @extend %slower-transition;
     display: block;
     max-height: 35rem;
     max-width: 100%;
@@ -160,7 +160,7 @@
 }
 
 .project__img, .project__copy{
-  @extend %slower-transition;
+  @extend %slow-transition;
   width: 100%;
   float: left;
 }

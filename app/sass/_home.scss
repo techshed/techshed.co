@@ -10,6 +10,9 @@
     line-height: 1.3;
     width: 100%;
     max-width: 37rem;
+
+    // MEDIUM: 641px min
+    @include respond-to(md-screen) { max-width: 38rem; }
   }
   .page-header__copy{
     position: absolute;
@@ -24,7 +27,7 @@
     &:before{
       content: '';
       display: block;
-      margin-top: 84%;
+      margin-top: 66%;
     }
     h1{
       width: 102%;
@@ -110,21 +113,9 @@
   top: 0;
   right: 0;
 
-  // MEDIUM: 641px min
-  @include respond-to(md-screen) {
-
-  }
   // LARGE: 1025px min
   @include respond-to(lg-screen) {
     display: block;
-  }
-  // X-LARGE: 1441px min
-  @include respond-to(x-lg-screen) {
-
-  }
-  // XX-LARGE: 1921px min
-  @include respond-to(xx-lg-screen) {
-
   }
 }
 
@@ -146,6 +137,12 @@
     @-moz-document url-prefix() {
       padding: 0.2rem 0.3rem 0.8rem 0.6rem;
     }
+  }
+}
+
+.location{
+  .pullquote{
+    font-weight: 900;
   }
 }
 
@@ -276,7 +273,7 @@
 }
 
 .benefits__item{
-  @extend %slowest-transition;
+  @extend %slow-transition;
   @extend %backface-hidden;
   display: inline-block;
   height: 10rem;
@@ -286,7 +283,7 @@
 
   p{
     @extend %default-cursor;
-    @extend %slowest-transition;
+    @extend %slow-transition;
     @extend %vertical-align;
     margin: 0;
     text-align: center;

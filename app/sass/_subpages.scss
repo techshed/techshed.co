@@ -1,26 +1,4 @@
 // Subpage specific global overrides
-.subpage{
-
-  .nav-primary{
-    background-color: transparent;
-  }
-  .nav-primary__menu--lg{
-
-    a.active{
-      span{
-        @include linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.1) 50%);
-      }
-    }
-  }
-  .nav-primary .logo{
-    background-position: left bottom;
-  }
-  .nav-primary__menu-toggle, .nav-primary__menu--lg a{
-    @extend %quick-transition;
-    color: $body-copy-color;
-  }
-}
-
 .page-header--subpage{
   padding-bottom: 4rem;
 
@@ -49,4 +27,3 @@
     padding: 12rem 0;
   }
 }
-

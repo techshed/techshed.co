@@ -1,5 +1,5 @@
 .btn{
-  @extend %no-selection;
+  @extend %no-select;
   display: inline-block;
   margin-bottom: 0;
   padding: 1rem 0;
@@ -13,7 +13,6 @@
   font-size: 2rem;
   text-align: center;
   white-space: nowrap;
-  text-decoration: none;
   background-image: none !important;
 }
 .btn--white{
@@ -37,10 +36,4 @@
   &:active{
     border-color: rgba($body-copy-color,0.5);
   }
-}
-.btn--back-to-top{
-  @extend .btn--black;
-  padding: .8rem 3.3rem;
-  border-width: .19rem;
-  font-size: 1.4rem;
 }

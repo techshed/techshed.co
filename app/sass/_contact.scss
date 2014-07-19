@@ -10,10 +10,8 @@
   }
 }
 
-.contact-footer{
-  background-image: url(../images/contact/footer-bg.jpg);
+.contact-info{
   font-size: 1.5rem;
-  height: 40rem !important;
 
   h2{
     margin: 0 0 2rem;
@@ -22,23 +20,30 @@
     line-height: 1.1;
 
     span{
-      vertical-align: super;
-      font-size: 1.8rem;
+      @extend %superscript;
     }
   }
   .btn{
     width: 100%;
     max-width: 30rem;
   }
+
+  .block--img{
+    height: 42rem;
+  }
+
+  .block--img__img{
+    background-image: url(../images/contact/footer-bg.jpg);
+  }
 }
 
-.contact-footer__copy{
+.contact-info__copy{
   @include clearfix;
   @extend %vertical-align;
   max-width: 35rem;
 }
 
-.contact-footer__links{
+.contact-info__links{
   @extend %inline-list;
   margin-top: 2.3rem;
 

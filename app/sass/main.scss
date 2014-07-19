@@ -2,20 +2,21 @@
 @import 'bower_components/bourbon/dist/bourbon';
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
-// global styles
+// base
 @import 'vars';
 @import 'mediaqueries';
 @import 'placeholders';
+@import 'mixins';
+@import 'animation';
+@import 'fonts';
 @import 'global';
 
 // components
 @import 'buttons';
 @import 'icons';
-@import 'fonts';
 @import 'navigation';
-@import 'animation';
 
-// page-specific styles
+// page-specific
 @import 'home';
 @import 'jobs';
 @import 'projects';
