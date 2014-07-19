@@ -1,7 +1,14 @@
 .jobs{
 
+  .page-header--subpage{
+    padding-bottom: 1rem;
+  }
+
   /* MEDIUM: 641px min */
   @include respond-to(md-screen) {
+    .page-header--subpage{
+      padding-bottom: 4rem;
+    }
     .page-header__copy{
       br{
         display: none;

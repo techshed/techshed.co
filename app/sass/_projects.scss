@@ -61,7 +61,7 @@
   overflow: visible;
 
   .project__copy{
-    background: linear-gradient(transparent 0%, #111 30%, #111 100%);
+    @include linear-gradient(transparent 0%, #111 30%, #111 100%);
     padding: 10rem 2rem 4rem;
     width: 114%;
     left: -7%;

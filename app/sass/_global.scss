@@ -23,6 +23,8 @@ html{
   @include respond-to(x-lg-screen) { font-size: 104%; }
   // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) { font-size: 130%; }
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
 }
 body{
   @extend %sans-serif;
@@ -31,21 +33,25 @@ body{
   font-size: 1.6rem;
   color: $body-copy-color;
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
-  text-rendering: optimizeLegibility !important;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a{
-  @include transition(color .1s $ease-in-out-quad);
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
+
+  // MEDIUM: 641px min
+  @include respond-to(md-screen) {
+    @include transition(color .1s $ease-in-out-quad);
+  }
 }
 
 // nprogress bar
 #nprogress .bar {
   background: $homedepot-orange;
-  height: .18rem;
+  height: .2rem;
 }
 #nprogress .peg {
   display: none;
@@ -140,7 +146,7 @@ a{
   }
   p{
     width: 82%;
-    font-size: 2rem;
+    font-size: 2.1rem;
     line-height: 1.6;
   }
   .comma, .break-sm{
@@ -185,7 +191,7 @@ a{
   @include outer-container;
   position: relative;
   height: 100%;
-  width: 88%;
+  width: 90%;
 }
 .row{
   position: relative;
@@ -361,7 +367,8 @@ h4{
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
-    font-size: 2.8rem;
+    margin-top: 9.5rem;
+    font-size: 2.6rem;
     text-align: right;
   }
 }

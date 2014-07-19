@@ -68,21 +68,24 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home p {
 html, body {
   height: 100%; }
 
-@media screen and (max-width: 40em) {
-  html {
-    font-size: 62.5%; } }
-@media screen and (min-width: 40.063em) {
-  html {
-    font-size: 75%; } }
-@media screen and (min-width: 64.063em) {
-  html {
-    font-size: 85%; } }
-@media screen and (min-width: 90.063em) {
-  html {
-    font-size: 104%; } }
-@media screen and (min-width: 120.063em) {
-  html {
-    font-size: 130%; } }
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll; }
+  @media screen and (max-width: 40em) {
+    html {
+      font-size: 62.5%; } }
+  @media screen and (min-width: 40.063em) {
+    html {
+      font-size: 75%; } }
+  @media screen and (min-width: 64.063em) {
+    html {
+      font-size: 85%; } }
+  @media screen and (min-width: 90.063em) {
+    html {
+      font-size: 104%; } }
+  @media screen and (min-width: 120.063em) {
+    html {
+      font-size: 130%; } }
 
 body {
   margin: 0;
@@ -90,20 +93,21 @@ body {
   font-size: 1.6rem;
   color: #414141;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
-  text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 a {
-  -webkit-transition: color 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -moz-transition: color 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: color 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   color: #a33a0a;
   text-decoration: none; }
+  @media screen and (min-width: 40.063em) {
+    a {
+      -webkit-transition: color 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      -moz-transition: color 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transition: color 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955); } }
 
 #nprogress .bar {
   background: #f16322;
-  height: .18rem; }
+  height: .2rem; }
 
 #nprogress .peg {
   display: none; }
@@ -186,7 +190,7 @@ a {
     font-size: 6rem; }
   .page-header p {
     width: 82%;
-    font-size: 2rem;
+    font-size: 2.1rem;
     line-height: 1.6; }
   .page-header .break-sm {
     display: none; }
@@ -220,7 +224,7 @@ a {
   margin-right: auto;
   position: relative;
   height: 100%;
-  width: 88%; }
+  width: 90%; }
   .wrapper:after {
     content: "";
     display: table;
@@ -354,7 +358,8 @@ h4 {
     margin: 0 0.6rem; }
   @media screen and (min-width: 40.063em) {
     .page-footer__social-icons {
-      font-size: 2.8rem;
+      margin-top: 9.5rem;
+      font-size: 2.6rem;
       text-align: right; } }
 
 .repo-link {
@@ -480,7 +485,9 @@ h4 {
   .nav-primary__menu:before {
     content: '';
     position: absolute;
-    background: linear-gradient(rgba(0, 0, 0, 0.93) 0%, rgba(0, 0, 0, 0.93) 50%, transparent 100%);
+    background-color: rgba(0, 0, 0, 0.93);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.93) 0%, rgba(0, 0, 0, 0.93) 50%, transparent 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.93) 0%, rgba(0, 0, 0, 0.93) 50%, transparent 100%);
     height: 240%;
     top: -7rem;
     left: 0;
@@ -661,7 +668,7 @@ h4 {
     font-weight: 900;
     line-height: 1.3;
     width: 100%;
-    max-width: 36rem; }
+    max-width: 37rem; }
   .page-header--home .page-header__copy {
     position: absolute;
     color: #fff; }
@@ -913,7 +920,11 @@ h4 {
 
 .jobs {
   /* MEDIUM: 641px min */ }
+  .jobs .page-header--subpage {
+    padding-bottom: 1rem; }
   @media screen and (min-width: 40.063em) {
+    .jobs .page-header--subpage {
+      padding-bottom: 4rem; }
     .jobs .page-header__copy br {
       display: none; } }
 
@@ -963,7 +974,9 @@ h4 {
   background-position: 93% center;
   overflow: visible; }
   .project--featured .project__copy {
-    background: linear-gradient(transparent 0%, #111111 30%, #111111 100%);
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(transparent 0%, #111111 30%, #111111 100%);
+    background-image: linear-gradient(transparent 0%, #111111 30%, #111111 100%);
     padding: 10rem 2rem 4rem;
     width: 114%;
     left: -7%; }

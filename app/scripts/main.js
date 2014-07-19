@@ -18,7 +18,6 @@
     },
 
     init: function() {
-      console.log('site init');
       window.TechshedCo = this;
       TechshedCo = this;
       el = TechshedCo.globalElements;
@@ -54,7 +53,7 @@
       el.$navPrimaryLink.on('click', function(ev) {
         var $this = $(this),
           page = $this.attr('class').split(' ')[0];
-        href = window.location.href.split('/').pop();
+        href = window.location.href.split('/').pop().replace(/[^a-z0-9\s]/gi, '');
 
         // ~~~~~~ mobile nav logic (need to refactor) ~~~~~~
         if ($this.parents().hasClass('nav-primary__menu')) {
@@ -66,8 +65,9 @@
         }
         // check if already on the requested page
         if (href !== page) {
-          history.pushState({}, '', '/' + page);
           NProgress.start();
+          // update url in address bar
+          history.pushState({}, '', '/' + page);
 
           // underline active nav link
           if (page === 'home' || page === '') {
@@ -90,13 +90,11 @@
 
 
       // Enable back button via HTML5 pop state
-      setTimeout(function() {
-        $(window).on('popstate', function(ev) {
-          var href = window.location.href.split('/').pop();
-          console.log(href);
-          ev.preventDefault();
-        });
-      }, 1500);
+      $(window).on('popstate', function(ev) {
+        var href = window.location.href.split('/').pop();
+        TechshedCo.getPage(href);
+        ev.preventDefault();
+      });
 
 
       // disable all transitions when window is being resized
@@ -112,13 +110,13 @@
 
     getPage: function(page) {
 
-      console.log('getpage: ' + page);
-
       // strip special characters
-      var pageTitle = page.replace(/[^a-z0-9\s]/gi, '');
+      var pageTitle = page;
       // page html path
       var pageUrl = ('/pages/' + pageTitle + '.html');
       $('.page-footer').addClass('hidden');
+
+
 
       // if jobs page, load the jobscore widget
       if (pageTitle === 'jobs') {
@@ -147,8 +145,6 @@
     },
 
     showPage: function(pageTitle) {
-
-      console.log('showPage ' + pageTitle);
 
       el.$pageWindow.removeClass('is-transitioning');
       TechshedCo.setWaypoints();
