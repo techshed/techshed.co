@@ -7,7 +7,6 @@
     background: $homedepot-orange; /* Firefox */
     color: #fff;
   }
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 html, body{
   height: 100%;
@@ -42,6 +41,7 @@ a{
   @include transition(color .1s $ease-in-out-quad);
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 // nprogress bar

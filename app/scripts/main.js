@@ -95,14 +95,12 @@
       });
 
       // Enable back button via HTML5 pop state
-      setTimeout(function() {
-        $(window).on('popstate', function(ev) {
-          console.log('popstate init');
-          var href = window.location.href.split('/').pop();
-          console.log(href);
-          ev.preventDefault();
-        });
-      }, 1500);
+      $(window).on('popstate', function(ev) {
+        console.log('popstate init');
+        var href = window.location.href.split('/').pop();
+        console.log(href);
+        ev.preventDefault();
+      });
 
       // disable all transitions when window is being resized
       $(window).on('resize', TechshedCo.debounce(function() {
