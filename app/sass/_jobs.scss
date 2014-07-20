@@ -19,6 +19,11 @@
 }
 
 .jobscore-jobs{
+  @extend %slower-transition;
   max-width: 900px;
-  min-height: 37rem;
+  min-height: 41rem;
+
+  .js-fallback{
+    opacity: 0;
+  }
 }

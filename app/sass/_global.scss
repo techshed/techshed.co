@@ -12,21 +12,18 @@ html, body{
   height: 100%;
 }
 html{
-  // SMALL: 641px min
   @include respond-to(handhelds) { font-size: 62.5%; }
-  // MEDIUM: 641px min
   @include respond-to(md-screen) { font-size: 75%; }
-  // LARGE: 1025px min
   @include respond-to(lg-screen) { font-size: 85%; }
-  // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) { font-size: 104%; }
-  // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) { font-size: 130%; }
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
+  // text-rendering: optimizeLegibility;
 }
 body{
   @extend %sans-serif;
+  // fix hairline margins
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
@@ -41,7 +38,6 @@ a{
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     // @include transition(color .1s $ease-in-out-quad);
   }
@@ -97,7 +93,6 @@ a{
     background-position: left bottom;
   }
 }
-
 .logo--footer{
   display: inline-block;
   background-image: url('../images/global/techshed-logo-type.png');
@@ -231,7 +226,9 @@ a{
 .block--img__img{
   position: absolute;
   top: 0;
-  width: 100%;
+  // ensure full-bleed
+  left: -1%;
+  width: 102%;
   height: 100%;
   background-size: cover;
   background-position: center center;
@@ -242,19 +239,15 @@ a{
   @extend .block;
   height: 40rem;
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     width: 50%;
   }
-  // LARGE: 1025px min
   @include respond-to(lg-screen) {
     height: 46rem;
   }
-  // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
     height: 56rem;
   }
-  // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) {
     height: 60rem;
   }
@@ -265,13 +258,9 @@ a{
   width: 100%;
   background-position: center right;
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) { }
-  // LARGE: 641px min
   @include respond-to(lg-screen) { height: 46rem; }
-  // X-LARGE: 641px min
   @include respond-to(x-lg-screen) { }
-  // XX-LARGE: 641px min
   @include respond-to(xx-lg-screen) { }
 }
 
@@ -312,7 +301,6 @@ h4{
     float: left;
     width: 100%;
 
-    // MEDIUM: 641px min
     @include respond-to(md-screen) {
       width: 50%;
     }
@@ -332,8 +320,6 @@ h4{
   a{
     color: #444;
   }
-
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     text-align: left;
     margin-bottom: 0;
@@ -342,7 +328,6 @@ h4{
       margin-bottom: 0;
     }
   }
-
 }
 .page-footer__social-icons{
   position: relative;
@@ -356,8 +341,6 @@ h4{
     color: $body-copy-color;
     margin: 0 0.6rem;
   }
-
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin-top: 9.5rem;
     font-size: 2.6rem;

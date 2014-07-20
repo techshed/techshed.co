@@ -55,9 +55,6 @@
     h1{
       margin-left: -.7rem;
     }
-    .scroll-down-arrow{
-      display: block;
-    }
   }
 
   // X-LARGE: 1441px min
@@ -309,32 +306,5 @@
         opacity: 0;
       }
     }
-  }
-}
-
-.scroll-down-arrow{
-  @extend %default-cursor;
-  @extend %regular-transition;
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 10rem;
-  width: 100%;
-  color: #fff;
-  z-index: 999;
-  font-size: 6rem;
-  text-align: center;
-
-  span{
-    @include animation(bobbing 1.0s $ease-in-out-quad);
-    @include animation-iteration-count(infinite);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
   }
 }
