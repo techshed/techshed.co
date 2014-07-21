@@ -21,11 +21,9 @@
     width: 100%;
     max-width: 37rem;
 
-    // MEDIUM: 641px min
     @include respond-to(md-screen) { max-width: 38rem; }
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     height: auto;
     max-height: 48rem;
@@ -49,7 +47,6 @@
     }
   }
 
-  // LARGE: 1025px min
   @include respond-to(lg-screen) {
     background-image: none;
     max-height: 65rem;
@@ -63,7 +60,6 @@
     }
   }
 
-  // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
     max-height: 71rem;
 
@@ -72,7 +68,6 @@
     }
   }
 
-  // XX-LARGE 1921px min
   @include respond-to(xx-lg-screen) {
     max-height: 70rem;
 
@@ -95,14 +90,13 @@
   background-position: left bottom;
   background-repeat: no-repeat;
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     height: 78%;
     right: 0;
     max-width: 46rem;
     left: 46%;
   }
-  // LARGE: 1025px min
+
   @include respond-to(lg-screen) {
     display: none;
   }
@@ -116,7 +110,6 @@
   top: 0;
   right: 0;
 
-  // LARGE: 1025px min
   @include respond-to(lg-screen) {
     display: block;
   }
@@ -184,7 +177,6 @@
     width: 100%;
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     max-width: 47rem;
     width: 85%;
@@ -250,7 +242,6 @@
     }
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
 
     .wrapper{
@@ -263,7 +254,7 @@
       margin-right: 0;
     }
   }
-  // LARGE: 1025px min
+
   @include respond-to(lg-screen) {
     .wrapper{
       max-width: 80rem;
@@ -296,13 +287,12 @@
     color: #fff;
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin: 4.4%;
     width: 12rem;
     height: 12rem;
   }
-  // LARGE: 1025px min
+
   @include respond-to(lg-screen) {
     .dormant &{
       @include transform(rotateY(120deg) scale(.2));

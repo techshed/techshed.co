@@ -14,15 +14,12 @@
     }
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     padding-bottom: 8rem;
   }
-  // LARGE: 1025px min
   @include respond-to(lg-screen) {
     padding: 10rem 0;
   }
-  // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
     padding: 12rem 0;
   }

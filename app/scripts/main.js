@@ -13,8 +13,7 @@
             $navPrimaryMenu: $('.nav-primary__menu'),
             $navPrimaryMenuLg: $('.nav-primary__menu--lg'),
             $navPrimaryLink: $('.nav-primary__link'),
-            $pageWindow: $('#page-window'),
-            $pageFooter: $('#page-footer')
+            $pageWindow: $('#page-window')
         },
 
         init: function() {
@@ -24,13 +23,11 @@
             el = TechshedCo.siteElements;
             page = TechshedCo.getCurrentPath();
             FastClick.attach(document.body);
-
             NProgress.configure({
                 trickleRate: 0.01,
                 trickleSpeed: 100,
                 minimum: 0.7
             });
-
             TechshedCo.bindEvents();
             TechshedCo.showPage(page);
         },
@@ -102,30 +99,32 @@
             if (page === '') { page = 'home'; }
 
             var pageContainer = $( '#page-' + page);
+
+            // underline nav link
             $('.' + page).addClass('active').siblings().removeClass('active');
 
-            // check if page already loaded, else go get it
+            // check if page already loaded, else go load it first
             if($('#page-' + page).length){
-                console.log('showPage(): ' + page);
+                console.log('showPage('+ page +')');
                 pageContainer.removeClass().addClass('is-visible');
                 pageContainer.siblings().removeClass().addClass('is-hidden');
-                console.log(pageContainer.height());
-                el.$pageWindow.height(pageContainer.innerHeight());
+                el.$pageWindow.height(pageContainer.height());
+
+                // set body class
+                if (page === 'home') {
+                    TechshedCo.fitText();
+                    $('body').removeClass().addClass('home');
+                } else {
+                    // init general subpage
+                    $('body').removeClass().addClass(page + ' subpage');
+                }
             } else{
                 TechshedCo.loadPage(page);
-            }
-            // set body class
-            if (page === 'home') {
-                TechshedCo.fitText();
-                $('body').removeClass().addClass('home');
-            } else {
-                // init general subpage
-                $('body').removeClass().addClass(page + ' subpage');
             }
         },
 
         loadPage: function(page) {
-            console.log('loadPage(): ' + page);
+            console.log('loadPage('+ page +')');
 
             // loading bar start
             NProgress.start();
@@ -145,8 +144,6 @@
                     TechshedCo.showPage(page);
                 }
                 if (page==='home'){
-                    TechshedCo.fitText();
-
                     // remove video poster after play to avoid loop flicker
                     $('.video-bg').on('playing', function() {
                         $(this).attr('poster', '');
@@ -155,25 +152,26 @@
                 if (page === 'jobs') {
                     TechshedCo.initJobScoreWidget();
                 }
-                $('p, h2, h3, h4').unorphanize(1);
+                $('p').unorphanize(1);
                 TechshedCo.setWaypoints();
                 NProgress.done();
             });
         },
 
         fitText: function() {
+          setTimeout(function() {
             console.log('fitText()');
             $('.fit-text').fitText(0.697, {
                 minFontSize: '84px'
             });
+          }, 40);
+
         },
 
         toggleNavMenu: function() {
             console.log('toggleNavMenu()');
             if (el.$navPrimaryMenu.hasClass('is-hidden')) {
-                $('.page-footer').css({
-                    'display': 'none'
-                });
+
                 el.$pageWindow.addClass('no-scroll');
                 el.$navPrimary.addClass('nav-primary__menu--on');
                 el.$navToggle.html('CLOSE <span>×</span>');
@@ -185,9 +183,7 @@
                 }, 30);
 
             } else {
-                $('.page-footer').css({
-                    'display': 'block'
-                });
+
                 el.$pageWindow.removeClass('no-scroll');
                 el.$navPrimary.removeClass('nav-primary__menu--on');
                 el.$navToggle.html('MENU <span>☰</span>');

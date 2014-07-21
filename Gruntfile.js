@@ -39,6 +39,14 @@ module.exports = function(grunt) {
       }
     },
 
+    includes: {
+      files: {
+        src: ['<%= config.app %>/{,*/}*.html'], // Source files
+        dest: '.tmp/pages', // Destination directory
+        flatten: true,
+        cwd: '.'
+      }
+    },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -65,7 +73,7 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/{,*/}*.html',
+          '.tmp/{,*/}*.html',
           '<%= config.app %>/pages/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
@@ -80,6 +88,7 @@ module.exports = function(grunt) {
         livereload: 35729,
         // Change this to '0.0.0.0' to access the server from outside
         hostname: '0.0.0.0',
+        // pushstate support (all requests point to index.html)
         middleware: function(connect, options) {
           var middlewares = [];
           middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]'])); //Matches everything that does not contain a '.' (period)
@@ -243,10 +252,10 @@ module.exports = function(grunt) {
     //     dist: {}
     // },
 
+    // remove any console.logs
     removelogging: {
       dist: {
-        src: '<%= config.app %>/scripts/{,*/}*.js',
-        dest: '<%= config.app %>/scripts/'
+        src: '<%= config.dist %>/scripts/{,*/}*.js'
       }
     },
 
@@ -261,7 +270,6 @@ module.exports = function(grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            '{,*/}*.html',
             'videos/{,*/}*',
             'favicons/{,*/}*',
             'fonts/{,*/}*',
@@ -292,7 +300,8 @@ module.exports = function(grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
-        'copy:styles'
+        'copy:styles',
+        'includes'
       ],
       dist: [
         'copy:styles',
@@ -325,13 +334,14 @@ module.exports = function(grunt) {
     'sass',
     'concurrent:dist',
     'concat',
-    // 'removelogging',
     'uglify',
     'copy:dist',
+    'includes',
     'cssmin',
     'usemin',
     'htmlmin',
-    'imagemin'
+    'imagemin',
+    'removelogging'
   ]);
 
   grunt.registerTask('default', [

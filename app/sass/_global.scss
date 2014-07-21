@@ -7,7 +7,6 @@
     background: $homedepot-orange; /* Firefox */
     color: #fff;
   }
-
 }
 
 html, body{
@@ -119,13 +118,13 @@ a{
 }
 
 [id^=page]{
+  // @extend %regular-transition;
+  // @extend %backface-hidden;
+  // @extend %hwa;
   width: 100%;
   position: absolute;
   top: 0;
-  @extend %regular-transition;
   background: #fff;
-  @extend %hwa;
-  @extend %backface-hidden;
 }
 
 
@@ -136,15 +135,11 @@ a{
   position: relative;
   float: left;
   width: 100%;
-  margin-bottom: $baseline-spacing-hard;
 
   &.no-scroll{
+    @extend %no-transition;
     height: 100% !important;
-    @include transition(none);
     overflow: hidden;
-  }
-  &.is-transitioning{
-    opacity: 0;
   }
 }
 .page-header{
@@ -191,7 +186,6 @@ a{
     max-width: 87rem;
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin-top: 2.3rem;
   }
@@ -307,6 +301,7 @@ h4{
   @include clearfix;
   font-size: 1.6rem;
   font-weight: 900;
+  margin-top: $baseline-spacing-hard;
 
   .row{
     text-align: center;

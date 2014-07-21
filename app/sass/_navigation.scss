@@ -20,7 +20,6 @@
     position: absolute;
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     .nav-primary__menu-toggle, .nav-primary__menu{
       display: none !important;
@@ -151,7 +150,6 @@
     .home &{
       color: #fff;
     }
-
     &.active span{
       @include svelte-underline(dark, heavy);
 
@@ -159,5 +157,8 @@
         @include svelte-underline(light, heavy);
       }
     }
+  }
+  span{
+    padding: 0.7rem 0;
   }
 }

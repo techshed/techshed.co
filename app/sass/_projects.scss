@@ -14,7 +14,6 @@
     @include span-columns(12);
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     img{
       max-width: none;
@@ -25,7 +24,6 @@
     }
   }
 
-  // LARGE: 1025px min
   @include respond-to(x-lg-screen) {
     .wrapper{
       max-width: 90rem;
@@ -48,7 +46,6 @@
     left: -7%;
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin: 0 0 5rem;
     height: 30rem;
@@ -65,7 +62,6 @@
     }
   }
 
-  // LARGE: 1025px min
   @include respond-to(lg-screen) {
     height: 37rem;
 
@@ -73,7 +69,7 @@
       left: 7rem;
     }
   }
-  // X-LARGE: 1441px min
+
   @include respond-to(lg-screen) {
     height: 40rem;
   }
@@ -95,7 +91,6 @@
 .project--img-left{
   @extend .project;
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     .project__img{
       float: left;
@@ -115,7 +110,6 @@
 .project--img-right{
   @extend .project;
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     .col:first-child{
       width: 40%;
@@ -161,7 +155,6 @@
     line-height: 1.5;
   }
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     @include transform(translateY(-50%));
 
@@ -175,18 +168,15 @@
 .project-01{
   background-image: url(../images/projects/project01.jpg);
 
-  // LARGE: 1025px min
   @include respond-to(lg-screen) {
     background-size: 110%;
   }
-  // X-LARGE: 1441px min
   @include respond-to(x-lg-screen) {
     background-size: 100%;
   }
 }
 .project-04{
 
-  // MEDIUM: 641px min
   @include respond-to(md-screen) {
     .project__img{
       margin-left: -3rem;
