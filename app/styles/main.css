@@ -222,7 +222,7 @@ a {
   position: relative;
   float: left;
   width: 100%;
-  margin-top: -7rem; }
+  margin-bottom: 4.4rem; }
   #page-window:after {
     content: "";
     display: table;
@@ -369,7 +369,6 @@ h4 {
     color: #fff; }
 
 .page-footer {
-  display: none;
   font-size: 1.6rem;
   font-weight: 900; }
   .page-footer:after {
@@ -486,12 +485,14 @@ h4 {
   content: "r"; }
 
 .nav-primary {
-  position: relative;
-  float: left;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 7rem;
   z-index: 3;
   cursor: default; }
+  .nav-primary a:last-child {
+    padding-right: 0; }
   .nav-primary a:active {
     opacity: .6; }
   .nav-primary .logo, .nav-primary .nav-primary__menu--lg {
@@ -639,6 +640,8 @@ h4 {
   .page-header--home .page-header__copy {
     position: absolute;
     color: #fff; }
+  .page-header--home h1 {
+    margin-left: -.6rem; }
   .page-header--home .purpose {
     margin: 1rem 0 1.8rem;
     font-weight: 900;
@@ -657,8 +660,7 @@ h4 {
         display: block;
         margin-top: 66%; }
       .page-header--home h1 {
-        width: 102%;
-        margin-left: -.4rem; }
+        width: 103%; }
       .page-header--home .comma {
         display: inline-block;
         visibility: visible;

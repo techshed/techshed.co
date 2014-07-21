@@ -1,12 +1,16 @@
 .nav-primary{
   @extend %no-select;
   @extend %backface-hidden;
-  position: relative;
-  float: left;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: $primary-nav-height;
   z-index: 3;
   cursor: default;
+
+  a:last-child{
+    padding-right: 0;
+  }
 
   a:active{
     opacity: .6;

@@ -109,7 +109,8 @@
                 console.log('showPage(): ' + page);
                 pageContainer.removeClass().addClass('is-visible');
                 pageContainer.siblings().removeClass().addClass('is-hidden');
-                el.$pageWindow.height(pageContainer.height());
+                console.log(pageContainer.height());
+                el.$pageWindow.height(pageContainer.innerHeight());
             } else{
                 TechshedCo.loadPage(page);
             }

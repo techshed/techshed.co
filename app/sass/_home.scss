@@ -8,6 +8,10 @@
     position: absolute;
     color: #fff;
   }
+  // left edge alignment for this type
+  h1{
+    margin-left: -.6rem;
+  }
   // instead of <p> to avoid being unorphanized();
   .purpose{
     @extend %sans-serif;
@@ -32,8 +36,7 @@
       margin-top: 66%;
     }
     h1{
-      width: 102%;
-      margin-left: -.4rem;
+      width: 103%;
     }
     .comma{
       display: inline-block;
@@ -55,6 +58,7 @@
       margin-top: 57%;
     }
     h1{
+      // more accurate left and right type alignment
       margin-left: -.7rem;
     }
   }

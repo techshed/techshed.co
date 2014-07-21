@@ -7,7 +7,9 @@
     background: $homedepot-orange; /* Firefox */
     color: #fff;
   }
+
 }
+
 html, body{
   height: 100%;
 }
@@ -20,6 +22,7 @@ html{
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
   // text-rendering: optimizeLegibility;
+  // @extend %debug-layout;
 }
 body{
   @extend %sans-serif;
@@ -126,7 +129,6 @@ a{
 }
 
 
-
 // primary view window for pages
 #page-window{
   @extend %fade-transition;
@@ -134,7 +136,7 @@ a{
   position: relative;
   float: left;
   width: 100%;
-  margin-top: -$primary-nav-height;
+  margin-bottom: $baseline-spacing-hard;
 
   &.no-scroll{
     height: 100% !important;
@@ -300,7 +302,6 @@ h4{
 }
 
 .page-footer{
-  display: none;
   @extend %fade-transition;
   @extend .row;
   @include clearfix;
