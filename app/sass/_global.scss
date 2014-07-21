@@ -102,20 +102,42 @@ a{
   margin-bottom: $baseline-spacing-soft;
 }
 
+.is-hidden{
+  display: none;
+  height: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.is-visible{
+  display: block;
+  height: auto;
+  z-index: 1;
+  opacity: 1;
+}
+
+[id^=page]{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  @extend %regular-transition;
+  background: #fff;
+  @extend %hwa;
+  @extend %backface-hidden;
+}
+
+
+
 // primary view window for pages
 #page-window{
   @extend %fade-transition;
+  @include clearfix;
   position: relative;
   float: left;
   width: 100%;
-  height: auto;
   margin-top: -$primary-nav-height;
-  padding-top: $primary-nav-height;
-  margin-bottom: $baseline-spacing-hard;
-  overflow: hidden;
 
   &.no-scroll{
-    height: 100%;
+    height: 100% !important;
     @include transition(none);
     overflow: hidden;
   }
@@ -129,7 +151,6 @@ a{
   float: left;
   width: 100%;
   margin: 0;
-  margin-top: -$primary-nav-height;
   padding-top: $primary-nav-height;
 
   h1{
@@ -142,7 +163,7 @@ a{
     line-height: .8;
     font-size: 6rem;
   }
-  p{
+  p, .purpose{
     width: 82%;
     font-size: 2.1rem;
     line-height: 1.6;
@@ -164,20 +185,14 @@ a{
   z-index: 1;
   margin-top: 1.8rem;
 
+  .subpage &{
+    max-width: 87rem;
+  }
+
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
     margin-top: 2.3rem;
   }
-}
-.page-header__bg{
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background-size: 100%;
-  background-position: top right;
-  background-repeat: no-repeat;
-  z-index: 0;
 }
 
 // layout containers
@@ -285,6 +300,7 @@ h4{
 }
 
 .page-footer{
+  display: none;
   @extend %fade-transition;
   @extend .row;
   @include clearfix;
@@ -348,7 +364,7 @@ h4{
   }
 }
 .repo-link{
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 
   span{
     color: lighten($body-copy-color, 30%);

@@ -1,4 +1,7 @@
 // Transitions
+%fastest-transition{
+  @include transition(all .1s $ease-in-out-quad);
+}
 %fast-transition{
   @include transition(all .12s $ease-in-out-quad);
 }

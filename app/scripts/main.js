@@ -51,7 +51,7 @@
                     link.data('isClicked', true);
                     setTimeout(function() {
                         link.removeData('isClicked');
-                    }, 400);
+                    }, 600);
                 }
                 ev.preventDefault();
             });
@@ -71,7 +71,6 @@
                 if ($this.hasClass('logo') && !el.$navPrimaryMenu.hasClass('is-hidden')) {
                     TechshedCo.toggleNavMenu();
                 }
-
                 // check if already on page
                 if (path === page) {
                     console.log('already on ' + page);
@@ -99,7 +98,6 @@
             }, 0));
         },
 
-
         showPage: function(page) {
             if (page === '') { page = 'home'; }
 
@@ -109,22 +107,20 @@
             // check if page already loaded, else go get it
             if($('#page-' + page).length){
                 console.log('showPage(): ' + page);
-                pageContainer.show();
-                pageContainer.siblings().hide();
-
+                pageContainer.removeClass().addClass('is-visible');
+                pageContainer.siblings().removeClass().addClass('is-hidden');
+                el.$pageWindow.height(pageContainer.height());
             } else{
                 TechshedCo.loadPage(page);
             }
-
-            // init home
+            // set body class
             if (page === 'home') {
-                $('body').removeClass().addClass(page);
-
+                TechshedCo.fitText();
+                $('body').removeClass().addClass('home');
             } else {
                 // init general subpage
                 $('body').removeClass().addClass(page + ' subpage');
             }
-
         },
 
         loadPage: function(page) {
@@ -137,7 +133,7 @@
             var pageHtml = ('/pages/' + page + '.html');
 
             // create page container
-            var pageContainer = $( '<div id=page-' + page + '/>');
+            var pageContainer = $( '<div id=page-' + page + ' class="is-hidden" />');
             el.$pageWindow.append(pageContainer);
 
             // load & append html into unique page container
@@ -158,8 +154,9 @@
                 if (page === 'jobs') {
                     TechshedCo.initJobScoreWidget();
                 }
-                NProgress.done();
+                $('p, h2, h3, h4').unorphanize(1);
                 TechshedCo.setWaypoints();
+                NProgress.done();
             });
         },
 
@@ -234,11 +231,6 @@
         initJobScoreWidget: function() {
             console.log('initJobScoreWidget()');
             (function(d, s, c) {
-                if (window._jobscore_loader) {
-                    return;
-                } else {
-                    window._jobscore_loader = true;
-                }
                 var o = d.createElement(s);
                 o.type = 'text/javascript';
                 o.async = true;

@@ -2,8 +2,14 @@
   background-color: #FBAB69;
   overflow: hidden;
   height: 52rem;
+  padding-top: 0;
 
-  p{
+  .page-header__copy{
+    position: absolute;
+    color: #fff;
+  }
+  // instead of <p> to avoid being unorphanized();
+  .purpose{
     @extend %sans-serif;
     margin: 1rem 0 1.8rem;
     font-weight: 900;
@@ -13,10 +19,6 @@
 
     // MEDIUM: 641px min
     @include respond-to(md-screen) { max-width: 38rem; }
-  }
-  .page-header__copy{
-    position: absolute;
-    color: #fff;
   }
 
   // MEDIUM: 641px min
@@ -50,7 +52,7 @@
     max-height: 65rem;
 
     &:before{
-      margin-top: 50%;
+      margin-top: 57%;
     }
     h1{
       margin-left: -.7rem;
@@ -73,18 +75,17 @@
     h1{
       margin-left: -1rem;
     }
-    p{
+    .purpose{
       margin: 1.5rem 0 2rem;
     }
   }
 }
-.page-header__bg{
+.page-header--home__bg{
   position: absolute;
-  right: 0;
+  right: -30%;
   bottom: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 70%;
+  width: 90%;
+  height: 77%;
   background-image: url(../images/home/header-bg.jpg);
   background-size: cover;
   background-position: left bottom;
@@ -92,8 +93,9 @@
 
   // MEDIUM: 641px min
   @include respond-to(md-screen) {
-    max-width: 44rem;
-    top: 3%;
+    height: 78%;
+    right: 0;
+    max-width: 46rem;
     left: 46%;
   }
   // LARGE: 1025px min

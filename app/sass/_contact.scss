@@ -1,14 +1,3 @@
-.contact{
-  .break-sm{
-    display: none;
-  }
-  @include respond-to(x-lg-screen) {
-    .break-sm{
-      display: block;
-    }
-  }
-}
-
 .contact-info{
   font-size: 1.5rem;
 

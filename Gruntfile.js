@@ -243,6 +243,13 @@ module.exports = function(grunt) {
     //     dist: {}
     // },
 
+    removelogging: {
+      dist: {
+        src: '<%= config.app %>/scripts/{,*/}*.js',
+        dest: '<%= config.app %>/scripts/'
+      }
+    },
+
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -255,7 +262,6 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '{,*/}*.html',
-            'images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             'videos/{,*/}*',
             'favicons/{,*/}*',
             'fonts/{,*/}*',
@@ -319,11 +325,13 @@ module.exports = function(grunt) {
     'sass',
     'concurrent:dist',
     'concat',
+    // 'removelogging',
     'uglify',
     'copy:dist',
     'cssmin',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'imagemin'
   ]);
 
   grunt.registerTask('default', [
