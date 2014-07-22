@@ -41,11 +41,11 @@ module.exports = function(grunt) {
 
     includes: {
       files: {
-        src: ['<%= config.app %>/{,*/}*.html'], // Source files
-        dest: '.tmp/pages', // Destination directory
-        flatten: true,
-        cwd: '.'
+        cwd: '<%= config.dist %>',
+        src: '{,*/}*.html',
+        dest: '<%= config.dist %>'
       }
+
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -271,6 +271,7 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'videos/{,*/}*',
+            '{,*/}*.html',
             'favicons/{,*/}*',
             'fonts/{,*/}*',
             'styles/{,*/}*'
@@ -304,8 +305,7 @@ module.exports = function(grunt) {
         'includes'
       ],
       dist: [
-        'copy:styles',
-        'svgmin'
+        'copy:styles'
       ]
     }
   });
