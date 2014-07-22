@@ -39,13 +39,24 @@ module.exports = function(grunt) {
       }
     },
 
+    // Build the site using grunt-includes
     includes: {
-      files: {
-        cwd: '<%= config.dist %>',
-        src: '{,*/}*.html',
-        dest: '<%= config.dist %>'
+      dist: {
+        cwd: '<%= config.app %>',
+        src: ['{,*/}*.html'],
+        dest: 'dist',
+        options: {
+          flatten: true
+        }
+      },
+      server: {
+        cwd: '<%= config.app %>',
+        src: ['{,*/}*.html'],
+        dest: '.tmp/',
+        options: {
+          flatten: true
+        }
       }
-
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -77,7 +88,8 @@ module.exports = function(grunt) {
           '<%= config.app %>/pages/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
-        ]
+        ],
+        tasks: ['includes:server']
       }
     },
 

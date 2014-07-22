@@ -202,6 +202,12 @@ a {
   height: 2.1rem;
   margin-bottom: 2.2rem; }
 
+[id^=page] {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #fff; }
+
 .is-hidden {
   display: none;
   height: 0;
@@ -213,12 +219,6 @@ a {
   height: auto;
   z-index: 1;
   opacity: 1; }
-
-[id^=page] {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  background: #fff; }
 
 #page-window {
   position: relative;
@@ -262,13 +262,9 @@ a {
 
 .page-header__copy {
   width: 100%;
-  z-index: 1;
-  margin-top: 1.8rem; }
+  z-index: 1; }
   .subpage .page-header__copy {
     max-width: 87rem; }
-  @media screen and (min-width: 40.063em) {
-    .page-header__copy {
-      margin-top: 2.3rem; } }
 
 .wrapper {
   max-width: 105rem;
@@ -293,7 +289,8 @@ a {
   float: left;
   margin: auto;
   width: 100%;
-  padding: 3.2rem 0; }
+  padding: 3.2rem 0;
+  overflow: hidden; }
 
 .block--img, .project--featured {
   padding: 0;
@@ -357,7 +354,7 @@ h4 {
   max-width: 74rem;
   margin: 0 auto;
   padding: 10rem 0;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 300;
   line-height: 1.6; }
   .pullquote.sans-serif {
@@ -863,11 +860,7 @@ h4 {
 
 .jobs {
   /* MEDIUM: 641px min */ }
-  .jobs .page-header--subpage {
-    padding-bottom: 1rem; }
   @media screen and (min-width: 40.063em) {
-    .jobs .page-header--subpage {
-      padding-bottom: 4rem; }
     .jobs .page-header__copy br {
       display: none; } }
 
@@ -913,9 +906,7 @@ h4 {
     background-color: transparent;
     background-image: -webkit-linear-gradient(transparent 0%, #111111 30%, #111111 100%);
     background-image: linear-gradient(transparent 0%, #111111 30%, #111111 100%);
-    padding: 10rem 2rem 4rem;
-    width: 114%;
-    left: -7%; }
+    padding: 10rem 2rem 4rem; }
   @media screen and (min-width: 40.063em) {
     .project--featured {
       margin: 0 0 5rem;
@@ -1012,6 +1003,9 @@ h4 {
 
 .project-01 {
   background-image: url(../images/projects/project01.jpg); }
+  @media screen and (max-width: 40em) {
+    .project-01 .wrapper {
+      width: 100%; } }
   @media screen and (min-width: 64.063em) {
     .project-01 {
       background-size: 110%; } }
@@ -1051,7 +1045,7 @@ h4 {
     margin: 0 3.2rem 1.1rem 0; }
 
 .page-header--subpage {
-  padding-bottom: 4rem; }
+  padding: 8rem 0 5rem; }
   .page-header--subpage .page-header__copy {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -1065,10 +1059,4 @@ h4 {
       margin-bottom: 0; }
   @media screen and (min-width: 40.063em) {
     .page-header--subpage {
-      padding-bottom: 8rem; } }
-  @media screen and (min-width: 64.063em) {
-    .page-header--subpage {
-      padding: 10rem 0; } }
-  @media screen and (min-width: 90.063em) {
-    .page-header--subpage {
-      padding: 12rem 0; } }
+      padding: 10rem 0 7rem; } }

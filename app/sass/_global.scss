@@ -106,6 +106,18 @@ a{
   margin-bottom: $baseline-spacing-soft;
 }
 
+
+
+[id^=page]{
+  // @extend %regular-transition;
+  // @extend %backface-hidden;
+  // @extend %hwa;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #fff;
+}
+
 .is-hidden{
   display: none;
   height: 0;
@@ -118,17 +130,6 @@ a{
   z-index: 1;
   opacity: 1;
 }
-
-[id^=page]{
-  // @extend %regular-transition;
-  // @extend %backface-hidden;
-  // @extend %hwa;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  background: #fff;
-}
-
 
 // primary view window for pages
 #page-window{
@@ -145,6 +146,11 @@ a{
     overflow: hidden;
   }
 }
+
+
+
+
+
 .page-header{
   @include clearfix;
   position: relative;
@@ -183,14 +189,9 @@ a{
   @extend %vertical-align;
   width: 100%;
   z-index: 1;
-  margin-top: 1.8rem;
 
   .subpage &{
     max-width: 87rem;
-  }
-
-  @include respond-to(md-screen) {
-    margin-top: 2.3rem;
   }
 }
 
@@ -216,6 +217,7 @@ a{
   margin: auto;
   width: 100%;
   padding: 3.2rem 0;
+  overflow: hidden;
 
   &.dormant p{
 
@@ -286,7 +288,7 @@ h4{
   max-width: 74rem;
   margin: 0 auto;
   padding: 10rem 0;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 300;
   line-height: 1.6;
 

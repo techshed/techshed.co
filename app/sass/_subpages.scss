@@ -1,6 +1,6 @@
 // Subpage specific global overrides
 .page-header--subpage{
-  padding-bottom: 4rem;
+    padding: 8rem 0 5rem;
 
   .page-header__copy{
     @include transform(translateY(0));
@@ -15,12 +15,10 @@
   }
 
   @include respond-to(md-screen) {
-    padding-bottom: 8rem;
+    padding: 10rem 0 7rem;
   }
   @include respond-to(lg-screen) {
-    padding: 10rem 0;
   }
   @include respond-to(x-lg-screen) {
-    padding: 12rem 0;
   }
 }

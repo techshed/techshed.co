@@ -42,8 +42,6 @@
   .project__copy{
     @include linear-gradient(transparent 0%, #111 30%, #111 100%);
     padding: 10rem 2rem 4rem;
-    width: 114%;
-    left: -7%;
   }
 
   @include respond-to(md-screen) {
@@ -168,6 +166,12 @@
 .project-01{
   background-image: url(../images/projects/project01.jpg);
 
+
+  @include respond-to(handhelds) {
+    .wrapper{
+      width: 100%;
+    }
+  }
   @include respond-to(lg-screen) {
     background-size: 110%;
   }
