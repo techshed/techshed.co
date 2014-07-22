@@ -207,7 +207,12 @@ module.exports = function(grunt) {
           cwd: '<%= config.app %>/images',
           src: '{,*/}*.{gif,jpeg,jpg,png}',
           dest: '<%= config.dist %>/images'
-        }]
+        }],
+        jpg: {
+          options: {
+            progressive: true
+          }
+        }
       }
     },
 
