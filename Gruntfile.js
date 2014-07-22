@@ -89,9 +89,7 @@ module.exports = function(grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ],
-
-      },
-      tasks: ['includes:server']
+      }
     },
 
     // The actual grunt server settings
