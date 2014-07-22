@@ -255,7 +255,7 @@ module.exports = function(grunt) {
     // remove any console.logs
     removelogging: {
       dist: {
-        src: '<%= config.dist %>/scripts/{,*/}*.js'
+        src: '<%= config.app %>/scripts/{,*/}*.js'
       }
     },
 
@@ -333,8 +333,8 @@ module.exports = function(grunt) {
     'useminPrepare',
     'sass',
     'concurrent:dist',
-    'concat',
     'removelogging',
+    'concat',
     'uglify',
     'copy:dist',
     'includes',

@@ -17,7 +17,7 @@
         },
 
         init: function() {
-            console.log('init()');
+            
             window.TechshedCo = this;
             TechshedCo = this;
             el = TechshedCo.siteElements;
@@ -37,7 +37,7 @@
         },
 
         bindEvents: function() {
-            console.log('bindEvents()');
+            
 
             // nav toggle
             el.$navToggle.on('click', function(ev) {
@@ -70,7 +70,7 @@
                 }
                 // check if already on page
                 if (path === page) {
-                    console.log('already on ' + page);
+                    
                 } else{
                     // update path in address bar
                     history.pushState({}, '', '/' + page);
@@ -105,7 +105,7 @@
 
             // check if page already loaded, else go load it first
             if($('#page-' + page).length){
-                console.log('showPage('+ page +')');
+                
                 pageContainer.removeClass().addClass('is-visible');
                 pageContainer.siblings().removeClass().addClass('is-hidden');
                 // el.$pageWindow.height(pageContainer.height());
@@ -113,10 +113,12 @@
                 // set body class
                 if (page === 'home') {
                     TechshedCo.fitText();
+                    $('.video-bg').get(0).pause();
                     $('body').removeClass().addClass('home');
                 } else {
                     // init general subpage
                     $('body').removeClass().addClass(page + ' subpage');
+                    $('.video-bg').get(0).pause();
                 }
             } else{
                 TechshedCo.loadPage(page);
@@ -124,7 +126,7 @@
         },
 
         loadPage: function(page) {
-            console.log('loadPage('+ page +')');
+            
 
             // loading bar start
             NProgress.start();
@@ -152,7 +154,8 @@
                 if (page === 'jobs') {
                     TechshedCo.initJobScoreWidget();
                 }
-                $('p').unorphanize(1);
+                
+                pageContainer.find('p').unorphanize(1);
                 TechshedCo.setWaypoints();
                 NProgress.done();
             });
@@ -160,7 +163,7 @@
 
         fitText: function() {
           setTimeout(function() {
-            console.log('fitText()');
+            
             $('.fit-text').fitText(0.697, {
                 minFontSize: '84px'
             });
@@ -169,7 +172,7 @@
         },
 
         toggleNavMenu: function() {
-            console.log('toggleNavMenu()');
+            
             if (el.$navPrimaryMenu.hasClass('is-hidden')) {
 
                 el.$pageWindow.addClass('no-scroll');
@@ -200,12 +203,12 @@
         },
 
         setHeaderHeight: function() {
-            console.log('setHeaderHeight()');
+            
             var winHeight = $(window).height(),
                 pageHeader = $('.page-header');
 
             if (pageHeader.height() > winHeight && winHeight > 900) {
-              console.log('header is taller than window');
+              
               pageHeader.css(
                 'max-height', winHeight
               );
@@ -213,7 +216,7 @@
         },
 
         setWaypoints: function() {
-            console.log('setWaypoints()');
+            
             $.waypoints('below');
             $('.dormant').waypoint(function() {
                 var $this = $(this);
@@ -226,7 +229,7 @@
         },
 
         initJobScoreWidget: function() {
-            console.log('initJobScoreWidget()');
+            
             (function(d, s, c) {
                 var o = d.createElement(s);
                 o.type = 'text/javascript';

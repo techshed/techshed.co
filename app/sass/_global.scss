@@ -48,6 +48,8 @@ a{
 
 // nprogress bar
 #nprogress{
+  z-index: 1;
+
   .bar {
     background: $homedepot-orange;
     height: .2rem;
@@ -135,6 +137,7 @@ a{
   position: relative;
   float: left;
   width: 100%;
+  z-index: 0;
 
   &.no-scroll{
     @extend %no-transition;
@@ -228,7 +231,7 @@ a{
   overflow: hidden;
 
   a{
-    @include svelte-underline(light, normal);
+    @include svelte-underline(light, normal, hover);
   }
   .pullquote{
     padding: 13rem 0;
@@ -368,7 +371,7 @@ h4{
     font-weight: 600;
   }
   a{
-    @include svelte-underline(dark, normal);
+    @include svelte-underline(dark, normal, hover);
     color: lighten($body-copy-color, 30%);
   }
 }
