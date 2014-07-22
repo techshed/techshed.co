@@ -211,7 +211,6 @@ a{
   margin-bottom: -1px;
 }
 .block{
-  @extend %slower-transition;
   position: relative;
   float: left;
   margin: auto;

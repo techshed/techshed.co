@@ -78,7 +78,7 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home .purpose {
   -moz-transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-.block, .block--img, .project--featured, .block--tall, .block--wide, .project, .project--img-left, .project--img-right, .jobscore-jobs, .project img, .project--featured img, .project--img-left img, .project--img-right img {
+.jobscore-jobs, .project img, .project--featured img, .project--img-left img, .project--img-right img {
   -webkit-transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -moz-transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
@@ -602,7 +602,7 @@ h4 {
       background-image: -webkit-linear-gradient(top, transparent 50%, rgba(65, 65, 65, 0.3) 50%);
       background-image: linear-gradient(to bottom,transparent 50%, rgba(65, 65, 65, 0.3) 50%);
       color: #414141;
-      background-size: 1px 6px;
+      background-size: 1px 7px;
       background-position: 0 2.9rem;
       background-repeat: repeat-x; }
       .home .nav-primary__menu--lg a.active span {
@@ -613,7 +613,7 @@ h4 {
         background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
         background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
         color: #fff;
-        background-size: 1px 6px;
+        background-size: 1px 7px;
         background-position: 0 2.9rem;
         background-repeat: repeat-x; }
   .nav-primary__menu--lg span {

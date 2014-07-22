@@ -110,6 +110,9 @@
                 if (page === 'home') {
                     TechshedCo.fitText();
                     $('body').removeClass().addClass('home');
+                    $('.lazy').lazyload({
+                      effect : 'fadeIn'
+                    });
                 } else {
                     // init general subpage
                     $('body').removeClass().addClass(page + ' subpage');
