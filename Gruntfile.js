@@ -334,14 +334,15 @@ module.exports = function(grunt) {
     'sass',
     'concurrent:dist',
     'concat',
+    'removelogging',
     'uglify',
     'copy:dist',
     'includes',
     'cssmin',
     'usemin',
     'htmlmin',
-    'imagemin',
-    'removelogging'
+    'imagemin'
+
   ]);
 
   grunt.registerTask('default', [
