@@ -122,7 +122,6 @@
         loadPage: function(page) {
             // loading bar start
             NProgress.start();
-            console.log('loadPage: ' + page);
             // path to html
             var pageHtml = ('/pages/' + page + '.html');
 

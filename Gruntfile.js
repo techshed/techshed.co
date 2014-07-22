@@ -89,8 +89,9 @@ module.exports = function(grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ],
-        tasks: ['includes:server']
-      }
+
+      },
+      tasks: ['includes:server']
     },
 
     // The actual grunt server settings
@@ -264,13 +265,6 @@ module.exports = function(grunt) {
     //     dist: {}
     // },
 
-    // remove any console.logs
-    removelogging: {
-      dist: {
-        src: '<%= config.app %>/scripts/{,*/}*.js'
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -299,16 +293,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Generates a custom Modernizr build that includes only the tests you
-    // reference in your app
-    modernizr: {
-      devFile: '<%= config.app %>/bower_components/modernizr/modernizr.js',
-      outputFile: '<%= config.dist %>/scripts/modernizr.js',
-      files: [
-        '<%= config.dist %>/scripts/{,*/}*.js',
-        '<%= config.dist %>/styles/{,*/}*.css'
-      ]
-    },
 
     // Run some tasks in parallel to speed up build process
     concurrent: {
@@ -345,7 +329,6 @@ module.exports = function(grunt) {
     'useminPrepare',
     'sass',
     'concurrent:dist',
-    'removelogging',
     'concat',
     'uglify',
     'copy:dist',
@@ -354,7 +337,6 @@ module.exports = function(grunt) {
     'usemin',
     'htmlmin',
     'imagemin'
-
   ]);
 
   grunt.registerTask('default', [
