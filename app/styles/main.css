@@ -354,7 +354,7 @@ h4 {
   max-width: 74rem;
   margin: 0 auto;
   padding: 10rem 0;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.6; }
   .pullquote.sans-serif {
@@ -622,11 +622,11 @@ h4 {
 .page-header--home {
   background-color: #FBAB69;
   overflow: hidden;
-  height: 52rem;
-  padding-top: 0; }
+  height: 52rem; }
   .page-header--home .page-header__copy {
     position: absolute;
-    color: #fff; }
+    color: #fff;
+    margin-top: 2rem; }
   .page-header--home h1 {
     margin-left: -.6rem; }
   .page-header--home .purpose {
@@ -660,12 +660,14 @@ h4 {
       background-image: none;
       max-height: 65rem; }
       .page-header--home:before {
-        margin-top: 57%; }
+        margin-top: 54%; }
       .page-header--home h1 {
         margin-left: -.7rem; } }
   @media screen and (min-width: 90.063em) {
     .page-header--home {
       max-height: 71rem; }
+      .page-header--home:before {
+        margin-top: 51%; }
       .page-header--home h1 {
         margin-left: -.8rem; } }
   @media screen and (min-width: 120.063em) {

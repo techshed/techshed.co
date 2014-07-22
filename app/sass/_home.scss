@@ -2,11 +2,12 @@
   background-color: #FBAB69;
   overflow: hidden;
   height: 52rem;
-  padding-top: 0;
+
 
   .page-header__copy{
     position: absolute;
     color: #fff;
+    margin-top: 2rem;
   }
   // left edge alignment for this type
   h1{
@@ -52,7 +53,7 @@
     max-height: 65rem;
 
     &:before{
-      margin-top: 57%;
+      margin-top: 54%;
     }
     h1{
       // more accurate left and right type alignment
@@ -63,6 +64,9 @@
   @include respond-to(x-lg-screen) {
     max-height: 71rem;
 
+    &:before{
+      margin-top: 51%;
+    }
     h1{
       margin-left: -.8rem;
     }

@@ -17,7 +17,6 @@
         },
 
         init: function() {
-
             window.TechshedCo = this;
             TechshedCo = this;
             el = TechshedCo.siteElements;
@@ -37,8 +36,6 @@
         },
 
         bindEvents: function() {
-
-
             // nav toggle
             el.$navToggle.on('click', function(ev) {
                 // Prevent multiple clicks within .4s window
@@ -97,7 +94,6 @@
 
         showPage: function(page) {
             if (page === '') { page = 'home'; }
-
             var pageContainer = $( '#page-' + page);
 
             // underline nav link
@@ -124,11 +120,9 @@
         },
 
         loadPage: function(page) {
-
-
             // loading bar start
             NProgress.start();
-
+            console.log('loadPage: ' + page);
             // path to html
             var pageHtml = ('/pages/' + page + '.html');
 
@@ -139,7 +133,8 @@
             // load & append html into unique page container
             pageContainer.load(pageHtml, function(response, status) {
                 if (status === 'error') {
-                    TechshedCo.showPage('404');
+                    pageContainer.remove();
+                    TechshedCo.showPage('error');
                 } else{
                     TechshedCo.showPage(page);
                 }
@@ -161,7 +156,6 @@
 
         fitText: function() {
           setTimeout(function() {
-
             $('.fit-text').fitText(0.697, {
                 minFontSize: '84px'
             });
@@ -170,7 +164,6 @@
         },
 
         toggleNavMenu: function() {
-
             if (el.$navPrimaryMenu.hasClass('is-hidden')) {
 
                 el.$pageWindow.addClass('no-scroll');
@@ -184,7 +177,6 @@
                 }, 30);
 
             } else {
-
                 el.$pageWindow.removeClass('no-scroll');
                 el.$navPrimary.removeClass('nav-primary__menu--on');
                 el.$navToggle.html('MENU <span>☰</span>');
@@ -201,7 +193,6 @@
         },
 
         setHeaderHeight: function() {
-
             var winHeight = $(window).height(),
                 pageHeader = $('.page-header');
 
@@ -214,7 +205,6 @@
         },
 
         setWaypoints: function() {
-
             $.waypoints('below');
             $('.dormant').waypoint(function() {
                 var $this = $(this);
@@ -227,7 +217,6 @@
         },
 
         initJobScoreWidget: function() {
-
             (function(d, s, c) {
                 var o = d.createElement(s);
                 o.type = 'text/javascript';
