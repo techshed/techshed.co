@@ -88,7 +88,7 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home .purpose {
   -moz-transition: opacity 0.33s ease;
   transition: opacity 0.33s ease; }
 
-.logo, #page-window.no-scroll {
+#page-window.no-scroll {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none; }
@@ -179,20 +179,26 @@ a {
   transition: none !important; }
 
 .logo {
-  background-image: url("../images/global/techshed-logo.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left top;
   width: 12rem;
   height: 3rem;
   left: 0;
   margin: 0;
-  padding: 0;
-  font: 0/0 a;
-  font-size: 3rem;
-  color: transparent; }
+  padding: 0; }
   .subpage .logo {
     background-position: left bottom; }
+    .subpage .logo .techshed-type svg {
+      fill: black !important; }
+
+.hd-logo, .techshed-type {
+  vertical-align: middle;
+  display: inline-block; }
+
+.hd-logo {
+  max-width: 25%;
+  border: 1px solid white; }
+
+.techshed-type {
+  max-width: 70%; }
 
 .logo--footer {
   display: inline-block;

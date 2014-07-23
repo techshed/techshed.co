@@ -17,6 +17,7 @@
         },
 
         init: function() {
+            window.TechshedCo = this;
             TechshedCo = this;
             el = TechshedCo.siteElements;
             page = TechshedCo.getCurrentPath();
@@ -112,6 +113,7 @@
                 } else {
                     // init general subpage
                     $('body').removeClass().addClass(page + ' subpage');
+
                 }
             } else{
                 TechshedCo.loadPage(page);
@@ -238,4 +240,4 @@
         }
     };
     TechshedCo.init();
-})(window);
+})();
