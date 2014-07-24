@@ -4,7 +4,7 @@
   /* MEDIUM: 641px min */
   @include respond-to(md-screen) {
     .page-header--subpage{
-
+      padding: 10rem 0 5rem;
     }
     .page-header__copy{
       br{
@@ -18,7 +18,7 @@
 .jobscore-jobs{
   @extend %slower-transition;
   max-width: 900px;
-  min-height: 41rem;
+  min-height: 35rem;
 
   .js-fallback{
     opacity: 0;

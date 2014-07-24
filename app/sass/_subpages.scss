@@ -8,9 +8,10 @@
 
     p{
       @extend %serif;
-      font-size: 2rem;
       width: 100%;
+      max-width: 70rem;
       margin-bottom: 0;
+      font-size: 2rem;
     }
   }
 

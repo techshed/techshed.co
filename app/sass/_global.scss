@@ -15,9 +15,9 @@ html, body{
 html{
   @include respond-to(handhelds) { font-size: 62.5%; }
   @include respond-to(md-screen) { font-size: 75%; }
-  @include respond-to(lg-screen) { font-size: 85%; }
-  @include respond-to(x-lg-screen) { font-size: 104%; }
-  @include respond-to(xx-lg-screen) { font-size: 130%; }
+  @include respond-to(lg-screen) { font-size: 80%; }
+  @include respond-to(x-lg-screen) { font-size: 100%; }
+  @include respond-to(xx-lg-screen) { font-size: 110%; }
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
   // text-rendering: optimizeLegibility;
@@ -84,25 +84,27 @@ a{
   left: 0;
   margin: 0;
   padding: 0;
-
-  .subpage &{
-    background-position: left bottom;
-    .techshed-type svg{
-      fill: black !important;
-    }
-  }
 }
-
-.hd-logo, .techshed-type{
+.hd-logomark, .techshed-type{
   vertical-align: middle;
   display: inline-block;
 }
-.hd-logo{
+.hd-logomark{
   max-width: 25%;
   border: 1px solid white;
 }
 .techshed-type{
-  max-width: 70%;
+  width: 70%;
+  height: 100%;
+  background-image: url("../images/global/techshed-logo-type.png");
+  background-size: 200% 53%;
+  background-position: right;
+  background-repeat: no-repeat;
+  margin-left: 1%;
+
+  .subpage &{
+    background-position: left;
+  }
 }
 .logo--footer{
   display: inline-block;
@@ -114,17 +116,31 @@ a{
 }
 
 
-
+// page container
 [id^=page]{
   // @extend %regular-transition;
   // @extend %backface-hidden;
   // @extend %hwa;
-  width: 100%;
   position: absolute;
   top: 0;
+  width: 100%;
+  height: 100%;
   background: #fff;
+  @extend %fade-transition;
 }
 
+// pages container
+#pages-container{
+  @extend %fade-transition;
+  @include clearfix;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+// content window states
 .is-hidden{
   display: none;
   height: 0;
@@ -133,29 +149,14 @@ a{
 }
 .is-visible{
   display: block;
-  height: auto;
   z-index: 1;
   opacity: 1;
 }
-
-// primary view window for pages
-#page-window{
-  @extend %fade-transition;
-  @include clearfix;
-  position: relative;
-  float: left;
-  width: 100%;
-  z-index: 0;
-
-  &.no-scroll{
-    @extend %no-transition;
-    height: 100% !important;
-    overflow: hidden;
-  }
+.no-scroll{
+  @extend %no-transition;
+  height: 100% !important;
+  overflow: hidden;
 }
-
-
-
 
 
 .page-header{
@@ -175,6 +176,7 @@ a{
     font-weight: 900;
     line-height: .8;
     font-size: 6rem;
+    letter-spacing: -0.1rem;
   }
   p, .purpose{
     width: 82%;
@@ -291,7 +293,7 @@ h4{
   margin: 0;
 }
 .pullquote{
-  max-width: 74rem;
+  max-width: 76rem;
   margin: 0 auto;
   padding: 10rem 0;
   font-size: 2rem;
@@ -306,7 +308,7 @@ h4{
   }
 }
 
-.page-footer{
+.site-footer{
   @extend %fade-transition;
   @extend .row;
   @include clearfix;
@@ -330,7 +332,7 @@ h4{
   }
 }
 
-.page-footer__location{
+.site-footer__location{
   margin-bottom: $baseline-spacing-hard;
 
   p{
@@ -352,7 +354,7 @@ h4{
     }
   }
 }
-.page-footer__social-icons{
+.site-footer__social-icons{
   position: relative;
   float: left;
   font-weight: normal;

@@ -123,8 +123,8 @@
 .nav-primary__menu--on{
   @extend %fast-transition;
 
-  .logo{
-    background-position: 0 0 !important;
+  .techshed-type{
+    background-position: right;
   }
   .nav-primary__menu-toggle{
     color: #fff;

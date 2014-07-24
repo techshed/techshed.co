@@ -3,7 +3,6 @@
   overflow: hidden;
   height: 52rem;
 
-
   .page-header__copy{
     position: absolute;
     color: #fff;
@@ -12,17 +11,16 @@
   // left edge alignment for this type
   h1{
     margin-left: -.6rem;
+    letter-spacing: -.2rem;
   }
   // instead of <p> to avoid being unorphanized();
   .purpose{
     @extend %sans-serif;
-    margin: 1rem 0 1.8rem;
+    margin: 1.2rem 0 2rem;
     font-weight: 900;
     line-height: 1.3;
     width: 100%;
-    max-width: 37rem;
-
-    @include respond-to(md-screen) { max-width: 38rem; }
+    max-width: 50rem;
   }
 
   @include respond-to(md-screen) {
@@ -32,10 +30,10 @@
     &:before{
       content: '';
       display: block;
-      margin-top: 66%;
+      margin-top: 64%;
     }
     h1{
-      width: 103%;
+      width: 107%;
     }
     .comma{
       display: inline-block;
@@ -50,30 +48,28 @@
 
   @include respond-to(lg-screen) {
     background-image: none;
-    max-height: 65rem;
+    max-height: 69rem;
 
     &:before{
-      margin-top: 54%;
+      margin-top: 47.5%;
     }
     h1{
       // more accurate left and right type alignment
-      margin-left: -.7rem;
+      margin-left: -.8rem;
     }
   }
 
   @include respond-to(x-lg-screen) {
-    max-height: 71rem;
+    max-height: 75rem;
 
-    &:before{
-      margin-top: 51%;
-    }
     h1{
+      width: 106%;
       margin-left: -.8rem;
     }
   }
 
   @include respond-to(xx-lg-screen) {
-    max-height: 70rem;
+    max-height: 75rem;
 
     h1{
       margin-left: -1rem;
@@ -116,6 +112,13 @@
 
   @include respond-to(lg-screen) {
     display: block;
+    height: 107%;
+  }
+  @include respond-to(x-lg-screen) {
+
+  }
+  @include respond-to(xx-lg-screen) {
+
   }
 }
 
@@ -127,11 +130,12 @@
   }
 
   p:first-letter{
-    font-size: 340%;
+    font-size: 309%;
     line-height: 0;
     display: inline-block;
     float: left;
-    padding: 3.1rem 0.5rem 1rem 1rem;
+    padding: 3.2rem 0rem 1.3rem 0rem;
+
 
     // firefox fix
     @-moz-document url-prefix() {
@@ -167,7 +171,6 @@
     font-size: 5rem;
     line-height: .9;
     font-weight: 900;
-    width: 30%;
   }
   p{
     @extend %serif;

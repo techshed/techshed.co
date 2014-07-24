@@ -64,7 +64,7 @@
     height: 37rem;
 
     .project__copy{
-      left: 7rem;
+      left: 6%;
     }
   }
 
@@ -128,6 +128,15 @@
         @include transform(translateX(15rem));
         opacity: 0;
       }
+    }
+  }
+  @include respond-to(lg-screen) {
+    .col{
+      margin-right: -5%;
+    }
+    .project__copy{
+      right: -12%;
+      width: 105%;
     }
   }
 }

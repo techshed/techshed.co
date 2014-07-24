@@ -13,7 +13,7 @@
             $navPrimaryMenu: $('.nav-primary__menu'),
             $navPrimaryMenuLg: $('.nav-primary__menu--lg'),
             $navPrimaryLink: $('.nav-primary__link'),
-            $pageWindow: $('#page-window')
+            $pageWindow: $('#pages-container')
         },
 
         init: function() {
@@ -29,6 +29,10 @@
             });
             TechshedCo.bindEvents();
             TechshedCo.showPage(page);
+
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+             console.log('this is a mobile device');
+            }
         },
 
         getCurrentPath: function() {
@@ -93,66 +97,66 @@
         },
 
         showPage: function(page) {
-            if (page === '') { page = 'home'; }
-            var pageContainer = $( '#page-' + page);
+                    if (page === '') { page = 'home'; }
+                    var pageContainer = $( '#page-' + page);
 
-            // underline nav link
-            $('.' + page).addClass('active').siblings().removeClass('active');
+                    // underline nav link
+                    $('.' + page).addClass('active').siblings().removeClass('active');
 
-            // check if page already loaded, else go load it first
-            if($('#page-' + page).length){
+                    // check if page already loaded, else go load it first
+                    if($('#page-' + page).length){
 
-                pageContainer.removeClass().addClass('is-visible');
-                pageContainer.siblings().removeClass().addClass('is-hidden');
-                // el.$pageWindow.height(pageContainer.height());
+                        pageContainer.removeClass().addClass('is-visible');
+                        pageContainer.siblings().removeClass().addClass('is-hidden');
+                        // el.$pageWindow.height(pageContainer.height());
 
-                // set body class
-                if (page === 'home') {
-                    TechshedCo.fitText();
-                    $('body').removeClass().addClass('home');
-                } else {
-                    // init general subpage
-                    $('body').removeClass().addClass(page + ' subpage');
+                        // set body class
+                        if (page === 'home') {
+                            TechshedCo.fitText();
+                            $('body').removeClass().addClass('home');
+                        } else {
+                            // init general subpage
+                            $('body').removeClass().addClass(page + ' subpage');
 
-                }
-            } else{
-                TechshedCo.loadPage(page);
-            }
-        },
+                        }
+                    } else{
+                        TechshedCo.loadPage(page);
+                    }
+                },
 
         loadPage: function(page) {
-            // loading bar start
-            NProgress.start();
-            // path to html
-            var pageHtml = ('/pages/' + page + '.html');
+                    // loading bar start
+                    NProgress.start();
+                    // path to html
+                    var pageHtml = ('/pages/' + page + '.html');
 
-            // create page container
-            var pageContainer = $( '<div id=page-' + page + ' class="is-hidden" />');
-            el.$pageWindow.append(pageContainer);
+                    // create page container
+                    var pageContainer = $( '<div id=page-' + page + ' class="is-hidden" />');
+                    el.$pageWindow.append(pageContainer);
 
-            // load & append html into unique page container
-            pageContainer.load(pageHtml, function(response, status) {
-                if (status === 'error') {
-                    pageContainer.remove();
-                    TechshedCo.showPage('error');
-                } else{
-                    TechshedCo.showPage(page);
-                }
-                if (page==='home'){
-                    // remove video poster after play to avoid loop flicker
-                    $('.video-bg').on('playing', function() {
-                        $(this).attr('poster', '');
+                    // load & append html into unique page container
+                    pageContainer.load(pageHtml, function(response, status) {
+                        if (status === 'error') {
+                            pageContainer.remove();
+                            TechshedCo.showPage('error');
+                        } else{
+                            TechshedCo.showPage(page);
+                        }
+                        if (page==='home'){
+                            // remove video poster after play to avoid loop flicker
+                            $('.video-bg').on('playing', function() {
+                                $(this).attr('poster', '');
+                            });
+                        }
+                        if (page === 'jobs') {
+                            TechshedCo.initJobScoreWidget();
+                        }
+
+                        pageContainer.find('p').unorphanize(1);
+                        TechshedCo.setWaypoints();
+                        NProgress.done();
                     });
-                }
-                if (page === 'jobs') {
-                    TechshedCo.initJobScoreWidget();
-                }
-
-                pageContainer.find('p').unorphanize(1);
-                TechshedCo.setWaypoints();
-                NProgress.done();
-            });
-        },
+                },
 
         fitText: function() {
           setTimeout(function() {
