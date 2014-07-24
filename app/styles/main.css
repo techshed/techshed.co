@@ -210,8 +210,8 @@ a {
 .logo--footer {
   display: inline-block;
   background-image: url("../images/global/techshed-logo-type.png");
-  background-size: contain;
-  width: 11rem;
+  background-size: 200%;
+  width: 10rem;
   height: 2.1rem;
   margin-bottom: 2.2rem; }
 
@@ -921,7 +921,7 @@ h4 {
     max-width: 90rem; } }
 
 .project--featured {
-  height: 38rem;
+  height: 35rem;
   margin: 4rem 0 18rem;
   background-position: 93% center;
   overflow: visible; }
@@ -937,7 +937,7 @@ h4 {
       .project--featured .project__copy {
         left: 0;
         width: 60%;
-        max-width: 40rem;
+        max-width: 44rem;
         padding: 0;
         background: none; }
       .project--featured br {
@@ -946,10 +946,10 @@ h4 {
     .project--featured {
       height: 37rem; }
       .project--featured .project__copy {
-        left: 6%; } }
+        left: 8%; } }
   @media screen and (min-width: 64.063em) {
     .project--featured {
-      height: 40rem; } }
+      height: 37rem; } }
 
 .project--featured__badge {
   position: absolute;

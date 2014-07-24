@@ -34,7 +34,7 @@
 .project--featured{
   @extend .project;
   @extend .block--img;
-  height: 38rem;
+  height: 35rem;
   margin: 4rem 0 18rem;
   background-position: 93% center;
   overflow: visible;
@@ -51,7 +51,7 @@
     .project__copy{
       left: 0;
       width: 60%;
-      max-width: 40rem;
+      max-width: 44rem;
       padding: 0;
       background: none;
     }
@@ -64,12 +64,12 @@
     height: 37rem;
 
     .project__copy{
-      left: 6%;
+      left: 8%;
     }
   }
 
   @include respond-to(lg-screen) {
-    height: 40rem;
+    height: 37rem;
   }
 }
 .project--featured__badge{
