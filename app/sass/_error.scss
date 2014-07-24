@@ -1,6 +1,6 @@
 .error{
   .page-header--subpage{
-    height: 50rem;
+    height: 48rem;
     margin: 0;
     padding: 0;
   }
@@ -10,13 +10,12 @@
   }
 
   h1 span{
+    @extend %monospace;
     font-weight: 100;
     color: #aaa;
-    font-family: consolas;
     display: inline-block;
-    font-size: 110%;
   }
   .page-header__copy{
-    margin-top: -8rem;
+    margin-top: -5rem;
   }
 }

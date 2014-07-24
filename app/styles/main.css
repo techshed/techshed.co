@@ -12,6 +12,9 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home .purpose {
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal; }
 
+.error h1 span {
+  font-family: 'Consolas', 'Monaco', 'Courier New', 'Courier', monospace; }
+
 .site-footer__location p span, .contact-info h2 span {
   vertical-align: super;
   font-size: 80%; }
@@ -367,7 +370,7 @@ h4 {
   max-width: 76rem;
   margin: 0 auto;
   padding: 10rem 0;
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 300;
   line-height: 1.6; }
   .pullquote.sans-serif {
@@ -506,8 +509,6 @@ h4 {
   .nav-primary .logo, .nav-primary .nav-primary__menu--lg {
     position: absolute; }
   @media screen and (min-width: 40.063em) {
-    .nav-primary .nav-primary__menu-toggle, .nav-primary .nav-primary__menu {
-      display: none !important; }
     .nav-primary .nav-primary__menu--lg {
       display: block; } }
 
@@ -524,6 +525,9 @@ h4 {
   .nav-primary__menu-toggle span {
     display: inline-block;
     opacity: .5; }
+  @media screen and (min-width: 40.063em) {
+    .nav-primary__menu-toggle {
+      display: none !important; } }
 
 .nav-primary__menu {
   position: absolute;
@@ -538,6 +542,9 @@ h4 {
   display: none;
   padding-top: 7rem;
   overflow: hidden; }
+  @media screen and (min-width: 40.063em) {
+    .nav-primary__menu {
+      display: none !important; } }
   .nav-primary__menu.is-hidden {
     opacity: 0; }
     .nav-primary__menu.is-hidden:before {
@@ -716,9 +723,11 @@ h4 {
   height: 100%;
   top: 0;
   right: 0; }
+  @media screen and (min-width: 40.063em) {
+    .video-bg {
+      display: block; } }
   @media screen and (min-width: 64.063em) {
     .video-bg {
-      display: block;
       height: 107%; } }
 
 .culture p:first-letter {
@@ -969,13 +978,16 @@ h4 {
     opacity: 0; } }
 
 @media screen and (min-width: 40.063em) {
+  .project--img-right .col {
+    margin-right: -5% !important; }
   .project--img-right .col:first-child {
     width: 40%;
     float: right; }
   .project--img-right .col:nth-child(2) {
     float: left; }
   .project--img-right .project__copy {
-    right: -5%; }
+    right: -10%;
+    width: 110%; }
   .project--img-right img {
     margin-left: 10px; }
   .project--img-right.dormant img {
@@ -987,9 +999,9 @@ h4 {
     opacity: 0; } }
 @media screen and (min-width: 64.063em) {
   .project--img-right .col {
-    margin-right: -5%; }
+    margin-right: -10% !important; }
   .project--img-right .project__copy {
-    right: -12%;
+    right: -15%;
     width: 105%; } }
 
 .project__img, .project__copy {
@@ -1083,7 +1095,7 @@ h4 {
       padding: 10rem 0 7rem; } }
 
 .error .page-header--subpage {
-  height: 50rem;
+  height: 48rem;
   margin: 0;
   padding: 0; }
 .error h1 {
@@ -1091,8 +1103,6 @@ h4 {
 .error h1 span {
   font-weight: 100;
   color: #aaa;
-  font-family: consolas;
-  display: inline-block;
-  font-size: 110%; }
+  display: inline-block; }
 .error .page-header__copy {
-  margin-top: -8rem; }
+  margin-top: -5rem; }

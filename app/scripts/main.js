@@ -29,10 +29,6 @@
             });
             TechshedCo.bindEvents();
             TechshedCo.showPage(page);
-
-            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-             console.log('this is a mobile device');
-            }
         },
 
         getCurrentPath: function() {
@@ -60,6 +56,8 @@
                 var $this = $(this),
                     page = $this.attr('class').split(' ')[0],
                     path = TechshedCo.getCurrentPath();
+
+                if (page === 'logo') { page = 'home'; }
 
                 // ~~~~~~ mobile nav logic (need to refactor) ~~~~~~
                 if ($this.parents().hasClass('nav-primary__menu')) {
@@ -114,6 +112,11 @@
                         if (page === 'home') {
                             TechshedCo.fitText();
                             $('body').removeClass().addClass('home');
+
+                            // disable video if device is mobile
+                            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                              $('.video-bg').remove();
+                            }
                         } else {
                             // init general subpage
                             $('body').removeClass().addClass(page + ' subpage');

@@ -110,8 +110,11 @@
   top: 0;
   right: 0;
 
-  @include respond-to(lg-screen) {
+  @include respond-to(md-screen) {
     display: block;
+  }
+
+  @include respond-to(lg-screen) {
     height: 107%;
   }
   @include respond-to(x-lg-screen) {

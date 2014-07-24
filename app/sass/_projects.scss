@@ -109,6 +109,9 @@
   @extend .project;
 
   @include respond-to(md-screen) {
+    .col{
+      margin-right: -5% !important;
+    }
     .col:first-child{
       width: 40%;
       float: right;
@@ -117,7 +120,8 @@
       float: left;
     }
     .project__copy{
-      right: -5%;
+      right: -10%;
+      width: 110%;
     }
     img{
       margin-left: 10px;
@@ -132,10 +136,10 @@
   }
   @include respond-to(lg-screen) {
     .col{
-      margin-right: -5%;
+      margin-right: -10% !important;
     }
     .project__copy{
-      right: -12%;
+      right: -15%;
       width: 105%;
     }
   }

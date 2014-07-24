@@ -21,9 +21,6 @@
   }
 
   @include respond-to(md-screen) {
-    .nav-primary__menu-toggle, .nav-primary__menu{
-      display: none !important;
-    }
     .nav-primary__menu--lg{
       display: block;
     }
@@ -45,6 +42,9 @@
     display: inline-block;
     opacity: .5;
   }
+  @include respond-to(md-screen) {
+    display: none !important;
+  }
 }
 .nav-primary__menu{
   @extend %regular-transition;
@@ -62,6 +62,10 @@
   display: none;
   padding-top: $primary-nav-height;
   overflow: hidden;
+
+  @include respond-to(md-screen) {
+    display: none !important;
+  }
 
   &.is-hidden{
     opacity: 0;
