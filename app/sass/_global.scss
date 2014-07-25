@@ -107,11 +107,12 @@ a{
 }
 .logo--footer{
   display: inline-block;
-  background-image: url('../images/global/techshed-logo-type.png');
-  background-size: contain;
-  width: 11rem;
+  width: 10rem;
   height: 2.1rem;
   margin-bottom: $baseline-spacing-soft;
+  background-image: url('../images/global/techshed-logo-type.png');
+  background-size: 200%;
+  background-repeat: no-repeat;
 }
 
 
