@@ -86,7 +86,7 @@ body, .page-header h1, .pullquote.sans-serif, .page-header--home .purpose {
   -moz-transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-[id^=page], #pages-container, .site-footer {
+[id^=page], #pages-container, p, h1, h2, h3, h4, .purpose, .site-footer {
   -webkit-transition: opacity 0.33s ease;
   -moz-transition: opacity 0.33s ease;
   transition: opacity 0.33s ease; }
@@ -210,8 +210,8 @@ a {
 .logo--footer {
   display: inline-block;
   background-image: url("../images/global/techshed-logo-type.png");
-  background-size: 200%;
-  width: 10rem;
+  background-size: contain;
+  width: 11rem;
   height: 2.1rem;
   margin-bottom: 2.2rem; }
 
@@ -367,10 +367,10 @@ h4 {
   margin: 0; }
 
 .pullquote {
-  max-width: 76rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding: 10rem 0;
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.6; }
   .pullquote.sans-serif {
@@ -378,77 +378,10 @@ h4 {
     line-height: 1.48;
     color: #fff; }
 
-.site-footer {
-  font-size: 1.6rem;
-  font-weight: 900;
-  margin-top: 4.4rem; }
-  .site-footer:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .site-footer .row, .site-footer .site-footer {
-    text-align: center;
-    margin-bottom: 4.4rem; }
-  .site-footer .col {
-    height: 100%;
-    float: left;
-    width: 100%; }
-    .site-footer .col:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media screen and (min-width: 40.063em) {
-      .site-footer .col {
-        width: 50%; } }
-
-.site-footer__location {
-  margin-bottom: 4.4rem; }
-  .site-footer__location p {
-    margin: 0 0 2.2rem; }
-  .site-footer__location a {
-    color: #444; }
-  @media screen and (min-width: 40.063em) {
-    .site-footer__location {
-      text-align: left;
-      margin-bottom: 0; }
-      .site-footer__location p:last-child {
-        margin-bottom: 0; } }
-
-.site-footer__social-icons {
-  position: relative;
-  float: left;
-  font-weight: normal;
-  text-align: center;
-  font-size: 3.2rem;
-  width: 100%; }
-  .site-footer__social-icons a {
-    color: #333333;
-    margin: 0 0.6rem; }
-  @media screen and (min-width: 40.063em) {
-    .site-footer__social-icons {
-      margin-top: 9.5rem;
-      font-size: 2.6rem;
-      text-align: right; } }
-
-.repo-link {
-  font-size: 1.5rem; }
-  .repo-link span {
-    color: gray;
-    padding: 0 .3rem;
-    font-weight: 600; }
-  .repo-link a {
-    background-size: 2px 2px;
-    background-position: 0 1.6rem;
-    background-repeat: repeat-x;
-    background-color: transparent;
-    background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.3) 50%);
-    background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.3) 50%);
-    color: #333333;
-    color: gray; }
-    .repo-link a:hover {
-      background-color: transparent;
-      background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.6) 50%);
-      background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.6) 50%); }
+p, h1, h2, h3, h4, .purpose {
+  opacity: 0; }
+  .wf-active p, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active .purpose {
+    opacity: 1; }
 
 .btn {
   display: inline-block;
@@ -639,6 +572,78 @@ h4 {
   .nav-primary__menu--lg span {
     padding: 0.7rem 0; }
 
+.site-footer {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-top: 4.4rem; }
+  .site-footer:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .site-footer .row, .site-footer .site-footer {
+    text-align: center;
+    margin-bottom: 4.4rem; }
+  .site-footer .col {
+    height: 100%;
+    float: left;
+    width: 100%; }
+    .site-footer .col:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media screen and (min-width: 40.063em) {
+      .site-footer .col {
+        width: 50%; } }
+
+.site-footer__location {
+  margin-bottom: 4.4rem; }
+  .site-footer__location p {
+    margin: 0 0 2.2rem; }
+  .site-footer__location a {
+    color: #444; }
+  @media screen and (min-width: 40.063em) {
+    .site-footer__location {
+      text-align: left;
+      margin-bottom: 0; }
+      .site-footer__location p:last-child {
+        margin-bottom: 0; } }
+
+.site-footer__social-icons {
+  position: relative;
+  float: left;
+  font-weight: normal;
+  text-align: center;
+  font-size: 3.2rem;
+  width: 100%; }
+  .site-footer__social-icons a {
+    color: #333333;
+    margin: 0 0.6rem; }
+  @media screen and (min-width: 40.063em) {
+    .site-footer__social-icons {
+      margin-top: 9.5rem;
+      font-size: 2.6rem;
+      text-align: right; } }
+
+.repo-link {
+  font-size: 1.5rem; }
+  .repo-link span {
+    color: gray;
+    padding: 0 .3rem;
+    font-weight: 600; }
+  .repo-link a {
+    background-size: 2px 2px;
+    background-position: 0 1.6rem;
+    background-repeat: repeat-x;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.3) 50%);
+    background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.3) 50%);
+    color: #333333;
+    color: gray; }
+    .repo-link a:hover {
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.6) 50%);
+      background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.6) 50%); }
+
 .page-header--home {
   background-color: #FBAB69;
   overflow: hidden;
@@ -648,7 +653,7 @@ h4 {
     color: #fff;
     margin-top: 2rem; }
   .page-header--home h1 {
-    margin-left: -.6rem;
+    margin-left: -.5rem;
     letter-spacing: -.2rem; }
   .page-header--home .purpose {
     margin: 1.2rem 0 2rem;
@@ -735,7 +740,7 @@ h4 {
   line-height: 0;
   display: inline-block;
   float: left;
-  padding: 3.2rem 0rem 1.3rem 0rem; }
+  padding: 3.3rem 0rem 1rem 0rem; }
 @-moz-document url-prefix() {
   .culture p:first-letter {
     padding: 0.2rem 0.3rem 0.8rem 0.6rem; } }
@@ -1087,7 +1092,7 @@ h4 {
     color: #333333; }
     .page-header--subpage .page-header__copy p {
       width: 100%;
-      max-width: 70rem;
+      max-width: 75rem;
       margin-bottom: 0;
       font-size: 2rem; }
   @media screen and (min-width: 40.063em) {

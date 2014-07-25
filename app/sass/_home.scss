@@ -10,7 +10,7 @@
   }
   // left edge alignment for this type
   h1{
-    margin-left: -.6rem;
+    margin-left: -.5rem;
     letter-spacing: -.2rem;
   }
   // instead of <p> to avoid being unorphanized();
@@ -137,7 +137,7 @@
     line-height: 0;
     display: inline-block;
     float: left;
-    padding: 3.2rem 0rem 1.3rem 0rem;
+    padding: 3.3rem 0rem 1rem 0rem;
 
 
     // firefox fix
