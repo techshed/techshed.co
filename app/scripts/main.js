@@ -29,6 +29,7 @@
             });
             TechshedCo.bindEvents();
             TechshedCo.showPage(page);
+            el.$navPrimary.addClass('visible');
         },
 
         getCurrentPath: function() {
@@ -103,7 +104,7 @@
 
                     // check if page already loaded, else go load it first
                     if($('#page-' + page).length){
-
+                        TechshedCo.toggleVideoPlaying(page);
                         pageContainer.removeClass().addClass('is-visible');
                         pageContainer.siblings().removeClass().addClass('is-hidden');
                         // el.$pageWindow.height(pageContainer.height());
@@ -113,6 +114,11 @@
                             TechshedCo.fitText();
                             $('body').removeClass().addClass('home');
 
+                            // remove video poster after play to avoid loop flicker
+                            $('#video-bg').on('playing', function() {
+                                $(this).attr('poster', '');
+                            });
+
                             // disable video if device is mobile
                             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                               $('.video-bg').remove();
@@ -120,8 +126,8 @@
                         } else {
                             // init general subpage
                             $('body').removeClass().addClass(page + ' subpage');
-
                         }
+                        // page doesn't exist yet so let's go load it
                     } else{
                         TechshedCo.loadPage(page);
                     }
@@ -145,16 +151,9 @@
                         } else{
                             TechshedCo.showPage(page);
                         }
-                        if (page==='home'){
-                            // remove video poster after play to avoid loop flicker
-                            $('.video-bg').on('playing', function() {
-                                $(this).attr('poster', '');
-                            });
-                        }
                         if (page === 'jobs') {
                             TechshedCo.initJobScoreWidget();
                         }
-
                         pageContainer.find('p').unorphanize(1);
                         TechshedCo.setWaypoints();
                         NProgress.done();
@@ -163,7 +162,7 @@
 
         fitText: function() {
           setTimeout(function() {
-            $('.fit-text').fitText(0.697, {
+            $('.fit-text').css('opacity','1').fitText(0.697, {
                 minFontSize: '84px'
             });
           }, 40);
@@ -197,6 +196,22 @@
                         ev.stopPropagation();
                     });
             }
+        },
+
+        toggleVideoPlaying: function(page) {
+            var video = $('#video-bg');
+            console.log('toggleVideoPlaying()');
+
+            setTimeout( function() {
+                if((page === 'home')){
+                    console.log('video played');
+                    video[0].play();
+                } else{
+                    console.log('video paused');
+                    video[0].pause();
+                }
+            }, 100);
+
         },
 
         setHeaderHeight: function() {

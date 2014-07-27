@@ -1,12 +1,17 @@
 .nav-primary{
+  @extend %default-cursor;
   @extend %no-select;
   @extend %backface-hidden;
+  opacity: 0;
   position: absolute;
   top: 0;
   width: 100%;
   height: $primary-nav-height;
   z-index: 3;
-  cursor: default;
+
+  &.visible{
+      opacity: 1;
+  }
 
   a:last-child{
     padding-right: 0;
@@ -145,20 +150,22 @@
   text-align: right;
   right: 0;
 
+
   a{
     padding: .8rem 1.3rem;
     font-weight: 900;
     font-size: 1.7rem;
-    color: $body-copy-color;
+    color: #fff;
 
-    .home &{
-      color: #fff;
+
+    .subpage &{
+        color: $body-copy-color;
     }
     &.active span{
-      @include svelte-underline(dark, heavy, no-hover);
+      @include svelte-underline(light, heavy, no-hover);
 
-      .home &{
-        @include svelte-underline(light, heavy, no-hover);
+      .subpage &{
+        @include svelte-underline(dark, heavy, no-hover);
       }
     }
   }

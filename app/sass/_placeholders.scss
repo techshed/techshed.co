@@ -1,4 +1,5 @@
 // Type
+
 %serif{
   font-family: "Libre Baskerville", "Palatino Linotype", "Palatino", serif;
   font-style: italic;
@@ -16,7 +17,9 @@
   font-size: 80%;
 }
 
+
 // Layout & Positioning
+
 %debug-layout{
   * { background-color: rgba(255,0,0,.2) !important; }
   * * { background-color: rgba(0,255,0,.2) !important; }
@@ -30,6 +33,12 @@
   @include transform(translateY(-50%));
   position: relative;
   top: 50%;
+}
+%absolute-center {
+  @include transform(translateY(-50%) translateX(-50%));
+  position: relative;
+  top: 50%;
+  left: 50%;
 }
 %vertical-align-children{
   text-align: center;
@@ -58,7 +67,9 @@
   height: 0;
 }
 
+
 // Helpers
+
 %default-cursor{
   cursor: default;
 }
@@ -66,7 +77,9 @@
   @include user-select(none);
 }
 
+
 // Rendering
+
 %hwa {
   -webkit-transform: translateZ(0) translate3D(0,0,0);
   -moz-transform: translateZ(0) translate3D(0,0,0);

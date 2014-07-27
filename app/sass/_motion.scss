@@ -15,7 +15,7 @@
   @include transition(all 1.5s $ease-in-out-quad);
 }
 %fade-transition{
-  @include transition(opacity .33s ease);
+  @include transition(opacity .25s ease);
 }
 %no-transition{
   @include transition(none);

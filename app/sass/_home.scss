@@ -1,51 +1,20 @@
 .page-header--home{
+  @extend .page-header;
   background-color: #FBAB69;
   overflow: hidden;
   height: 52rem;
-
-  .page-header__copy{
-    position: absolute;
-    color: #fff;
-    margin-top: 2rem;
-  }
-  // left edge alignment for this type
-  h1{
-    margin-left: -.5rem;
-    letter-spacing: -.2rem;
-  }
-  // instead of <p> to avoid being unorphanized();
-  .purpose{
-    @extend %sans-serif;
-    margin: 1.2rem 0 2rem;
-    font-weight: 900;
-    line-height: 1.3;
-    width: 100%;
-    max-width: 50rem;
-  }
 
   @include respond-to(md-screen) {
     height: auto;
     max-height: 48rem;
 
+    // enable relative/fluid sizing
     &:before{
       content: '';
       display: block;
       margin-top: 64%;
     }
-    h1{
-      width: 107%;
-    }
-    .comma{
-      display: inline-block;
-      visibility: visible;
-      height: auto;
-      margin-right: -.5rem;
-    }
-    .btn{
-      max-width: 26rem;
-    }
   }
-
   @include respond-to(lg-screen) {
     background-image: none;
     max-height: 69rem;
@@ -53,31 +22,71 @@
     &:before{
       margin-top: 47.5%;
     }
-    h1{
-      // more accurate left and right type alignment
-      margin-left: -.8rem;
-    }
   }
-
   @include respond-to(x-lg-screen) {
     max-height: 75rem;
+  }
+  @include respond-to(xx-lg-screen) {
+    max-height: 75rem;
+  }
+}
 
+.page-header--home__copy{
+  @extend .page-header__copy;
+  position: absolute;
+  margin-top: 2rem;
+  color: #fff;
+
+  // left edge alignment for this type
+  h1{
+    @extend %fade-transition;
+    margin-left: -.5rem;
+    font-size: 6rem;
+    opacity: 0;
+    letter-spacing: -.2rem;
+  }
+  .comma{
+    @extend %ghost-block;
+  }
+
+  @include respond-to(md-screen) {
+    width: 107%;
+
+    .comma{
+      visibility: visible;
+      display: inline-block;
+      height: auto;
+      margin-right: -.5rem;
+    }
+    .btn{
+      max-width: 26rem;
+    }
+  }
+  @include respond-to(lg-screen) {
     h1{
-      width: 106%;
       margin-left: -.8rem;
     }
   }
-
+  @include respond-to(x-lg-screen) {
+    h1{
+      margin-left: -.8rem;
+    }
+  }
   @include respond-to(xx-lg-screen) {
-    max-height: 75rem;
-
     h1{
       margin-left: -1rem;
     }
-    .purpose{
-      margin: 1.5rem 0 2rem;
-    }
   }
+}
+
+// instead of <p> to avoid being unorphanized();
+.purpose{
+  @extend %sans-serif;
+  margin: 1.2rem 0 2rem;
+  font-weight: 900;
+  line-height: 1.3;
+  width: 100%;
+  max-width: 50rem;
 }
 .page-header--home__bg{
   position: absolute;
@@ -101,36 +110,29 @@
     display: none;
   }
 }
-.video-bg{
+#video-bg{
   display: none;
   position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  height: 100%;
   top: 0;
   right: 0;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-image: url(../images/home/video-poster-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @include respond-to(md-screen) {
     display: block;
   }
-
   @include respond-to(lg-screen) {
     height: 107%;
   }
-  @include respond-to(x-lg-screen) {
-
-  }
-  @include respond-to(xx-lg-screen) {
-
-  }
 }
 
-// culture
 .culture{
 
-  .pullquote{
-    @extend %serif;
-  }
+  padding: 9rem 0;
 
   p:first-letter{
     font-size: 309%;
@@ -139,7 +141,6 @@
     float: left;
     padding: 3.3rem 0rem 1rem 0rem;
 
-
     // firefox fix
     @-moz-document url-prefix() {
       padding: 0.2rem 0.3rem 0.8rem 0.6rem;
@@ -147,23 +148,22 @@
   }
 }
 
-.location{
-  .pullquote{
-    font-weight: 900;
+.our-jobs .block--tall{
+    max-height: 40rem;
+    min-height: none;
+  @include respond-to(md-screen) {
+    max-height: none;
+    min-height: 40rem;
   }
 }
-
-.our-jobs{
-  background: #fff;
-}
-
 // our jobs block
 .our-jobs__copy{
-  @extend %vertical-align;
-  max-width: 48rem;
-  width: 90%;
+  @extend %absolute-center;
+  position: absolute;
+  max-width: 47rem;
+  width: 100%;
+  padding: 0 8%;
   color: $body-copy-color;
-  position: relative;
   margin: 0 auto;
   text-align: left;
 
@@ -188,8 +188,6 @@
   }
 
   @include respond-to(md-screen) {
-    max-width: 47rem;
-    width: 85%;
 
     .btn{
       max-width: 25rem;
@@ -216,7 +214,6 @@
 }
 .home04{
   background-image: url(../images/home/home04.jpg);
-  height: 40rem;
 }
 .home05{
   background-image: url(../images/home/home05.jpg);

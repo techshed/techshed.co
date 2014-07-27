@@ -1,19 +1,8 @@
-// Subpage specific global overrides
+// Subpage styles
+
 .page-header--subpage{
-    padding: 8rem 0 5rem;
-
-  .page-header__copy{
-    @include transform(translateY(0));
-    color: $body-copy-color;
-
-    p{
-      @extend %serif;
-      width: 100%;
-      max-width: 75rem;
-      margin-bottom: 0;
-      font-size: 2rem;
-    }
-  }
+  @extend .page-header;
+  padding: 8rem 0 5rem;
 
   @include respond-to(md-screen) {
     padding: 10rem 0 7rem;
@@ -21,5 +10,23 @@
   @include respond-to(lg-screen) {
   }
   @include respond-to(x-lg-screen) {
+  }
+}
+
+.page-header--subpage__copy{
+  @extend .page-header__copy;
+  @include transform(translateY(0));
+  color: $body-copy-color;
+
+  h1{
+    font-size: 6rem;
+  }
+  p{
+    @extend %serif;
+    width: 100%;
+    max-width: 75rem;
+    margin-bottom: 0;
+    font-size: 2rem;
+    line-height: 1.6;
   }
 }

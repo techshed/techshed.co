@@ -1,14 +1,3 @@
-* {
-  ::selection {
-    background: $homedepot-orange; /* Safari */
-    color: #fff;
-  }
-  ::-moz-selection {
-    background: $homedepot-orange; /* Firefox */
-    color: #fff;
-  }
-}
-
 html, body{
   height: 100%;
 }
@@ -33,15 +22,20 @@ body{
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  ::selection {
+    background: $homedepot-orange; /* Safari */
+    color: #fff;
+  }
+  ::-moz-selection {
+    background: $homedepot-orange; /* Firefox */
+    color: #fff;
+  }
 }
 
 a{
   color: darken($homedepot-orange, 20%);
   text-decoration: none;
-
-  @include respond-to(md-screen) {
-    // @include transition(color .1s $ease-in-out-quad);
-  }
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -118,15 +112,14 @@ a{
 
 // page container
 [id^=page]{
-  // @extend %regular-transition;
-  // @extend %backface-hidden;
-  // @extend %hwa;
+  @extend %fade-transition;
+  @extend %backface-hidden;
+  @extend %hwa;
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   background: #fff;
-  @extend %fade-transition;
 }
 
 // pages container
@@ -142,15 +135,17 @@ a{
 
 // content window states
 .is-hidden{
-  display: none;
+  visibility: hidden;
   height: 0;
-  z-index: -1;
   opacity: 0;
+  z-index: 0;
+  position:fixed !important;
+
 }
 .is-visible{
-  display: block;
-  z-index: 1;
+  visibility: visible;
   opacity: 1;
+  z-index: 1;
 }
 .no-scroll{
   @extend %no-transition;
@@ -176,19 +171,11 @@ a{
     margin: 0 0 0 -.4rem;
     font-weight: 900;
     line-height: .8;
-    font-size: 6rem;
     letter-spacing: -0.1rem;
   }
   p, .purpose{
     width: 82%;
     font-size: 2.1rem;
-    line-height: 1.6;
-  }
-  .comma, .break-sm{
-    @extend %ghost-block;
-  }
-  .break-sm{
-    display: none;
   }
   .btn{
     width: 100%;
@@ -216,21 +203,17 @@ a{
   position: relative;
   float: left;
   width: 100%;
-
-  // iOS 1px gap fix
-  margin-bottom: -1px;
+  // hairline gap fix
+  margin-bottom: -2px;
+  background-color: #fff;
 }
+
 .block{
   position: relative;
   float: left;
   margin: auto;
   width: 100%;
-  padding: 3.2rem 0;
   overflow: hidden;
-
-  &.dormant p{
-
-  }
 }
 .block--img{
   @extend .block;
@@ -244,9 +227,10 @@ a{
   a{
     @include svelte-underline(light, normal, hover);
   }
-  .pullquote{
-    padding: 13rem 0;
-  }
+
+  .quote{
+      padding: 13rem 0;
+    }
 }
 .block--img__img{
   position: absolute;
@@ -258,23 +242,18 @@ a{
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
 }
 .block--tall{
   @extend .block;
-  height: 40rem;
 
+  // enable relative/fluid sizing
+  &:before{
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
   @include respond-to(md-screen) {
     width: 50%;
-  }
-  @include respond-to(lg-screen) {
-    height: 46rem;
-  }
-  @include respond-to(x-lg-screen) {
-    height: 56rem;
-  }
-  @include respond-to(xx-lg-screen) {
-    height: 60rem;
   }
 }
 .block--wide{
@@ -283,34 +262,35 @@ a{
   width: 100%;
   background-position: center right;
 
-  @include respond-to(md-screen) { }
   @include respond-to(lg-screen) { height: 46rem; }
-  @include respond-to(x-lg-screen) { }
-  @include respond-to(xx-lg-screen) { }
 }
 
-// type related
+// type relatefd
 h4{
   margin: 0;
 }
-.pullquote{
+.quote{
   max-width: 80rem;
+  position: relative;
   margin: 0 auto;
-  padding: 10rem 0;
   font-size: 2rem;
   font-weight: 300;
   line-height: 1.6;
-
-  &.sans-serif{
-    @extend %sans-serif;
-    font-weight: 900;
-    line-height: 1.48;
-    color: #fff;
-  }
+}
+.quote--sans-serif{
+  @extend .quote;
+  @extend %sans-serif;
+  font-weight: 900;
+  line-height: 1.48;
+  color: #fff;
+}
+.quote--serif{
+  @extend .quote;
+  @extend %serif;
 }
 
 // fade in text after webfonts loaded
-p, h1, h2, h3, h4, .purpose{
+p, a, h1, h2, h3, h4, .purpose, .logo{
   @extend %fade-transition;
   opacity: 0;
 

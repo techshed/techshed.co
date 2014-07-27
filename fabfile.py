@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
-# Copyright 2014 Red Beacon, Inc. - All Rights Reserved
+# Copyright 2014 Techshed - All Rights Reserved
 #
-# This is the Fabric file for pushing the Techshed website.
+# This is the Fabric file for pushing the Techshed.co website.
 #
 # Author: Billy McCarthy
 

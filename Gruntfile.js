@@ -1,3 +1,4 @@
+/* jshint camelcase: false */
 'use strict';
 
 module.exports = function(grunt) {
@@ -19,6 +20,16 @@ module.exports = function(grunt) {
       // Configurable paths
       app: 'app',
       dist: 'dist'
+    },
+
+    throttle: {
+        default: {
+            remote_port: 9000,
+            local_port: 9001,
+            upstream: 10*1024,
+            downstream: 100*1024,
+            keepalive: true
+        }
     },
 
     sass: {
@@ -84,11 +95,13 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '.tmp/{,*/}*.html',
           '<%= config.app %>/pages/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ],
+        tasks: [
+          'includes:server'
+        ]
       }
     },
 
@@ -323,7 +336,8 @@ module.exports = function(grunt) {
       'clean:server',
       'concurrent:server',
       'connect:livereload',
-      'watch'
+      'watch',
+      'throttle'
     ]);
   });
 
