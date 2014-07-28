@@ -3,10 +3,10 @@ html, body{
 }
 html{
   @include respond-to(handhelds) { font-size: 62.5%; }
-  @include respond-to(md-screen) { font-size: 75%; }
+  @include respond-to(md-screen) { font-size: 72%; }
   @include respond-to(lg-screen) { font-size: 80%; }
-  @include respond-to(x-lg-screen) { font-size: 100%; }
-  @include respond-to(xx-lg-screen) { font-size: 110%; }
+  @include respond-to(x-lg-screen) { font-size: 108%; }
+  @include respond-to(xx-lg-screen) { font-size: 120%; }
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
   // text-rendering: optimizeLegibility;
@@ -211,12 +211,11 @@ a{
 .block{
   position: relative;
   float: left;
-  margin: auto;
   width: 100%;
+  margin: auto;
   overflow: hidden;
 }
 .block--img{
-  @extend .block;
   padding: 0;
   background-size: cover;
   background-position: center center;
@@ -227,10 +226,6 @@ a{
   a{
     @include svelte-underline(light, normal, hover);
   }
-
-  .quote{
-      padding: 13rem 0;
-    }
 }
 .block--img__img{
   position: absolute;
@@ -243,8 +238,10 @@ a{
   background-position: center center;
   background-repeat: no-repeat;
 }
+.block--quote{
+  padding: 12rem 0;
+}
 .block--tall{
-  @extend .block;
 
   // enable relative/fluid sizing
   &:before{
@@ -257,12 +254,12 @@ a{
   }
 }
 .block--wide{
-  @extend .block;
   height: 30rem;
   width: 100%;
   background-position: center right;
-
-  @include respond-to(lg-screen) { height: 46rem; }
+  @include respond-to(lg-screen) {
+    height: 46rem;
+  }
 }
 
 // type relatefd
@@ -270,7 +267,7 @@ h4{
   margin: 0;
 }
 .quote{
-  max-width: 80rem;
+  max-width: 76rem;
   position: relative;
   margin: 0 auto;
   font-size: 2rem;

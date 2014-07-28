@@ -2,6 +2,7 @@
 // Project Item
 .project{
   @extend .block;
+  margin-bottom: 5rem;
 
   img{
     @extend %slower-transition;
@@ -15,6 +16,8 @@
   }
 
   @include respond-to(md-screen) {
+    margin-bottom: 0;
+
     img{
       max-width: none;
     }
@@ -32,10 +35,10 @@
 }
 
 .project--featured{
-  @extend .project;
+  @extend .block;
   @extend .block--img;
   height: 35rem;
-  margin: 4rem 0 18rem;
+  margin: 4rem 0 20rem;
   background-position: 93% center;
   overflow: visible;
 

@@ -73,6 +73,7 @@
     }
   }
   @include respond-to(xx-lg-screen) {
+
     h1{
       margin-left: -1rem;
     }
@@ -128,11 +129,12 @@
   @include respond-to(lg-screen) {
     height: 107%;
   }
+  @include respond-to(x-lg-screen) {
+    height: 109%;
+  }
 }
 
 .culture{
-
-  padding: 9rem 0;
 
   p:first-letter{
     font-size: 309%;
@@ -151,6 +153,7 @@
 .our-jobs .block--tall{
     max-height: 40rem;
     min-height: none;
+
   @include respond-to(md-screen) {
     max-height: none;
     min-height: 40rem;
@@ -158,14 +161,13 @@
 }
 // our jobs block
 .our-jobs__copy{
-  @extend %absolute-center;
+  @extend %vertical-align;
   position: absolute;
-  max-width: 47rem;
   width: 100%;
-  padding: 0 8%;
-  color: $body-copy-color;
+  padding: 0 9%;
   margin: 0 auto;
   text-align: left;
+  color: $body-copy-color;
 
   h2{
     @extend %default-cursor;
@@ -179,19 +181,20 @@
     @extend %serif;
     line-height: 1.7;
     margin: 0;
-    padding: 2rem 0;
+    padding: 1.4rem 0 2rem;
     width: 100%;
     font-size: 1.8rem;
   }
   .btn{
     width: 100%;
+    max-width: 25rem;
   }
 
   @include respond-to(md-screen) {
+    padding: 0 12%;
+  }
+  @include respond-to(x-lg-screen) {
 
-    .btn{
-      max-width: 25rem;
-    }
   }
 }
 
