@@ -200,14 +200,11 @@
 
         toggleVideoPlaying: function(page) {
             var video = $('#video-bg');
-            console.log('toggleVideoPlaying()');
 
             setTimeout( function() {
                 if((page === 'home')){
-                    console.log('video played');
                     video[0].play();
                 } else{
-                    console.log('video paused');
                     video[0].pause();
                 }
             }, 100);
