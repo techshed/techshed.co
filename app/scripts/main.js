@@ -126,7 +126,7 @@
 
                             // disable video if device is mobile
                             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                              $('.video-bg').remove();
+                              $('#video-bg').remove();
                             }
                         } else {
                             // init general subpage
