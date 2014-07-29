@@ -114,10 +114,15 @@
                             TechshedCo.fitText();
                             $('body').removeClass().addClass('home');
 
+                            $('#video-bg').on('loadedmetadata', function() {
+                                $(this).removeClass('is-hidden');
+                            });
                             // remove video poster after play to avoid loop flicker
                             $('#video-bg').on('playing', function() {
                                 $(this).attr('poster', '');
                             });
+
+
 
                             // disable video if device is mobile
                             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {

@@ -84,10 +84,11 @@
 .purpose{
   @extend %sans-serif;
   margin: 1.2rem 0 2rem;
+  width: 103%;
+  max-width: 50rem;
+  font-size: 2.1rem;
   font-weight: 900;
   line-height: 1.3;
-  width: 100%;
-  max-width: 50rem;
 }
 .page-header--home__bg{
   position: absolute;
@@ -112,7 +113,7 @@
   }
 }
 #video-bg{
-  display: none;
+  @extend %regular-transition;
   position: absolute;
   top: 0;
   right: 0;
@@ -122,6 +123,10 @@
   background-image: url(../images/home/video-poster-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+
+  &.is-hidden{
+    opacity: 0;
+  }
 
   @include respond-to(md-screen) {
     display: block;

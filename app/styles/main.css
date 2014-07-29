@@ -71,7 +71,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   -moz-transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-.nav-primary__menu, .nav-primary__menu:before, .nav-primary__menu .nav-primary__link {
+.nav-primary__menu, .nav-primary__menu:before, .nav-primary__menu .nav-primary__link, #video-bg {
   -webkit-transition: all 0.33s ease;
   -moz-transition: all 0.33s ease;
   transition: all 0.33s ease; }
@@ -91,7 +91,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   -moz-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease; }
 
-.no-scroll {
+#pages-container.no-scroll, .nav-primary__menu--lg a {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none; }
@@ -222,6 +222,16 @@ a {
   height: 100%;
   min-height: 40rem;
   background: #fff; }
+  [id^=page].is-hidden {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    z-index: 0;
+    position: fixed !important; }
+  [id^=page].is-visible {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1; }
 
 #pages-container {
   position: relative;
@@ -233,22 +243,9 @@ a {
     content: "";
     display: table;
     clear: both; }
-
-.is-hidden {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  z-index: 0;
-  position: fixed !important; }
-
-.is-visible {
-  visibility: visible;
-  opacity: 1;
-  z-index: 1; }
-
-.no-scroll {
-  height: 100% !important;
-  overflow: hidden; }
+  #pages-container.no-scroll {
+    height: 100% !important;
+    overflow: hidden; }
 
 .page-header, .page-header--home, .page-header--subpage {
   position: relative;
@@ -261,13 +258,12 @@ a {
     display: table;
     clear: both; }
   .page-header h1, .page-header--home h1, .page-header--subpage h1 {
-    width: 100%;
     padding: 0;
     margin: 0 0 0 -.4rem;
     font-weight: 900;
     line-height: .8;
     letter-spacing: -0.1rem; }
-  .page-header p, .page-header--home p, .page-header--subpage p, .page-header .purpose, .page-header--home .purpose, .page-header--subpage .purpose {
+  .page-header p, .page-header--home p, .page-header--subpage p {
     width: 82%;
     font-size: 2.1rem; }
   .page-header .btn, .page-header--home .btn, .page-header--subpage .btn {
@@ -695,10 +691,11 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
 
 .purpose {
   margin: 1.2rem 0 2rem;
+  width: 103%;
+  max-width: 50rem;
+  font-size: 2.1rem;
   font-weight: 900;
-  line-height: 1.3;
-  width: 100%;
-  max-width: 50rem; }
+  line-height: 1.3; }
 
 .page-header--home__bg {
   position: absolute;
@@ -721,7 +718,6 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
       display: none; } }
 
 #video-bg {
-  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -731,6 +727,8 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   background-image: url(../images/home/video-poster-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat; }
+  #video-bg.is-hidden {
+    opacity: 0; }
   @media screen and (min-width: 40.063em) {
     #video-bg {
       display: block; } }

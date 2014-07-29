@@ -152,6 +152,7 @@
 
 
   a{
+    @extend %no-transition;
     padding: .8rem 1.3rem;
     font-weight: 900;
     font-size: 1.7rem;
