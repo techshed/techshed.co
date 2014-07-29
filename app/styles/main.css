@@ -19,7 +19,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   vertical-align: super;
   font-size: 80%; }
 
-.page-header__copy, .page-header--subpage__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .page-header--home__copy, .our-jobs__copy, .benefits__item p, .project__copy, .contact-info__copy {
+.page-header__copy, .page-header--subpage__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .page-header--home__copy, .our-jobs__copy, .benefits__item p, .project__img, .project__copy, .contact-info__copy {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);

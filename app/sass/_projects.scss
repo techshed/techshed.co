@@ -150,11 +150,12 @@
 
 .project__img, .project__copy{
   @extend %slow-transition;
+  @extend %vertical-align;
   width: 100%;
   float: left;
 }
 .project__copy{
-  @extend %vertical-align;
+
   @include transform(none);
 
   h2{
