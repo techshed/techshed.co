@@ -32,10 +32,12 @@
 }
 
 .page-header--home__copy{
-  @extend .page-header__copy;
+  @extend %vertical-align;
   position: absolute;
+  width: 100%;
   margin-top: 2rem;
   color: #fff;
+  z-index: 1;
 
   // left edge alignment for this type
   h1{
@@ -53,7 +55,7 @@
     width: 107%;
 
     .comma{
-      visibility: visible;
+      opacity: 1;
       display: inline-block;
       height: auto;
       margin-right: -.5rem;
@@ -114,6 +116,8 @@
 }
 #video-bg{
   @extend %regular-transition;
+  // hide by default for mobile
+  display: none;
   position: absolute;
   top: 0;
   right: 0;

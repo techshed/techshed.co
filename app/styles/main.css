@@ -19,7 +19,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   vertical-align: super;
   font-size: 80%; }
 
-.page-header__copy, .page-header--home__copy, .page-header--subpage__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .our-jobs__copy, .benefits__item p, .project__copy, .contact-info__copy {
+.page-header__copy, .page-header--subpage__copy, .nav-primary .logo, .nav-primary .nav-primary__menu--lg, .nav-primary__menu .nav-primary__link span, .page-header--home__copy, .our-jobs__copy, .benefits__item p, .project__copy, .contact-info__copy {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -38,7 +38,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
 
 .page-header--home__copy .comma {
   display: block;
-  visibility: hidden;
+  opacity: 0;
   height: 0; }
 
 .page-header h1, .page-header--home h1, .page-header--subpage h1, .nav-primary, .our-jobs__copy h2, .benefits__item p {
@@ -223,13 +223,10 @@ a {
   min-height: 40rem;
   background: #fff; }
   [id^=page].is-hidden {
-    visibility: hidden;
-    height: 0;
     opacity: 0;
     z-index: 0;
     position: fixed !important; }
   [id^=page].is-visible {
-    visibility: visible;
     opacity: 1;
     z-index: 1; }
 
@@ -270,10 +267,10 @@ a {
     width: 100%;
     max-width: 30rem; }
 
-.page-header__copy, .page-header--home__copy, .page-header--subpage__copy {
+.page-header__copy, .page-header--subpage__copy {
   width: 100%;
   z-index: 1; }
-  .subpage .page-header__copy, .subpage .page-header--home__copy, .subpage .page-header--subpage__copy {
+  .subpage .page-header__copy, .subpage .page-header--subpage__copy {
     max-width: 87rem; }
 
 .wrapper {
@@ -662,8 +659,10 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
 
 .page-header--home__copy {
   position: absolute;
+  width: 100%;
   margin-top: 2rem;
-  color: #fff; }
+  color: #fff;
+  z-index: 1; }
   .page-header--home__copy h1 {
     margin-left: -.5rem;
     font-size: 6rem;
@@ -673,7 +672,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     .page-header--home__copy {
       width: 107%; }
       .page-header--home__copy .comma {
-        visibility: visible;
+        opacity: 1;
         display: inline-block;
         height: auto;
         margin-right: -.5rem; }
@@ -718,6 +717,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
       display: none; } }
 
 #video-bg {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -890,13 +890,11 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
 .jobs {
   /* MEDIUM: 641px min */ }
   @media screen and (min-width: 40.063em) {
-    .jobs .page-header--subpage {
-      padding: 10rem 0 5rem; }
-    .jobs .page-header__copy br, .jobs .page-header--home__copy br, .jobs .page-header--subpage__copy br {
+    .jobs .page-header__copy br, .jobs .page-header--subpage__copy br {
       display: none; } }
 
 .jobscore-jobs {
-  max-width: 900px;
+  max-width: 650px;
   min-height: 35rem; }
   .jobscore-jobs .js-fallback {
     opacity: 0; }

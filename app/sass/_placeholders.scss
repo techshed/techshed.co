@@ -63,7 +63,7 @@
 }
 %ghost-block{
   display: block;
-  visibility: hidden;
+  opacity: 0;
   height: 0;
 }
 

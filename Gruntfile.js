@@ -358,8 +358,7 @@ module.exports = function(grunt) {
     'includes',
     'cssmin',
     'usemin',
-    'htmlmin',
-    'imagemin'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [

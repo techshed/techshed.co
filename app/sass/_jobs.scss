@@ -3,9 +3,6 @@
 
   /* MEDIUM: 641px min */
   @include respond-to(md-screen) {
-    .page-header--subpage{
-      padding: 10rem 0 5rem;
-    }
     .page-header__copy{
       br{
         display: none;
@@ -17,7 +14,7 @@
 
 .jobscore-jobs{
   @extend %slower-transition;
-  max-width: 900px;
+  max-width: 650px;
   min-height: 35rem;
 
   .js-fallback{
