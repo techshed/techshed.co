@@ -148,14 +148,10 @@
   }
 }
 
-.project__img, .project__copy{
-  @extend %slow-transition;
-  @extend %vertical-align;
-  width: 100%;
-  float: left;
+.project__img{
+  @include transform(none);
 }
 .project__copy{
-
   @include transform(none);
 
   h2{
@@ -172,11 +168,19 @@
   }
 
   @include respond-to(md-screen) {
-    @include transform(translateY(-50%));
-
     p{
       max-width: 51rem;
     }
+  }
+}
+.project__img, .project__copy{
+  @extend %slow-transition;
+  @extend %vertical-align;
+  width: 100%;
+  float: left;
+
+  @include respond-to(md-screen) {
+    @include transform(translateY(-50%));
   }
 }
 

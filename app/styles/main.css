@@ -1016,9 +1016,12 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     right: -15%;
     width: 105%; } }
 
-.project__img, .project__copy {
-  width: 100%;
-  float: left; }
+.project__img {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none; }
 
 .project__copy {
   -webkit-transform: none;
@@ -1037,14 +1040,19 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     font-weight: 600;
     line-height: 1.5; }
   @media screen and (min-width: 40.063em) {
-    .project__copy {
+    .project__copy p {
+      max-width: 51rem; } }
+
+.project__img, .project__copy {
+  width: 100%;
+  float: left; }
+  @media screen and (min-width: 40.063em) {
+    .project__img, .project__copy {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       -o-transform: translateY(-50%);
-      transform: translateY(-50%); }
-      .project__copy p {
-        max-width: 51rem; } }
+      transform: translateY(-50%); } }
 
 .project-01 {
   background-image: url(../images/projects/project01.jpg); }
