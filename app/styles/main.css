@@ -901,7 +901,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     opacity: 0; }
 
 .project, .project--img-left, .project--img-right {
-  margin-bottom: 5rem; }
+  margin-bottom: 4.4rem; }
   .project img, .project--img-left img, .project--img-right img {
     display: block;
     max-height: 35rem;
@@ -933,7 +933,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
 
 .project--featured {
   height: 35rem;
-  margin: 4rem 0 20rem;
+  margin: 4rem 0 27rem;
   background-position: 93% center;
   overflow: visible; }
   .project--featured .project__copy {
@@ -943,7 +943,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     padding: 10rem 2rem 4rem; }
   @media screen and (min-width: 40.063em) {
     .project--featured {
-      margin: 0 0 5rem;
+      margin: 0 0 4.4rem;
       height: 30rem; }
       .project--featured .project__copy {
         left: 0;
@@ -1028,7 +1028,8 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   .project__copy h2 {
     margin: 0 0 1rem;
     font-size: 3rem;
-    font-weight: 900; }
+    font-weight: 900;
+    line-height: 1.1; }
   .project__copy p {
     width: 100%;
     margin: 0;
@@ -1056,6 +1057,8 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     .project-01 {
       background-size: 100%; } }
 
+.project-04 .project__img {
+  margin-bottom: 1.7rem; }
 @media screen and (min-width: 40.063em) {
   .project-04 .project__img {
     margin-left: -3rem; } }

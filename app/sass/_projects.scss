@@ -2,7 +2,7 @@
 // Project Item
 .project{
   @extend .block;
-  margin-bottom: 5rem;
+  margin-bottom: $baseline-spacing-hard;
 
   img{
     @extend %slower-transition;
@@ -38,7 +38,7 @@
   @extend .block;
   @extend .block--img;
   height: 35rem;
-  margin: 4rem 0 20rem;
+  margin: 4rem 0 27rem;
   background-position: 93% center;
   overflow: visible;
 
@@ -48,7 +48,7 @@
   }
 
   @include respond-to(md-screen) {
-    margin: 0 0 5rem;
+    margin: 0 0 $baseline-spacing-hard;
     height: 30rem;
 
     .project__copy{
@@ -161,6 +161,7 @@
     margin: 0 0 1rem;
     font-size: 3rem;
     font-weight: 900;
+    line-height: 1.1;
   }
   p{
     width: 100%;
@@ -196,6 +197,9 @@
   }
 }
 .project-04{
+    .project__img{
+        margin-bottom: 1.7rem;
+    }
 
   @include respond-to(md-screen) {
     .project__img{
