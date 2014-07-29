@@ -225,6 +225,7 @@ a {
   [id^=page].is-hidden {
     opacity: 0;
     z-index: 0;
+    height: 0;
     position: fixed !important; }
   [id^=page].is-visible {
     opacity: 1;
