@@ -302,7 +302,8 @@ module.exports = function(grunt) {
             '{,*/}*.html',
             'favicons/{,*/}*',
             'fonts/{,*/}*',
-            'styles/{,*/}*'
+            'styles/{,*/}*',
+            'images/{,*/}*'
           ]
         }]
       },

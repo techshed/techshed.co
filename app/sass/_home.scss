@@ -52,7 +52,9 @@
   }
 
   @include respond-to(md-screen) {
-    width: 107%;
+    h1{
+      width: 107%;
+    }
 
     .comma{
       opacity: 1;
@@ -66,6 +68,7 @@
   }
   @include respond-to(lg-screen) {
     h1{
+      width: 106%;
       margin-left: -.8rem;
     }
   }
@@ -160,12 +163,11 @@
 }
 
 .our-jobs .block--tall{
-    max-height: 40rem;
-    min-height: none;
+    min-height: 40rem;
+    max-height: 45rem;
 
   @include respond-to(md-screen) {
-    max-height: none;
-    min-height: 40rem;
+    max-height: 45rem;
   }
 }
 // our jobs block
@@ -198,12 +200,8 @@
     width: 100%;
     max-width: 25rem;
   }
-
   @include respond-to(md-screen) {
     padding: 0 12%;
-  }
-  @include respond-to(x-lg-screen) {
-
   }
 }
 
@@ -262,12 +260,10 @@
   }
 
   @include respond-to(md-screen) {
-
     .wrapper{
       max-width: 65rem;
       padding: 3rem 0
     }
-
     .col{
       width: 33.333333%;
       margin-right: 0;
@@ -299,6 +295,7 @@
     @extend %slow-transition;
     @extend %vertical-align;
     margin: 0;
+    opacity: 1;
     text-align: center;
     font-size: 1.7rem;
     font-weight: 900;

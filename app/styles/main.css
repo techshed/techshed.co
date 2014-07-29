@@ -669,17 +669,18 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     opacity: 0;
     letter-spacing: -.2rem; }
   @media screen and (min-width: 40.063em) {
-    .page-header--home__copy {
+    .page-header--home__copy h1 {
       width: 107%; }
-      .page-header--home__copy .comma {
-        opacity: 1;
-        display: inline-block;
-        height: auto;
-        margin-right: -.5rem; }
-      .page-header--home__copy .btn {
-        max-width: 26rem; } }
+    .page-header--home__copy .comma {
+      opacity: 1;
+      display: inline-block;
+      height: auto;
+      margin-right: -.5rem; }
+    .page-header--home__copy .btn {
+      max-width: 26rem; } }
   @media screen and (min-width: 64.063em) {
     .page-header--home__copy h1 {
+      width: 106%;
       margin-left: -.8rem; } }
   @media screen and (min-width: 90.063em) {
     .page-header--home__copy h1 {
@@ -749,12 +750,11 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   .culture p:first-letter {
     padding: 0.2rem 0.3rem 0.8rem 0.6rem; } }
 .our-jobs .block--tall {
-  max-height: 40rem;
-  min-height: none; }
+  min-height: 40rem;
+  max-height: 45rem; }
   @media screen and (min-width: 40.063em) {
     .our-jobs .block--tall {
-      max-height: none;
-      min-height: 40rem; } }
+      max-height: 45rem; } }
 
 .our-jobs__copy {
   position: absolute;
@@ -866,6 +866,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   border: 0.25rem solid rgba(255, 255, 255, 0.99); }
   .benefits__item p {
     margin: 0;
+    opacity: 1;
     text-align: center;
     font-size: 1.7rem;
     font-weight: 900;
