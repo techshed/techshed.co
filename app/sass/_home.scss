@@ -88,7 +88,7 @@
 // instead of <p> to avoid being unorphanized();
 .purpose{
   @extend %sans-serif;
-  margin: 1.2rem 0 2rem;
+  margin: 1.2rem 0 2xrem;
   width: 103%;
   max-width: 50rem;
   font-size: 2.1rem;
@@ -304,11 +304,16 @@
 
   @include respond-to(md-screen) {
     margin: 4.4%;
-    width: 12rem;
-    height: 12rem;
+    // explicity define new w/h to avoid strange Safari border-radius square bug
+    height: 12.3rem;
+    width: 12.3rem;
   }
 
   @include respond-to(lg-screen) {
+    // explicity define new w/h to avoid strange Safari border-radius square bug
+    height: 12.5rem;
+    width: 12.5rem;
+
     .dormant &{
       @include transform(rotateY(120deg) scale(.2));
       border-color: rgba(255,255,255,0);

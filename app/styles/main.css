@@ -691,7 +691,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
       margin-left: -1rem; } }
 
 .purpose {
-  margin: 1.2rem 0 2rem;
+  margin: 1.2rem 0 2xrem;
   width: 103%;
   max-width: 50rem;
   font-size: 2.1rem;
@@ -875,18 +875,21 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   @media screen and (min-width: 40.063em) {
     .benefits__item {
       margin: 4.4%;
-      width: 12rem;
-      height: 12rem; } }
+      height: 12.3rem;
+      width: 12.3rem; } }
   @media screen and (min-width: 64.063em) {
-    .dormant .benefits__item {
-      -webkit-transform: rotateY(120deg) scale(0.2);
-      -moz-transform: rotateY(120deg) scale(0.2);
-      -ms-transform: rotateY(120deg) scale(0.2);
-      -o-transform: rotateY(120deg) scale(0.2);
-      transform: rotateY(120deg) scale(0.2);
-      border-color: rgba(255, 255, 255, 0); }
-      .dormant .benefits__item p {
-        opacity: 0; } }
+    .benefits__item {
+      height: 12.5rem;
+      width: 12.5rem; }
+      .dormant .benefits__item {
+        -webkit-transform: rotateY(120deg) scale(0.2);
+        -moz-transform: rotateY(120deg) scale(0.2);
+        -ms-transform: rotateY(120deg) scale(0.2);
+        -o-transform: rotateY(120deg) scale(0.2);
+        transform: rotateY(120deg) scale(0.2);
+        border-color: rgba(255, 255, 255, 0); }
+        .dormant .benefits__item p {
+          opacity: 0; } }
 
 .jobs {
   /* MEDIUM: 641px min */ }
