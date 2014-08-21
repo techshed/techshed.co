@@ -6,18 +6,18 @@
 
   @include respond-to(md-screen) {
     height: auto;
-    max-height: 48rem;
+    max-height: 50rem;
 
     // enable relative/fluid sizing
     &:before{
       content: '';
       display: block;
-      margin-top: 64%;
+      margin-top: 58%;
     }
   }
   @include respond-to(lg-screen) {
     background-image: none;
-    max-height: 69rem;
+    max-height: 59rem;
 
     &:before{
       margin-top: 47.5%;
@@ -39,7 +39,7 @@
   color: #fff;
   z-index: 1;
 
-  // left edge alignment for this type
+  // -.5rem margin to align left edge of this text with its container
   h1{
     @extend %fade-transition;
     margin-left: -.5rem;
@@ -49,6 +49,9 @@
   }
   .comma{
     @extend %ghost-block;
+  }
+  .btn{
+      font-size: 2rem;
   }
 
   @include respond-to(md-screen) {
@@ -63,7 +66,7 @@
       margin-right: -.5rem;
     }
     .btn{
-      max-width: 26rem;
+      max-width: 25rem;
     }
   }
   @include respond-to(lg-screen) {
@@ -88,10 +91,10 @@
 // instead of <p> to avoid being unorphanized();
 .purpose{
   @extend %sans-serif;
-  margin: 1.2rem 0 2rem;
+  margin: 1.6rem 0 2.3rem;
   width: 103%;
-  max-width: 50rem;
-  font-size: 2.1rem;
+  max-width: 42rem;
+  font-size: 2.2rem;
   font-weight: 900;
   line-height: 1.3;
 }
@@ -281,13 +284,13 @@
 }
 
 .benefits__item{
-  @extend %slow-transition;
+  @include transition(all .7s $ease-in-out-quad);
   @extend %backface-hidden;
   display: inline-block;
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
-  border: .25rem solid rgba(255,255,255,.99);
+  border: .26rem solid rgba(255,255,255,.99);
 
   p{
     @extend %default-cursor;
@@ -315,7 +318,7 @@
     width: 12.5rem;
 
     .dormant &{
-      @include transform(rotateY(120deg) scale(.2));
+      @include transform(rotateY(120deg) scale(.6));
       border-color: rgba(255,255,255,0);
 
       p{

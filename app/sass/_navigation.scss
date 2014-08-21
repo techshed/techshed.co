@@ -52,6 +52,7 @@
   }
 }
 .nav-primary__menu{
+  display: none;
   @extend %regular-transition;
   @extend %hwa;
   @extend %backface-hidden;
@@ -62,11 +63,10 @@
   width: auto;
   height: 100%;
   min-height: 35.4rem;
-  text-align: center;
-  z-index: 2;
-  display: none;
   padding-top: $primary-nav-height;
+  text-align: center;
   overflow: hidden;
+  z-index: 2;
 
   @include respond-to(md-screen) {
     display: none !important;
@@ -132,7 +132,7 @@
 .nav-primary__menu--on{
   @extend %fast-transition;
 
-  .techshed-type{
+  .logo__type{
     background-position: right;
   }
   .nav-primary__menu-toggle{
@@ -150,7 +150,6 @@
   text-align: right;
   right: 0;
 
-
   a{
     @extend %no-transition;
     padding: .8rem 1.3rem;
@@ -158,11 +157,14 @@
     font-size: 1.7rem;
     color: #fff;
 
+    // Dark text color on subpage
+    .subpage &{ color: $body-copy-color; }
 
-    .subpage &{
-        color: $body-copy-color;
+    span:hover{
+        opacity: .8;
     }
-    &.active span{
+    &.active span, &.active span:hover{
+        opacity: 1;
       @include svelte-underline(light, heavy, no-hover);
 
       .subpage &{

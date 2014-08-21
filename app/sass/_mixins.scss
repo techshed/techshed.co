@@ -6,28 +6,28 @@
   background-repeat: repeat-x;
 
   @if $shade == light {
-    @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.6) 50%);
+    @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.4) 50%);
     color: #fff;
 
     @if $hover != no-hover{
       &:hover{
-        @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.9) 50%);
+        @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.2) 50%);
       }
     }
   }
   @else if $shade == dark{
-    @include linear-gradient(to bottom, rgba(0,0,0, 0) 50%, rgba($body-copy-color, 0.3) 50%);
+    @include linear-gradient(to bottom, rgba(0,0,0, 0) 50%, rgba($body-copy-color, 0.18) 50%);
     color: $body-copy-color;
 
     @if $hover != no-hover{
       &:hover{
-        @include linear-gradient(to bottom, rgba(0,0,0, 0) 50%, rgba($body-copy-color, 0.6) 50%);
+        @include linear-gradient(to bottom, rgba(0,0,0, 0) 50%, rgba($body-copy-color, 0.06) 50%);
       }
     }
   }
   @if $thickness == heavy{
     background-size: 1px 7px;
-    background-position: 0 2.9rem;
+    background-position: 0 2.8rem;
     background-repeat: repeat-x;
   }
 }

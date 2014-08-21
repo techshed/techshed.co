@@ -13,7 +13,7 @@ var TechshedCo = (function() {
         timer;
 
     function init() {
-        page = getCurrentPath();
+        page = getPath();
         FastClick.attach(document.body);
         NProgress.configure({
             trickleRate: 0.01,
@@ -25,7 +25,7 @@ var TechshedCo = (function() {
         $navPrimary.addClass('visible');
     }
 
-    function getCurrentPath() {
+    function getPath() {
         return window.location.pathname.split('/').pop().replace(/[^a-z0-9\s]/gi, '');
     }
 
@@ -49,7 +49,7 @@ var TechshedCo = (function() {
             ev.preventDefault();
             var $this = $(this),
                 page = $this.attr('class').split(' ')[0],
-                path = getCurrentPath();
+                path = getPath();
 
             if (page === 'logo') { page = 'home'; }
 
@@ -74,12 +74,15 @@ var TechshedCo = (function() {
         // enable back button via HTML5 pop state
         $(window).on('popstate', function(ev) {
             ev.preventDefault();
-            var path = getCurrentPath();
+            var path = getPath();
             showPage(path);
         });
 
         // disable all transitions when window is being resized
         $(window).on('resize', debounce(function() {
+            if( (screen.availHeight || screen.height-30) <= window.innerHeight) {
+                $('.page-header--home').height() = window.height();
+            }
             clearInterval(timer);
             $('body').addClass('no-transitions');
             timer = setTimeout(function() {
@@ -196,6 +199,7 @@ var TechshedCo = (function() {
     function toggleVideoPlaying(page) {
         var video = $('#video-bg');
 
+        // delay necessary for the play status to toggle reliably
         setTimeout( function() {
             if((page === 'home')){
                 video[0].play();

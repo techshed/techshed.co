@@ -3,8 +3,8 @@
   display: inline-block;
   margin-bottom: 0;
   padding: 1rem 0;
-  border-radius: .5rem;
-  border-width: .25rem;
+  border-radius: .56rem;
+  border-width: .26rem;
   border-style: solid;
   background-image: none;
   vertical-align: middle;
@@ -17,7 +17,7 @@
 }
 .btn--white{
   color: #fff;
-  border-color: #fff;
+  border-color: rgba(255,255,255,0.99);
 
   &:hover{
     border-color: rgba(255,255,255,0.7);

@@ -1,3 +1,13 @@
+.logo--footer{
+  display: inline-block;
+  width: 10rem;
+  height: 2.1rem;
+  margin-bottom: $baseline-spacing-soft;
+  background-image: url('../images/global/techshed-logo-type.png');
+  background-size: 200%;
+  background-repeat: no-repeat;
+}
+
 .site-footer{
   @extend %fade-transition;
   @extend .row;

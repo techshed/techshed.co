@@ -2,15 +2,15 @@ html, body{
   height: 100%;
 }
 html{
+  // @extend %debug-layout;
   @include respond-to(handhelds) { font-size: 62.5%; }
   @include respond-to(md-screen) { font-size: 72%; }
   @include respond-to(lg-screen) { font-size: 80%; }
-  @include respond-to(x-lg-screen) { font-size: 108%; }
+  @include respond-to(x-lg-screen) { font-size: 100%; }
   @include respond-to(xx-lg-screen) { font-size: 120%; }
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
   // text-rendering: optimizeLegibility;
-  // @extend %debug-layout;
 }
 body{
   @extend %sans-serif;
@@ -39,6 +39,17 @@ a{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+// used to disable transitions during window resize
+.no-transitions *{
+  @include transition(none !important);
+}
+
+
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
 // nprogress bar
 #nprogress{
   z-index: 1;
@@ -52,63 +63,13 @@ a{
   }
 }
 
-// displayed if browser < IE10
+// displayed only if browser < IE10
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
-.hidden{
-  visibility: hidden;
-  opacity: 0;
-}
-
-// used to disable transitions during window resize
-.no-transitions *{
-  @include transition(none !important);
-}
-
-.logo{
-  @extend %no-select;
-  width: 12rem;
-  height: 3rem;
-  left: 0;
-  margin: 0;
-  padding: 0;
-}
-.hd-logomark, .techshed-type{
-  vertical-align: middle;
-  display: inline-block;
-}
-.hd-logomark{
-  max-width: 25%;
-  border: 1px solid white;
-}
-.techshed-type{
-  width: 70%;
-  height: 100%;
-  background-image: url("../images/global/techshed-logo-type.png");
-  background-size: 200% 53%;
-  background-position: right;
-  background-repeat: no-repeat;
-  margin-left: 1%;
-
-  .subpage &{
-    background-position: left;
-  }
-}
-.logo--footer{
-  display: inline-block;
-  width: 10rem;
-  height: 2.1rem;
-  margin-bottom: $baseline-spacing-soft;
-  background-image: url('../images/global/techshed-logo-type.png');
-  background-size: 200%;
-  background-repeat: no-repeat;
-}
-
 
 // page container
 [id^=page]{
@@ -237,7 +198,7 @@ a{
   background-repeat: no-repeat;
 }
 .block--quote{
-  padding: 12rem 0;
+  padding: 11rem 0;
 }
 .block--tall{
 
@@ -257,6 +218,37 @@ a{
   background-position: center right;
   @include respond-to(lg-screen) {
     height: 46rem;
+  }
+}
+
+// logo component
+.logo{
+  @extend %no-select;
+  width: 12rem;
+  height: 3rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.logo__mark, .logo__type{
+  vertical-align: middle;
+  display: inline-block;
+}
+.logo__mark{
+  max-width: 25%;
+  border: 1px solid white;
+}
+.logo__type{
+  width: 70%;
+  height: 100%;
+  background-image: url("../images/global/techshed-logo-type.png");
+  background-size: 200% 53%;
+  background-position: right;
+  background-repeat: no-repeat;
+  margin-left: 1%;
+
+  .subpage &{
+    background-position: left;
   }
 }
 
@@ -284,7 +276,7 @@ h4{
   @extend %serif;
 }
 
-// fade in text after webfonts loaded
+// used to reveal text once fonts are loaded
 p, a, h1, h2, h3, h4, .purpose, .logo{
   @extend %fade-transition;
   opacity: 0;
@@ -293,4 +285,3 @@ p, a, h1, h2, h3, h4, .purpose, .logo{
     opacity: 1;
   }
 }
-
