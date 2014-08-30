@@ -338,8 +338,7 @@ module.exports = function(grunt) {
       'concurrent:server',
       'connect:livereload',
       'includes:server',
-      'watch',
-      'throttle'
+      'watch'
     ]);
   });
 

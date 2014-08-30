@@ -97,7 +97,7 @@ a{
 }
 
 // pages container
-#pages-container{
+#page-container{
   @extend %fade-transition;
   @include clearfix;
   position: relative;
@@ -112,7 +112,6 @@ a{
     overflow: hidden;
   }
 }
-
 
 // page header
 .page-header{
@@ -166,7 +165,6 @@ a{
   margin-bottom: -2px;
   background-color: #fff;
 }
-
 .block{
   position: relative;
   float: left;
@@ -201,7 +199,6 @@ a{
   padding: 11rem 0;
 }
 .block--tall{
-
   // enable relative/fluid sizing
   &:before{
     content: '';

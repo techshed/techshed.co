@@ -8,7 +8,7 @@ var TechshedCo = (function() {
         $navToggle      = $('.nav-primary__menu-toggle'),
         $navPrimaryMenu = $('.nav-primary__menu'),
         $navPrimaryLink = $('.nav-primary__link'),
-        $pageWindow     = $('#pages-container'),
+        $pageWindow     = $('#page-container'),
         page,
         timer;
 
@@ -80,9 +80,6 @@ var TechshedCo = (function() {
 
         // disable all transitions when window is being resized
         $(window).on('resize', debounce(function() {
-            if( (screen.availHeight || screen.height-30) <= window.innerHeight) {
-                $('.page-header--home').height() = window.height();
-            }
             clearInterval(timer);
             $('body').addClass('no-transitions');
             timer = setTimeout(function() {

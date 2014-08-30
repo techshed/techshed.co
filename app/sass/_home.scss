@@ -253,10 +253,10 @@
   @for $item from 1 through 8{
     .col:nth-child(#{$item}){
       .benefits__item{
-        transition-delay: #{$item / 9 }s;
+        transition-delay: #{$item / 10 }s;
       }
       p{
-        transition-delay: #{$item / 5 }s;
+        transition-delay: #{$item / 6 }s;
       }
     }
   }
@@ -284,7 +284,7 @@
 }
 
 .benefits__item{
-  @include transition(all .7s $ease-in-out-quad);
+  @include transition(all 1.2s $ease-in-out-quad);
   @extend %backface-hidden;
   display: inline-block;
   height: 10rem;
@@ -318,7 +318,7 @@
     width: 12.5rem;
 
     .dormant &{
-      @include transform(rotateY(120deg) scale(.6));
+      @include transform(rotateY(100deg) scale(.6));
       border-color: rgba(255,255,255,0);
 
       p{

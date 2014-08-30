@@ -86,12 +86,12 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   -moz-transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-[id^=page], #pages-container, p, a, h1, h2, h3, h4, .purpose, .logo, .site-footer, .page-header--home__copy h1 {
+[id^=page], #page-container, p, a, h1, h2, h3, h4, .purpose, .logo, .site-footer, .page-header--home__copy h1 {
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease; }
 
-#pages-container.no-scroll, .nav-primary__menu--lg a {
+#page-container.no-scroll, .nav-primary__menu--lg a {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none; }
@@ -196,17 +196,17 @@ a {
     opacity: 1;
     z-index: 1; }
 
-#pages-container {
+#page-container {
   position: relative;
   float: left;
   width: 100%;
   height: 100%;
   z-index: 0; }
-  #pages-container:after {
+  #page-container:after {
     content: "";
     display: table;
     clear: both; }
-  #pages-container.no-scroll {
+  #page-container.no-scroll {
     height: 100% !important;
     overflow: hidden; }
 
@@ -381,9 +381,9 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.99); }
   .btn--white:hover {
-    border-color: rgba(255, 255, 255, 0.7); }
+    border-color: rgba(255, 255, 255, 0.8); }
   .btn--white:active {
-    border-color: rgba(255, 255, 255, 0.5); }
+    border-color: rgba(255, 255, 255, 0.6); }
 
 .btn--black {
   color: #333333;
@@ -558,8 +558,8 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
 .logo--footer {
   display: inline-block;
   width: 10rem;
-  height: 2.1rem;
-  margin-bottom: 2.2rem;
+  height: 1.9rem;
+  margin-bottom: 2rem;
   background-image: url("../images/global/techshed-logo-type.png");
   background-size: 200%;
   background-repeat: no-repeat; }
@@ -590,7 +590,7 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
 .site-footer__location {
   margin-bottom: 4.4rem; }
   .site-footer__location p {
-    margin: 0 0 2.2rem; }
+    margin: 0 0 2rem; }
   .site-footer__location a {
     color: #444; }
   @media screen and (min-width: 40.063em) {
@@ -818,37 +818,37 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
   margin: 2rem 0;
   text-align: center; }
 .benefits .col:nth-child(1) .benefits__item {
-  transition-delay: 0.11111s; }
+  transition-delay: 0.1s; }
 .benefits .col:nth-child(1) p {
-  transition-delay: 0.2s; }
+  transition-delay: 0.16667s; }
 .benefits .col:nth-child(2) .benefits__item {
-  transition-delay: 0.22222s; }
+  transition-delay: 0.2s; }
 .benefits .col:nth-child(2) p {
-  transition-delay: 0.4s; }
-.benefits .col:nth-child(3) .benefits__item {
   transition-delay: 0.33333s; }
+.benefits .col:nth-child(3) .benefits__item {
+  transition-delay: 0.3s; }
 .benefits .col:nth-child(3) p {
-  transition-delay: 0.6s; }
+  transition-delay: 0.5s; }
 .benefits .col:nth-child(4) .benefits__item {
-  transition-delay: 0.44444s; }
+  transition-delay: 0.4s; }
 .benefits .col:nth-child(4) p {
-  transition-delay: 0.8s; }
-.benefits .col:nth-child(5) .benefits__item {
-  transition-delay: 0.55556s; }
-.benefits .col:nth-child(5) p {
-  transition-delay: 1s; }
-.benefits .col:nth-child(6) .benefits__item {
   transition-delay: 0.66667s; }
+.benefits .col:nth-child(5) .benefits__item {
+  transition-delay: 0.5s; }
+.benefits .col:nth-child(5) p {
+  transition-delay: 0.83333s; }
+.benefits .col:nth-child(6) .benefits__item {
+  transition-delay: 0.6s; }
 .benefits .col:nth-child(6) p {
-  transition-delay: 1.2s; }
+  transition-delay: 1s; }
 .benefits .col:nth-child(7) .benefits__item {
-  transition-delay: 0.77778s; }
+  transition-delay: 0.7s; }
 .benefits .col:nth-child(7) p {
-  transition-delay: 1.4s; }
+  transition-delay: 1.16667s; }
 .benefits .col:nth-child(8) .benefits__item {
-  transition-delay: 0.88889s; }
+  transition-delay: 0.8s; }
 .benefits .col:nth-child(8) p {
-  transition-delay: 1.6s; }
+  transition-delay: 1.33333s; }
 @media screen and (min-width: 40.063em) {
   .benefits .wrapper {
     max-width: 65rem;
@@ -864,9 +864,9 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
     margin-right: 0; } }
 
 .benefits__item {
-  -webkit-transition: all 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -moz-transition: all 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: all 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-transition: all 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition: all 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   display: inline-block;
   height: 10rem;
   width: 10rem;
@@ -890,11 +890,11 @@ p, a, h1, h2, h3, h4, .purpose, .logo {
       height: 12.5rem;
       width: 12.5rem; }
       .dormant .benefits__item {
-        -webkit-transform: rotateY(120deg) scale(0.6);
-        -moz-transform: rotateY(120deg) scale(0.6);
-        -ms-transform: rotateY(120deg) scale(0.6);
-        -o-transform: rotateY(120deg) scale(0.6);
-        transform: rotateY(120deg) scale(0.6);
+        -webkit-transform: rotateY(100deg) scale(0.6);
+        -moz-transform: rotateY(100deg) scale(0.6);
+        -ms-transform: rotateY(100deg) scale(0.6);
+        -o-transform: rotateY(100deg) scale(0.6);
+        transform: rotateY(100deg) scale(0.6);
         border-color: rgba(255, 255, 255, 0); }
         .dormant .benefits__item p {
           opacity: 0; } }
