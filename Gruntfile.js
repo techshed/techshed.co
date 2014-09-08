@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             remote_port: 9000,
             local_port: 9001,
             upstream: 10*1024,
-            downstream: 100*1024,
+            downstream: 4*1024,
             keepalive: true
         }
     },

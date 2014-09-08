@@ -13,5 +13,7 @@
     "jquery-unorphanize": "~1.0.1",
     "jquery-waypoints": "~2.0.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jquery.smooth-scroll": "~1.5.0"
+  }
 }

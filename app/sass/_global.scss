@@ -274,7 +274,7 @@ h4{
 }
 
 // used to reveal text once fonts are loaded
-p, a, h1, h2, h3, h4, .purpose, .logo{
+p, a, h1, h2, h3, h4, .purpose{
   @extend %fade-transition;
   opacity: 0;
 
