@@ -716,12 +716,6 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   background-repeat: no-repeat; }
   @media screen and (min-width: 40.063em) {
     .page-header--home__bg {
-      height: 78%;
-      right: 0;
-      max-width: 46rem;
-      left: 46%; } }
-  @media screen and (min-width: 64.063em) {
-    .page-header--home__bg {
       display: none; } }
 
 #video-bg {
