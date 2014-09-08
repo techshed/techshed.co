@@ -86,7 +86,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   -moz-transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
-[id^=page], #page-container, p, a, h1, h2, h3, h4, .purpose, .site-footer, .page-header--home__copy h1 {
+[id^=page], #page-container, p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link, .site-footer, .page-header--home__copy h1 {
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease; }
@@ -357,9 +357,9 @@ h4 {
   line-height: 1.48;
   color: #fff; }
 
-p, a, h1, h2, h3, h4, .purpose {
+p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   opacity: 0; }
-  .wf-active p, .wf-active a, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active .purpose {
+  .wf-active p, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active .purpose, .wf-active .logo, .wf-active .nav-primary__link {
     opacity: 1; }
 
 .btn {

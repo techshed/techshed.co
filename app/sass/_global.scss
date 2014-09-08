@@ -274,8 +274,8 @@ h4{
   @extend %serif;
 }
 
-// used to reveal text once fonts are loaded
-p, a, h1, h2, h3, h4, .purpose{
+// used to reveal text once fonts are loaded (hacky, needs better fallback)
+p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link{
   @extend %fade-transition;
   opacity: 0;
 
