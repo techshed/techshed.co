@@ -87,7 +87,8 @@ a{
   &.is-hidden{
     opacity: 0;
     z-index: 0;
-    height: 0;
+    height: 100%;
+    overflow: auto;
     position:fixed !important;
   }
   &.is-visible{
