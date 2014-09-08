@@ -191,7 +191,7 @@ a {
     opacity: 0;
     z-index: 0;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     position: fixed !important; }
   [id^=page].is-visible {
     opacity: 1;
