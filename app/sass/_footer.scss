@@ -67,10 +67,19 @@
     margin: 0 0.6rem;
   }
   @include respond-to(md-screen) {
-    margin-top: 9.5rem;
     font-size: 2.6rem;
     text-align: right;
   }
+}
+.site-footer__mixpanel{
+    margin-top: 7rem;
+
+    @include respond-to(md-screen) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-top: 0;
+    }
 }
 .repo-link{
   font-size: 1.5rem;
