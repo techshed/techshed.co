@@ -1,6 +1,6 @@
 /* jshint camelcase: false */
 /* exported TechshedCo */
-/* global NProgress, FastClick */
+/* global NProgress, FastClick, mixpanel */
 
 var TechshedCo = (function() {
     'use strict';
@@ -110,7 +110,9 @@ var TechshedCo = (function() {
             toggleVideoPlaying(page);
             pageContainer.removeClass().addClass('is-visible');
             pageContainer.siblings().removeClass().addClass('is-hidden');
-            // $pageWindow.height(pageContainer.height());
+
+            // mixpanel tracker
+            mixpanel.track('page load', { path: page });
 
             // set body class
             if (page === 'home') {
