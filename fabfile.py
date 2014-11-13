@@ -13,7 +13,7 @@ env.user = 'produser'
 BASEDIR = '~/src/techshed.co'
 env.roledefs = {
     'dev': ['adfe3', 'adfe4'],
-    'prod': ['apfe4', 'apfe5']
+    'prod': ['apfe7', 'apfe8', 'apfe9']
 }
 
 
