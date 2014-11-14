@@ -55,6 +55,7 @@
   }
 }
 .site-footer__social-icons{
+  @extend %default-cursor;
   position: relative;
   float: left;
   font-weight: normal;
@@ -63,8 +64,13 @@
   width: 100%;
 
   a{
+    @extend %fade-transition;
     color: $body-copy-color;
     margin: 0 0.6rem;
+
+    &:hover{
+      opacity: 0.7;
+    }
   }
   @include respond-to(md-screen) {
     font-size: 2.6rem;

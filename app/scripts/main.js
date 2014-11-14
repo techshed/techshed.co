@@ -5,12 +5,12 @@
 var TechshedCo = (function() {
     'use strict';
 
-    var $navPrimary = $('.nav-primary'),
-    $navToggle      = $('.nav-primary__menu-toggle'),
-    $navPrimaryMenu = $('.nav-primary__menu'),
-    $pageWindow     = $('#page-container'),
-    page,
-    timer;
+    var $navPrimary     = $('.nav-primary'),
+        $navToggle      = $('.nav-primary__menu-toggle'),
+        $navPrimaryMenu = $('.nav-primary__menu'),
+        $pageWindow     = $('#page-container'),
+        page,
+        timer;
 
     function init() {
         page = getPath();
