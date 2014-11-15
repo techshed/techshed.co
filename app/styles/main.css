@@ -613,6 +613,8 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     margin: 0 0.6rem; }
     .site-footer__social-icons a:hover {
       opacity: 0.7; }
+    .site-footer__social-icons a:last-child {
+      margin-right: 0; }
   @media screen and (min-width: 40.063em) {
     .site-footer__social-icons {
       font-size: 2.6rem;
@@ -620,6 +622,9 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
 
 .site-footer__mixpanel {
   margin-top: 7rem; }
+  .site-footer__mixpanel img {
+    width: 10rem;
+    margin-bottom: -1rem; }
   @media screen and (min-width: 40.063em) {
     .site-footer__mixpanel {
       position: absolute;
@@ -726,6 +731,11 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   background-repeat: no-repeat; }
   @media screen and (min-width: 40.063em) {
     .page-header--home__bg {
+      right: 0;
+      width: 50%;
+      height: 80%; } }
+  @media screen and (min-width: 64.063em) {
+    .page-header--home__bg {
       display: none; } }
 
 #video-bg {
@@ -740,11 +750,9 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   background-repeat: no-repeat; }
   #video-bg.is-hidden {
     opacity: 0; }
-  @media screen and (min-width: 40.063em) {
-    #video-bg {
-      display: block; } }
   @media screen and (min-width: 64.063em) {
     #video-bg {
+      display: block;
       height: 107%; } }
   @media screen and (min-width: 90.063em) {
     #video-bg {
@@ -1133,7 +1141,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     font-size: 6rem; }
   .page-header--subpage__copy p {
     width: 100%;
-    max-width: 72rem;
+    max-width: 70rem;
     margin-bottom: 0;
     font-size: 2rem;
     line-height: 1.6; }

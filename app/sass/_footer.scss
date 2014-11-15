@@ -71,6 +71,9 @@
     &:hover{
       opacity: 0.7;
     }
+    &:last-child{
+      margin-right: 0;
+    }
   }
   @include respond-to(md-screen) {
     font-size: 2.6rem;
@@ -79,6 +82,11 @@
 }
 .site-footer__mixpanel{
     margin-top: 7rem;
+
+    img{
+      width: 10rem;
+      margin-bottom: -1rem;
+    }
 
     @include respond-to(md-screen) {
       position: absolute;

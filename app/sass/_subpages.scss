@@ -1,4 +1,4 @@
-// Subpage styles
+// Subpage common styles
 
 .page-header--subpage{
   @extend .page-header;
@@ -6,10 +6,6 @@
 
   @include respond-to(md-screen) {
     padding: 11rem 0 8rem;
-  }
-  @include respond-to(lg-screen) {
-  }
-  @include respond-to(x-lg-screen) {
   }
 }
 
@@ -24,7 +20,7 @@
   p{
     @extend %serif;
     width: 100%;
-    max-width: 72rem;
+    max-width: 70rem;
     margin-bottom: 0;
     font-size: 2rem;
     line-height: 1.6;

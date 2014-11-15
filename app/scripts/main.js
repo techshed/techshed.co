@@ -163,6 +163,7 @@ var TechshedCo = (function() {
             if (page === 'jobs') {
                 initJobScoreWidget();
             }
+
             pageContainer.find('p').unorphanize(1);
             setWaypoints();
             NProgress.done();

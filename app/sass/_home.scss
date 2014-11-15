@@ -110,11 +110,13 @@
   background-repeat: no-repeat;
 
   @include respond-to(md-screen) {
-    display: none;
+    right: 0;
+    width: 50%;
+    height: 80%;
   }
 
   @include respond-to(lg-screen) {
-
+    display: none;
   }
 }
 #video-bg{
@@ -134,10 +136,8 @@
     opacity: 0;
   }
 
-  @include respond-to(md-screen) {
-    display: block;
-  }
   @include respond-to(lg-screen) {
+    display: block;
     height: 107%;
   }
   @include respond-to(x-lg-screen) {
