@@ -162,6 +162,8 @@ var TechshedCo = (function() {
             }
             if (page === 'jobs') {
                 initJobScoreWidget();
+            } else if (page === 'projects') {
+                pageContainer.find('.page-header--subpage__copy p').unorphanize(1);
             }
 
             pageContainer.find('p').unorphanize(1);
