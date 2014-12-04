@@ -115,7 +115,7 @@ var TechshedCo = (function() {
             mixpanel.track('page load', { path: page });
 
             // set body class
-            if (page === 'home') {
+            if (page === 'home' || page === 'tv') {
                 fitText();
                 $('body').removeClass().addClass('home');
 
@@ -160,10 +160,17 @@ var TechshedCo = (function() {
             } else{
                 showPage(page);
             }
-            if (page === 'jobs') {
-                initJobScoreWidget();
-            } else if (page === 'projects') {
-                pageContainer.find('.page-header--subpage__copy p').unorphanize(1);
+
+            switch (page) {
+                case 'jobs':
+                    initJobScoreWidget();
+                    break;
+                case 'projects':
+                    pageContainer.find('.page-header--subpage__copy p').unorphanize(1);
+                    break;
+                case 'tv':
+                    $navPrimary.hide();
+                    break;
             }
 
             pageContainer.find('p').unorphanize(1);
@@ -213,7 +220,7 @@ function toggleVideoPlaying(page) {
 
         // delay necessary for the play status to toggle reliably
         setTimeout( function() {
-            if((page === 'home')){
+            if((page === 'home' || page === 'tv')){
                 video[0].play();
             } else{
                 video[0].pause();

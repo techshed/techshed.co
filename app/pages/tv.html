@@ -1,0 +1,91 @@
+
+
+
+    <!doctype html>
+    <!--
+
+        ░░   design & code by   ░░                  ░░                        ░░
+        ░░                      ░░                  ░░                        ░░
+      ░░░░░░  ░░░░░░░  ░░░░░░░  ░░░░░░░░  ░░░░░░░░  ░░░░░░░░  ░░░░░░░░  ░░░░░░░░
+        ░░    ░░   ░░  ░░       ░░    ░░  ░░        ░░    ░░  ░░    ░░  ░░    ░░
+        ░░    ░░░░░░░  ░░       ░░    ░░  ░░░░░░░░  ░░    ░░  ░░░░░░░░  ░░    ░░
+        ░░    ░░       ░░       ░░    ░░        ░░  ░░    ░░  ░░        ░░    ░░
+        ░░░░  ░░░░░░   ░░░░░░░  ░░    ░░  ░░░░░░░░  ░░    ░░  ░░░░░░░   ░░░░░░░░
+
+                Join us and help change an industry : techshed.co/jobs
+
+    -->
+    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+      <meta charset="utf-8">
+      <title>Techshed</title>
+      <meta name="description" content="We make meaningful interactive products that help homeowners and home improvement professionals build their dreams.">
+      <!-- load webfont.js early on to avoid FOUT (http://www.paulirish.com/2009/fighting-the-font-face-fout/) -->
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script>
+        WebFont.load({
+          custom: { families: ['Avenir', 'socicon-webfont'] },
+          urls: ['/styles/fonts.css'],
+          google: { families: ['Libre Baskerville:400italic'] }
+        });
+      </script>
+      <!-- build:css(.tmp) /styles/main.css -->
+      <link rel="stylesheet" href="/styles/vid.css">
+      <!-- bower:css -->
+
+      <!-- endbower -->
+      <!-- endbuild -->
+    </head>
+
+    <body class="home">
+
+      <div class="logo" href="#">
+        <img class="logo__mark" src="/images/global/home-depot-logo.png">
+        <span class="logo__type"></span>
+      </div>
+
+      <video id="video-bg" poster="/images/home/video-poster.jpg" preload="auto" autoplay="true" loop="loop">
+       <source src="/videos/home-video.mp4" type="video/mp4">
+      </video>
+      <div style="z-index: 2;" class="page-header--home__copy">
+        <div class="wrapper">
+          <h1 class="fit-text">Make<span class="comma">,</span>Build<span class="comma">,</span>Do</span></h1>
+          <div class="purpose">We make interactive products that help homeowners and home-improvement professionals build their dreams.</div>
+        </div>
+      </div>
+
+
+      <!-- jQuery via Google CDN -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+      <!-- build:js /scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <script src="/bower_components/modernizr/modernizr.js"></script>
+      <script src="/bower_components/fastclick/lib/fastclick.js"></script>
+      <script src="/bower_components/FitText.js/jquery.fittext.js"></script>
+      <script src="/bower_components/nprogress/nprogress.js"></script>
+      <script src="/bower_components/jquery-unorphanize/unorphanize.jquery.js"></script>
+      <script src="/bower_components/jquery-waypoints/waypoints.js"></script>
+      <script src="/bower_components/jquery.smooth-scroll/jquery.smooth-scroll.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+
+  <script>
+
+      setTimeout(function() {
+        $('.fit-text').css('opacity','1').fitText(0.697, {
+            minFontSize: '84px'
+        });
+      }, 40);
+
+
+  </script>
+
+
+    </body>
+    </html>

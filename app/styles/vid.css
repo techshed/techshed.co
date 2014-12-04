@@ -1,0 +1,113 @@
+body, html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:"Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+}
+#video-bg{
+  position: absolute;
+  z-index: 1;
+  width: 1280px;
+  height: 720px;
+}
+
+.wrapper{
+    position: relative;
+    width: 1260px;
+}
+
+.page-header--home__copy{
+  position: absolute;
+  width: 100%;
+  margin-top: 2rem;
+  color: #fff;
+  z-index: 2;
+  margin-left: 2rem;
+  margin-top: 10rem;
+
+  text-shadow: none;
+  -moz-text-shadow: none;
+  -o-text-shadow: none;
+
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  letter-spacing: -.2rem;
+  margin: 0.25em 0 -2rem;
+  margin-left: -0.75rem;
+}
+
+.purpose{
+  margin: 1.6rem 0 2.3rem;
+  max-width: 49rem;
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+
+.logo{
+  position: absolute;
+  width: 15rem;
+  height: 3.7rem;
+  left: 33px;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  top: 45px;
+}
+.logo__mark, .logo__type{
+  vertical-align: middle;
+  display: inline-block;
+}
+.logo__mark{
+  max-width: 25%;
+  border: 1px solid white;
+}
+.logo__type{
+  width: 70%;
+  height: 100%;
+  background-image: url("/images/global/techshed-logo-type.png");
+  background-size: 200% 53%;
+  background-position: right;
+  background-repeat: no-repeat;
+  margin-left: 1%;
+
+}
+
+
+
+// Avenir
+@font-face{
+    font-family:"Avenir";
+    src:url("../fonts/avenir-book.eot?#iefix") format("eot"),
+    url("../fonts/avenir-book.woff") format("woff"),
+    url("../fonts/avenir-book.ttf") format("truetype"),
+    url("../fonts/avenir-book.svg") format("svg");
+    font-weight: 300;
+}
+@font-face{
+    font-family:"Avenir";
+    src:url("../fonts/avenir-heavy.eot?#iefix") format("eot"),
+    url("../fonts/avenir-heavy.woff") format("woff"),
+    url("../fonts/avenir-heavy.ttf") format("truetype"),
+    url("../fonts/avenir-heavy.svg") format("svg");
+    font-weight: 600;
+}
+@font-face{
+    font-family:"Avenir";
+    src:url("../fonts/avenir-black.eot?#iefix") format("eot"),
+    url("../fonts/avenir-black.woff") format("woff"),
+    url("../fonts/avenir-black.ttf") format("truetype"),
+    url("../fonts/avenir-black.svg") format("svg");
+    font-weight: 900;
+}
+
+
