@@ -4,6 +4,7 @@ body, html{
     overflow: hidden;
     margin: 0;
     padding: 0;
+    background: #D88C55;
 }
 body{
     font-family:"Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -24,18 +25,16 @@ body{
 .page-header--home__copy{
   position: absolute;
   width: 100%;
-  margin-top: 2rem;
   color: #fff;
   z-index: 2;
-  margin-left: 2rem;
-  margin-top: 10rem;
+  margin-left: 1.3rem;
+  margin-top: 8.5rem;
 
   text-shadow: none;
   -moz-text-shadow: none;
   -o-text-shadow: none;
 
   -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1{
