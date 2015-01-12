@@ -12,7 +12,7 @@ body, .page-header h1, .page-header--home h1, .page-header--subpage h1, .quote--
   font-family: "Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal; }
 
-.error .response {
+#page-error .response {
   font-family: 'Consolas', 'Monaco', 'Courier New', 'Courier', monospace; }
 
 .site-footer__location p span, .contact-info h2 span {
@@ -1146,13 +1146,13 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     font-size: 2rem;
     line-height: 1.6; }
 
-.error .page-header--subpage {
+#page-error .page-header--subpage {
   height: 40rem;
   margin: 0;
   padding: 0; }
-.error h1 {
+#page-error h1 {
   margin-left: 0; }
-.error .response {
+#page-error .response {
   font-weight: 100;
   color: #aaa;
   display: inline-block; }
