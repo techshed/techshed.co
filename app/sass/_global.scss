@@ -98,7 +98,7 @@ a{
 }
 
 // pages container
-#page-container{
+#pages-container{
   @extend %fade-transition;
   @include clearfix;
   position: relative;

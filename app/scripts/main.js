@@ -8,7 +8,7 @@ var TechshedCo = (function() {
     var $navPrimary     = $('.nav-primary'),
         $navToggle      = $('.nav-primary__menu-toggle'),
         $navPrimaryMenu = $('.nav-primary__menu'),
-        $pageWindow     = $('#page-container'),
+        $pageWindow     = $('#pages-container'),
         page,
         timer;
 
@@ -107,6 +107,7 @@ var TechshedCo = (function() {
 
         // check if page already loaded, else go load it first
         if($('#page-' + page).length){
+            console.log(page);
             toggleVideoPlaying(page);
             pageContainer.removeClass().addClass('is-visible');
             pageContainer.siblings().removeClass().addClass('is-hidden');
@@ -130,6 +131,8 @@ var TechshedCo = (function() {
                 // disable video if device is mobile
                 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                   $('#video-bg').remove();
+
+                  // disable onScroll animations for mobile
                   $('.dormant').removeClass('dormant');
               }
           } else {
@@ -142,25 +145,36 @@ var TechshedCo = (function() {
         }
     }
 
+    function showErrorPage(code, text){
+        showPage('error');
+        $('#page-error').find('.status').html(code);
+        $('#page-error').find('.statusText').html(text);
+    }
+
     function loadPage(page) {
         // loading bar start
         NProgress.start();
-        // path to html
-        var pageHtml = ('/pages/' + page + '.html');
 
         // create page container
-        var pageContainer = $( '<div id=page-' + page + ' class="is-hidden" />');
+        var pageContainer = $( '<div id="page-' + page + '" class="is-hidden" />');
         $pageWindow.append(pageContainer);
 
-        // load & append html into unique page container
-        pageContainer.load(pageHtml, function(response, status) {
+        // location of html to load
+        var pageHtml = ('/pages/' + page + '.html');
+
+        // load & append html into its unique page container
+        pageContainer.load(pageHtml, function(response, status, xhr) {
+            var statusCode = xhr.status,
+                statusText = xhr.statusText;
+
             if (status === 'error') {
                 pageContainer.remove();
-                showPage('error');
+                showErrorPage(statusCode, statusText);
             } else{
                 showPage(page);
             }
 
+            // page-specific initializations
             switch (page) {
                 case 'jobs':
                     initJobScoreWidget();
