@@ -2,6 +2,8 @@ node_modules
 dist
 .tmp
 .sass-cache
+*.css
+*.map
 app/bower_components
 test/bower_components
 .DS_Store

@@ -345,6 +345,7 @@ module.exports = function(grunt) {
         'sass',
         'concurrent:dist',
         'concat',
+        'uglify',
         'copy:dist',
         'includes',
         'cssmin',

@@ -5,10 +5,10 @@
 var TechshedCo = (function() {
     'use strict';
 
-    var $navPrimary     = $('.nav-primary'),
-        $navToggle      = $('.nav-primary__menu-toggle'),
+    var $navPrimary = $('.nav-primary'),
+        $navToggle = $('.nav-primary__menu-toggle'),
         $navPrimaryMenu = $('.nav-primary__menu'),
-        $pageWindow     = $('#page-container'),
+        $pageWindow = $('#page-container'),
         page,
         timer;
 
@@ -49,11 +49,13 @@ var TechshedCo = (function() {
             ev.preventDefault();
 
             var $this = $(this),
-            page = $this.attr('class').split(' ')[0],
-            path = getPath();
+                page = $this.attr('class').split(' ')[0],
+                path = getPath();
 
             // logo points to /home
-            if (page === 'logo') { page = 'home'; }
+            if (page === 'logo') {
+                page = 'home';
+            }
 
             // ~~~~~~ mobile nav logic (need to refactor) ~~~~~~
             if ($this.parents().hasClass('nav-primary__menu')) {
@@ -66,11 +68,11 @@ var TechshedCo = (function() {
             // check if already on page
             if (path === page) {
                 return false;
-            } else{
+            } else {
                 // scroll to top of page before showing new page
                 $.smoothScroll({
-                  scrollElement: null,
-                  afterScroll: function(){
+                    scrollElement: null,
+                    afterScroll: function() {
                         // update path in address bar
                         history.pushState({}, '', '/' + page);
                         showPage(page);
@@ -99,20 +101,24 @@ var TechshedCo = (function() {
     }
 
     function showPage(page) {
-        if (page === '') { page = 'home'; }
-        var pageContainer = $( '#page-' + page);
+        if (page === '') {
+            page = 'home';
+        }
+        var pageContainer = $('#page-' + page);
 
         // underline nav link
         $('.' + page).addClass('active').siblings().removeClass('active');
 
         // check if page already loaded, else go load it first
-        if($('#page-' + page).length){
+        if ($('#page-' + page).length) {
             toggleVideoPlaying(page);
             pageContainer.removeClass().addClass('is-visible');
             pageContainer.siblings().removeClass().addClass('is-hidden');
 
             // mixpanel tracker
-            mixpanel.track('page load', { path: page });
+            mixpanel.track('page load', {
+                path: page
+            });
 
             // set body class
             if (page === 'home') {
@@ -128,16 +134,16 @@ var TechshedCo = (function() {
                 });
 
                 // disable video if device is mobile
-                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                  $('#video-bg').remove();
-                  $('.dormant').removeClass('dormant');
-              }
-          } else {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    $('#video-bg').remove();
+                    $('.dormant').removeClass('dormant');
+                }
+            } else {
                 // init general subpage
                 $('body').removeClass().addClass(page + ' subpage');
             }
             // page doesn't exist yet so let's go load it
-        } else{
+        } else {
             loadPage(page);
         }
     }
@@ -149,7 +155,7 @@ var TechshedCo = (function() {
         var pageHtml = ('/pages/' + page + '.html');
 
         // create page container
-        var pageContainer = $( '<div id=page-' + page + ' class="is-hidden" />');
+        var pageContainer = $('<div id=page-' + page + ' class="is-hidden" />');
         $pageWindow.append(pageContainer);
 
         // load & append html into unique page container
@@ -157,7 +163,7 @@ var TechshedCo = (function() {
             if (status === 'error') {
                 pageContainer.remove();
                 showPage('error');
-            } else{
+            } else {
                 showPage(page);
             }
             if (page === 'jobs') {
@@ -173,49 +179,49 @@ var TechshedCo = (function() {
     }
 
     function fitText() {
-      setTimeout(function() {
-        $('.fit-text').css('opacity','1').fitText(0.697, {
-            minFontSize: '84px'
-        });
-    }, 40);
-  }
-
-  function toggleNavMenu() {
-    if ($navPrimaryMenu.hasClass('is-hidden')) {
-        $pageWindow.addClass('no-scroll');
-        $navPrimary.addClass('nav-primary__menu--on');
-        $navToggle.html('CLOSE <span>×</span>');
-        $navPrimaryMenu.css({
-            'display': 'block'
-        });
         setTimeout(function() {
-            $navPrimaryMenu.removeClass('is-hidden');
-        }, 30);
-
-    } else {
-        $pageWindow.removeClass('no-scroll');
-        $navPrimary.removeClass('nav-primary__menu--on');
-        $navToggle.html('MENU <span>☰</span>');
-        $navPrimaryMenu
-        .addClass('is-hidden')
-        .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
-            $navPrimaryMenu.css({
-                'display': 'none'
+            $('.fit-text').css('opacity', '1').fitText(0.697, {
+                minFontSize: '84px'
             });
-            $navPrimaryMenu.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
-            ev.stopPropagation();
-        });
+        }, 40);
     }
-}
 
-function toggleVideoPlaying(page) {
-    var video = $('#video-bg');
+    function toggleNavMenu() {
+        if ($navPrimaryMenu.hasClass('is-hidden')) {
+            $pageWindow.addClass('no-scroll');
+            $navPrimary.addClass('nav-primary__menu--on');
+            $navToggle.html('CLOSE <span>×</span>');
+            $navPrimaryMenu.css({
+                'display': 'block'
+            });
+            setTimeout(function() {
+                $navPrimaryMenu.removeClass('is-hidden');
+            }, 30);
+
+        } else {
+            $pageWindow.removeClass('no-scroll');
+            $navPrimary.removeClass('nav-primary__menu--on');
+            $navToggle.html('MENU <span>☰</span>');
+            $navPrimaryMenu
+                .addClass('is-hidden')
+                .one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(ev) {
+                    $navPrimaryMenu.css({
+                        'display': 'none'
+                    });
+                    $navPrimaryMenu.off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
+                    ev.stopPropagation();
+                });
+        }
+    }
+
+    function toggleVideoPlaying(page) {
+        var video = $('#video-bg');
 
         // delay necessary for the play status to toggle reliably
-        setTimeout( function() {
-            if((page === 'home')){
+        setTimeout(function() {
+            if ((page === 'home')) {
                 video[0].play();
-            } else{
+            } else {
                 video[0].pause();
             }
         }, 100);
@@ -248,7 +254,7 @@ function toggleVideoPlaying(page) {
         var timeoutID;
         return function() {
             var scope = this,
-            args = arguments;
+                args = arguments;
             clearTimeout(timeoutID);
             timeoutID = setTimeout(function() {
                 func.apply(scope, Array.prototype.slice.call(args));
