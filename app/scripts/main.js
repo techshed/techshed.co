@@ -8,7 +8,7 @@ var TechshedCo = (function() {
     var $navPrimary = $('.nav-primary'),
         $navToggle = $('.nav-primary__menu-toggle'),
         $navPrimaryMenu = $('.nav-primary__menu'),
-        $pageWindow = $('#page-container'),
+        $pageWindow = $('#pages-container'),
         page,
         timer;
 
