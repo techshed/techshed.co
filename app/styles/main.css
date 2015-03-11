@@ -275,7 +275,7 @@ a {
   overflow: hidden; }
   .block--img a, .project--featured a {
     background-size: 1px 1px;
-    background-position: 0 1.6rem;
+    background-position: 0 100%;
     background-repeat: repeat-x;
     background-color: rgba(255, 255, 255, 0);
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
@@ -285,9 +285,6 @@ a {
       background-color: rgba(255, 255, 255, 0);
       background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, white 50%);
       background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, white 50%); }
-    @media screen and (min-width: 40.063em) {
-      .block--img a, .project--featured a {
-        background-position: 0 1.8rem; } }
 
 .block--img__img {
   position: absolute;
@@ -536,7 +533,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     .nav-primary__menu--lg a.active span, .nav-primary__menu--lg a.active span:hover {
       opacity: 1;
       background-size: 1px 1px;
-      background-position: 0 1.6rem;
+      background-position: 0 100%;
       background-repeat: repeat-x;
       background-color: rgba(255, 255, 255, 0);
       background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
@@ -547,7 +544,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
       background-repeat: repeat-x; }
       .subpage .nav-primary__menu--lg a.active span, .subpage .nav-primary__menu--lg a.active span:hover {
         background-size: 1px 1px;
-        background-position: 0 1.6rem;
+        background-position: 0 100%;
         background-repeat: repeat-x;
         background-color: transparent;
         background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.18) 50%);
@@ -643,7 +640,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     font-weight: 600; }
   .repo-link a {
     background-size: 1px 1px;
-    background-position: 0 1.6rem;
+    background-position: 0 100%;
     background-repeat: repeat-x;
     background-color: transparent;
     background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.18) 50%);

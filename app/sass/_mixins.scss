@@ -2,7 +2,7 @@
   // props to Marcin Wichary @ Medium.com for sharing this approach to link underlining
   // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
   background-size: 1px 1px;
-  background-position: 0 1.6rem;
+  background-position: 0 100%;
   background-repeat: repeat-x;
 
   @if $shade == light {

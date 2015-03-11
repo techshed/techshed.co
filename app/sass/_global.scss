@@ -183,7 +183,6 @@ a{
 
   a{
     @include svelte-underline(light, normal, hover);
-    @include respond-to(md-screen) { background-position: 0 1.8rem; }
   }
 }
 .block--img__img{
