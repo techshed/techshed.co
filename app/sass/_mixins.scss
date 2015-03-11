@@ -1,17 +1,17 @@
 @mixin svelte-underline($shade, $thickness, $hover) {
   // props to Marcin Wichary @ Medium.com for sharing this approach to link underlining
   // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
-  background-size: 2px 2px;
+  background-size: 1px 1px;
   background-position: 0 1.6rem;
   background-repeat: repeat-x;
 
   @if $shade == light {
-    @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.4) 50%);
+    @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.6) 50%);
     color: #fff;
 
     @if $hover != no-hover{
       &:hover{
-        @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 0.2) 50%);
+        @include linear-gradient(to bottom, rgba(255,255,255, 0) 50%, rgba(255,255,255, 1) 50%);
       }
     }
   }
@@ -21,7 +21,7 @@
 
     @if $hover != no-hover{
       &:hover{
-        @include linear-gradient(to bottom, rgba(0,0,0, 0) 50%, rgba($body-copy-color, 0.06) 50%);
+        @include linear-gradient(to bottom, rgba(0,0,0, 0) 50%, rgba($body-copy-color, 0.3) 50%);
       }
     }
   }

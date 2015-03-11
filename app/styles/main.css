@@ -139,16 +139,16 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
-  color: #333;
+  color: #333333;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   body ::selection {
-    background: #F16322;
+    background: #f16322;
     /* Safari */
     color: #fff; }
   body ::-moz-selection {
-    background: #F16322;
+    background: #f16322;
     /* Firefox */
     color: #fff; }
 
@@ -169,7 +169,7 @@ a {
 #nprogress {
   z-index: 1; }
   #nprogress .bar {
-    background: #F16322;
+    background: #f16322;
     height: .2rem; }
   #nprogress .peg, #nprogress .spinner {
     display: none; }
@@ -274,17 +274,20 @@ a {
   color: #fff;
   overflow: hidden; }
   .block--img a, .project--featured a {
-    background-size: 2px 2px;
+    background-size: 1px 1px;
     background-position: 0 1.6rem;
     background-repeat: repeat-x;
     background-color: rgba(255, 255, 255, 0);
-    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
-    background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
+    background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
     color: #fff; }
     .block--img a:hover, .project--featured a:hover {
       background-color: rgba(255, 255, 255, 0);
-      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 50%);
-      background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 50%); }
+      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, white 50%);
+      background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, white 50%); }
+    @media screen and (min-width: 40.063em) {
+      .block--img a, .project--featured a {
+        background-position: 0 1.8rem; } }
 
 .block--img__img {
   position: absolute;
@@ -387,8 +390,8 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     border-color: rgba(255, 255, 255, 0.6); }
 
 .btn--black {
-  color: #333;
-  border-color: #333; }
+  color: #333333;
+  border-color: #333333; }
   .btn--black:hover {
     border-color: rgba(51, 51, 51, 0.7); }
   .btn--black:active {
@@ -433,7 +436,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   vertical-align: middle;
   font-size: 1.7rem;
   font-weight: 600;
-  color: #333; }
+  color: #333333; }
   .home .nav-primary__menu-toggle {
     color: #fff; }
   .nav-primary__menu-toggle span {
@@ -527,29 +530,29 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     font-size: 1.7rem;
     color: #fff; }
     .subpage .nav-primary__menu--lg a {
-      color: #333; }
+      color: #333333; }
     .nav-primary__menu--lg a span:hover {
       opacity: .8; }
     .nav-primary__menu--lg a.active span, .nav-primary__menu--lg a.active span:hover {
       opacity: 1;
-      background-size: 2px 2px;
+      background-size: 1px 1px;
       background-position: 0 1.6rem;
       background-repeat: repeat-x;
       background-color: rgba(255, 255, 255, 0);
-      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
-      background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
+      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
+      background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
       color: #fff;
       background-size: 1px 7px;
       background-position: 0 2.8rem;
       background-repeat: repeat-x; }
       .subpage .nav-primary__menu--lg a.active span, .subpage .nav-primary__menu--lg a.active span:hover {
-        background-size: 2px 2px;
+        background-size: 1px 1px;
         background-position: 0 1.6rem;
         background-repeat: repeat-x;
         background-color: transparent;
         background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.18) 50%);
         background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.18) 50%);
-        color: #333;
+        color: #333333;
         background-size: 1px 7px;
         background-position: 0 2.8rem;
         background-repeat: repeat-x; }
@@ -609,7 +612,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   font-size: 3.2rem;
   width: 100%; }
   .site-footer__social-icons a {
-    color: #333;
+    color: #333333;
     margin: 0 0.6rem; }
     .site-footer__social-icons a:hover {
       opacity: 0.7; }
@@ -639,18 +642,18 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     padding: 0 .3rem;
     font-weight: 600; }
   .repo-link a {
-    background-size: 2px 2px;
+    background-size: 1px 1px;
     background-position: 0 1.6rem;
     background-repeat: repeat-x;
     background-color: transparent;
     background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.18) 50%);
     background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.18) 50%);
-    color: #333;
+    color: #333333;
     color: gray; }
     .repo-link a:hover {
       background-color: transparent;
-      background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.06) 50%);
-      background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.06) 50%); }
+      background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.3) 50%);
+      background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.3) 50%); }
 
 .page-header--home {
   background-color: #FBAB69;
@@ -780,7 +783,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   padding: 0 9%;
   margin: 0 auto;
   text-align: left;
-  color: #333; }
+  color: #333333; }
   .our-jobs__copy h2 {
     margin: 0;
     padding: 0;
@@ -963,8 +966,8 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   overflow: visible; }
   .project--featured .project__copy {
     background-color: transparent;
-    background-image: -webkit-linear-gradient(transparent 0%, #111 30%, #111 100%);
-    background-image: linear-gradient(transparent 0%, #111 30%, #111 100%);
+    background-image: -webkit-linear-gradient(transparent 0%, #111111 30%, #111111 100%);
+    background-image: linear-gradient(transparent 0%, #111111 30%, #111111 100%);
     padding: 10rem 2rem 4rem; }
   @media screen and (min-width: 40.063em) {
     .project--featured {
@@ -998,7 +1001,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   text-align: center;
   color: #fff;
   border-radius: 50%;
-  background: #F16322; }
+  background: #f16322; }
 
 @media screen and (min-width: 40.063em) {
   .project--img-left .project__img {
@@ -1136,7 +1139,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
-  color: #333; }
+  color: #333333; }
   .page-header--subpage__copy h1 {
     font-size: 6rem; }
   .page-header--subpage__copy p {
@@ -1156,5 +1159,3 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
   font-weight: 100;
   color: #aaa;
   display: inline-block; }
-
-/*# sourceMappingURL=main.css.map */
