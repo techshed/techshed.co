@@ -539,9 +539,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
       background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
       background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 50%);
       color: #fff;
-      background-size: 1px 7px;
-      background-position: 0 2.8rem;
-      background-repeat: repeat-x; }
+      background-size: 1px 8px; }
       .subpage .nav-primary__menu--lg a.active span, .subpage .nav-primary__menu--lg a.active span:hover {
         background-size: 1px 1px;
         background-position: 0 100%;
@@ -550,11 +548,9 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
         background-image: -webkit-linear-gradient(top, transparent 50%, rgba(51, 51, 51, 0.18) 50%);
         background-image: linear-gradient(to bottom,transparent 50%, rgba(51, 51, 51, 0.18) 50%);
         color: #333333;
-        background-size: 1px 7px;
-        background-position: 0 2.8rem;
-        background-repeat: repeat-x; }
+        background-size: 1px 8px; }
   .nav-primary__menu--lg span {
-    padding: 0.7rem 0; }
+    padding: 0.5rem 0; }
 
 .logo--footer {
   display: inline-block;
