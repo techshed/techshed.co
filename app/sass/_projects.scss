@@ -34,12 +34,19 @@
   }
 }
 
+.project__copy{
+    @include respond-to(handhelds) {
+      font-size: 1.8rem;
+    }
+}
+
 .project--featured{
   @extend .block;
   @extend .block--img;
   height: 35rem;
-  margin: 4rem 0 27rem;
+  margin: 4rem 0 30rem;
   background-position: 93% center;
+  background-size: 273%;
   overflow: visible;
 
   .project__copy{
@@ -69,10 +76,6 @@
     .project__copy{
       left: 8%;
     }
-  }
-
-  @include respond-to(lg-screen) {
-    height: 37rem;
   }
 }
 .project--featured__badge{
@@ -156,7 +159,7 @@
 
   h2{
     margin: 0 0 1rem;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
     line-height: 1.1;
   }
@@ -211,4 +214,18 @@
       margin-left: -3rem;
     }
   }
+}
+
+.project-02{
+    @include respond-to(handhelds) {
+      img{
+          margin: 0 0 -1rem -20%;
+          max-width: 140%;
+      }
+    }
+    @include respond-to(md-screen) {
+      .project__copy{
+          margin-top: -3rem;
+      }
+    }
 }
