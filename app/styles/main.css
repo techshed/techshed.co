@@ -922,7 +922,7 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     opacity: 0; }
 
 .project, .project--img-left, .project--img-right {
-  margin-bottom: 4.4rem; }
+  margin-bottom: 8.8rem; }
   .project img, .project--img-left img, .project--img-right img {
     display: block;
     max-height: 35rem;
@@ -952,13 +952,16 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     .project .wrapper, .project--img-left .wrapper, .project--img-right .wrapper {
       max-width: 90rem; } }
 
+.project__img, .project__copy {
+  width: 100%; }
+
 @media screen and (max-width: 40em) {
   .project__copy {
     font-size: 1.8rem; } }
 
 .project--featured {
-  height: 35rem;
-  margin: 4rem 0 30rem;
+  height: 50rem;
+  margin: 4rem 0 20rem;
   background-position: 93% center;
   overflow: visible; }
   .project--featured .project__copy {
@@ -1068,7 +1071,6 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
       max-width: 51rem; } }
 
 .project__img, .project__copy {
-  width: 100%;
   float: left; }
   @media screen and (min-width: 40.063em) {
     .project__img, .project__copy {
@@ -1097,10 +1099,12 @@ p, h1, h2, h3, h4, .purpose, .logo, .nav-primary__link {
     margin-left: -3rem; } }
 
 @media screen and (max-width: 40em) {
-  .project-02 img {
-    margin: 0 0 -1rem -20%;
-    max-width: 140%; } }
+  .project-02 .project__img {
+    width: 140%;
+    margin: 0 0 -2rem -20%; } }
 @media screen and (min-width: 40.063em) {
+  .project-02 .project__img {
+    right: -7%; }
   .project-02 .project__copy {
     margin-top: -3rem; } }
 

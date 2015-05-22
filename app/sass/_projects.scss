@@ -2,7 +2,7 @@
 // Project Item
 .project{
   @extend .block;
-  margin-bottom: $baseline-spacing-hard;
+  margin-bottom: $baseline-spacing-hard * 2;
 
   img{
     @extend %slower-transition;
@@ -34,6 +34,9 @@
   }
 }
 
+.project__img, .project__copy{
+    width: 100%;
+}
 .project__copy{
     @include respond-to(handhelds) {
       font-size: 1.8rem;
@@ -43,8 +46,8 @@
 .project--featured{
   @extend .block;
   @extend .block--img;
-  height: 35rem;
-  margin: 4rem 0 30rem;
+  height: 50rem;
+  margin: 4rem 0 20rem;
   background-position: 93% center;
   overflow: visible;
 
@@ -182,7 +185,6 @@
 .project__img, .project__copy{
   @extend %slow-transition;
   @extend %vertical-align;
-  width: 100%;
   float: left;
 
   @include respond-to(md-screen) {
@@ -221,14 +223,17 @@
 
 .project-02{
     @include respond-to(handhelds) {
-      img{
-          margin: 0 0 -1rem -20%;
-          max-width: 140%;
-      }
+      .project__img{
+          width: 140%;
+          margin: 0 0 -2rem -20%;
+        }
     }
     @include respond-to(md-screen) {
-      .project__copy{
-          margin-top: -3rem;
-      }
+        .project__img{
+            right: -7%;
+        }
+        .project__copy{
+            margin-top: -3rem;
+        }
     }
 }
