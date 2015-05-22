@@ -1,6 +1,6 @@
 @mixin respond-to($media) {
 
-  // SMALL: 641px min
+  // SMALL: 641px max
   @if $media == handhelds {
     @media screen and (max-width: 40em) { @content; }
   }

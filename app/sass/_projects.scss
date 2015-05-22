@@ -46,12 +46,15 @@
   height: 35rem;
   margin: 4rem 0 30rem;
   background-position: 93% center;
-  background-size: 273%;
   overflow: visible;
 
   .project__copy{
     @include linear-gradient(transparent 0%, #111 30%, #111 100%);
     padding: 10rem 2rem 4rem;
+  }
+
+  @include respond-to(handhelds) {
+      background-size: 273%;
   }
 
   @include respond-to(md-screen) {
